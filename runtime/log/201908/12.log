@@ -1,0 +1,893 @@
+---------------------------------------------------------------
+[ 2019-08-12T13:39:46+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001223s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.007363s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000479s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.005912s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000602s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 1 ORDER BY `weigh` DESC [ RunTime:0.000555s ]
+[ sql ] [ SQL ] SELECT `name`,`pid` FROM `h_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 0  AND `name` LIKE '%/index' [ RunTime:0.000567s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:39:47+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/dashboard?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012704s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.009622s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000611s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.005875s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000570s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'dashboard' LIMIT 1 [ RunTime:0.000455s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:39:50+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/addon?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011164s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.004678s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000377s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.006521s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000479s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'addon' LIMIT 1 [ RunTime:0.000504s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:39:53+08:00 ] 127.0.0.1 POST ceshi.com/index.php/admin/addon/install
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001206s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.004199s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000294s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.008449s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000562s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `icon` , `ismenu` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('command' , '在线命令管理' , 'fa fa-terminal' , 1 , 0 , 'normal' , 1565588393 , 1565588393) [ RunTime:0.001727s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('command/index' , '查看' , 0 , 'fa fa-circle-o' , 85 , 'normal' , 1565588393 , 1565588393) [ RunTime:0.000781s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('command/add' , '添加' , 0 , 'fa fa-circle-o' , 85 , 'normal' , 1565588393 , 1565588393) [ RunTime:0.000997s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('command/detail' , '详情' , 0 , 'fa fa-circle-o' , 85 , 'normal' , 1565588393 , 1565588393) [ RunTime:0.000627s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('command/execute' , '运行' , 0 , 'fa fa-circle-o' , 85 , 'normal' , 1565588393 , 1565588393) [ RunTime:0.000720s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('command/del' , '删除' , 0 , 'fa fa-circle-o' , 85 , 'normal' , 1565588393 , 1565588393) [ RunTime:0.000601s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('command/multi' , '批量更新' , 0 , 'fa fa-circle-o' , 85 , 'normal' , 1565588393 , 1565588393) [ RunTime:0.000761s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.005543s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('插件管理 安装' , '{\"name\":\"command\",\"force\":\"0\",\"uid\":\"0\",\"token\":\"\",\"version\":\"1.0.5\",\"faversion\":\"1.0.0.20190705_beta\"}' , '/index.php/admin/addon/install' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36' , '127.0.0.1' , 1565588393) [ RunTime:0.000961s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:39:53+08:00 ] 127.0.0.1 POST ceshi.com/index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011391s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.005566s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000426s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.004987s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000499s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 1 ORDER BY `weigh` DESC [ RunTime:0.000531s ]
+[ sql ] [ SQL ] SELECT `name`,`pid` FROM `h_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 0  AND `name` LIKE '%/index' [ RunTime:0.000571s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.007763s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('' , '{\"action\":\"refreshmenu\"}' , '/index.php/admin/index/index' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36' , '127.0.0.1' , 1565588393) [ RunTime:0.003088s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:39:57+08:00 ] 127.0.0.1 POST ceshi.com/index.php/admin/addon/install
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011702s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.004262s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000331s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.005530s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000559s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `icon` , `ismenu` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat' , '微信管理' , 'fa fa-wechat' , 1 , 0 , 'normal' , 1565588397 , 1565588397) [ RunTime:0.002413s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `icon` , `ismenu` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/autoreply' , '自动回复管理' , 'fa fa-reply-all' , 1 , 92 , 'normal' , 1565588397 , 1565588397) [ RunTime:0.000886s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/autoreply/index' , '查看' , 0 , 'fa fa-circle-o' , 93 , 'normal' , 1565588397 , 1565588397) [ RunTime:0.001209s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/autoreply/add' , '添加' , 0 , 'fa fa-circle-o' , 93 , 'normal' , 1565588397 , 1565588397) [ RunTime:0.000837s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/autoreply/edit' , '修改' , 0 , 'fa fa-circle-o' , 93 , 'normal' , 1565588397 , 1565588397) [ RunTime:0.001139s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/autoreply/del' , '删除' , 0 , 'fa fa-circle-o' , 93 , 'normal' , 1565588397 , 1565588397) [ RunTime:0.000759s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/autoreply/multi' , '批量更新' , 0 , 'fa fa-circle-o' , 93 , 'normal' , 1565588397 , 1565588397) [ RunTime:0.000704s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `icon` , `ismenu` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/config' , '配置管理' , 'fa fa-cog' , 1 , 92 , 'normal' , 1565588397 , 1565588397) [ RunTime:0.000696s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/config/index' , '查看' , 0 , 'fa fa-circle-o' , 99 , 'normal' , 1565588397 , 1565588397) [ RunTime:0.000688s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/config/add' , '添加' , 0 , 'fa fa-circle-o' , 99 , 'normal' , 1565588397 , 1565588397) [ RunTime:0.000725s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/config/edit' , '修改' , 0 , 'fa fa-circle-o' , 99 , 'normal' , 1565588397 , 1565588397) [ RunTime:0.000834s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/config/del' , '删除' , 0 , 'fa fa-circle-o' , 99 , 'normal' , 1565588397 , 1565588397) [ RunTime:0.001138s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/config/multi' , '批量更新' , 0 , 'fa fa-circle-o' , 99 , 'normal' , 1565588397 , 1565588397) [ RunTime:0.002457s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `icon` , `ismenu` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/menu' , '菜单管理' , 'fa fa-list' , 1 , 92 , 'normal' , 1565588397 , 1565588397) [ RunTime:0.000849s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/menu/index' , '查看' , 0 , 'fa fa-circle-o' , 105 , 'normal' , 1565588397 , 1565588397) [ RunTime:0.001019s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/menu/add' , '添加' , 0 , 'fa fa-circle-o' , 105 , 'normal' , 1565588397 , 1565588397) [ RunTime:0.001696s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/menu/edit' , '修改' , 0 , 'fa fa-circle-o' , 105 , 'normal' , 1565588397 , 1565588397) [ RunTime:0.000895s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/menu/del' , '删除' , 0 , 'fa fa-circle-o' , 105 , 'normal' , 1565588397 , 1565588397) [ RunTime:0.000773s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/menu/sync' , '同步' , 0 , 'fa fa-circle-o' , 105 , 'normal' , 1565588397 , 1565588397) [ RunTime:0.000765s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/menu/multi' , '批量更新' , 0 , 'fa fa-circle-o' , 105 , 'normal' , 1565588397 , 1565588397) [ RunTime:0.000704s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `icon` , `ismenu` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/response' , '资源管理' , 'fa fa-list-alt' , 1 , 92 , 'normal' , 1565588397 , 1565588397) [ RunTime:0.000729s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/response/index' , '查看' , 0 , 'fa fa-circle-o' , 112 , 'normal' , 1565588397 , 1565588397) [ RunTime:0.000690s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/response/add' , '添加' , 0 , 'fa fa-circle-o' , 112 , 'normal' , 1565588397 , 1565588397) [ RunTime:0.000609s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/response/edit' , '修改' , 0 , 'fa fa-circle-o' , 112 , 'normal' , 1565588397 , 1565588397) [ RunTime:0.000678s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/response/del' , '删除' , 0 , 'fa fa-circle-o' , 112 , 'normal' , 1565588397 , 1565588397) [ RunTime:0.001769s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/response/select' , '选择' , 0 , 'fa fa-circle-o' , 112 , 'normal' , 1565588397 , 1565588397) [ RunTime:0.000724s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/response/multi' , '批量更新' , 0 , 'fa fa-circle-o' , 112 , 'normal' , 1565588397 , 1565588397) [ RunTime:0.000823s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.004843s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('插件管理 安装' , '{\"name\":\"wechat\",\"force\":\"0\",\"uid\":\"0\",\"token\":\"\",\"version\":\"1.0.3\",\"faversion\":\"1.0.0.20190705_beta\"}' , '/index.php/admin/addon/install' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36' , '127.0.0.1' , 1565588397) [ RunTime:0.002029s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:39:57+08:00 ] 127.0.0.1 POST ceshi.com/index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004418s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.012032s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.001775s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.005704s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000580s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 1 ORDER BY `weigh` DESC [ RunTime:0.000569s ]
+[ sql ] [ SQL ] SELECT `name`,`pid` FROM `h_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 0  AND `name` LIKE '%/index' [ RunTime:0.001092s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.004511s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('' , '{\"action\":\"refreshmenu\"}' , '/index.php/admin/index/index' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36' , '127.0.0.1' , 1565588397) [ RunTime:0.001227s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:40:02+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/general/config?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.019215s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.005898s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000439s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.005966s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000735s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_config` [ RunTime:0.006200s ]
+[ sql ] [ SQL ] SELECT * FROM `h_config` [ RunTime:0.000484s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'general/config' LIMIT 1 [ RunTime:0.000331s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:40:07+08:00 ] 127.0.0.1 POST ceshi.com/index.php/admin/general.config/edit
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011006s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.007304s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000454s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.004833s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000579s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_config` [ RunTime:0.006462s ]
+[ sql ] [ SQL ] SELECT * FROM `h_config` [ RunTime:0.000366s ]
+[ sql ] [ SQL ] UPDATE `h_config`  SET `name`='categorytype',`group`='dictionary',`title`='Category type',`tip`='',`type`='array',`value`='{\"default\":\"Default\"}',`content`='',`rule`='',`extend`=''  WHERE  `id` = 9 [ RunTime:0.000361s ]
+[ sql ] [ SQL ] UPDATE `h_config`  SET `name`='configgroup',`group`='dictionary',`title`='Config group',`tip`='',`type`='array',`value`='{\"basic\":\"Basic\",\"email\":\"Email\",\"dictionary\":\"Dictionary\",\"user\":\"User\",\"example\":\"Example\"}',`content`='',`rule`='',`extend`=''  WHERE  `id` = 10 [ RunTime:0.000253s ]
+[ sql ] [ SQL ] SELECT * FROM `h_config` [ RunTime:0.000296s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.004456s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('常规管理 系统配置 编辑' , '{\"row\":{\"categorytype\":\"{\\\"default\\\":\\\"Default\\\"}\",\"configgroup\":\"{\\\"basic\\\":\\\"Basic\\\",\\\"email\\\":\\\"Email\\\",\\\"dictionary\\\":\\\"Dictionary\\\",\\\"user\\\":\\\"User\\\",\\\"example\\\":\\\"Example\\\"}\"}}' , '/index.php/admin/general.config/edit' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36' , '127.0.0.1' , 1565588407) [ RunTime:0.001156s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:40:09+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/category?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011723s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.005600s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000325s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.005366s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.002441s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.005726s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.001747s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'category' LIMIT 1 [ RunTime:0.000414s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:40:09+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/category/index?sort=weigh&order=desc&_=1565588409426
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012637s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.006392s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000687s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.007168s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000599s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.009707s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000395s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:40:14+08:00 ] 127.0.0.1 POST ceshi.com/index.php/admin/category/del/ids/13,12,5,7,11,10,6,9,8,2,4,3,1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003485s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.004911s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000377s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.010798s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000583s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.008841s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000471s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` WHERE  `id` IN (13,12,5,7,11,10,6,9,8,2,4,3,1) [ RunTime:0.000350s ]
+[ sql ] [ SQL ] DELETE FROM `h_category`    WHERE  `id` = 1 [ RunTime:0.000211s ]
+[ sql ] [ SQL ] DELETE FROM `h_category`    WHERE  `id` = 2 [ RunTime:0.000177s ]
+[ sql ] [ SQL ] DELETE FROM `h_category`    WHERE  `id` = 3 [ RunTime:0.000234s ]
+[ sql ] [ SQL ] DELETE FROM `h_category`    WHERE  `id` = 4 [ RunTime:0.000223s ]
+[ sql ] [ SQL ] DELETE FROM `h_category`    WHERE  `id` = 5 [ RunTime:0.000177s ]
+[ sql ] [ SQL ] DELETE FROM `h_category`    WHERE  `id` = 6 [ RunTime:0.000167s ]
+[ sql ] [ SQL ] DELETE FROM `h_category`    WHERE  `id` = 7 [ RunTime:0.000178s ]
+[ sql ] [ SQL ] DELETE FROM `h_category`    WHERE  `id` = 8 [ RunTime:0.000121s ]
+[ sql ] [ SQL ] DELETE FROM `h_category`    WHERE  `id` = 9 [ RunTime:0.000123s ]
+[ sql ] [ SQL ] DELETE FROM `h_category`    WHERE  `id` = 10 [ RunTime:0.000124s ]
+[ sql ] [ SQL ] DELETE FROM `h_category`    WHERE  `id` = 11 [ RunTime:0.000122s ]
+[ sql ] [ SQL ] DELETE FROM `h_category`    WHERE  `id` = 12 [ RunTime:0.000122s ]
+[ sql ] [ SQL ] DELETE FROM `h_category`    WHERE  `id` = 13 [ RunTime:0.000118s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.007174s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('分类管理 删除' , '{\"action\":\"del\",\"ids\":\"13,12,5,7,11,10,6,9,8,2,4,3,1\",\"params\":\"\"}' , '/index.php/admin/category/del/ids/13,12,5,7,11,10,6,9,8,2,4,3,1' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36' , '127.0.0.1' , 1565588414) [ RunTime:0.000896s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:40:14+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/category/index?sort=weigh&order=desc&_=1565588409427
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012989s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.008067s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000452s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.007551s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.002545s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.004496s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000250s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:40:14+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/category/add?dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011339s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.005774s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.001880s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.004699s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000521s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.009301s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000592s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:40:31+08:00 ] 127.0.0.1 POST ceshi.com/index.php/admin/ajax/upload
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001021s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_attachment` [ RunTime:0.004979s ]
+[ sql ] [ SQL ] SELECT * FROM `h_attachment` WHERE  `url` = '/uploads/20190812/5aeeeb68f9e747e189fb6f36381746c5.png' LIMIT 1 [ RunTime:0.000524s ]
+[ sql ] [ SQL ] INSERT INTO `h_attachment` (`admin_id` , `filesize` , `imagewidth` , `imageheight` , `imagetype` , `mimetype` , `url` , `uploadtime` , `storage` , `sha1` , `extparam` , `createtime` , `updatetime`) VALUES (1 , 7669 , '86' , '86' , 'png' , 'image/png' , '/uploads/20190812/5aeeeb68f9e747e189fb6f36381746c5.png' , 1565588431 , 'local' , '6a402181c871b24d9de55c58798440a364b6d57e' , '{\"name\":\"jtSPea80t16l70iz73U1EJs8A3tt6A.png\"}' , 1565588431 , 1565588431) [ RunTime:0.001496s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.004493s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('' , '{\"name\":\"jtSPea80t16l70iz73U1EJs8A3tt6A.png\"}' , '/index.php/admin/ajax/upload' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36' , '127.0.0.1' , 1565588431) [ RunTime:0.000807s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:40:34+08:00 ] 127.0.0.1 POST ceshi.com/index.php/admin/category/add?dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011611s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.004496s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000345s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.007929s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000612s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.007536s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000514s ]
+[ sql ] [ SQL ] INSERT INTO `h_category` (`type` , `pid` , `name` , `nickname` , `image` , `keywords` , `description` , `weigh` , `status` , `flag` , `createtime` , `updatetime`) VALUES ('default' , 0 , '直播' , '直播' , '/uploads/20190812/5aeeeb68f9e747e189fb6f36381746c5.png' , '直播' , '直播' , 0 , 'normal' , '' , 1565588434 , 1565588434) [ RunTime:0.000472s ]
+[ sql ] [ SQL ] UPDATE `h_category`  SET `type`='default',`pid`=0,`name`='直播',`nickname`='直播',`image`='/uploads/20190812/5aeeeb68f9e747e189fb6f36381746c5.png',`keywords`='直播',`description`='直播',`weigh`=14,`status`='normal',`flag`='',`createtime`=1565588434,`updatetime`=1565588434  WHERE  `id` = 14 [ RunTime:0.000489s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.004677s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('分类管理 添加' , '{\"dialog\":\"1\",\"row\":{\"type\":\"default\",\"pid\":\"0\",\"name\":\"\\u76f4\\u64ad\",\"nickname\":\"\\u76f4\\u64ad\",\"image\":\"\\/uploads\\/20190812\\/5aeeeb68f9e747e189fb6f36381746c5.png\",\"keywords\":\"\\u76f4\\u64ad\",\"description\":\"\\u76f4\\u64ad\",\"weigh\":\"0\",\"status\":\"normal\",\"flag\":[\"\"]}}' , '/index.php/admin/category/add?dialog=1' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36' , '127.0.0.1' , 1565588434) [ RunTime:0.001086s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:40:35+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/category/index?sort=weigh&order=desc&_=1565588409428
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001936s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.007306s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000400s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.004356s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000539s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.006678s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000374s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:40:41+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/category/add?dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.019346s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.005326s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000326s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.010515s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000791s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.010495s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000523s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:40:52+08:00 ] 127.0.0.1 POST ceshi.com/index.php/admin/ajax/upload
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011216s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_attachment` [ RunTime:0.004856s ]
+[ sql ] [ SQL ] SELECT * FROM `h_attachment` WHERE  `url` = '/uploads/20190812/9f64fb47c909388f839a805bfce03758.png' LIMIT 1 [ RunTime:0.000323s ]
+[ sql ] [ SQL ] INSERT INTO `h_attachment` (`admin_id` , `filesize` , `imagewidth` , `imageheight` , `imagetype` , `mimetype` , `url` , `uploadtime` , `storage` , `sha1` , `extparam` , `createtime` , `updatetime`) VALUES (1 , 7041 , '86' , '86' , 'png' , 'image/png' , '/uploads/20190812/9f64fb47c909388f839a805bfce03758.png' , 1565588452 , 'local' , '3fc8b4b5875a6c809bb8dfeb531c696cf417954d' , '{\"name\":\"bCXuUhoukBVcCy5z503k6CVjs3nZK3.png\"}' , 1565588452 , 1565588452) [ RunTime:0.001151s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.004951s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('' , '{\"name\":\"bCXuUhoukBVcCy5z503k6CVjs3nZK3.png\"}' , '/index.php/admin/ajax/upload' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36' , '127.0.0.1' , 1565588452) [ RunTime:0.000822s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:40:58+08:00 ] 127.0.0.1 POST ceshi.com/index.php/admin/category/add?dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004414s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.053109s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000422s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.004507s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000548s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.005520s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000469s ]
+[ sql ] [ SQL ] INSERT INTO `h_category` (`type` , `pid` , `name` , `nickname` , `flag` , `image` , `keywords` , `description` , `weigh` , `status` , `createtime` , `updatetime`) VALUES ('default' , 0 , '权威解答' , '权威解答' , 'index' , '/uploads/20190812/9f64fb47c909388f839a805bfce03758.png' , '权威解答' , '权威解答' , 0 , 'normal' , 1565588457 , 1565588457) [ RunTime:0.000292s ]
+[ sql ] [ SQL ] UPDATE `h_category`  SET `type`='default',`pid`=0,`name`='权威解答',`nickname`='权威解答',`flag`='index',`image`='/uploads/20190812/9f64fb47c909388f839a805bfce03758.png',`keywords`='权威解答',`description`='权威解答',`weigh`=15,`status`='normal',`createtime`=1565588457,`updatetime`=1565588457  WHERE  `id` = 15 [ RunTime:0.000299s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.004642s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('分类管理 添加' , '{\"dialog\":\"1\",\"row\":{\"type\":\"default\",\"pid\":\"0\",\"name\":\"\\u6743\\u5a01\\u89e3\\u7b54\",\"nickname\":\"\\u6743\\u5a01\\u89e3\\u7b54\",\"flag\":[\"index\"],\"image\":\"\\/uploads\\/20190812\\/9f64fb47c909388f839a805bfce03758.png\",\"keywords\":\"\\u6743\\u5a01\\u89e3\\u7b54\",\"description\":\"\\u6743\\u5a01\\u89e3\\u7b54\",\"weigh\":\"0\",\"status\":\"normal\"}}' , '/index.php/admin/category/add?dialog=1' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36' , '127.0.0.1' , 1565588458) [ RunTime:0.030631s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:40:58+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/category/index?sort=weigh&order=desc&_=1565588409429
+[ sql ] [ DB ] CONNECT:[ UseTime:0.014020s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.010123s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000414s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.012272s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001070s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.011142s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000396s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:40:59+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/category/add?dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.014396s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.013665s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000424s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.004448s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000533s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.004507s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000301s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:41:08+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/category/add?dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.014478s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.004694s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000307s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.007337s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001639s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.010424s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000620s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:41:15+08:00 ] 127.0.0.1 POST ceshi.com/index.php/admin/ajax/upload
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001434s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_attachment` [ RunTime:0.005701s ]
+[ sql ] [ SQL ] SELECT * FROM `h_attachment` WHERE  `url` = '/uploads/20190812/7120b1011dfff9f9cbb9946cef2a895d.png' LIMIT 1 [ RunTime:0.000423s ]
+[ sql ] [ SQL ] INSERT INTO `h_attachment` (`admin_id` , `filesize` , `imagewidth` , `imageheight` , `imagetype` , `mimetype` , `url` , `uploadtime` , `storage` , `sha1` , `extparam` , `createtime` , `updatetime`) VALUES (1 , 7932 , '86' , '86' , 'png' , 'image/png' , '/uploads/20190812/7120b1011dfff9f9cbb9946cef2a895d.png' , 1565588475 , 'local' , '876fdcdaf59c73b9240b1f345250ad8990b2a615' , '{\"name\":\"b8Hk4zdzk7Z0b84ob4H0O0AkKKnBBA.png\"}' , 1565588475 , 1565588475) [ RunTime:0.000977s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.004931s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('' , '{\"name\":\"b8Hk4zdzk7Z0b84ob4H0O0AkKKnBBA.png\"}' , '/index.php/admin/ajax/upload' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36' , '127.0.0.1' , 1565588475) [ RunTime:0.000848s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:41:19+08:00 ] 127.0.0.1 POST ceshi.com/index.php/admin/category/add?dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011250s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.035950s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000280s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.005069s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000577s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.004590s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000270s ]
+[ sql ] [ SQL ] INSERT INTO `h_category` (`type` , `pid` , `name` , `nickname` , `image` , `keywords` , `description` , `weigh` , `status` , `flag` , `createtime` , `updatetime`) VALUES ('default' , 0 , '学员分享' , '学员分享' , '/uploads/20190812/7120b1011dfff9f9cbb9946cef2a895d.png' , '学员分享' , '学员分享' , 0 , 'normal' , '' , 1565588479 , 1565588479) [ RunTime:0.000206s ]
+[ sql ] [ SQL ] UPDATE `h_category`  SET `type`='default',`pid`=0,`name`='学员分享',`nickname`='学员分享',`image`='/uploads/20190812/7120b1011dfff9f9cbb9946cef2a895d.png',`keywords`='学员分享',`description`='学员分享',`weigh`=16,`status`='normal',`flag`='',`createtime`=1565588479,`updatetime`=1565588479  WHERE  `id` = 16 [ RunTime:0.000192s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.005601s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('分类管理 添加' , '{\"dialog\":\"1\",\"row\":{\"type\":\"default\",\"pid\":\"0\",\"name\":\"\\u5b66\\u5458\\u5206\\u4eab\",\"nickname\":\"\\u5b66\\u5458\\u5206\\u4eab\",\"image\":\"\\/uploads\\/20190812\\/7120b1011dfff9f9cbb9946cef2a895d.png\",\"keywords\":\"\\u5b66\\u5458\\u5206\\u4eab\",\"description\":\"\\u5b66\\u5458\\u5206\\u4eab\",\"weigh\":\"0\",\"status\":\"normal\",\"flag\":[\"\"]}}' , '/index.php/admin/category/add?dialog=1' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36' , '127.0.0.1' , 1565588479) [ RunTime:0.000947s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:41:19+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/category/index?sort=weigh&order=desc&_=1565588409430
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013569s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.010762s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000633s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.007520s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000634s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.010455s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000804s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:41:30+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/category/add?dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011173s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.004226s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000328s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.004495s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000537s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.006544s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000327s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:41:38+08:00 ] 127.0.0.1 POST ceshi.com/index.php/admin/ajax/upload
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012003s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_attachment` [ RunTime:0.005661s ]
+[ sql ] [ SQL ] SELECT * FROM `h_attachment` WHERE  `url` = '/uploads/20190812/88cd2262cdc622ab3afe931ce8d87bb5.png' LIMIT 1 [ RunTime:0.000336s ]
+[ sql ] [ SQL ] INSERT INTO `h_attachment` (`admin_id` , `filesize` , `imagewidth` , `imageheight` , `imagetype` , `mimetype` , `url` , `uploadtime` , `storage` , `sha1` , `extparam` , `createtime` , `updatetime`) VALUES (1 , 7771 , '86' , '86' , 'png' , 'image/png' , '/uploads/20190812/88cd2262cdc622ab3afe931ce8d87bb5.png' , 1565588498 , 'local' , '1339c45f00f4822f72a43472d45b71413bbe8d79' , '{\"name\":\"lY47LDDn882845D4Pe88B5S7dsAP70.png\"}' , 1565588498 , 1565588498) [ RunTime:0.001075s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.005335s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('' , '{\"name\":\"lY47LDDn882845D4Pe88B5S7dsAP70.png\"}' , '/index.php/admin/ajax/upload' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36' , '127.0.0.1' , 1565588498) [ RunTime:0.001015s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:41:45+08:00 ] 127.0.0.1 POST ceshi.com/index.php/admin/category/add?dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002827s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.007384s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000388s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.005654s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001987s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.004639s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000261s ]
+[ sql ] [ SQL ] INSERT INTO `h_category` (`type` , `pid` , `name` , `nickname` , `flag` , `image` , `keywords` , `description` , `weigh` , `status` , `createtime` , `updatetime`) VALUES ('default' , 0 , '私人辅导' , '私人辅导' , 'index' , '/uploads/20190812/88cd2262cdc622ab3afe931ce8d87bb5.png' , '私人辅导' , '私人辅导' , 0 , 'normal' , 1565588505 , 1565588505) [ RunTime:0.000185s ]
+[ sql ] [ SQL ] UPDATE `h_category`  SET `type`='default',`pid`=0,`name`='私人辅导',`nickname`='私人辅导',`flag`='index',`image`='/uploads/20190812/88cd2262cdc622ab3afe931ce8d87bb5.png',`keywords`='私人辅导',`description`='私人辅导',`weigh`=17,`status`='normal',`createtime`=1565588505,`updatetime`=1565588505  WHERE  `id` = 17 [ RunTime:0.000206s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.005723s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('分类管理 添加' , '{\"dialog\":\"1\",\"row\":{\"type\":\"default\",\"pid\":\"0\",\"name\":\"\\u79c1\\u4eba\\u8f85\\u5bfc\",\"nickname\":\"\\u79c1\\u4eba\\u8f85\\u5bfc\",\"flag\":[\"index\"],\"image\":\"\\/uploads\\/20190812\\/88cd2262cdc622ab3afe931ce8d87bb5.png\",\"keywords\":\"\\u79c1\\u4eba\\u8f85\\u5bfc\",\"description\":\"\\u79c1\\u4eba\\u8f85\\u5bfc\",\"weigh\":\"0\",\"status\":\"normal\"}}' , '/index.php/admin/category/add?dialog=1' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36' , '127.0.0.1' , 1565588505) [ RunTime:0.001321s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:41:45+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/category/index?sort=weigh&order=desc&_=1565588409431
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002429s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.005181s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000471s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.007978s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000723s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.012634s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000484s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:41:47+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/category/edit/ids/16?dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011729s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.004258s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000412s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.006143s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000767s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.004935s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000511s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` WHERE  `id` = 16 LIMIT 1 [ RunTime:0.000385s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:41:52+08:00 ] 127.0.0.1 POST ceshi.com/index.php/admin/category/edit/ids/16?dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011723s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.004823s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000414s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.004495s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000505s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.005260s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000380s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` WHERE  `id` = 16 LIMIT 1 [ RunTime:0.000308s ]
+[ sql ] [ SQL ] UPDATE `h_category`  SET `pid`=0,`flag`='index',`updatetime`=1565588512  WHERE  `id` = 16 [ RunTime:0.001906s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.006093s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('分类管理 编辑' , '{\"dialog\":\"1\",\"row\":{\"type\":\"default\",\"pid\":\"0\",\"name\":\"\\u5b66\\u5458\\u5206\\u4eab\",\"nickname\":\"\\u5b66\\u5458\\u5206\\u4eab\",\"flag\":[\"index\"],\"image\":\"\\/uploads\\/20190812\\/7120b1011dfff9f9cbb9946cef2a895d.png\",\"keywords\":\"\\u5b66\\u5458\\u5206\\u4eab\",\"description\":\"\\u5b66\\u5458\\u5206\\u4eab\",\"weigh\":\"16\",\"status\":\"normal\"},\"ids\":\"16\"}' , '/index.php/admin/category/edit/ids/16?dialog=1' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36' , '127.0.0.1' , 1565588512) [ RunTime:0.001352s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:41:52+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/category/index?sort=weigh&order=desc&_=1565588409432
+[ sql ] [ DB ] CONNECT:[ UseTime:0.014723s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.005976s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000348s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.012163s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000872s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.007892s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.002605s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:41:53+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/category/edit/ids/14?dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000931s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.010922s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000724s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.006577s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001657s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.005216s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000329s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` WHERE  `id` = 14 LIMIT 1 [ RunTime:0.001329s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:41:57+08:00 ] 127.0.0.1 POST ceshi.com/index.php/admin/category/edit/ids/14?dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001191s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.004668s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000477s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.008861s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001028s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.007521s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000589s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` WHERE  `id` = 14 LIMIT 1 [ RunTime:0.000366s ]
+[ sql ] [ SQL ] UPDATE `h_category`  SET `pid`=0,`flag`='index',`updatetime`=1565588517  WHERE  `id` = 14 [ RunTime:0.001757s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.006129s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('分类管理 编辑' , '{\"dialog\":\"1\",\"row\":{\"type\":\"default\",\"pid\":\"0\",\"name\":\"\\u76f4\\u64ad\",\"nickname\":\"\\u76f4\\u64ad\",\"flag\":[\"index\"],\"image\":\"\\/uploads\\/20190812\\/5aeeeb68f9e747e189fb6f36381746c5.png\",\"keywords\":\"\\u76f4\\u64ad\",\"description\":\"\\u76f4\\u64ad\",\"weigh\":\"14\",\"status\":\"normal\"},\"ids\":\"14\"}' , '/index.php/admin/category/edit/ids/14?dialog=1' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36' , '127.0.0.1' , 1565588517) [ RunTime:0.001518s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:41:57+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/category/index?sort=weigh&order=desc&_=1565588409433
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001043s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.008940s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000411s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.006546s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000578s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.006248s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000434s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:42:01+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/category?ref=addtabs
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011268s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.004430s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000452s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.005212s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000526s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:42:01+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001700s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.006298s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000375s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.005712s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000704s ]
+[ sql ] [ SQL ] SELECT `name`,`pid` FROM `h_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 0  AND `name` LIKE '%/index' [ RunTime:0.000800s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:42:01+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/dashboard?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004105s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.005374s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000277s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.004115s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000451s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'dashboard' LIMIT 1 [ RunTime:0.000322s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:42:02+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/category?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011702s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.007588s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000391s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.007970s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000919s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.005637s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.001563s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'category' LIMIT 1 [ RunTime:0.000437s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:42:02+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/category/index?sort=weigh&order=desc&_=1565588522650
+[ sql ] [ DB ] CONNECT:[ UseTime:0.009892s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.006026s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000326s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.004728s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000481s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.006155s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000473s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:42:05+08:00 ] 127.0.0.1 POST ceshi.com/index.php/admin/ajax/weigh
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000907s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.006064s ]
+[ sql ] [ SQL ] SELECT `id`,`pid` FROM `h_category` WHERE  `id` IN (14,17,16,15)  AND `pid` IN (0) [ RunTime:0.000387s ]
+[ sql ] [ SQL ] SELECT `id`,`weigh` FROM `h_category` WHERE  `id` IN (14,17,16,15) ORDER BY `weigh` DESC [ RunTime:0.000288s ]
+[ sql ] [ SQL ] UPDATE `h_category`  SET `weigh`=17  WHERE  `id` = 14 [ RunTime:0.000991s ]
+[ sql ] [ SQL ] UPDATE `h_category`  SET `weigh`=16  WHERE  `id` = 17 [ RunTime:0.000822s ]
+[ sql ] [ SQL ] UPDATE `h_category`  SET `weigh`=15  WHERE  `id` = 16 [ RunTime:0.000739s ]
+[ sql ] [ SQL ] UPDATE `h_category`  SET `weigh`=14  WHERE  `id` = 15 [ RunTime:0.000627s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.004365s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('' , '{\"ids\":\"14,17,16,15\",\"changeid\":\"14\",\"pid\":\"0\",\"field\":\"weigh\",\"orderway\":\"desc\",\"table\":\"category\",\"pk\":\"id\"}' , '/index.php/admin/ajax/weigh' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36' , '127.0.0.1' , 1565588525) [ RunTime:0.001309s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:42:05+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/category/index?sort=weigh&order=desc&_=1565588522651
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011239s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.004600s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000381s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.011820s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001024s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.012257s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000416s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:42:11+08:00 ] 127.0.0.1 POST ceshi.com/index.php/admin/ajax/weigh
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000938s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.006131s ]
+[ sql ] [ SQL ] SELECT `id`,`pid` FROM `h_category` WHERE  `id` IN (14,15,17,16)  AND `pid` IN (0) [ RunTime:0.000366s ]
+[ sql ] [ SQL ] SELECT `id`,`weigh` FROM `h_category` WHERE  `id` IN (14,15,17,16) ORDER BY `weigh` DESC [ RunTime:0.000238s ]
+[ sql ] [ SQL ] UPDATE `h_category`  SET `weigh`=16  WHERE  `id` = 15 [ RunTime:0.001009s ]
+[ sql ] [ SQL ] UPDATE `h_category`  SET `weigh`=15  WHERE  `id` = 17 [ RunTime:0.000681s ]
+[ sql ] [ SQL ] UPDATE `h_category`  SET `weigh`=14  WHERE  `id` = 16 [ RunTime:0.000647s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.004397s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('' , '{\"ids\":\"14,15,17,16\",\"changeid\":\"15\",\"pid\":\"0\",\"field\":\"weigh\",\"orderway\":\"desc\",\"table\":\"category\",\"pk\":\"id\"}' , '/index.php/admin/ajax/weigh' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36' , '127.0.0.1' , 1565588531) [ RunTime:0.000861s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:42:11+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/category/index?sort=weigh&order=desc&_=1565588522652
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013387s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.004428s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000329s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.007264s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001198s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.004644s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000435s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:42:16+08:00 ] 127.0.0.1 POST ceshi.com/index.php/admin/ajax/weigh
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000885s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.008021s ]
+[ sql ] [ SQL ] SELECT `id`,`pid` FROM `h_category` WHERE  `id` IN (14,15,16,17)  AND `pid` IN (0) [ RunTime:0.000328s ]
+[ sql ] [ SQL ] SELECT `id`,`weigh` FROM `h_category` WHERE  `id` IN (14,15,16,17) ORDER BY `weigh` DESC [ RunTime:0.000236s ]
+[ sql ] [ SQL ] UPDATE `h_category`  SET `weigh`=15  WHERE  `id` = 16 [ RunTime:0.001059s ]
+[ sql ] [ SQL ] UPDATE `h_category`  SET `weigh`=14  WHERE  `id` = 17 [ RunTime:0.000731s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.004382s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('' , '{\"ids\":\"14,15,16,17\",\"changeid\":\"16\",\"pid\":\"0\",\"field\":\"weigh\",\"orderway\":\"desc\",\"table\":\"category\",\"pk\":\"id\"}' , '/index.php/admin/ajax/weigh' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36' , '127.0.0.1' , 1565588536) [ RunTime:0.001601s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:42:16+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/category/index?sort=weigh&order=desc&_=1565588522653
+[ sql ] [ DB ] CONNECT:[ UseTime:0.015318s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.006312s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000391s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.010881s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000636s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.010474s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000501s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:42:19+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/category/add?dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012682s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.007262s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000329s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.004432s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000515s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.005769s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000381s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:42:22+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/category/edit/ids/15?dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000934s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.004696s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000367s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.010846s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000785s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.010355s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000460s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` WHERE  `id` = 15 LIMIT 1 [ RunTime:0.000406s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:42:30+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/category/index?sort=weigh&order=desc&_=1565588522654
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011257s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.004195s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000319s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.004437s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000470s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.004568s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000416s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:42:32+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/category/index?sort=weigh&order=desc&_=1565588522655
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005423s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.005004s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000347s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.006842s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001774s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.004747s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000340s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:42:34+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/category/index?sort=weigh&order=desc&_=1565588522656
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011493s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.006065s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000426s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.004875s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000588s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.005749s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000416s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:42:36+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/category/index?sort=weigh&order=desc&_=1565588522657
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011451s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.004417s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000377s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.006420s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000609s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.004771s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000350s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:42:45+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/auth/rule?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010778s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.004276s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000386s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.006255s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001962s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.001051s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'auth/rule' LIMIT 1 [ RunTime:0.000427s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:42:45+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/auth/rule/index?sort=weigh&order=desc&_=1565588565432
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011036s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.004222s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000368s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.004191s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000541s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.000988s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:42:50+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/auth/rule/edit/ids/3?dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001101s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.010164s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000379s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.004503s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000521s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.000952s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.001308s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:43:07+08:00 ] 127.0.0.1 POST ceshi.com/index.php/admin/auth/rule/edit/ids/3?dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000818s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.005810s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000344s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.004732s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000548s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.000850s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000489s ]
+[ sql ] [ SQL ] SELECT `id` FROM `h_auth_rule` WHERE  `name` = 'category'  AND `id` <> 3 LIMIT 1 [ RunTime:0.000331s ]
+[ sql ] [ SQL ] UPDATE `h_auth_rule`  SET `pid`=0,`title`='课程分类',`updatetime`=1565588587  WHERE  `id` = 3 [ RunTime:0.001285s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.004364s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('权限管理 菜单规则 编辑' , '{\"dialog\":\"1\",\"row\":{\"ismenu\":\"1\",\"pid\":\"0\",\"name\":\"category\",\"title\":\"\\u8bfe\\u7a0b\\u5206\\u7c7b\",\"icon\":\"fa fa-leaf\",\"weigh\":\"119\",\"condition\":\"\",\"remark\":\"Category tips\",\"status\":\"normal\"},\"ids\":\"3\"}' , '/index.php/admin/auth/rule/edit/ids/3?dialog=1' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36' , '127.0.0.1' , 1565588587) [ RunTime:0.001328s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:43:07+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/auth/rule/index?sort=weigh&order=desc&_=1565588565433
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011862s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.014281s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000980s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.014228s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001429s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.001006s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:43:08+08:00 ] 127.0.0.1 POST ceshi.com/index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.016605s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.005515s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.001461s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.008286s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000504s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 1 ORDER BY `weigh` DESC [ RunTime:0.000764s ]
+[ sql ] [ SQL ] SELECT `name`,`pid` FROM `h_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 0  AND `name` LIKE '%/index' [ RunTime:0.000610s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.008727s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('' , '{\"action\":\"refreshmenu\"}' , '/index.php/admin/index/index' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36' , '127.0.0.1' , 1565588588) [ RunTime:0.001475s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:43:08+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/auth/rule/index?sort=weigh&order=desc&_=1565588565434
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012161s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.004388s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000329s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.004729s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000825s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.001134s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:43:17+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/addon?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010276s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.004692s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000348s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.004315s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000501s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'addon' LIMIT 1 [ RunTime:0.000387s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:43:32+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/auth/rule/index?sort=weigh&order=desc&_=1565588565435
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013468s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.007747s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000681s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.006601s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000696s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.000940s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:43:45+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/auth/rule/edit/ids/4?dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011670s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.004401s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000331s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.004769s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.001002s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.001318s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:44:00+08:00 ] 127.0.0.1 POST ceshi.com/index.php/admin/auth/rule/edit/ids/4?dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001060s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.005341s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000375s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.004303s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000496s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.001003s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000378s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` [ RunTime:0.000434s ]
+[ sql ] [ SQL ] SELECT `id` FROM `h_auth_rule` WHERE  `name` = 'addon'  AND `id` <> 4 LIMIT 1 [ RunTime:0.000292s ]
+[ sql ] [ SQL ] UPDATE `h_auth_rule`  SET `pid`=2,`title`='插件管理',`weigh`=0,`updatetime`=1565588640  WHERE  `id` = 4 [ RunTime:0.001479s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.005572s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('权限管理 菜单规则 编辑' , '{\"dialog\":\"1\",\"row\":{\"ismenu\":\"1\",\"pid\":\"2\",\"name\":\"addon\",\"title\":\"\\u63d2\\u4ef6\\u7ba1\\u7406\",\"icon\":\"fa fa-rocket\",\"weigh\":\"0\",\"condition\":\"\",\"remark\":\"Addon tips\",\"status\":\"normal\"},\"ids\":\"4\"}' , '/index.php/admin/auth/rule/edit/ids/4?dialog=1' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36' , '127.0.0.1' , 1565588640) [ RunTime:0.001012s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:44:00+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/auth/rule/index?sort=weigh&order=desc&_=1565588565436
+[ sql ] [ DB ] CONNECT:[ UseTime:0.016609s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.005068s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000528s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.007005s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001922s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.001157s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:44:00+08:00 ] 127.0.0.1 POST ceshi.com/index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.020857s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.007078s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000377s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.005240s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001798s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 1 ORDER BY `weigh` DESC [ RunTime:0.002381s ]
+[ sql ] [ SQL ] SELECT `name`,`pid` FROM `h_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 0  AND `name` LIKE '%/index' [ RunTime:0.000571s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.010453s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('' , '{\"action\":\"refreshmenu\"}' , '/index.php/admin/index/index' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36' , '127.0.0.1' , 1565588640) [ RunTime:0.001567s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:44:01+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/auth/rule/index?sort=weigh&order=desc&_=1565588565437
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011757s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.004591s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000378s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.005959s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000889s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.001092s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:44:07+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/auth/rule/edit/ids/85?dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011935s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.004753s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000418s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.009600s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000964s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.000914s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` WHERE  `id` = 85 LIMIT 1 [ RunTime:0.001015s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:44:11+08:00 ] 127.0.0.1 POST ceshi.com/index.php/admin/auth/rule/edit/ids/85?dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011400s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.004213s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000335s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.006125s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000780s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.000980s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` WHERE  `id` = 85 LIMIT 1 [ RunTime:0.000378s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` [ RunTime:0.000561s ]
+[ sql ] [ SQL ] SELECT `id` FROM `h_auth_rule` WHERE  `name` = 'command'  AND `id` <> 85 LIMIT 1 [ RunTime:0.000394s ]
+[ sql ] [ SQL ] UPDATE `h_auth_rule`  SET `pid`=2,`weigh`=0,`updatetime`=1565588651  WHERE  `id` = 85 [ RunTime:0.001719s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.004494s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('权限管理 菜单规则 编辑' , '{\"dialog\":\"1\",\"row\":{\"ismenu\":\"1\",\"pid\":\"2\",\"name\":\"command\",\"title\":\"\\u5728\\u7ebf\\u547d\\u4ee4\\u7ba1\\u7406\",\"icon\":\"fa fa-terminal\",\"weigh\":\"0\",\"condition\":\"\",\"remark\":\"\",\"status\":\"normal\"},\"ids\":\"85\"}' , '/index.php/admin/auth/rule/edit/ids/85?dialog=1' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36' , '127.0.0.1' , 1565588651) [ RunTime:0.001094s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:44:11+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/auth/rule/index?sort=weigh&order=desc&_=1565588565438
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013393s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.009459s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.002262s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.008892s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000723s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.003370s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:44:11+08:00 ] 127.0.0.1 POST ceshi.com/index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001051s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.014083s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000403s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.011198s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000692s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 1 ORDER BY `weigh` DESC [ RunTime:0.000514s ]
+[ sql ] [ SQL ] SELECT `name`,`pid` FROM `h_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 0  AND `name` LIKE '%/index' [ RunTime:0.000428s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.007164s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('' , '{\"action\":\"refreshmenu\"}' , '/index.php/admin/index/index' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36' , '127.0.0.1' , 1565588651) [ RunTime:0.001624s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:44:11+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/auth/rule/index?sort=weigh&order=desc&_=1565588565439
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011245s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.004582s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000542s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.004984s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000706s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.001280s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:44:36+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/user/user?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003641s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.006088s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000378s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.004246s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000519s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'user/user' LIMIT 1 [ RunTime:0.000437s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:44:36+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/user/user/index?sort=user.id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565588676593
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010596s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.004386s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000267s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.004197s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000502s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_user` [ RunTime:0.004573s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_user_group` [ RunTime:0.004331s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_user` `user` LEFT JOIN `h_user_group` `group` ON `user`.`group_id`=`group`.`id` ORDER BY `user`.`id` DESC LIMIT 1 [ RunTime:0.000836s ]
+[ sql ] [ SQL ] SELECT `user`.`id`,`user`.`group_id`,`user`.`username`,`user`.`nickname`,`user`.`password`,`user`.`salt`,`user`.`email`,`user`.`mobile`,`user`.`avatar`,`user`.`level`,`user`.`gender`,`user`.`birthday`,`user`.`bio`,`user`.`money`,`user`.`score`,`user`.`successions`,`user`.`maxsuccessions`,`user`.`prevtime`,`user`.`logintime`,`user`.`loginip`,`user`.`loginfailure`,`user`.`joinip`,`user`.`jointime`,`user`.`createtime`,`user`.`updatetime`,`user`.`token`,`user`.`status`,`user`.`verification`,group.id AS group__id,group.name AS group__name,group.rules AS group__rules,group.createtime AS group__createtime,group.updatetime AS group__updatetime,group.status AS group__status FROM `h_user` `user` LEFT JOIN `h_user_group` `group` ON `user`.`group_id`=`group`.`id` ORDER BY `user`.`id` DESC LIMIT 0,10 [ RunTime:0.000436s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:44:43+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/user/user/edit/ids/1?dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.020275s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.004476s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000351s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.008408s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000693s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_user` [ RunTime:0.008154s ]
+[ sql ] [ SQL ] SELECT * FROM `h_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000649s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_user_group` [ RunTime:0.007389s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `h_user_group` [ RunTime:0.000311s ]
+[ sql ] [ SQL ] SELECT * FROM `h_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000388s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:44:54+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/user/group?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011451s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.004472s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000304s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.007060s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000524s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'user/group' LIMIT 1 [ RunTime:0.000336s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:44:55+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/user/group/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565588695024
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011250s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.004404s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000330s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.004280s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000535s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_user_group` [ RunTime:0.004674s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_user_group` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000263s ]
+[ sql ] [ SQL ] SELECT * FROM `h_user_group` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000223s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:44:56+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/user/group/add?dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.019479s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.010200s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000575s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.004853s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000587s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_user_rule` [ RunTime:0.005565s ]
+[ sql ] [ SQL ] SELECT * FROM `h_user_rule` WHERE  `status` = 'normal' ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000439s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:45:15+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/category/index?sort=weigh&order=desc&_=1565588522658
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000906s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.006257s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000411s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.004711s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000591s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.006516s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000397s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:45:18+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/category/index?sort=weigh&order=desc&type=default&_=1565588522659
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011149s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.004220s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000361s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.004491s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000536s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.004601s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000378s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:45:19+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/category/index?sort=weigh&order=desc&type=all&_=1565588522660
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011265s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.005590s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000415s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.004311s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000616s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.005135s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000386s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:45:24+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/category/edit/ids/14?dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001094s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.008682s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.001546s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.007714s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000712s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.010552s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.001571s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` WHERE  `id` = 14 LIMIT 1 [ RunTime:0.000484s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:45:28+08:00 ] 127.0.0.1 POST ceshi.com/index.php/admin/category/edit/ids/14?dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011465s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.005667s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.001501s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.005100s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000772s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.007521s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000438s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` WHERE  `id` = 14 LIMIT 1 [ RunTime:0.000321s ]
+[ sql ] [ SQL ] UPDATE `h_category`  SET `pid`=0,`status`='hidden',`updatetime`=1565588728  WHERE  `id` = 14 [ RunTime:0.002042s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.005375s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('课程分类 编辑' , '{\"dialog\":\"1\",\"row\":{\"type\":\"default\",\"pid\":\"0\",\"name\":\"\\u76f4\\u64ad\",\"nickname\":\"\\u76f4\\u64ad\",\"flag\":[\"index\"],\"image\":\"\\/uploads\\/20190812\\/5aeeeb68f9e747e189fb6f36381746c5.png\",\"keywords\":\"\\u76f4\\u64ad\",\"description\":\"\\u76f4\\u64ad\",\"weigh\":\"17\",\"status\":\"hidden\"},\"ids\":\"14\"}' , '/index.php/admin/category/edit/ids/14?dialog=1' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36' , '127.0.0.1' , 1565588728) [ RunTime:0.002446s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:45:28+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/category/index?sort=weigh&order=desc&type=all&_=1565588522661
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000957s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.011616s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000935s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.010388s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.001338s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.009904s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000842s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:45:31+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/category/edit/ids/14?dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011243s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.007226s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000554s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.005892s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000677s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.004850s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000372s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` WHERE  `id` = 14 LIMIT 1 [ RunTime:0.000385s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:45:34+08:00 ] 127.0.0.1 POST ceshi.com/index.php/admin/category/edit/ids/14?dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.014374s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.005845s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000513s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.007118s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000882s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.006420s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000405s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` WHERE  `id` = 14 LIMIT 1 [ RunTime:0.000308s ]
+[ sql ] [ SQL ] UPDATE `h_category`  SET `pid`=0,`status`='normal',`updatetime`=1565588734  WHERE  `id` = 14 [ RunTime:0.001454s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.006307s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('课程分类 编辑' , '{\"dialog\":\"1\",\"row\":{\"type\":\"default\",\"pid\":\"0\",\"name\":\"\\u76f4\\u64ad\",\"nickname\":\"\\u76f4\\u64ad\",\"flag\":[\"index\"],\"image\":\"\\/uploads\\/20190812\\/5aeeeb68f9e747e189fb6f36381746c5.png\",\"keywords\":\"\\u76f4\\u64ad\",\"description\":\"\\u76f4\\u64ad\",\"weigh\":\"17\",\"status\":\"normal\"},\"ids\":\"14\"}' , '/index.php/admin/category/edit/ids/14?dialog=1' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36' , '127.0.0.1' , 1565588734) [ RunTime:0.001379s ]
+---------------------------------------------------------------
+[ 2019-08-12T13:45:34+08:00 ] 127.0.0.1 GET ceshi.com/index.php/admin/category/index?sort=weigh&order=desc&type=all&_=1565588522662
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013064s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.007928s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000930s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.010398s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000549s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.011683s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.001360s ]
