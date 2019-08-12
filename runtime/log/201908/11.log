@@ -1,0 +1,1242 @@
+---------------------------------------------------------------
+[ 2019-08-11T16:58:27+08:00 ] 113.102.166.105 GET s.yaoget.cn/index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000639s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000574s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000346s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000554s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000473s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 1 ORDER BY `weigh` DESC [ RunTime:0.000396s ]
+[ sql ] [ SQL ] SELECT `name`,`pid` FROM `h_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 0  AND `name` LIKE '%/index' [ RunTime:0.000271s ]
+---------------------------------------------------------------
+[ 2019-08-11T16:58:27+08:00 ] 113.102.166.105 GET s.yaoget.cn/index.php/admin/dashboard?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000796s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000627s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000233s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000498s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000358s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'dashboard' LIMIT 1 [ RunTime:0.000520s ]
+---------------------------------------------------------------
+[ 2019-08-11T16:58:32+08:00 ] 113.102.166.105 GET s.yaoget.cn/index.php/admin/addon?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000643s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000618s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000259s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000471s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000230s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'addon' LIMIT 1 [ RunTime:0.000382s ]
+---------------------------------------------------------------
+[ 2019-08-11T16:59:14+08:00 ] 113.102.166.105 POST s.yaoget.cn/index.php/admin/addon/install
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000841s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000817s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000332s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000487s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000248s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `icon` , `ismenu` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat' , '微信管理' , 'fa fa-wechat' , 1 , 0 , 'normal' , 1565513954 , 1565513954) [ RunTime:0.007420s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `icon` , `ismenu` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/autoreply' , '自动回复管理' , 'fa fa-reply-all' , 1 , 85 , 'normal' , 1565513954 , 1565513954) [ RunTime:0.003983s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/autoreply/index' , '查看' , 0 , 'fa fa-circle-o' , 86 , 'normal' , 1565513954 , 1565513954) [ RunTime:0.003531s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/autoreply/add' , '添加' , 0 , 'fa fa-circle-o' , 86 , 'normal' , 1565513954 , 1565513954) [ RunTime:0.003514s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/autoreply/edit' , '修改' , 0 , 'fa fa-circle-o' , 86 , 'normal' , 1565513954 , 1565513954) [ RunTime:0.003265s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/autoreply/del' , '删除' , 0 , 'fa fa-circle-o' , 86 , 'normal' , 1565513954 , 1565513954) [ RunTime:0.003849s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/autoreply/multi' , '批量更新' , 0 , 'fa fa-circle-o' , 86 , 'normal' , 1565513954 , 1565513954) [ RunTime:0.004088s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `icon` , `ismenu` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/config' , '配置管理' , 'fa fa-cog' , 1 , 85 , 'normal' , 1565513954 , 1565513954) [ RunTime:0.003391s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/config/index' , '查看' , 0 , 'fa fa-circle-o' , 92 , 'normal' , 1565513954 , 1565513954) [ RunTime:0.004786s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/config/add' , '添加' , 0 , 'fa fa-circle-o' , 92 , 'normal' , 1565513954 , 1565513954) [ RunTime:0.003747s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/config/edit' , '修改' , 0 , 'fa fa-circle-o' , 92 , 'normal' , 1565513954 , 1565513954) [ RunTime:0.003961s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/config/del' , '删除' , 0 , 'fa fa-circle-o' , 92 , 'normal' , 1565513954 , 1565513954) [ RunTime:0.003791s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/config/multi' , '批量更新' , 0 , 'fa fa-circle-o' , 92 , 'normal' , 1565513954 , 1565513954) [ RunTime:0.003639s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `icon` , `ismenu` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/menu' , '菜单管理' , 'fa fa-list' , 1 , 85 , 'normal' , 1565513954 , 1565513954) [ RunTime:0.003403s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/menu/index' , '查看' , 0 , 'fa fa-circle-o' , 98 , 'normal' , 1565513954 , 1565513954) [ RunTime:0.004356s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/menu/add' , '添加' , 0 , 'fa fa-circle-o' , 98 , 'normal' , 1565513954 , 1565513954) [ RunTime:0.003487s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/menu/edit' , '修改' , 0 , 'fa fa-circle-o' , 98 , 'normal' , 1565513954 , 1565513954) [ RunTime:0.004580s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/menu/del' , '删除' , 0 , 'fa fa-circle-o' , 98 , 'normal' , 1565513954 , 1565513954) [ RunTime:0.003870s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/menu/sync' , '同步' , 0 , 'fa fa-circle-o' , 98 , 'normal' , 1565513954 , 1565513954) [ RunTime:0.003406s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/menu/multi' , '批量更新' , 0 , 'fa fa-circle-o' , 98 , 'normal' , 1565513954 , 1565513954) [ RunTime:0.003829s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `icon` , `ismenu` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/response' , '资源管理' , 'fa fa-list-alt' , 1 , 85 , 'normal' , 1565513954 , 1565513954) [ RunTime:0.003407s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/response/index' , '查看' , 0 , 'fa fa-circle-o' , 105 , 'normal' , 1565513954 , 1565513954) [ RunTime:0.003528s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/response/add' , '添加' , 0 , 'fa fa-circle-o' , 105 , 'normal' , 1565513954 , 1565513954) [ RunTime:0.003926s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/response/edit' , '修改' , 0 , 'fa fa-circle-o' , 105 , 'normal' , 1565513954 , 1565513954) [ RunTime:0.003868s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/response/del' , '删除' , 0 , 'fa fa-circle-o' , 105 , 'normal' , 1565513954 , 1565513954) [ RunTime:0.003781s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/response/select' , '选择' , 0 , 'fa fa-circle-o' , 105 , 'normal' , 1565513954 , 1565513954) [ RunTime:0.003918s ]
+[ sql ] [ SQL ] INSERT INTO `h_auth_rule` (`name` , `title` , `ismenu` , `icon` , `pid` , `status` , `createtime` , `updatetime`) VALUES ('wechat/response/multi' , '批量更新' , 0 , 'fa fa-circle-o' , 105 , 'normal' , 1565513954 , 1565513954) [ RunTime:0.003363s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.000714s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('插件管理 安装' , '{\"name\":\"wechat\",\"force\":\"0\",\"uid\":\"0\",\"token\":\"\",\"version\":\"1.0.3\",\"faversion\":\"1.0.0.20190705_beta\"}' , '/index.php/admin/addon/install' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36' , '113.102.166.105' , 1565513954) [ RunTime:0.004364s ]
+---------------------------------------------------------------
+[ 2019-08-11T16:59:14+08:00 ] 113.102.166.105 POST s.yaoget.cn/index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000818s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000594s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000222s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000484s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000477s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 1 ORDER BY `weigh` DESC [ RunTime:0.000668s ]
+[ sql ] [ SQL ] SELECT `name`,`pid` FROM `h_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 0  AND `name` LIKE '%/index' [ RunTime:0.000348s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.000887s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('' , '{\"action\":\"refreshmenu\"}' , '/index.php/admin/index/index' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36' , '113.102.166.105' , 1565513954) [ RunTime:0.005661s ]
+---------------------------------------------------------------
+[ 2019-08-11T16:59:19+08:00 ] 113.102.166.105 GET s.yaoget.cn/index.php/admin/wechat/autoreply?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000966s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000734s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000412s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000564s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000260s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'wechat/autoreply' LIMIT 1 [ RunTime:0.000430s ]
+---------------------------------------------------------------
+[ 2019-08-11T16:59:19+08:00 ] 113.102.166.105 GET s.yaoget.cn/index.php/admin/wechat/autoreply/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565513958642
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000626s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000568s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000190s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000470s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000242s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_autoreply` [ RunTime:0.000572s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_wechat_autoreply` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000225s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_autoreply` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000180s ]
+---------------------------------------------------------------
+[ 2019-08-11T16:59:20+08:00 ] 113.102.166.105 GET s.yaoget.cn/index.php/admin/wechat/config?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001271s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000884s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000265s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000778s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000417s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'wechat/config' LIMIT 1 [ RunTime:0.000648s ]
+---------------------------------------------------------------
+[ 2019-08-11T16:59:20+08:00 ] 113.102.166.105 GET s.yaoget.cn/index.php/admin/wechat/config/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565513959796
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000787s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000745s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000259s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000564s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000348s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000806s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_wechat_config` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000292s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000436s ]
+---------------------------------------------------------------
+[ 2019-08-11T16:59:21+08:00 ] 113.102.166.105 GET s.yaoget.cn/index.php/admin/wechat/menu?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000824s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000646s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000223s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000759s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000476s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000653s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` WHERE  `name` = 'menu' LIMIT 1 [ RunTime:0.000301s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_response` [ RunTime:0.000474s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_response` [ RunTime:0.000205s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'wechat/menu' LIMIT 1 [ RunTime:0.000232s ]
+---------------------------------------------------------------
+[ 2019-08-11T16:59:22+08:00 ] 113.102.166.105 GET s.yaoget.cn/index.php/admin/wechat/response?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000620s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000555s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000188s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000520s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000421s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'wechat/response' LIMIT 1 [ RunTime:0.000409s ]
+---------------------------------------------------------------
+[ 2019-08-11T16:59:22+08:00 ] 113.102.166.105 GET s.yaoget.cn/index.php/admin/wechat/response/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565513961899
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000820s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000609s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000230s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000469s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000273s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_response` [ RunTime:0.000647s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_wechat_response` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000240s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_response` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000238s ]
+---------------------------------------------------------------
+[ 2019-08-11T16:59:29+08:00 ] 113.102.166.105 POST s.yaoget.cn/index.php/admin/wechat/menu/edit
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000753s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000852s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000273s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000682s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000368s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000646s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` WHERE  `name` = 'menu' LIMIT 1 [ RunTime:0.000210s ]
+[ error ] [8]未定义数组索引: type
+---------------------------------------------------------------
+[ 2019-08-11T16:59:30+08:00 ] 113.102.166.105 POST s.yaoget.cn/index.php/admin/wechat/menu/sync
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000673s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000556s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000297s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000496s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000350s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000783s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` WHERE  `name` = 'menu' LIMIT 1 [ RunTime:0.000200s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.000634s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('微信管理 菜单管理 同步' , '[]' , '/index.php/admin/wechat/menu/sync' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36' , '113.102.166.105' , 1565513970) [ RunTime:0.005871s ]
+---------------------------------------------------------------
+[ 2019-08-11T16:59:35+08:00 ] 113.102.166.105 POST s.yaoget.cn/index.php/admin/wechat/menu/edit
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000670s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000596s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000201s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000459s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000264s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000566s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` WHERE  `name` = 'menu' LIMIT 1 [ RunTime:0.000162s ]
+[ error ] [8]未定义数组索引: type
+---------------------------------------------------------------
+[ 2019-08-11T16:59:36+08:00 ] 113.102.166.105 POST s.yaoget.cn/index.php/admin/wechat/menu/sync
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001145s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000596s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000275s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000489s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000286s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000777s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` WHERE  `name` = 'menu' LIMIT 1 [ RunTime:0.000289s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.000730s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('微信管理 菜单管理 同步' , '[]' , '/index.php/admin/wechat/menu/sync' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36' , '113.102.166.105' , 1565513976) [ RunTime:0.010844s ]
+---------------------------------------------------------------
+[ 2019-08-11T16:59:37+08:00 ] 113.102.166.105 GET s.yaoget.cn/index.php/admin/wechat/autoreply/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565513958643
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000831s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000648s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000228s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000492s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000272s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_autoreply` [ RunTime:0.000638s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_wechat_autoreply` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000203s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_autoreply` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000279s ]
+---------------------------------------------------------------
+[ 2019-08-11T16:59:38+08:00 ] 113.102.166.105 GET s.yaoget.cn/index.php/admin/wechat/config/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565513959797
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000848s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000673s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000252s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000448s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000261s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000677s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_wechat_config` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000158s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000122s ]
+---------------------------------------------------------------
+[ 2019-08-11T16:59:41+08:00 ] 113.102.166.105 GET s.yaoget.cn/index.php/admin/wechat/autoreply/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565513958644
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000861s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000646s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000252s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000504s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000271s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_autoreply` [ RunTime:0.000539s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_wechat_autoreply` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000185s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_autoreply` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000169s ]
+---------------------------------------------------------------
+[ 2019-08-11T16:59:42+08:00 ] 113.102.166.105 GET s.yaoget.cn/index.php/admin/wechat/config/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565513959798
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000892s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000623s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000204s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000450s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000258s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000621s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_wechat_config` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000155s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000124s ]
+---------------------------------------------------------------
+[ 2019-08-11T16:59:43+08:00 ] 113.102.166.105 GET s.yaoget.cn/index.php/admin/wechat/response/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565513961900
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000639s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000558s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000198s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000437s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000260s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_response` [ RunTime:0.000513s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_wechat_response` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000145s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_response` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000275s ]
+---------------------------------------------------------------
+[ 2019-08-11T16:59:49+08:00 ] 113.102.166.105 POST s.yaoget.cn/index.php/admin/wechat/menu/sync
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000847s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000803s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000392s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000623s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000386s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000798s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` WHERE  `name` = 'menu' LIMIT 1 [ RunTime:0.000241s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.000623s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('微信管理 菜单管理 同步' , '[]' , '/index.php/admin/wechat/menu/sync' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36' , '113.102.166.105' , 1565513989) [ RunTime:0.005874s ]
+---------------------------------------------------------------
+[ 2019-08-11T17:00:19+08:00 ] 113.102.166.105 GET s.yaoget.cn/index.php/admin/general/config?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000805s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000737s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000264s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000640s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000401s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_config` [ RunTime:0.000572s ]
+[ sql ] [ SQL ] SELECT * FROM `h_config` [ RunTime:0.000351s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'general/config' LIMIT 1 [ RunTime:0.000348s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:14:17+08:00 ] 113.89.4.253 POST s.yaoget.cn/admin/index/login.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000626s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin` [ RunTime:0.000598s ]
+[ sql ] [ SQL ] SELECT * FROM `h_admin` WHERE  `username` = 'admin' LIMIT 1 [ RunTime:0.000329s ]
+[ sql ] [ SQL ] UPDATE `h_admin`  SET `logintime`=1565518457,`token`='d64556af-b0a5-412f-90c9-8c0a8e3f216f',`updatetime`=1565518457  WHERE  `id` = 1 [ RunTime:0.005355s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.000634s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('登录' , '{\"__token__\":\"4a48c7b73cf8d2b49720b39588f9440f\",\"username\":\"admin\",\"captcha\":\"qqfu\"}' , '/admin/index/login.html' , 1 , 'admin' , 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36' , '113.89.4.253' , 1565518457) [ RunTime:0.003806s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:14:17+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000866s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000573s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000229s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000459s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000278s ]
+[ sql ] [ SQL ] SELECT `name`,`pid` FROM `h_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 0  AND `name` LIKE '%/index' [ RunTime:0.000297s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:14:17+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/dashboard?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000560s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000595s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000219s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000501s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000260s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'dashboard' LIMIT 1 [ RunTime:0.000373s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:14:20+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/config?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000642s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000564s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000225s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000436s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000248s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'wechat/config' LIMIT 1 [ RunTime:0.000336s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:14:20+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/config/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565518460113
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000936s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000571s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000335s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000524s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000465s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000677s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_wechat_config` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000179s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000148s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:14:20+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/autoreply?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000662s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000525s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000351s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000617s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000385s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'wechat/autoreply' LIMIT 1 [ RunTime:0.000290s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:14:20+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/autoreply/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565518460766
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000684s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000547s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000199s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000447s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000240s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_autoreply` [ RunTime:0.000489s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_wechat_autoreply` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000269s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_autoreply` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000255s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:14:22+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/config/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565518460114
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000570s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000604s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000413s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000713s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000346s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000663s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_wechat_config` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000148s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000135s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:14:22+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/menu?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000638s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000550s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000209s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000420s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000252s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000690s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` WHERE  `name` = 'menu' LIMIT 1 [ RunTime:0.000206s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_response` [ RunTime:0.000466s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_response` [ RunTime:0.000144s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'wechat/menu' LIMIT 1 [ RunTime:0.000328s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:14:23+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/response?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000680s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000727s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000260s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000592s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000326s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'wechat/response' LIMIT 1 [ RunTime:0.000397s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:14:23+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/response/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565518463410
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001184s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000727s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000584s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000741s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000559s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_response` [ RunTime:0.000556s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_wechat_response` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000144s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_response` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000128s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:14:24+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/config/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565518460115
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000851s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000736s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000270s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000568s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000293s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000700s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_wechat_config` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000191s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000168s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:14:28+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/response/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565518463411
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000754s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000562s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000226s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000574s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000251s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_response` [ RunTime:0.000625s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_wechat_response` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000143s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_response` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000146s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:14:36+08:00 ] 113.89.4.253 POST s.yaoget.cn/admin/wechat/menu/edit
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000824s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000810s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000503s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000522s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000292s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000690s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` WHERE  `name` = 'menu' LIMIT 1 [ RunTime:0.000177s ]
+[ error ] [8]未定义数组索引: type
+---------------------------------------------------------------
+[ 2019-08-11T18:14:36+08:00 ] 113.89.4.253 POST s.yaoget.cn/admin/wechat/menu/sync
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000645s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000566s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000206s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000462s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000279s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000683s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` WHERE  `name` = 'menu' LIMIT 1 [ RunTime:0.000200s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.000739s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('微信管理 菜单管理 同步' , '[]' , '/admin/wechat/menu/sync' , 1 , 'admin' , 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36' , '113.89.4.253' , 1565518476) [ RunTime:0.005222s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:14:45+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/menu/edit
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000718s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000584s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000199s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000466s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000250s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000775s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` WHERE  `name` = 'menu' LIMIT 1 [ RunTime:0.000280s ]
+[ sql ] [ SQL ] UPDATE `h_wechat_config`  SET `value`='[]',`updatetime`=1565518485  WHERE  `id` = 1 [ RunTime:0.005060s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:46:40+08:00 ] 183.11.39.189 GET s.yaoget.cn/admin/wechat/menu?ref=addtabs
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000619s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000597s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000202s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000458s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000320s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:46:41+08:00 ] 183.11.39.189 GET s.yaoget.cn/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000648s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000659s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000191s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000465s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000240s ]
+[ sql ] [ SQL ] SELECT `name`,`pid` FROM `h_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 0  AND `name` LIKE '%/index' [ RunTime:0.000233s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:46:41+08:00 ] 183.11.39.189 GET s.yaoget.cn/admin/dashboard?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000715s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000590s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000422s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000486s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000291s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'dashboard' LIMIT 1 [ RunTime:0.000347s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:46:41+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/menu?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000644s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000735s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000262s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000838s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000300s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000587s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` WHERE  `name` = 'menu' LIMIT 1 [ RunTime:0.000534s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_response` [ RunTime:0.000659s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_response` [ RunTime:0.000276s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'wechat/menu' LIMIT 1 [ RunTime:0.000250s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:46:44+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/config?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000968s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000608s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000371s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000478s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000270s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'wechat/config' LIMIT 1 [ RunTime:0.000244s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:46:45+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/config/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565520404940
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000839s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000722s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000319s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000568s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000451s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000732s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_wechat_config` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000265s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000170s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:46:52+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/response?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000794s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000598s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000229s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000494s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000327s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'wechat/response' LIMIT 1 [ RunTime:0.000356s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:46:52+08:00 ] 183.11.39.189 GET s.yaoget.cn/admin/wechat/response/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565520412309
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000907s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000893s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000258s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000783s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000402s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_response` [ RunTime:0.000908s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_wechat_response` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000317s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_response` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000158s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:47:13+08:00 ] 183.11.39.189 POST s.yaoget.cn/index.php/admin/index/login.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000835s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.000654s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('' , '{\"__token__\":\"403a39ab99867f17a9927ff9157b5331\",\"username\":\"admin\",\"captcha\":\"tvpq\"}' , '/index.php/admin/index/login.html' , 1 , 'admin' , 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36' , '183.11.39.189' , 1565520433) [ RunTime:0.004620s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:47:16+08:00 ] 183.11.39.189 POST s.yaoget.cn/index.php/admin/index/login.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000654s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.000592s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('' , '{\"__token__\":\"403a39ab99867f17a9927ff9157b5331\",\"username\":\"admin\",\"captcha\":\"tvpq\"}' , '/index.php/admin/index/login.html' , 1 , 'admin' , 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36' , '183.11.39.189' , 1565520436) [ RunTime:0.005508s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:47:17+08:00 ] 183.11.39.189 POST s.yaoget.cn/index.php/admin/index/login.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000683s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.000707s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('' , '{\"__token__\":\"403a39ab99867f17a9927ff9157b5331\",\"username\":\"admin\",\"captcha\":\"tvpq\"}' , '/index.php/admin/index/login.html' , 1 , 'admin' , 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36' , '183.11.39.189' , 1565520437) [ RunTime:0.004623s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:47:20+08:00 ] 183.11.39.189 GET s.yaoget.cn/index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000631s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000697s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000253s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000446s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000245s ]
+[ sql ] [ SQL ] SELECT `name`,`pid` FROM `h_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 0  AND `name` LIKE '%/index' [ RunTime:0.000386s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:47:20+08:00 ] 183.11.39.189 GET s.yaoget.cn/index.php/admin/dashboard?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000846s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000560s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000227s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000444s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000275s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'dashboard' LIMIT 1 [ RunTime:0.000341s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:47:22+08:00 ] 183.11.39.189 GET s.yaoget.cn/index.php/admin/wechat/response?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000651s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000566s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000194s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000475s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000271s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'wechat/response' LIMIT 1 [ RunTime:0.000210s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:47:22+08:00 ] 183.11.39.189 GET s.yaoget.cn/index.php/admin/wechat/response/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565520442495
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000610s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000618s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000255s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000478s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000295s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_response` [ RunTime:0.000603s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_wechat_response` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000236s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_response` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000139s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:47:23+08:00 ] 183.11.39.189 GET s.yaoget.cn/index.php/admin/wechat/menu?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000870s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000790s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000350s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000555s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000277s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000635s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` WHERE  `name` = 'menu' LIMIT 1 [ RunTime:0.000196s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_response` [ RunTime:0.000522s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_response` [ RunTime:0.000170s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'wechat/menu' LIMIT 1 [ RunTime:0.000195s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:47:28+08:00 ] 183.11.39.189 POST s.yaoget.cn/index.php/admin/wechat/menu/edit
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000833s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000765s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000320s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000744s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000404s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000597s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` WHERE  `name` = 'menu' LIMIT 1 [ RunTime:0.000184s ]
+[ sql ] [ SQL ] UPDATE `h_wechat_config`  SET `value`='[{\"name\":\"添加菜单11111\",\"key\":\"\",\"type\":\"click\"}]',`updatetime`=1565520448  WHERE  `id` = 1 [ RunTime:0.004922s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.000624s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('微信管理 菜单管理 修改' , '{\"menu\":\"[{\\\"name\\\":\\\"\\u6dfb\\u52a0\\u83dc\\u535511111\\\",\\\"key\\\":\\\"\\\",\\\"type\\\":\\\"click\\\"}]\"}' , '/index.php/admin/wechat/menu/edit' , 1 , 'admin' , 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36' , '183.11.39.189' , 1565520448) [ RunTime:0.005125s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:47:28+08:00 ] 183.11.39.189 POST s.yaoget.cn/index.php/admin/wechat/menu/sync
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000708s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000566s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000204s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000444s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000254s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000526s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` WHERE  `name` = 'menu' LIMIT 1 [ RunTime:0.000509s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.000773s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('微信管理 菜单管理 同步' , '[]' , '/index.php/admin/wechat/menu/sync' , 1 , 'admin' , 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36' , '183.11.39.189' , 1565520448) [ RunTime:0.004851s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:47:42+08:00 ] 113.89.4.253 GET s.yaoget.cn/index.php/admin/wechat.response/select?key=&dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000898s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000686s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000559s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000571s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000262s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'wechat/response/select' LIMIT 1 [ RunTime:0.000438s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:47:43+08:00 ] 113.89.4.253 GET s.yaoget.cn/index.php/admin/wechat/response/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565520462873
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000813s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000652s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000244s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000543s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000509s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_response` [ RunTime:0.000750s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_wechat_response` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000168s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_response` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000142s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:47:45+08:00 ] 113.89.4.253 POST s.yaoget.cn/index.php/admin/wechat/menu/edit
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000786s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000596s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000241s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000457s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000253s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000474s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` WHERE  `name` = 'menu' LIMIT 1 [ RunTime:0.000230s ]
+[ sql ] [ SQL ] UPDATE `h_wechat_config`  SET `value`='[{\"name\":\"添加菜单11111\",\"key\":\"58fdfaa9e1965\",\"type\":\"click\"}]',`updatetime`=1565520465  WHERE  `id` = 1 [ RunTime:0.004813s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.000652s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('微信管理 菜单管理 修改' , '{\"menu\":\"[{\\\"name\\\":\\\"\\u6dfb\\u52a0\\u83dc\\u535511111\\\",\\\"key\\\":\\\"58fdfaa9e1965\\\",\\\"type\\\":\\\"click\\\"}]\"}' , '/index.php/admin/wechat/menu/edit' , 1 , 'admin' , 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36' , '113.89.4.253' , 1565520465) [ RunTime:0.004155s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:47:47+08:00 ] 113.89.4.253 POST s.yaoget.cn/index.php/admin/wechat/menu/sync
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000793s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000604s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000228s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000532s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000287s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000551s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` WHERE  `name` = 'menu' LIMIT 1 [ RunTime:0.000270s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.001006s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('微信管理 菜单管理 同步' , '[]' , '/index.php/admin/wechat/menu/sync' , 1 , 'admin' , 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36' , '113.89.4.253' , 1565520467) [ RunTime:0.005284s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:47:48+08:00 ] 113.89.4.253 POST s.yaoget.cn/index.php/admin/wechat/menu/sync
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000824s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000745s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000250s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000736s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000397s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000706s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` WHERE  `name` = 'menu' LIMIT 1 [ RunTime:0.000243s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.000795s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('微信管理 菜单管理 同步' , '[]' , '/index.php/admin/wechat/menu/sync' , 1 , 'admin' , 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36' , '113.89.4.253' , 1565520468) [ RunTime:0.004583s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:47:48+08:00 ] 183.11.39.189 POST s.yaoget.cn/index.php/admin/wechat/menu/sync
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000634s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000571s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000266s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000555s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000284s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000594s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` WHERE  `name` = 'menu' LIMIT 1 [ RunTime:0.000196s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.000729s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('微信管理 菜单管理 同步' , '[]' , '/index.php/admin/wechat/menu/sync' , 1 , 'admin' , 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36' , '183.11.39.189' , 1565520468) [ RunTime:0.004823s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:48:05+08:00 ] 183.11.39.189 GET s.yaoget.cn/index.php/admin/wechat/menu?ref=addtabs
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000743s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000607s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000294s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000439s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000281s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:48:05+08:00 ] 183.11.39.189 GET s.yaoget.cn/index.php/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000595s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000547s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000193s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000436s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000411s ]
+[ sql ] [ SQL ] SELECT `name`,`pid` FROM `h_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 0  AND `name` LIKE '%/index' [ RunTime:0.000316s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:48:05+08:00 ] 183.11.39.189 GET s.yaoget.cn/index.php/admin/dashboard?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000499s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000550s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000183s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000469s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000217s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'dashboard' LIMIT 1 [ RunTime:0.000300s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:48:05+08:00 ] 113.89.4.253 GET s.yaoget.cn/index.php/admin/wechat/menu?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000469s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000545s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000189s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000554s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000234s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000481s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` WHERE  `name` = 'menu' LIMIT 1 [ RunTime:0.000168s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_response` [ RunTime:0.000450s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_response` [ RunTime:0.000118s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'wechat/menu' LIMIT 1 [ RunTime:0.000140s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:48:07+08:00 ] 183.11.39.189 GET s.yaoget.cn/index.php/admin/wechat/autoreply?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000791s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000579s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000241s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000455s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000287s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'wechat/autoreply' LIMIT 1 [ RunTime:0.000298s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:48:08+08:00 ] 183.11.39.189 GET s.yaoget.cn/index.php/admin/wechat/autoreply/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565520487937
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000654s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000561s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000197s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000424s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000242s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_autoreply` [ RunTime:0.000512s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_wechat_autoreply` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000131s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_autoreply` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000118s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:48:08+08:00 ] 183.11.39.189 GET s.yaoget.cn/index.php/admin/wechat/config?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000602s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000608s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000226s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000446s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000247s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'wechat/config' LIMIT 1 [ RunTime:0.000228s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:48:08+08:00 ] 183.11.39.189 GET s.yaoget.cn/index.php/admin/wechat/config/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565520488562
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000620s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000538s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000213s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000401s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000299s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000604s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_wechat_config` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000273s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000427s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:48:12+08:00 ] 183.11.39.189 GET s.yaoget.cn/index.php/admin/wechat/response?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000821s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000645s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000227s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000497s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000473s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'wechat/response' LIMIT 1 [ RunTime:0.000293s ]
+---------------------------------------------------------------
+[ 2019-08-11T18:48:12+08:00 ] 183.11.39.189 GET s.yaoget.cn/index.php/admin/wechat/response/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565520492041
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000617s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000546s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000196s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000430s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000389s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_response` [ RunTime:0.000724s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_wechat_response` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000204s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_response` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000150s ]
+---------------------------------------------------------------
+[ 2019-08-11T20:59:29+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/menu?ref=addtabs
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001021s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000728s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000258s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000768s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000314s ]
+---------------------------------------------------------------
+[ 2019-08-11T20:59:30+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/index/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000846s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000630s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000304s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000540s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000293s ]
+[ sql ] [ SQL ] SELECT `name`,`pid` FROM `h_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 0  AND `name` LIKE '%/index' [ RunTime:0.000231s ]
+---------------------------------------------------------------
+[ 2019-08-11T20:59:30+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/dashboard?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000713s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000576s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000228s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000471s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000253s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'dashboard' LIMIT 1 [ RunTime:0.000268s ]
+---------------------------------------------------------------
+[ 2019-08-11T20:59:30+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/menu?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000620s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000527s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000216s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000442s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000248s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000543s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` WHERE  `name` = 'menu' LIMIT 1 [ RunTime:0.000172s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_response` [ RunTime:0.000450s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_response` [ RunTime:0.000146s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'wechat/menu' LIMIT 1 [ RunTime:0.000179s ]
+---------------------------------------------------------------
+[ 2019-08-11T20:59:34+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/autoreply?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000807s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000632s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000241s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000455s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000282s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'wechat/autoreply' LIMIT 1 [ RunTime:0.000368s ]
+---------------------------------------------------------------
+[ 2019-08-11T20:59:34+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/autoreply/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565528374027
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000816s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000599s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000375s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000575s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000275s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_autoreply` [ RunTime:0.000527s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_wechat_autoreply` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000146s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_autoreply` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000124s ]
+---------------------------------------------------------------
+[ 2019-08-11T20:59:34+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/config?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000681s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000561s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000202s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000435s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000315s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'wechat/config' LIMIT 1 [ RunTime:0.000268s ]
+---------------------------------------------------------------
+[ 2019-08-11T20:59:34+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/config/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565528374708
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000894s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000625s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000306s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000720s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000303s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000670s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_wechat_config` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000192s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000340s ]
+---------------------------------------------------------------
+[ 2019-08-11T20:59:36+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/config/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565528374709
+[ sql ] [ DB ] CONNECT:[ UseTime:0.015036s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.001320s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000307s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000494s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000315s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000644s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_wechat_config` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000504s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000166s ]
+---------------------------------------------------------------
+[ 2019-08-11T20:59:40+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/autoreply?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000854s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000749s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000338s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000606s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000332s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'wechat/autoreply' LIMIT 1 [ RunTime:0.000330s ]
+---------------------------------------------------------------
+[ 2019-08-11T20:59:41+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/autoreply/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565528380974
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000680s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000579s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000308s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000521s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000261s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_autoreply` [ RunTime:0.000548s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_wechat_autoreply` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000151s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_autoreply` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000232s ]
+---------------------------------------------------------------
+[ 2019-08-11T20:59:42+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/config?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000631s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000593s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000228s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000439s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000244s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'wechat/config' LIMIT 1 [ RunTime:0.000348s ]
+---------------------------------------------------------------
+[ 2019-08-11T20:59:42+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/config/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565528382334
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000897s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000888s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000321s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000637s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000361s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000790s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_wechat_config` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000220s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000193s ]
+---------------------------------------------------------------
+[ 2019-08-11T20:59:45+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/config/edit/ids/3?dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000874s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000669s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000321s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000563s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000264s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000781s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000324s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:00:03+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/menu?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000659s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000674s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000225s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000459s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000442s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000742s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` WHERE  `name` = 'menu' LIMIT 1 [ RunTime:0.000258s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_response` [ RunTime:0.000540s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_response` [ RunTime:0.000156s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'wechat/menu' LIMIT 1 [ RunTime:0.000182s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:00:08+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/response?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000851s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000695s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000305s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000605s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000279s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'wechat/response' LIMIT 1 [ RunTime:0.000354s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:00:09+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/response/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565528408837
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000824s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000592s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000225s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000460s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000488s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_response` [ RunTime:0.000803s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_wechat_response` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000275s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_response` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000224s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:00:16+08:00 ] 113.89.4.253 POST s.yaoget.cn/admin/wechat/menu/edit
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000827s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000611s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000346s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000709s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000346s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000992s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` WHERE  `name` = 'menu' LIMIT 1 [ RunTime:0.000253s ]
+[ sql ] [ SQL ] UPDATE `h_wechat_config`  SET `value`='[{\"name\":\"添加菜单111222\",\"key\":\"58fdfaa9e1965\",\"type\":\"click\"}]',`updatetime`=1565528416  WHERE  `id` = 1 [ RunTime:0.010659s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.000997s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('微信管理 菜单管理 修改' , '{\"menu\":\"[{\\\"pagepath\\\":\\\"\\\",\\\"appid\\\":\\\"\\\",\\\"url\\\":\\\"\\\",\\\"name\\\":\\\"\\u6dfb\\u52a0\\u83dc\\u5355111222\\\",\\\"key\\\":\\\"58fdfaa9e1965\\\",\\\"type\\\":\\\"click\\\"}]\"}' , '/admin/wechat/menu/edit' , 1 , 'admin' , 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36' , '113.89.4.253' , 1565528416) [ RunTime:0.004896s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:00:17+08:00 ] 113.89.4.253 POST s.yaoget.cn/admin/wechat/menu/sync
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000804s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000663s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000224s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000508s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000272s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000575s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` WHERE  `name` = 'menu' LIMIT 1 [ RunTime:0.000375s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.000831s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('微信管理 菜单管理 同步' , '[]' , '/admin/wechat/menu/sync' , 1 , 'admin' , 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36' , '113.89.4.253' , 1565528417) [ RunTime:0.004839s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:00:26+08:00 ] 113.89.4.253 POST s.yaoget.cn/admin/wechat/menu/sync
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000689s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000602s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000217s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000491s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000258s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000524s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` WHERE  `name` = 'menu' LIMIT 1 [ RunTime:0.000165s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.000752s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('微信管理 菜单管理 同步' , '[]' , '/admin/wechat/menu/sync' , 1 , 'admin' , 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36' , '113.89.4.253' , 1565528426) [ RunTime:0.006301s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:00:38+08:00 ] 113.89.4.253 POST s.yaoget.cn/admin/wechat/menu/sync
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000823s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000588s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000227s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000468s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000366s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000670s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` WHERE  `name` = 'menu' LIMIT 1 [ RunTime:0.000194s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.000715s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('微信管理 菜单管理 同步' , '[]' , '/admin/wechat/menu/sync' , 1 , 'admin' , 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36' , '113.89.4.253' , 1565528438) [ RunTime:0.004661s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:00:56+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/response/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565528408838
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000646s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000613s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000222s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000521s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000248s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_response` [ RunTime:0.000799s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_wechat_response` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000276s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_response` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000149s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:01:00+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/autoreply/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565528380975
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000683s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000557s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000199s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000449s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000234s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_autoreply` [ RunTime:0.001081s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_wechat_autoreply` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000173s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_autoreply` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000132s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:01:02+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/config/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565528382335
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000744s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000678s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000204s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000460s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000245s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_config` [ RunTime:0.000579s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_wechat_config` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000243s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_config` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000307s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:01:04+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/response/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565528408839
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000940s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000633s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000259s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000505s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000268s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_response` [ RunTime:0.000612s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_wechat_response` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000164s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_response` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000242s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:01:07+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/response/edit/ids/4?dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000814s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000690s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000315s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000635s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000292s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_response` [ RunTime:0.000555s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_response` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000277s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:01:19+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/response/add?dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000776s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000837s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000678s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000675s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000278s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:02:03+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/response/edit/ids/5?dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001068s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000702s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000268s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000454s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000298s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_response` [ RunTime:0.000638s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_response` WHERE  `id` = 5 LIMIT 1 [ RunTime:0.000328s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:02:08+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/wechat/autoreply/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565528380976
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000825s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000701s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000261s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000535s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000432s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_wechat_autoreply` [ RunTime:0.000762s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_wechat_autoreply` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000182s ]
+[ sql ] [ SQL ] SELECT * FROM `h_wechat_autoreply` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000143s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:02:17+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/user/user?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000968s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000876s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000262s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000475s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000426s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'user/user' LIMIT 1 [ RunTime:0.000557s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:02:17+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/user/user/index?sort=user.id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565528537484
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000630s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000556s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000193s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000435s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000246s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_user` [ RunTime:0.000571s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_user_group` [ RunTime:0.000888s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_user` `user` LEFT JOIN `h_user_group` `group` ON `user`.`group_id`=`group`.`id` ORDER BY `user`.`id` DESC LIMIT 1 [ RunTime:0.000317s ]
+[ sql ] [ SQL ] SELECT `user`.`id`,`user`.`group_id`,`user`.`username`,`user`.`nickname`,`user`.`password`,`user`.`salt`,`user`.`email`,`user`.`mobile`,`user`.`avatar`,`user`.`level`,`user`.`gender`,`user`.`birthday`,`user`.`bio`,`user`.`money`,`user`.`score`,`user`.`successions`,`user`.`maxsuccessions`,`user`.`prevtime`,`user`.`logintime`,`user`.`loginip`,`user`.`loginfailure`,`user`.`joinip`,`user`.`jointime`,`user`.`createtime`,`user`.`updatetime`,`user`.`token`,`user`.`status`,`user`.`verification`,group.id AS group__id,group.name AS group__name,group.rules AS group__rules,group.createtime AS group__createtime,group.updatetime AS group__updatetime,group.status AS group__status FROM `h_user` `user` LEFT JOIN `h_user_group` `group` ON `user`.`group_id`=`group`.`id` ORDER BY `user`.`id` DESC LIMIT 0,10 [ RunTime:0.000352s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:02:20+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/user/group?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000839s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000597s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000281s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000578s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000252s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'user/group' LIMIT 1 [ RunTime:0.000705s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:02:20+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/user/group/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565528540440
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000846s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000663s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000219s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000508s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000275s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_user_group` [ RunTime:0.000602s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_user_group` ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000222s ]
+[ sql ] [ SQL ] SELECT * FROM `h_user_group` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000175s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:02:22+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/user/rule?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000840s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000669s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000215s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000254s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_user_rule` [ RunTime:0.000573s ]
+[ sql ] [ SQL ] SELECT * FROM `h_user_rule` ORDER BY `weigh` DESC [ RunTime:0.000303s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'user/rule' LIMIT 1 [ RunTime:0.000330s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:02:22+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/user/rule/index?sort=weigh&order=desc&_=1565528542269
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000866s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000588s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000205s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000481s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000310s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_user_rule` [ RunTime:0.002440s ]
+[ sql ] [ SQL ] SELECT * FROM `h_user_rule` ORDER BY `weigh` DESC [ RunTime:0.000260s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:02:34+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/user/rule/edit/ids/11?dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000630s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000566s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000211s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000445s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000270s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_user_rule` [ RunTime:0.000633s ]
+[ sql ] [ SQL ] SELECT * FROM `h_user_rule` ORDER BY `weigh` DESC [ RunTime:0.000161s ]
+[ sql ] [ SQL ] SELECT * FROM `h_user_rule` WHERE  `id` = 11 LIMIT 1 [ RunTime:0.000303s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:02:49+08:00 ] 113.89.4.253 POST s.yaoget.cn/admin/user/rule/multi/ids/6
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000960s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000695s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000245s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000452s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000262s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_user_rule` [ RunTime:0.000632s ]
+[ sql ] [ SQL ] SELECT * FROM `h_user_rule` ORDER BY `weigh` DESC [ RunTime:0.000209s ]
+[ sql ] [ SQL ] SELECT * FROM `h_user_rule` WHERE  `id` IN (6) [ RunTime:0.000482s ]
+[ sql ] [ SQL ] UPDATE `h_user_rule`  SET `ismenu`=1,`updatetime`=1565528569  WHERE  `id` = 6 [ RunTime:0.000349s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.000693s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('会员管理 会员规则 批量更新' , '{\"action\":\"\",\"ids\":\"6\",\"params\":\"ismenu=1\"}' , '/admin/user/rule/multi/ids/6' , 1 , 'admin' , 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36' , '113.89.4.253' , 1565528569) [ RunTime:0.007701s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:02:49+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/user/rule/index?sort=weigh&order=desc&_=1565528542270
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001044s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000624s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000229s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000488s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000340s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_user_rule` [ RunTime:0.001052s ]
+[ sql ] [ SQL ] SELECT * FROM `h_user_rule` ORDER BY `weigh` DESC [ RunTime:0.000578s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:02:51+08:00 ] 113.89.4.253 POST s.yaoget.cn/admin/user/rule/multi/ids/6
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000791s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000603s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000232s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000462s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000380s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_user_rule` [ RunTime:0.000736s ]
+[ sql ] [ SQL ] SELECT * FROM `h_user_rule` ORDER BY `weigh` DESC [ RunTime:0.000331s ]
+[ sql ] [ SQL ] SELECT * FROM `h_user_rule` WHERE  `id` IN (6) [ RunTime:0.000346s ]
+[ sql ] [ SQL ] UPDATE `h_user_rule`  SET `ismenu`=0,`updatetime`=1565528571  WHERE  `id` = 6 [ RunTime:0.000327s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.000655s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('会员管理 会员规则 批量更新' , '{\"action\":\"\",\"ids\":\"6\",\"params\":\"ismenu=0\"}' , '/admin/user/rule/multi/ids/6' , 1 , 'admin' , 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36' , '113.89.4.253' , 1565528571) [ RunTime:0.004845s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:02:51+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/user/rule/index?sort=weigh&order=desc&_=1565528542271
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000872s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000651s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000224s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000495s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000282s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_user_rule` [ RunTime:0.000527s ]
+[ sql ] [ SQL ] SELECT * FROM `h_user_rule` ORDER BY `weigh` DESC [ RunTime:0.000463s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:02:57+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/category?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000838s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000636s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000226s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000493s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000273s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.000608s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000328s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'category' LIMIT 1 [ RunTime:0.000297s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:02:57+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/category/index?sort=weigh&order=desc&_=1565528576997
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000653s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000586s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000208s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000452s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000238s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.000561s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000188s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:03:05+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/addon?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000615s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000563s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000215s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000412s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000243s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'addon' LIMIT 1 [ RunTime:0.000294s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:03:18+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/addon/config?name=wechat&dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000720s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000739s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000223s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000467s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000265s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:03:32+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/addon/config?name=wechat&dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000610s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000750s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000218s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000492s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000388s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:04:12+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/category/index?sort=weigh&order=desc&_=1565528576998
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000815s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000644s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000225s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000510s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000261s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.000588s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` ORDER BY `weigh` DESC,`id` DESC [ RunTime:0.000189s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:04:19+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/addon/config?name=wechat&dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000755s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000853s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000286s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000568s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000283s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:05:23+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/addon/downloaded?callback=jQuery22405721145425184844_1565528585394&sort=id&order=desc&filter=%7B%22type%22%3A%22local%22%2C%22category_id%22%3A%2215%22%2C%22faversion%22%3A%221.0.0.20190705_beta%22%7D&op=%7B%22type%22%3A%22%3D%22%2C%22category_id%22%3A%22%3D%22%2C%22faversion%22%3A%22%3D%22%7D&_=1565528585400
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000779s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000661s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000312s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000526s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000444s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:05:23+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/addon/downloaded?callback=jQuery22405721145425184844_1565528585394&sort=id&order=desc&filter=%7B%22type%22%3A%22local%22%2C%22category_id%22%3A%2215%22%2C%22faversion%22%3A%221.0.0.20190705_beta%22%7D&op=%7B%22type%22%3A%22%3D%22%2C%22category_id%22%3A%22%3D%22%2C%22faversion%22%3A%22%3D%22%7D&_=1565528585401
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000858s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000569s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000448s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000509s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000249s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:05:29+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/auth/group?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000800s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000555s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000193s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000437s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000256s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group` [ RunTime:0.000490s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_group` WHERE  `status` = 'normal' [ RunTime:0.000341s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_group` WHERE  `id` IN (1,2,3,4,5) [ RunTime:0.000303s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'auth/group' LIMIT 1 [ RunTime:0.000278s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:05:29+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/auth/group/index?sort=id&order=desc&_=1565528729007
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001226s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000649s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000228s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000480s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000264s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group` [ RunTime:0.000580s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_group` WHERE  `status` = 'normal' [ RunTime:0.000838s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_group` WHERE  `id` IN (1,2,3,4,5) [ RunTime:0.000306s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_group` WHERE  `id` IN (1,2,3,5,4) [ RunTime:0.000328s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:05:32+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/auth/adminlog?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000679s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000558s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000514s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000448s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000278s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin` [ RunTime:0.000633s ]
+[ sql ] [ SQL ] SELECT `id` FROM `h_admin` [ RunTime:0.000409s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group` [ RunTime:0.000627s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_group` WHERE  `status` = 'normal' [ RunTime:0.000212s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `h_auth_group` WHERE  `id` IN (1,2,3,4,5) [ RunTime:0.000248s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'auth/adminlog' LIMIT 1 [ RunTime:0.000304s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:05:32+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/auth/adminlog/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1565528732710
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000635s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000569s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000274s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000596s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000255s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin` [ RunTime:0.000611s ]
+[ sql ] [ SQL ] SELECT `id` FROM `h_admin` [ RunTime:0.000126s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group` [ RunTime:0.000439s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_group` WHERE  `status` = 'normal' [ RunTime:0.000163s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `h_auth_group` WHERE  `id` IN (1,2,3,4,5) [ RunTime:0.000238s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.000477s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_admin_log` WHERE  `admin_id` IN (1) ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000275s ]
+[ sql ] [ SQL ] SELECT * FROM `h_admin_log` WHERE  `admin_id` IN (1) ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000199s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:05:34+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/auth/rule?addtabs=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000819s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000802s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000225s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000468s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000283s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.000840s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'auth/rule' LIMIT 1 [ RunTime:0.000557s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:05:35+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/auth/rule/index?sort=weigh&order=desc&_=1565528734951
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000664s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000627s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000209s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000533s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000439s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.000401s ]
+---------------------------------------------------------------
+[ 2019-08-11T21:05:54+08:00 ] 113.89.4.253 GET s.yaoget.cn/admin/auth/rule/edit/ids/13?dialog=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000812s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000664s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000239s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000478s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000332s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.000481s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000637s ]
