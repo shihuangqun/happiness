@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:85:"C:\phpStudy\PHPTutorial\WWW\ceshi\public/../application/admin\view\finance\index.html";i:1565661253;s:76:"C:\phpStudy\PHPTutorial\WWW\ceshi\application\admin\view\layout\default.html";i:1562338655;s:73:"C:\phpStudy\PHPTutorial\WWW\ceshi\application\admin\view\common\meta.html";i:1562338655;s:75:"C:\phpStudy\PHPTutorial\WWW\ceshi\application\admin\view\common\script.html";i:1562338655;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:85:"C:\phpStudy\PHPTutorial\WWW\ceshi\public/../application/admin\view\finance\index.html";i:1565765221;s:76:"C:\phpStudy\PHPTutorial\WWW\ceshi\application\admin\view\layout\default.html";i:1562338655;s:73:"C:\phpStudy\PHPTutorial\WWW\ceshi\application\admin\view\common\meta.html";i:1562338655;s:75:"C:\phpStudy\PHPTutorial\WWW\ceshi\application\admin\view\common\script.html";i:1562338655;}*/ ?>
 <!DOCTYPE html>
 <html lang="<?php echo $config['language']; ?>">
     <head>
@@ -56,9 +56,147 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<link rel="stylesheet" href="/assets/layui-v2.5.4/layui/css/layui.css">
+<style>
+    .head{
+        width: 90%;
+        height: 40px;
+        margin-left: 5%;
+        line-height: 40px;
+        font-size: 16px;
+        border: 1px solid #ddd;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        text-indent: 1em;
+    }
+    .con{
+        width: 90%;
+        height: 80px;
+        border: 1px solid #ddd;
+        margin-left: 5%;
+    }
+    .cc{
+        width: 25%;
+        text-align: center;
+        border-right: 1px solid #ddd;
+        height: 80px;
+        font-size: 18px;
+        float: left;
+    }
+    .sp{
+        display: block;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .ccs{
+        padding: 5%;
+    }
+</style>
 <body>
-    <h1>财务管理</h1>
+<div>
+    <div class="layui-form">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label" style="    width: 130px;font-size: 16px;">日期范围</label>
+                <div class="layui-input-inline">
+                    <input type="text" class="layui-input" id="test6" placeholder=" - ">
+                </div>
+                <input class="layui-btn" lay-submit="" lay-filter="demo1" value="搜索" style="width: 15%;">
+            </div>
+
+        </div><br>
+    <div class="head" style="background-color: #d9edf7">累计金额：55562</div>
+
+
+
+</div>
+
+
+<br><br>
+<div>
+    <div class="head">今日销售指标</div>
+    <div class="con">
+        <div  class="cc">
+            <div class="ccs">
+                今日课程销售额(元)
+                <span class="sp">0.00</span>
+            </div>
+
+        </div>
+        <div  class="cc">
+            <div class="ccs">
+                今日课程销售量(单)
+                <span class="sp">0</span>
+            </div>
+
+        </div>
+        <div  class="cc">
+            <div class="ccs">
+                今日VIP销售额(元)
+                <span class="sp">0.00</span>
+            </div>
+
+        </div>
+        <div  class="cc">
+            <div class="ccs">
+                今日VIP销售量(单)
+                <span class="sp">0.00</span>
+            </div>
+
+        </div>
+    </div>
+</div>
+<br><br>
+<div class="head">昨日销售指标</div>
+<div class="con">
+    <div  class="cc">
+        <div class="ccs">
+            昨日课程销售额(元)
+            <span class="sp">0.00</span>
+        </div>
+
+    </div>
+    <div  class="cc">
+        <div class="ccs">
+            昨日课程销售量(单)
+            <span class="sp">0</span>
+        </div>
+
+    </div>
+    <div  class="cc">
+        <div class="ccs">
+            昨日VIP销售额(元)
+            <span class="sp">0.00</span>
+        </div>
+
+    </div>
+    <div  class="cc">
+        <div class="ccs">
+            昨日VIP销售量(单)
+            <span class="sp">0.00</span>
+        </div>
+
+    </div>
+</div>
+</div>
 </body>
+<script src="/assets/layui-v2.5.4/layui/layui.js" charset="utf-8"></script>
+<script>
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+
+        //日期范围
+        laydate.render({
+            elem: '#test6'
+            ,range: true
+        });
+
+
+
+
+
+    });
+</script>
 </html>
                             </div>
                         </div>

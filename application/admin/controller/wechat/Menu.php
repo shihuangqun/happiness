@@ -56,7 +56,7 @@ class Menu extends Backend
                         $subitem = ['type' => $subitem['type'], 'name' => $subitem['name'], 'url' => $subitem['url'], 'appid' => $subitem['appid'], 'pagepath' => $subitem['pagepath']];
                     } else {
                         $allowFields = ['type', 'name', 'key'];
-                        $subitem = ['type' => $item['type'], 'name' => $subitem['name'], 'key' => $subitem['key']];
+                        $subitem = ['type' => $subitem['type'], 'name' => $subitem['name'], 'key' => $subitem['key']];
                     }
                     $subitem = array_intersect_key($subitem, array_flip($allowFields));
                 }

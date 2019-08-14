@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:88:"C:\phpStudy\PHPTutorial\WWW\ceshi\public/../application/admin\view\auth\admin\index.html";i:1562338655;s:76:"C:\phpStudy\PHPTutorial\WWW\ceshi\application\admin\view\layout\default.html";i:1562338655;s:73:"C:\phpStudy\PHPTutorial\WWW\ceshi\application\admin\view\common\meta.html";i:1562338655;s:75:"C:\phpStudy\PHPTutorial\WWW\ceshi\application\admin\view\common\script.html";i:1562338655;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:93:"C:\phpStudy\PHPTutorial\WWW\ceshi\public/../application/admin\view\wechat\response\index.html";i:1565588397;s:76:"C:\phpStudy\PHPTutorial\WWW\ceshi\application\admin\view\layout\default.html";i:1562338655;s:73:"C:\phpStudy\PHPTutorial\WWW\ceshi\application\admin\view\common\meta.html";i:1562338655;s:75:"C:\phpStudy\PHPTutorial\WWW\ceshi\application\admin\view\common\script.html";i:1562338655;}*/ ?>
 <!DOCTYPE html>
 <html lang="<?php echo $config['language']; ?>">
     <head>
@@ -58,11 +58,11 @@
             <div class="tab-pane fade active in" id="one">
                 <div class="widget-body no-padding">
                     <div id="toolbar" class="toolbar">
-                        <?php echo build_toolbar('refresh,add,delete'); ?>
+                        <?php echo build_toolbar();; ?>
                     </div>
-                    <table id="table" class="table table-striped table-bordered table-hover" 
-                           data-operate-edit="<?php echo $auth->check('auth/admin/edit'); ?>" 
-                           data-operate-del="<?php echo $auth->check('auth/admin/del'); ?>" 
+                    <table id="table" class="table table-bordered table-hover" 
+                           data-operate-edit="<?php echo $auth->check('wechat/response/edit'); ?>" 
+                           data-operate-del="<?php echo $auth->check('wechat/response/del'); ?>" 
                            width="100%">
                     </table>
                 </div>
@@ -71,6 +71,7 @@
         </div>
     </div>
 </div>
+
                             </div>
                         </div>
                     </div>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:86:"C:\phpStudy\PHPTutorial\WWW\ceshi\public/../application/admin\view\command\detail.html";i:1565588393;s:76:"C:\phpStudy\PHPTutorial\WWW\ceshi\application\admin\view\layout\default.html";i:1562338655;s:73:"C:\phpStudy\PHPTutorial\WWW\ceshi\application\admin\view\common\meta.html";i:1562338655;s:75:"C:\phpStudy\PHPTutorial\WWW\ceshi\application\admin\view\common\script.html";i:1562338655;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:94:"C:\phpStudy\PHPTutorial\WWW\ceshi\public/../application/admin\view\wechat\autoreply\index.html";i:1565588397;s:76:"C:\phpStudy\PHPTutorial\WWW\ceshi\application\admin\view\layout\default.html";i:1562338655;s:73:"C:\phpStudy\PHPTutorial\WWW\ceshi\application\admin\view\common\meta.html";i:1562338655;s:75:"C:\phpStudy\PHPTutorial\WWW\ceshi\application\admin\view\common\script.html";i:1562338655;}*/ ?>
 <!DOCTYPE html>
 <html lang="<?php echo $config['language']; ?>">
     <head>
@@ -50,48 +50,35 @@
                             <!-- END RIBBON -->
                             <?php endif; ?>
                             <div class="content">
-                                <table class="table table-striped">
-    <thead>
-    <tr>
-        <th><?php echo __('Title'); ?></th>
-        <th><?php echo __('Content'); ?></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td><?php echo __('Type'); ?></td>
-        <td><?php echo $row['type']; ?>(<?php echo $row['type_text']; ?>)</td>
-    </tr>
-    <tr>
-        <td><?php echo __('Params'); ?></td>
-        <td><?php echo $row['params']; ?></td>
-    </tr>
-    <tr>
-        <td><?php echo __('Command'); ?></td>
-        <td><?php echo $row['command']; ?></td>
-    </tr>
-    <tr>
-        <td><?php echo __('Content'); ?></td>
-        <td>
-            <textarea class="form-control" name="" id="" cols="60" rows="10"><?php echo $row['content']; ?></textarea>
-        </td>
-    </tr>
-    <tr>
-        <td><?php echo __('Executetime'); ?></td>
-        <td><?php echo datetime($row['executetime']); ?></td>
-    </tr>
-    <tr>
-        <td><?php echo __('Status'); ?></td>
-        <td><?php echo $row['status_text']; ?></td>
-    </tr>
-    </tbody>
-</table>
-<div class="hide layer-footer">
-    <label class="control-label col-xs-12 col-sm-2"></label>
-    <div class="col-xs-12 col-sm-8">
-        <button type="reset" class="btn btn-primary btn-embossed btn-close" onclick="Layer.closeAll();"><?php echo __('Close'); ?></button>
+                                <div class="panel panel-default panel-intro">
+    <?php echo build_heading(); ?>
+
+    <div class="panel-body">
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade active in" id="one">
+                <div class="widget-body no-padding">
+                    <div id="toolbar" class="toolbar">
+                        <?php echo build_toolbar(); ?>
+                        <div class="dropdown btn-group <?php echo $auth->check('wechat/autoreply/multi')?'':'hide'; ?>">
+                            <a class="btn btn-primary btn-more dropdown-toggle btn-disabled disabled" data-toggle="dropdown"><i class="fa fa-cog"></i> <?= __('More') ?></a>
+                            <ul class="dropdown-menu text-left" role="menu">
+                                <li><a class="btn btn-link btn-multi btn-disabled disabled" href="javascript:;" data-params="status=normal"><i class="fa fa-eye"></i> <?php echo __('Set to normal'); ?></a></li>
+                                <li><a class="btn btn-link btn-multi btn-disabled disabled" href="javascript:;" data-params="status=hidden"><i class="fa fa-eye-slash"></i> <?php echo __('Set to hidden'); ?></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <table id="table" class="table table-striped table-bordered table-hover" 
+                           data-operate-edit="<?php echo $auth->check('wechat/autoreply/edit'); ?>" 
+                           data-operate-del="<?php echo $auth->check('wechat/autoreply/del'); ?>" 
+                           width="100%">
+                    </table>
+                </div>
+            </div>
+
+        </div>
     </div>
 </div>
+
                             </div>
                         </div>
                     </div>

@@ -20,17 +20,15 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
             table.bootstrapTable({
                 url: $.fn.bootstrapTable.defaults.extend.index_url,
                 pk: 'id',
-                sortName: 'id',
+                sortName: 'weigh',
                 columns: [
                     [
                         {checkbox: true},
                         {field: 'id', title: __('Id')},
                         {field: 'name', title: __('Name')},
                         {field: 'image', title: __('Image'), events: Table.api.events.image, formatter: Table.api.formatter.image},
-                        {field: 'wechatimage', title: __('Wechatimage'), events: Table.api.events.image, formatter: Table.api.formatter.image},
-                        {field: 'qq', title: __('Qq')},
-                        {field: 'weight', title: __('Weight')},
-                        {field: 'status', title: __('Status'), searchList: {"1":__('Status 1'),"0":__('Status 0')}, formatter: Table.api.formatter.status},
+                        // {field: 'weigh', title: __('Weigh')},
+                        {field: 'status', title: __('Status'), searchList: {"1":__('Status 1'),"0":__('Status 0')}, formatter: Table.api.formatter.toggle},
                         {field: 'createtime', title: __('Createtime'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]

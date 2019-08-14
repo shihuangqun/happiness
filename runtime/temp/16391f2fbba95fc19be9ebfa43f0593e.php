@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:91:"C:\phpStudy\PHPTutorial\WWW\ceshi\public/../application/admin\view\member_service\edit.html";i:1565688789;s:76:"C:\phpStudy\PHPTutorial\WWW\ceshi\application\admin\view\layout\default.html";i:1562338655;s:73:"C:\phpStudy\PHPTutorial\WWW\ceshi\application\admin\view\common\meta.html";i:1562338655;s:75:"C:\phpStudy\PHPTutorial\WWW\ceshi\application\admin\view\common\script.html";i:1562338655;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:89:"C:\phpStudy\PHPTutorial\WWW\ceshi\public/../application/admin\view\wechat\config\add.html";i:1565588397;s:76:"C:\phpStudy\PHPTutorial\WWW\ceshi\application\admin\view\layout\default.html";i:1562338655;s:73:"C:\phpStudy\PHPTutorial\WWW\ceshi\application\admin\view\common\meta.html";i:1562338655;s:75:"C:\phpStudy\PHPTutorial\WWW\ceshi\application\admin\view\common\script.html";i:1562338655;}*/ ?>
 <!DOCTYPE html>
 <html lang="<?php echo $config['language']; ?>">
     <head>
@@ -50,53 +50,44 @@
                             <!-- END RIBBON -->
                             <?php endif; ?>
                             <div class="content">
-                                <form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
-
+                                <form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+    <input type="hidden" name="row[mode]" value="textarea" />
     <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Title'); ?>:</label>
+        <label for="c-name" class="control-label col-xs-12 col-sm-2"><?php echo __('Name'); ?>:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-title" data-rule="required" class="form-control" name="row[title]" type="text" value="<?php echo htmlentities($row['title']); ?>">
+            <input id="c-name" data-rule="required" class="form-control" name="row[name]" type="text" value="">
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Price'); ?>:</label>
+        <label for="c-title" class="control-label col-xs-12 col-sm-2"><?php echo __('Title'); ?>:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-price" data-rule="required" class="form-control" step="0.01" name="row[price]" type="number" value="<?php echo htmlentities($row['price']); ?>">
+            <input id="c-title" data-rule="required" class="form-control" name="row[title]" type="text" value="">
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Give'); ?>:</label>
+        <label for="c-value" class="control-label col-xs-12 col-sm-2"><?php echo __('Value'); ?>:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-give" data-rule="required" class="form-control" name="row[give]" type="text" value="<?php echo htmlentities($row['give']); ?>">
+            <p>
+                <a href="javascript:;" class="btn btn-info btn-jsoneditor"><i class="fa fa-pencil"></i> <?php echo __('Json editor'); ?></a>
+                <a href="javascript:;" class="btn btn-primary btn-insertlink"><i class="fa fa-link"></i> <?php echo __('Insert link'); ?></a>
+            </p>
+            <textarea id="c-value" class="form-control " rows="15" name="row[value]"></textarea>
+            <dl class="fieldlist hide" rel="1">
+                <dd>
+                    <ins><?php echo __('Json key'); ?></ins>
+                    <ins><?php echo __('Json value'); ?></ins>
+                </dd>
+                <dd>
+                    <input type="text" name="field[0]" class="form-control" id="field-0" value="" size="10" required />
+                    <input type="text" name="value[0]" class="form-control" id="value-0" value="" size="40" required />
+                    <span class="btn btn-sm btn-danger btn-remove"><i class="fa fa-times"></i></span>
+                    <span class="btn btn-sm btn-primary btn-dragsort"><i class="fa fa-arrows"></i></span>
+                </dd>
+                <dd><a href="javascript:;" class="append btn btn-sm btn-success"><i class="fa fa-plus"></i> <?php echo __('Append'); ?></a></dd>
+            </dl>
         </div>
     </div>
-    <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Member_discount'); ?>:</label>
-        <div class="col-xs-12 col-sm-8">
-            <input id="c-member_discount" data-rule="required" class="form-control" name="row[member_discount]" type="text" value="<?php echo htmlentities($row['member_discount']); ?>">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Status'); ?>:</label>
-        <div class="col-xs-12 col-sm-8">
-            
-            <div class="radio">
-            <?php if(is_array($statusList) || $statusList instanceof \think\Collection || $statusList instanceof \think\Paginator): if( count($statusList)==0 ) : echo "" ;else: foreach($statusList as $key=>$vo): ?>
-            <label for="row[status]-<?php echo $key; ?>"><input id="row[status]-<?php echo $key; ?>" name="row[status]" type="radio" value="<?php echo $key; ?>" <?php if(in_array(($key), is_array($row['status'])?$row['status']:explode(',',$row['status']))): ?>checked<?php endif; ?> /> <?php echo $vo; ?></label> 
-            <?php endforeach; endif; else: echo "" ;endif; ?>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Commission'); ?>:</label>
-        <div class="col-xs-12 col-sm-2">
-            <input id="c-commission" data-rule="required" class="form-control" name="row[commission]" type="text" value="<?php echo htmlentities($row['commission']); ?>">
-        </div>
-        <span style="font-size: 20px">%</span>
-    </div>
-    <div class="form-group layer-footer">
+    <div class="form-group hide layer-footer">
         <label class="control-label col-xs-12 col-sm-2"></label>
         <div class="col-xs-12 col-sm-8">
             <button type="submit" class="btn btn-success btn-embossed disabled"><?php echo __('OK'); ?></button>
