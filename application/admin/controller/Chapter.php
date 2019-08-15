@@ -22,6 +22,7 @@ class Chapter extends Backend
     {
         parent::_initialize();
         $this->model = new \app\admin\model\Chapter;
+        $this->view->assign("chapterTypeList", $this->model->getChapterTypeList());
         $this->view->assign("isAuditionList", $this->model->getIsAuditionList());
         $this->view->assign("statusList", $this->model->getStatusList());
     }
@@ -64,7 +65,7 @@ class Chapter extends Backend
                     ->select();
 
             foreach ($list as $row) {
-                $row->visible(['id','course_id','title','image','is_audition','weigh','status','createtime']);
+                $row->visible(['id','course_id','title','image','chapter_type','is_audition','weigh','status','createtime']);
                 $row->visible(['course']);
 				$row->getRelation('course')->visible(['title']);
             }

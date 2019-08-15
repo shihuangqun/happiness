@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="791c5f7e-1bed-47ca-b3e8-b37919c53fa6" name="fast" url="http://47.107.54.219">
+        <fileTransfer host="47.107.54.219" port="22" rootFolder="/www/wwwroot/c.yaoget.cn/" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

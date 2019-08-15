@@ -85,6 +85,6 @@ class Order extends Model
 
     public function memberservice()
     {
-        return $this->belongsTo('MemberService', 'member_id', 'id', [], 'LEFT')->setEagerlyType(0);
+        return $this->belongsTo('MemberService', 'member_service_id', 'id', [], 'LEFT')->setEagerlyType(0);
     }
 }

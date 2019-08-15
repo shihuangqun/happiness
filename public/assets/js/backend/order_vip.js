@@ -26,15 +26,16 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {checkbox: true},
                         {field: 'id', title: __('Id')},
                         {field: 'order_num', title: __('Order_num')},
-                        {field: 'memberservice.title', title: __('会员等级')},
-                        {field: 'user.username', title: __('用户名')},
+                        {field: 'memberservice.title', title: __('Memberservice_id')},
+                        {field: 'user.nickname', title: __('User_id')},
                         {field: 'price', title: __('Price'), operate:'BETWEEN'},
                         {field: 'pay_type', title: __('Pay_type'), searchList: {"0":__('Pay_type 0'),"1":__('Pay_type 1')}, formatter: Table.api.formatter.normal},
                         {field: 'order_status', title: __('Order_status'), searchList: {"0":__('Order_status 0'),"1":__('Order_status 1'),"2":__('Order_status 2')}, formatter: Table.api.formatter.status},
                         {field: 'crearetime', title: __('Crearetime'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
-                        // {field: 'paymenttime', title: __('Paymenttime'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
+                        // {field: 'user.nickname', title: __('User.nickname')},
+
                         // {field: 'memberservice.title', title: __('Memberservice.title')},
-                        // {field: 'user.username', title: __('User.username')},
+
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]
                 ]

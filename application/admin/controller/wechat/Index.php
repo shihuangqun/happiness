@@ -4,19 +4,18 @@ namespace app\admin\controller\wechat;
 use app\common\controller\Backend;
 use EasyWeChat\Foundation\Application;
 
-class index extends Backend{
+class Index extends Backend{
 
     protected $config = [
         'debug'  => true,
         'app_id' => 'wxfee56a904babbd88',
         'secret' => 'f1cf6b160ae47a954182c36c65cb75d8',
-        'token'  => 'bzspxkkpqg0xt3vfxjywaw3j0xpng2gd',
-
-        // 'aes_key' => null, // 可选
+        'token'  => 'happiness',
+//         'aes_key' => 'ltTo9w881yUAjGKDTRvCL8UBLI2ZiQeLegKw025v05T', // 可选
 
         'log' => [
             'level' => 'debug',
-            'file'  => '/tmp/easywechat.log', // XXX: 绝对路径！！！！
+            'file'  => __DIR__ . '/wechat.log',
         ],
         'oauth' => [
             'scopes'   => ['snsapi_userinfo'],
@@ -35,11 +34,11 @@ class index extends Backend{
      * @return \think\response\Json|void
      */
     public function index(){
-
         $app = new Application($this->config);
         $response = $app->server->serve();
 
         // 将响应输出
         $response->send(); // Laravel 里请使用：return $response;
     }
+
 }

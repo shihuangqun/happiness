@@ -25,6 +25,7 @@ class Chapter extends Model
 
     // 追加属性
     protected $append = [
+        'chapter_type_text',
         'is_audition_text',
         'status_text'
     ];
@@ -39,6 +40,11 @@ class Chapter extends Model
     }
 
     
+    public function getChapterTypeList()
+    {
+        return ['0' => __('Chapter_type 0'), '1' => __('Chapter_type 1')];
+    }
+
     public function getIsAuditionList()
     {
         return ['1' => __('Is_audition 1'), '0' => __('Is_audition 0')];
@@ -47,6 +53,14 @@ class Chapter extends Model
     public function getStatusList()
     {
         return ['1' => __('Status 1'), '0' => __('Status 0')];
+    }
+
+
+    public function getChapterTypeTextAttr($value, $data)
+    {
+        $value = $value ? $value : (isset($data['chapter_type']) ? $data['chapter_type'] : '');
+        $list = $this->getChapterTypeList();
+        return isset($list[$value]) ? $list[$value] : '';
     }
 
 

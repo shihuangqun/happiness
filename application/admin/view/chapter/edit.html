@@ -3,7 +3,7 @@
     <div class="form-group">
         <label class="control-label col-xs-12 col-sm-2">{:__('Course_id')}:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-course_id" data-rule="required" data-field="title" data-source="course/index" class="form-control selectpage" name="row[course_id]" type="text" value="{$row.course_id|htmlentities}">
+            <input id="c-course_id" data-rule="required" data-source="course/index" class="form-control selectpage" name="row[course_id]" type="text" value="{$row.course_id|htmlentities}">
         </div>
     </div>
     <div class="form-group">
@@ -27,31 +27,51 @@
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2">{:__('Video_file')}:</label>
+        <label class="control-label col-xs-12 col-sm-2">{:__('Chapter_type')}:</label>
         <div class="col-xs-12 col-sm-8">
-            <div class="input-group">
-                <input id="c-video_file" class="form-control" size="50" name="row[video_file]" type="text" value="{$row.video_file|htmlentities}">
-                <div class="input-group-addon no-border no-padding">
-                    <span><button type="button" id="plupload-video_file" class="btn btn-danger plupload" data-input-id="c-video_file" data-multiple="false" data-preview-id="p-video_file"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
-                    <span><button type="button" id="fachoose-video_file" class="btn btn-primary fachoose" data-input-id="c-video_file" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
-                </div>
-                <span class="msg-box n-right" for="c-video_file"></span>
-            </div>
-            <ul class="row list-inline plupload-preview" id="p-video_file"></ul>
+                        
+            <select  id="c-chapter_type" data-rule="required" class="form-control selectpicker" name="row[chapter_type]">
+                {foreach name="chapterTypeList" item="vo"}
+                    <option value="{$key}" {in name="key" value="$row.chapter_type"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+
         </div>
     </div>
-    <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2">{:__('Audio_file')}:</label>
-        <div class="col-xs-12 col-sm-8">
-            <div class="input-group">
-                <input id="c-audio_file" class="form-control" size="50" name="row[audio_file]" type="text" value="{$row.audio_file|htmlentities}">
-                <div class="input-group-addon no-border no-padding">
-                    <span><button type="button" id="plupload-audio_file" class="btn btn-danger plupload" data-input-id="c-audio_file" data-multiple="false" data-preview-id="p-audio_file"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
-                    <span><button type="button" id="fachoose-audio_file" class="btn btn-primary fachoose" data-input-id="c-audio_file" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+    <div id="video">
+        <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Video_file')}:</label>
+            <div class="col-xs-12 col-sm-8">
+                <div class="input-group">
+                    <input id="c-video_file" class="form-control" size="50" name="row[video_file]" type="text" value="{$row.video_file|htmlentities}">
+                    <div class="input-group-addon no-border no-padding">
+                        <span><button type="button" id="plupload-video_file" class="btn btn-danger plupload" data-input-id="c-video_file" data-multiple="false" data-preview-id="p-video_file"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                        <span><button type="button" id="fachoose-video_file" class="btn btn-primary fachoose" data-input-id="c-video_file" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                    </div>
+                    <span class="msg-box n-right" for="c-video_file"></span>
                 </div>
-                <span class="msg-box n-right" for="c-audio_file"></span>
+                <ul class="row list-inline plupload-preview" id="p-video_file"></ul>
             </div>
-            <ul class="row list-inline plupload-preview" id="p-audio_file"></ul>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-2">{:__('Audio_file')}:</label>
+            <div class="col-xs-12 col-sm-8">
+                <div class="input-group">
+                    <input id="c-audio_file" class="form-control" size="50" name="row[audio_file]" type="text" value="{$row.audio_file|htmlentities}">
+                    <div class="input-group-addon no-border no-padding">
+                        <span><button type="button" id="plupload-audio_file" class="btn btn-danger plupload" data-input-id="c-audio_file" data-multiple="false" data-preview-id="p-audio_file"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                        <span><button type="button" id="fachoose-audio_file" class="btn btn-primary fachoose" data-input-id="c-audio_file" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                    </div>
+                    <span class="msg-box n-right" for="c-audio_file"></span>
+                </div>
+                <ul class="row list-inline plupload-preview" id="p-audio_file"></ul>
+            </div>
+        </div>
+    </div>
+    <div class="form-group" id="con" style="display: none">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Content')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-content" class="form-control editor" rows="5" name="row[content]" cols="50">{$row.content|htmlentities}</textarea>
         </div>
     </div>
     <div class="form-group">
@@ -72,7 +92,12 @@
 
         </div>
     </div>
-
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Weigh')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-weigh" data-rule="required" class="form-control" name="row[weigh]" type="number" value="{$row.weigh|htmlentities}">
+        </div>
+    </div>
     <div class="form-group">
         <label class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
         <div class="col-xs-12 col-sm-8">
@@ -93,3 +118,25 @@
         </div>
     </div>
 </form>
+<script src="/assets/libs/jquery/dist/jquery.js"></script>
+<script>
+    var obj = document.getElementById('c-chapter_type'); //定位id
+
+    var index = obj.selectedIndex; // 选中索引
+
+    var text = obj.options[index].text; // 选中文本
+
+    var value = obj.options[index].value; // 选中值
+
+    $('#c-chapter_type').on('change',function(){
+        var val=$("#c-chapter_type option:selected").val(); //获取选中的项
+
+        if(val == 0){
+            $('#video').css('display','none');
+            $('#con').css('display','block');
+        }else if(val == 1){
+            $('#video').css('display','block');
+            $('#con').css('display','none');
+        }
+    });
+</script>

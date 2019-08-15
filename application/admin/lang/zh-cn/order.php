@@ -5,7 +5,7 @@ return [
     'Order_num'           => '订单编号',
     'User_id'             => '用户ID',
     'Course_id'           => '课程ID',
-    'Member_id'           => '会员状态',
+    'Member_service_id'   => '会员等级',
     'Price'               => '价格',
     'Commission'          => '一级佣金',
     'Recommend'           => '一级推荐人ID',

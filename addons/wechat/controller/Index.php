@@ -10,7 +10,9 @@ use EasyWeChat\Foundation\Application;
 use EasyWeChat\Payment\Order;
 use addons\wechat\library\Wechat as WechatService;
 use addons\wechat\library\Config as ConfigService;
+use think\Db;
 use think\Log;
+use think\Session;
 
 /**
  * 微信接口
@@ -31,7 +33,10 @@ class Index extends \think\addons\Controller
      */
     public function index()
     {
-        $this->error("当前插件暂无前台页面");
+        $response = $this->app->server->serve();
+
+        // 将响应输出
+        $response->send(); // Laravel 里请使用：return $response;
     }
 
     /**
@@ -134,11 +139,59 @@ class Index extends \think\addons\Controller
     }
 
     /**
+     * 用户授权
+     */
+    public function oauth(){
+
+        $oauth = $this->app->oauth;
+
+        if(empty(Session::get('wechat_user'))){
+
+            Session::set('target_url','/');
+            $response = $oauth->scopes(['snsapi_userinfo'])
+                ->redirect();
+            $response->send();
+        }
+        $user = Session::get('wechat_user');
+
+//        dump($user);
+        //已经授权过
+        header('location:'.'/');
+    }
+
+    /**
      * 登录回调
      */
     public function callback()
     {
+        $oauth = $this->app->oauth;
 
+        $user = $oauth->user()->toArray();
+
+        try{
+            $res['openid'] = $user['original']['openid'];
+            $res['nickname'] = $user['nickname'];
+            $res['avatar'] = $user['avatar'];
+            $res['email'] = $user['email'];
+            $res['gender'] = $user['original']['sex'];
+            $res['country'] = $user['original']['country'];
+            $res['province'] = $user['original']['province'];
+            $res['citys'] = $user['original']['city'];
+            $res['createtime'] = time();
+
+            $info = Db::name('userinfo')->insert($res);
+
+        }catch(\Exception $e){
+            return $this->error('添加用户出错');
+        }
+
+        if(!$info) return $this->error('数据异常，请稍后再试');
+
+        Session::set('wechat_user',$user);
+
+        $targetUrl = empty(Session::get('target_url')) ? 'http://www.baidu.com' : Session::get('target_url');
+
+        header('location:'.$targetUrl);
     }
 
     /**

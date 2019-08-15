@@ -9,7 +9,7 @@ return array (
     'content' => 
     array (
     ),
-    'value' => 'wxfee56a904babbd88',
+    'value' => 'wx046e68d756c22375',
     'rule' => 'required',
     'msg' => '',
     'tip' => '',
@@ -24,7 +24,7 @@ return array (
     'content' => 
     array (
     ),
-    'value' => 'f1cf6b160ae47a954182c36c65cb75d8',
+    'value' => 'a4459548fa12d197886f3af76dc04d56',
     'rule' => 'required',
     'msg' => '',
     'tip' => '',
@@ -39,7 +39,7 @@ return array (
     'content' => 
     array (
     ),
-    'value' => 'bzspxkkpqg0xt3vfxjywaw3j0xpng2gd',
+    'value' => 'happiness',
     'rule' => 'required',
     'msg' => '',
     'tip' => '',
@@ -54,7 +54,7 @@ return array (
     'content' => 
     array (
     ),
-    'value' => 'your aes_key',
+    'value' => 'UpnAQFoUP5FYAQ7iP2xMgP0E0PWGS4o0XIxYdab65m3',
     'rule' => 'required',
     'msg' => '',
     'tip' => '',
@@ -109,7 +109,7 @@ return array (
     'content' => 
     array (
     ),
-    'value' => 'http://www.yoursite.com/addons/wechat/index/callback',
+    'value' => 'http://c.yaoget.cn/addons/wechat/index/callback',
     'rule' => 'required',
     'msg' => '',
     'tip' => '',
