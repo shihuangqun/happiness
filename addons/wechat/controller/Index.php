@@ -10,10 +10,13 @@ use EasyWeChat\Foundation\Application;
 use EasyWeChat\Payment\Order;
 use addons\wechat\library\Wechat as WechatService;
 use addons\wechat\library\Config as ConfigService;
+use Endroid\QrCode\QrCode;
+use think\cache\driver\Redis;
+use think\Cookie;
 use think\Db;
 use think\Log;
+use think\Response;
 use think\Session;
-
 /**
  * 微信接口
  */
@@ -33,6 +36,23 @@ class Index extends \think\addons\Controller
      */
     public function index()
     {
+        $this->app->server->setMessageHandler(function ($message) {
+            $user = $this->app->user->get($message['FromUserName']);
+            $id = explode('_',$message['EventKey']);
+            if(count($id)>1){
+                $id = $id[1];
+            }else{
+                $id = $id[0];
+            }
+            //拿openid做 唯一标识符
+//            Session::set($message['FromUserName'],$id);
+//            Session::set('qq',90);
+            $redis = new Redis();
+            $redis->set($message['FromUserName'],$id);
+
+            return "您好！欢迎关注我!你的父级ID为：".$id;
+        });
+
         $response = $this->app->server->serve();
 
         // 将响应输出
@@ -152,9 +172,8 @@ class Index extends \think\addons\Controller
                 ->redirect();
             $response->send();
         }
-        $user = Session::get('wechat_user');
+//        $user = Session::get('wechat_user');
 
-//        dump($user);
         //已经授权过
         header('location:'.'/');
     }
@@ -168,8 +187,12 @@ class Index extends \think\addons\Controller
 
         $user = $oauth->user()->toArray();
 
-        try{
-            $res['openid'] = $user['original']['openid'];
+        $res['openid'] = $user['original']['openid'];
+
+        //查询是否已经注册过  如果注册过则跳过此步骤
+        $users = Db::name('userinfo')->where('openid',$res['openid'])->find();
+        dump(Session::get('aa'));
+        if(empty($users)){
             $res['nickname'] = $user['nickname'];
             $res['avatar'] = $user['avatar'];
             $res['email'] = $user['email'];
@@ -179,13 +202,19 @@ class Index extends \think\addons\Controller
             $res['citys'] = $user['original']['city'];
             $res['createtime'] = time();
 
-            $info = Db::name('userinfo')->insert($res);
+            $redis = new Redis();
+            $topid = $redis->get($res['openid']);
 
-        }catch(\Exception $e){
-            return $this->error('添加用户出错');
+            $res['topid'] = empty($topid) ? '0' : $topid;
+
+            try{
+                $info = Db::name('userinfo')->insert($res);
+            }catch(\Exception $e){
+                return $this->error('添加用户出错');
+            }
+
+            if(!$info) return $this->error('数据异常，请稍后再试');
         }
-
-        if(!$info) return $this->error('数据异常，请稍后再试');
 
         Session::set('wechat_user',$user);
 
@@ -227,6 +256,81 @@ class Index extends \think\addons\Controller
         });
 
         $response->send();
+    }
+
+    /**
+     * 关联二维码  返回二维码链接
+     */
+    public function qrcode(){
+
+        $ticket = $this->getTicket();
+        $url = "https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=$ticket";
+
+        echo "<img src='$url'>";
+
+//        $userinfo = Session::get('wechat_user');
+//        dump($userinfo);
+//        return $url;
+
+    }
+
+    /**
+     * 获取ticket
+     * @return mixed
+     */
+    public function getTicket(){
+        $accessToken = $this->app->access_token; // EasyWeChat\Core\AccessToken 实例
+        $token = $accessToken->getToken(); // token 字符串
+        $token = $accessToken->getToken(true); // 强制重新从微信服务器获取 token.
+
+        $userinfo = Session::get('wechat_user');
+        $openid = $userinfo['original']['openid'];
+        $user = Db::name('userinfo')->where('openid',$openid)->field('id')->find();
+
+        //永久二维码
+        $api = "https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token=$token";
+        $params = [
+//            'expire_seconds' => 604800,
+            'action_name' => 'QR_LIMIT_SCENE',
+            'action_info' => [
+                'scene' => [
+                    'scene_id' => $user['id']
+                ]
+            ]
+        ];
+        $json = \GuzzleHttp\json_encode($params);
+//
+        $ret = \GuzzleHttp\json_decode($this->curl($api,$json));
+        return $ret->ticket;
+    }
+
+    function curl($api,  $params, $timeout = 60)
+    {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $api);
+        //以返回的形式接受信息
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        //设置为POST方式
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
+        //不验证https证书
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($ch, CURLOPT_TIMEOUT, $timeout);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+            'Content-Type: application/json;charset=UTF-8'
+        ));
+        //发送数据
+        $response = curl_exec($ch);
+        //释放资源
+        curl_close($ch);
+        return $response;
+    }
+
+    public function aa(){
+        $aa = new Redis();
+
+        dump($aa->get('bb'));
     }
 
 }
