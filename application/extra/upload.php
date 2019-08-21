@@ -17,11 +17,11 @@ return [
     /**
      * 最大可上传大小
      */
-    'maxsize'   => '10mb',
+    'maxsize'   => '200000000000mb',
     /**
      * 可上传的文件类型
      */
-    'mimetype'  => 'jpg,png,bmp,jpeg,gif,zip,rar,xls,xlsx',
+    'mimetype'  => 'jpg,png,bmp,jpeg,gif,zip,rar,xls,xlsx,qlv,mp4,mp3',
     /**
      * 是否支持批量上传
      */

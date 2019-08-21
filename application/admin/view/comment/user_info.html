@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="/assets/layui-v2.5.4/layui/css/layui.css">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+<!--    <div>-->
+<!--        <p>订单编号：{$info.orderNo}</p>-->
+<!--        <p>课程名称：{$info.title}</p>-->
+<!--        <p>昵称：{$info.nickname}</p>-->
+<!--        <p>姓名：</p>-->
+<!--        <p>手机号：</p>-->
+<!--        <p>{$info.comment_rank}：{$info.comment}</p>-->
+<!--        <p>审核状态：{$info.status}</p>-->
+<!--    </div>-->
+    <form class="layui-form" id="forms">
+<!--        <textarea name="" id="" cols="30" rows="10"></textarea>-->
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label" style="width:15%">回复评价：</label>
+            <div class="layui-input-block">
+                <textarea placeholder="请输入内容" class="layui-textarea"  rows="6" style="width:65%" name="reply">{$info.reply}</textarea>
+            </div>
+        </div>
+        <input type="hidden" name="id" value="{$info.id}">
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <input type="button" class="layui-btn" value="提交回复" onclick="btn()">
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+    </form>
+
+
+</div>
+</body>
+<script src="/assets/layui-v2.5.4/layui/layui.js" charset="utf-8"></script>
+
+<script>
+    function btn(){
+        // alert(id);
+        $.ajax({
+            type:'post',
+            data:$('#forms').serialize(),
+            dataType:'json',
+            url:"comment/commentreply",
+            success: function(data){
+                parent.Toastr.success(data.msg);
+                var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+
+                parent.layer.close(index); //再执行关闭
+
+
+                console.log(data);
+            }
+        })
+    }
+
+</script>
+</html>

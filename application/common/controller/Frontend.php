@@ -39,8 +39,12 @@ class Frontend extends Controller
      */
     protected $auth = null;
 
+    protected $site = null;
+
     public function _initialize()
     {
+
+        $this->site = Config::get("site");//获取系统配置
         //移除HTML标签
         $this->request->filter('trim,strip_tags,htmlspecialchars');
         $modulename = $this->request->module();
@@ -133,5 +137,31 @@ class Frontend extends Controller
     protected function assignconfig($name, $value = '')
     {
         $this->view->config = array_merge($this->view->config ? $this->view->config : [], is_array($name) ? $name : [$name => $value]);
+    }
+
+    /**
+     * 随机字符串获取
+     * @param string $length    生成位数
+     * @return string
+     */
+    public function getNumberCode($length = '6'){
+        $code = '';
+        for($i=0;$i<intval($length);$i++) $code .= rand(0,9);
+        return $code;
+    }
+
+    /**
+     * @param int    $code   状态码
+     * @param string $msg   提示消息
+     * @param string $datas 返回信息
+     */
+    public function return_msg($code,$msg='',$datas=''){
+
+        $data['code'] = $code;
+        $data['msg'] = $msg;
+        $data['data'] = $datas;
+
+        echo json_encode($data);
+        die;
     }
 }

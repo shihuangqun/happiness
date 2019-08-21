@@ -1,0 +1,31 @@
+<?php
+
+return [
+    'Id'                  => 'ID',
+    'Order_num'           => '订单编号',
+    'User_id'             => '用户ID',
+    'Course_id'           => '课程ID',
+    'Member_service_id'   => '会员等级',
+    'Price'               => '价格',
+    'Commission'          => '一级佣金',
+    'Recommend'           => '一级推荐人ID',
+    'Commission_two'      => '二级佣金',
+    'Recommend_two'       => '二级推荐人ID',
+    'Commission_three'    => '三级佣金',
+    'Recommend_three'     => '三级推荐人ID',
+    'Pay_type'            => '支付方式',
+    'Pay_type 0'          => '其他',
+    'Pay_type 1'          => '微信支付',
+    'Order_status'        => '订单状态',
+    'Order_status 0'      => '待付款',
+    'Order_status 1'      => '已付款',
+    'Order_status 2'      => '已评价',
+    'Order_status 3'      => '已取消',
+    'Order_status 4'      => '退款中',
+    'Order_status 5'      => '退款成功',
+    'Createtime'          => '下单时间',
+    'Paymenttime'         => '付款时间',
+    'User.nickname'       => '昵称',
+    'Course.title'        => '课程名称',
+    'Memberservice.title' => '名称'
+];

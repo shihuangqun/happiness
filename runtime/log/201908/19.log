@@ -1,0 +1,2123 @@
+---------------------------------------------------------------
+[ 2019-08-19T09:06:53+08:00 ] 61.144.173.58 GET c.yaoget.cn/addons/wechat/index/oauth
+[运行时间：0.036490s] [吞吐率：27.40req/s] [内存消耗：4,420.88kb] [文件加载：197]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000022s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000795s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.5(0x17000523) NetType/WIFI Language/zh_CN',
+  'cookie' => 'Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1565840228,1565927933,1565972855,1566014404',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'addon' => 'wechat',
+  'controller' => 'index',
+  'action' => 'oauth',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ /www/wwwroot/c.yaoget.cn/vendor/karsonzhang/fastadmin-addons/src/addons/Route.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/common/lang/zh-cn/addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001226s ]
+[ info ] [ LOG ] INIT File
+[ error ] [0]致命错误: Class 'addons\wechat\controller\Session' not found[/www/wwwroot/c.yaoget.cn/addons/wechat/controller/Index.php:170]
+---------------------------------------------------------------
+[ 2019-08-19T09:06:53+08:00 ] 223.166.222.111 POST c.yaoget.cn/addons/wechat/index/index?signature=97d9a3d240d9a60f775e4e4c77630b8af5f55073&timestamp=1566176813&nonce=1354324525&openid=oH4181LNlP1WAZf1TG3eD4_RBoVc&encrypt_type=aes&msg_signature=e40cdf842b7a604806b5d628343b16614ba8b5c7
+[运行时间：0.517989s] [吞吐率：1.93req/s] [内存消耗：5,912.20kb] [文件加载：227]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000022s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000869s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'text/xml',
+  'content-length' => '922',
+  'pragma' => 'no-cache',
+  'host' => 'c.yaoget.cn',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/4.0',
+)
+[ info ] [ PARAM ] array (
+  'signature' => '97d9a3d240d9a60f775e4e4c77630b8af5f55073',
+  'timestamp' => '1566176813',
+  'nonce' => '1354324525',
+  'openid' => 'oH4181LNlP1WAZf1TG3eD4_RBoVc',
+  'encrypt_type' => 'aes',
+  'msg_signature' => 'e40cdf842b7a604806b5d628343b16614ba8b5c7',
+  'addon' => 'wechat',
+  'controller' => 'index',
+  'action' => 'index',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ /www/wwwroot/c.yaoget.cn/vendor/karsonzhang/fastadmin-addons/src/addons/Route.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/common/lang/zh-cn/addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001511s ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000444s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_only` [ RunTime:0.000616s ]
+[ sql ] [ SQL ] SELECT * FROM `h_only` WHERE  `key` = 'oH4181LNlP1WAZf1TG3eD4_RBoVc' LIMIT 1 [ RunTime:0.000197s ]
+---------------------------------------------------------------
+[ 2019-08-19T09:06:58+08:00 ] 61.144.173.58 GET c.yaoget.cn/addons/wechat/index/oauth
+[运行时间：0.039336s] [吞吐率：25.42req/s] [内存消耗：4,700.96kb] [文件加载：201]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000021s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000755s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.5(0x17000523) NetType/WIFI Language/zh_CN',
+  'cookie' => 'Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1565840228,1565927933,1565972855,1566014404',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'addon' => 'wechat',
+  'controller' => 'index',
+  'action' => 'oauth',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ /www/wwwroot/c.yaoget.cn/vendor/karsonzhang/fastadmin-addons/src/addons/Route.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/common/lang/zh-cn/addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001227s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ error ] [2]Cannot modify header information - headers already sent by (output started at /www/wwwroot/c.yaoget.cn/vendor/symfony/http-foundation/Response.php:377)[/www/wwwroot/c.yaoget.cn/addons/wechat/controller/Index.php:181]
+---------------------------------------------------------------
+[ 2019-08-19T09:06:58+08:00 ] 223.166.222.111 POST c.yaoget.cn/addons/wechat/index/index?signature=b3d2263b9757f698c0a11f56d73212639b6b1041&timestamp=1566176818&nonce=299397521&openid=oH4181LNlP1WAZf1TG3eD4_RBoVc&encrypt_type=aes&msg_signature=7d85eccb615b0b26a9ba8a72619bdf8e156f1f5d
+[运行时间：0.288986s] [吞吐率：3.46req/s] [内存消耗：5,906.24kb] [文件加载：227]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000021s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000760s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'text/xml',
+  'content-length' => '922',
+  'pragma' => 'no-cache',
+  'host' => 'c.yaoget.cn',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/4.0',
+)
+[ info ] [ PARAM ] array (
+  'signature' => 'b3d2263b9757f698c0a11f56d73212639b6b1041',
+  'timestamp' => '1566176818',
+  'nonce' => '299397521',
+  'openid' => 'oH4181LNlP1WAZf1TG3eD4_RBoVc',
+  'encrypt_type' => 'aes',
+  'msg_signature' => '7d85eccb615b0b26a9ba8a72619bdf8e156f1f5d',
+  'addon' => 'wechat',
+  'controller' => 'index',
+  'action' => 'index',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ /www/wwwroot/c.yaoget.cn/vendor/karsonzhang/fastadmin-addons/src/addons/Route.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/common/lang/zh-cn/addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001204s ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000511s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_only` [ RunTime:0.000725s ]
+[ sql ] [ SQL ] SELECT * FROM `h_only` WHERE  `key` = 'oH4181LNlP1WAZf1TG3eD4_RBoVc' LIMIT 1 [ RunTime:0.000433s ]
+---------------------------------------------------------------
+[ 2019-08-19T09:06:59+08:00 ] 61.144.173.58 GET c.yaoget.cn/addons/wechat/index/callback?code=0614tGXX1utrxZ0mmOWX1D4PXX14tGX6&state=0b30b9f3a4188ece495e26fc0e1467f3
+[运行时间：0.385686s] [吞吐率：2.59req/s] [内存消耗：5,843.84kb] [文件加载：234]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000022s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000760s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.5(0x17000523) NetType/WIFI Language/zh_CN',
+  'cookie' => 'PHPSESSID=cmbfnhplmlikc9digu4puc4hjj; Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1565840228,1565927933,1565972855,1566014404',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'code' => '0614tGXX1utrxZ0mmOWX1D4PXX14tGX6',
+  'state' => '0b30b9f3a4188ece495e26fc0e1467f3',
+  'addon' => 'wechat',
+  'controller' => 'index',
+  'action' => 'callback',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ /www/wwwroot/c.yaoget.cn/vendor/karsonzhang/fastadmin-addons/src/addons/Route.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/common/lang/zh-cn/addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001223s ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000500s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_userinfo` [ RunTime:0.000713s ]
+[ sql ] [ SQL ] SELECT * FROM `h_userinfo` WHERE  `openid` = 'oH4181LNlP1WAZf1TG3eD4_RBoVc' LIMIT 1 [ RunTime:0.000435s ]
+---------------------------------------------------------------
+[ 2019-08-19T09:06:59+08:00 ] 61.144.173.58 GET c.yaoget.cn/
+[运行时间：0.023395s] [吞吐率：42.74req/s] [内存消耗：2,880.91kb] [文件加载：122]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000021s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000757s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.5(0x17000523) NetType/WIFI Language/zh_CN',
+  'cookie' => 'PHPSESSID=cmbfnhplmlikc9digu4puc4hjj; Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1565840228,1565927933,1565972855,1566014404',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/index/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001123s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->index[ /www/wwwroot/c.yaoget.cn/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/c.yaoget.cn/public/../application/index/view/index/index.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T10:40:52+08:00 ] 223.166.222.102 POST c.yaoget.cn/addons/wechat/index/index?signature=d16eb7006d594f7c55929f59d9815f205b1283c0&timestamp=1566182452&nonce=626983810&openid=ocBqp0bVQXyW4yUHjknRXJChZ060&encrypt_type=aes&msg_signature=4e4ba186e0d6d228a0c20b497a10db4c527da691
+[运行时间：0.036007s] [吞吐率：27.77req/s] [内存消耗：4,178.56kb] [文件加载：180]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000020s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000840s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'text/xml',
+  'content-length' => '770',
+  'pragma' => 'no-cache',
+  'host' => 'c.yaoget.cn',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/4.0',
+)
+[ info ] [ PARAM ] array (
+  'signature' => 'd16eb7006d594f7c55929f59d9815f205b1283c0',
+  'timestamp' => '1566182452',
+  'nonce' => '626983810',
+  'openid' => 'ocBqp0bVQXyW4yUHjknRXJChZ060',
+  'encrypt_type' => 'aes',
+  'msg_signature' => '4e4ba186e0d6d228a0c20b497a10db4c527da691',
+  'addon' => 'wechat',
+  'controller' => 'index',
+  'action' => 'index',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ /www/wwwroot/c.yaoget.cn/vendor/karsonzhang/fastadmin-addons/src/addons/Route.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/common/lang/zh-cn/addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001255s ]
+[ info ] [ LOG ] INIT File
+[ error ] [-40005]Invalid appId.[/www/wwwroot/c.yaoget.cn/vendor/overtrue/wechat/src/Encryption/Encryptor.php:284]
+---------------------------------------------------------------
+[ 2019-08-19T10:51:46+08:00 ] 101.132.123.97 GET c.yaoget.cn/
+[运行时间：0.024058s] [吞吐率：41.57req/s] [内存消耗：2,876.57kb] [文件加载：122]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000021s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000807s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'c.yaoget.cn',
+  'user-agent' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/index/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001161s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->index[ /www/wwwroot/c.yaoget.cn/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/c.yaoget.cn/public/../application/index/view/index/index.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T14:22:51+08:00 ] 223.104.4.239 GET c.yaoget.cn/addons/wechat/index/oauth
+[运行时间：0.040940s] [吞吐率：24.43req/s] [内存消耗：4,699.86kb] [文件加载：201]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000021s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000803s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.3(0x17000321) NetType/4G Language/zh_CN',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'addon' => 'wechat',
+  'controller' => 'index',
+  'action' => 'oauth',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ /www/wwwroot/c.yaoget.cn/vendor/karsonzhang/fastadmin-addons/src/addons/Route.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/common/lang/zh-cn/addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001284s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ error ] [2]Cannot modify header information - headers already sent by (output started at /www/wwwroot/c.yaoget.cn/vendor/symfony/http-foundation/Response.php:377)[/www/wwwroot/c.yaoget.cn/addons/wechat/controller/Index.php:181]
+---------------------------------------------------------------
+[ 2019-08-19T14:22:51+08:00 ] 223.166.222.111 POST c.yaoget.cn/addons/wechat/index/index?signature=ed9a723a3893174bca83443afc14fac3065e473d&timestamp=1566195771&nonce=35327553&openid=oH4181I3NthKDDN6X1TfAdqJ9w9c&encrypt_type=aes&msg_signature=1f5c1532abac2237fafd376a156b41da5f79fbf0
+[运行时间：0.488174s] [吞吐率：2.05req/s] [内存消耗：5,878.52kb] [文件加载：227]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000020s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001006s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'text/xml',
+  'content-length' => '922',
+  'pragma' => 'no-cache',
+  'host' => 'c.yaoget.cn',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/4.0',
+)
+[ info ] [ PARAM ] array (
+  'signature' => 'ed9a723a3893174bca83443afc14fac3065e473d',
+  'timestamp' => '1566195771',
+  'nonce' => '35327553',
+  'openid' => 'oH4181I3NthKDDN6X1TfAdqJ9w9c',
+  'encrypt_type' => 'aes',
+  'msg_signature' => '1f5c1532abac2237fafd376a156b41da5f79fbf0',
+  'addon' => 'wechat',
+  'controller' => 'index',
+  'action' => 'index',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ /www/wwwroot/c.yaoget.cn/vendor/karsonzhang/fastadmin-addons/src/addons/Route.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/common/lang/zh-cn/addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001263s ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000716s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_only` [ RunTime:0.000663s ]
+[ sql ] [ SQL ] SELECT * FROM `h_only` WHERE  `key` = 'oH4181I3NthKDDN6X1TfAdqJ9w9c' LIMIT 1 [ RunTime:0.000372s ]
+[ sql ] [ SQL ] INSERT INTO `h_only` (`key` , `value`) VALUES ('oH4181I3NthKDDN6X1TfAdqJ9w9c' , 'http://c.yaoget.cn/addons/wechat/index/oauth') [ RunTime:0.007166s ]
+---------------------------------------------------------------
+[ 2019-08-19T14:22:52+08:00 ] 223.104.4.239 GET c.yaoget.cn/addons/wechat/index/callback?code=021OpBrr1bWMgm0uEftr12ZPrr1OpBr2&state=1a5d5706b2d9a891792a94c5d273b8a8
+[运行时间：0.409372s] [吞吐率：2.44req/s] [内存消耗：5,990.23kb] [文件加载：247]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000024s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000898s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.3(0x17000321) NetType/4G Language/zh_CN',
+  'cookie' => 'PHPSESSID=2qptbvls5nd5affp135bg8crjt',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'code' => '021OpBrr1bWMgm0uEftr12ZPrr1OpBr2',
+  'state' => '1a5d5706b2d9a891792a94c5d273b8a8',
+  'addon' => 'wechat',
+  'controller' => 'index',
+  'action' => 'callback',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ /www/wwwroot/c.yaoget.cn/vendor/karsonzhang/fastadmin-addons/src/addons/Route.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/common/lang/zh-cn/addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001328s ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000478s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_userinfo` [ RunTime:0.000746s ]
+[ sql ] [ SQL ] SELECT * FROM `h_userinfo` WHERE  `openid` = 'oH4181I3NthKDDN6X1TfAdqJ9w9c' LIMIT 1 [ RunTime:0.000787s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_only` [ RunTime:0.000415s ]
+[ sql ] [ SQL ] SELECT * FROM `h_only` WHERE  `key` = 'oH4181I3NthKDDN6X1TfAdqJ9w9c' LIMIT 1 [ RunTime:0.000203s ]
+[ sql ] [ SQL ] INSERT INTO `h_userinfo` (`openid` , `nickname` , `avatar` , `email` , `gender` , `country` , `province` , `citys` , `createtime` , `topid`) VALUES ('oH4181I3NthKDDN6X1TfAdqJ9w9c' , '刘灿' , 'http://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIup2uiazHbRHcjCMNSdcYia3NdzZLK2NuHnbjYQrJ7lV744wJku4jB2z5Y9LBScDnmUkKjfy5t3HXQ/132' , NULL , '1' , '中国' , '江苏' , '苏州' , 1566195772 , 0) [ RunTime:0.005396s ]
+[ sql ] [ SQL ] SELECT `id`,`openid` FROM `h_userinfo` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000233s ]
+[ error ] [0]Attribute 'touser' can not be empty![/www/wwwroot/c.yaoget.cn/vendor/overtrue/wechat/src/Notice/Notice.php:181]
+---------------------------------------------------------------
+[ 2019-08-19T14:22:59+08:00 ] 223.104.4.239 GET c.yaoget.cn/addons/wechat/index/aa
+[运行时间：0.039760s] [吞吐率：25.15req/s] [内存消耗：4,418.55kb] [文件加载：174]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000020s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000849s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.3(0x17000321) NetType/4G Language/zh_CN',
+  'cookie' => 'PHPSESSID=2qptbvls5nd5affp135bg8crjt',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'addon' => 'wechat',
+  'controller' => 'index',
+  'action' => 'aa',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ /www/wwwroot/c.yaoget.cn/vendor/karsonzhang/fastadmin-addons/src/addons/Route.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/common/lang/zh-cn/addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001306s ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000467s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_only` [ RunTime:0.000629s ]
+[ sql ] [ SQL ] SELECT * FROM `h_only` WHERE  `key` = 'oH4181D_65XSzrMkmYJQL8IJj_jU' LIMIT 1 [ RunTime:0.000419s ]
+---------------------------------------------------------------
+[ 2019-08-19T14:22:59+08:00 ] 223.166.222.111 POST c.yaoget.cn/addons/wechat/index/index?signature=b9e6737b352b96edc9bf982ceb867a268e075305&timestamp=1566195779&nonce=1134956695&openid=oH4181I3NthKDDN6X1TfAdqJ9w9c&encrypt_type=aes&msg_signature=e8b30613236c543ef1c2bfa0901288cea40b0827
+[运行时间：0.296090s] [吞吐率：3.38req/s] [内存消耗：5,906.25kb] [文件加载：227]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000020s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000754s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'text/xml',
+  'content-length' => '919',
+  'pragma' => 'no-cache',
+  'host' => 'c.yaoget.cn',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/4.0',
+)
+[ info ] [ PARAM ] array (
+  'signature' => 'b9e6737b352b96edc9bf982ceb867a268e075305',
+  'timestamp' => '1566195779',
+  'nonce' => '1134956695',
+  'openid' => 'oH4181I3NthKDDN6X1TfAdqJ9w9c',
+  'encrypt_type' => 'aes',
+  'msg_signature' => 'e8b30613236c543ef1c2bfa0901288cea40b0827',
+  'addon' => 'wechat',
+  'controller' => 'index',
+  'action' => 'index',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ /www/wwwroot/c.yaoget.cn/vendor/karsonzhang/fastadmin-addons/src/addons/Route.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/common/lang/zh-cn/addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001215s ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000631s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_only` [ RunTime:0.000549s ]
+[ sql ] [ SQL ] SELECT * FROM `h_only` WHERE  `key` = 'oH4181I3NthKDDN6X1TfAdqJ9w9c' LIMIT 1 [ RunTime:0.000353s ]
+---------------------------------------------------------------
+[ 2019-08-19T14:23:05+08:00 ] 223.104.4.239 GET c.yaoget.cn/addons/wechat/index/oauth
+[运行时间：0.038877s] [吞吐率：25.72req/s] [内存消耗：4,700.77kb] [文件加载：201]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000021s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000820s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.3(0x17000321) NetType/4G Language/zh_CN',
+  'cookie' => 'PHPSESSID=2qptbvls5nd5affp135bg8crjt',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'addon' => 'wechat',
+  'controller' => 'index',
+  'action' => 'oauth',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ /www/wwwroot/c.yaoget.cn/vendor/karsonzhang/fastadmin-addons/src/addons/Route.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/common/lang/zh-cn/addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001214s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ error ] [2]Cannot modify header information - headers already sent by (output started at /www/wwwroot/c.yaoget.cn/vendor/symfony/http-foundation/Response.php:377)[/www/wwwroot/c.yaoget.cn/addons/wechat/controller/Index.php:181]
+---------------------------------------------------------------
+[ 2019-08-19T14:23:05+08:00 ] 223.166.222.111 POST c.yaoget.cn/addons/wechat/index/index?signature=ab0dccb42a3dbe0d732198fcbf275b2960cc83c2&timestamp=1566195785&nonce=659471562&openid=oH4181I3NthKDDN6X1TfAdqJ9w9c&encrypt_type=aes&msg_signature=88864837257ac986acbe3a360c9df0421c9be5ad
+[运行时间：0.244514s] [吞吐率：4.09req/s] [内存消耗：5,906.25kb] [文件加载：227]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000020s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000793s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'text/xml',
+  'content-length' => '922',
+  'pragma' => 'no-cache',
+  'host' => 'c.yaoget.cn',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/4.0',
+)
+[ info ] [ PARAM ] array (
+  'signature' => 'ab0dccb42a3dbe0d732198fcbf275b2960cc83c2',
+  'timestamp' => '1566195785',
+  'nonce' => '659471562',
+  'openid' => 'oH4181I3NthKDDN6X1TfAdqJ9w9c',
+  'encrypt_type' => 'aes',
+  'msg_signature' => '88864837257ac986acbe3a360c9df0421c9be5ad',
+  'addon' => 'wechat',
+  'controller' => 'index',
+  'action' => 'index',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ /www/wwwroot/c.yaoget.cn/vendor/karsonzhang/fastadmin-addons/src/addons/Route.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/common/lang/zh-cn/addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001306s ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000438s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_only` [ RunTime:0.000596s ]
+[ sql ] [ SQL ] SELECT * FROM `h_only` WHERE  `key` = 'oH4181I3NthKDDN6X1TfAdqJ9w9c' LIMIT 1 [ RunTime:0.000285s ]
+---------------------------------------------------------------
+[ 2019-08-19T14:23:06+08:00 ] 223.104.4.239 GET c.yaoget.cn/addons/wechat/index/callback?code=061g6IV61lWdcN1ORdX61gtpV61g6IV1&state=300fc4d58b5ca5b7d6830be96be4e05b
+[运行时间：0.380378s] [吞吐率：2.63req/s] [内存消耗：5,843.08kb] [文件加载：234]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000022s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000756s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.3(0x17000321) NetType/4G Language/zh_CN',
+  'cookie' => 'PHPSESSID=2qptbvls5nd5affp135bg8crjt',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'code' => '061g6IV61lWdcN1ORdX61gtpV61g6IV1',
+  'state' => '300fc4d58b5ca5b7d6830be96be4e05b',
+  'addon' => 'wechat',
+  'controller' => 'index',
+  'action' => 'callback',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ /www/wwwroot/c.yaoget.cn/vendor/karsonzhang/fastadmin-addons/src/addons/Route.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/common/lang/zh-cn/addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001267s ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000472s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_userinfo` [ RunTime:0.000816s ]
+[ sql ] [ SQL ] SELECT * FROM `h_userinfo` WHERE  `openid` = 'oH4181I3NthKDDN6X1TfAdqJ9w9c' LIMIT 1 [ RunTime:0.000578s ]
+---------------------------------------------------------------
+[ 2019-08-19T14:23:06+08:00 ] 223.104.4.239 GET c.yaoget.cn/
+[运行时间：0.024441s] [吞吐率：40.91req/s] [内存消耗：2,880.48kb] [文件加载：122]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000024s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000797s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.3(0x17000321) NetType/4G Language/zh_CN',
+  'cookie' => 'PHPSESSID=2qptbvls5nd5affp135bg8crjt',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/index/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001306s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->index[ /www/wwwroot/c.yaoget.cn/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/c.yaoget.cn/public/../application/index/view/index/index.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T14:23:10+08:00 ] 223.104.4.239 GET c.yaoget.cn/addons/wechat/index/aa
+[运行时间：0.044335s] [吞吐率：22.56req/s] [内存消耗：4,418.55kb] [文件加载：174]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000020s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001053s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.3(0x17000321) NetType/4G Language/zh_CN',
+  'cookie' => 'PHPSESSID=2qptbvls5nd5affp135bg8crjt',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'addon' => 'wechat',
+  'controller' => 'index',
+  'action' => 'aa',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ /www/wwwroot/c.yaoget.cn/vendor/karsonzhang/fastadmin-addons/src/addons/Route.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/common/lang/zh-cn/addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001814s ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000482s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_only` [ RunTime:0.000656s ]
+[ sql ] [ SQL ] SELECT * FROM `h_only` WHERE  `key` = 'oH4181D_65XSzrMkmYJQL8IJj_jU' LIMIT 1 [ RunTime:0.000224s ]
+---------------------------------------------------------------
+[ 2019-08-19T14:23:10+08:00 ] 223.166.222.111 POST c.yaoget.cn/addons/wechat/index/index?signature=4c523d947d1955d0fa8d57aab94e28e13abc9c22&timestamp=1566195790&nonce=218916802&openid=oH4181I3NthKDDN6X1TfAdqJ9w9c&encrypt_type=aes&msg_signature=b6c7c9f3bf92bb4f344b3bf9f5c43d415a3fedf8
+[运行时间：0.248592s] [吞吐率：4.02req/s] [内存消耗：5,906.25kb] [文件加载：227]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000018s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000737s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'text/xml',
+  'content-length' => '919',
+  'pragma' => 'no-cache',
+  'host' => 'c.yaoget.cn',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/4.0',
+)
+[ info ] [ PARAM ] array (
+  'signature' => '4c523d947d1955d0fa8d57aab94e28e13abc9c22',
+  'timestamp' => '1566195790',
+  'nonce' => '218916802',
+  'openid' => 'oH4181I3NthKDDN6X1TfAdqJ9w9c',
+  'encrypt_type' => 'aes',
+  'msg_signature' => 'b6c7c9f3bf92bb4f344b3bf9f5c43d415a3fedf8',
+  'addon' => 'wechat',
+  'controller' => 'index',
+  'action' => 'index',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ /www/wwwroot/c.yaoget.cn/vendor/karsonzhang/fastadmin-addons/src/addons/Route.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/common/lang/zh-cn/addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001226s ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000454s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_only` [ RunTime:0.000626s ]
+[ sql ] [ SQL ] SELECT * FROM `h_only` WHERE  `key` = 'oH4181I3NthKDDN6X1TfAdqJ9w9c' LIMIT 1 [ RunTime:0.000332s ]
+---------------------------------------------------------------
+[ 2019-08-19T15:29:49+08:00 ] 61.144.173.58 GET c.yaoget.cn/
+[运行时间：0.023754s] [吞吐率：42.10req/s] [内存消耗：2,880.52kb] [文件加载：122]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000018s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000782s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1565921613',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/index/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001214s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->index[ /www/wwwroot/c.yaoget.cn/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/c.yaoget.cn/public/../application/index/view/index/index.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T15:29:49+08:00 ] 61.144.173.58 GET c.yaoget.cn/favicon.ico
+[运行时间：0.020006s] [吞吐率：49.98req/s] [内存消耗：2,033.58kb] [文件加载：107]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000022s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000868s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1565921613',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://c.yaoget.cn/',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T15:29:49+08:00 ] 61.144.173.58 GET c.yaoget.cn/favicon.ico
+[运行时间：0.019624s] [吞吐率：50.96req/s] [内存消耗：2,033.61kb] [文件加载：107]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000018s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000872s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '404',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1565921613',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://c.yaoget.cn/',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T15:29:53+08:00 ] 61.144.173.58 GET c.yaoget.cn/admin/userinfo?ref=addtabs
+[运行时间：0.025302s] [吞吐率：39.52req/s] [内存消耗：2,846.48kb] [文件加载：125]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000018s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000748s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'userinfo',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1565921613',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'ref' => 'addtabs',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001116s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] /www/wwwroot/c.yaoget.cn/public/../application/common/view/tpl/dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000076s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T15:29:54+08:00 ] 61.144.173.58 GET c.yaoget.cn/admin/index/login?url=%2Fadmin%2Fuserinfo%3Fref%3Daddtabs
+[运行时间：0.029491s] [吞吐率：33.91req/s] [内存消耗：3,450.11kb] [文件加载：130]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000019s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000760s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1565921613; PHPSESSID=da7psgpr069spr7h0sjvq714lo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://c.yaoget.cn/admin/userinfo?ref=addtabs',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'url' => '/admin/userinfo?ref=addtabs',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001206s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/index.php
+[ info ] [ RUN ] app\admin\controller\Index->login[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/c.yaoget.cn/public/../application/admin/view/index/login.html [ array (
+  0 => 'breadcrumb',
+  1 => 'site',
+  2 => 'config',
+  3 => 'auth',
+  4 => 'admin',
+  5 => 'background',
+  6 => 'title',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000062s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T15:29:54+08:00 ] 61.144.173.58 GET c.yaoget.cn/index.php?s=/captcha
+[运行时间：0.022364s] [吞吐率：44.71req/s] [内存消耗：2,057.63kb] [文件加载：106]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000019s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.002628s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1565921613; PHPSESSID=da7psgpr069spr7h0sjvq714lo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://c.yaoget.cn/admin/index/login?url=%2Fadmin%2Fuserinfo%3Fref%3Daddtabs',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ /www/wwwroot/c.yaoget.cn/vendor/topthink/think-captcha/src/CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T15:29:55+08:00 ] 61.144.173.58 GET c.yaoget.cn/admin/ajax/lang?callback=define&controllername=index&v=1566199794
+[运行时间：0.027959s] [吞吐率：35.77req/s] [内存消耗：3,299.10kb] [文件加载：128]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000017s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000768s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'lang',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1565921613; PHPSESSID=da7psgpr069spr7h0sjvq714lo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://c.yaoget.cn/admin/index/login?url=%2Fadmin%2Fuserinfo%3Fref%3Daddtabs',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'define',
+  'controllername' => 'index',
+  'v' => '1566199794',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001203s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/ajax.php
+[ info ] [ RUN ] app\admin\controller\Ajax->lang[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Ajax.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/index.php
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000055s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T15:30:00+08:00 ] 61.144.173.58 POST c.yaoget.cn/admin/index/login?url=%2Fadmin%2Fuserinfo%3Fref%3Daddtabs
+[运行时间：0.072678s] [吞吐率：13.76req/s] [内存消耗：4,084.02kb] [文件加载：137]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000022s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000783s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1565921613; PHPSESSID=da7psgpr069spr7h0sjvq714lo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://c.yaoget.cn/admin/index/login?url=%2Fadmin%2Fuserinfo%3Fref%3Daddtabs',
+  'origin' => 'http://c.yaoget.cn',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '86',
+  'connection' => 'keep-alive',
+  'host' => 'c.yaoget.cn',
+)
+[ info ] [ PARAM ] array (
+  'url' => '/admin/userinfo?ref=addtabs',
+  '__token__' => '81c9ff340976a099f16d8af43b095cca',
+  'username' => 'admin',
+  'password' => '123456',
+  'captcha' => '3q4e',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001411s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/index.php
+[ info ] [ RUN ] app\admin\controller\Index->login[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.007875s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000383s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin` [ RunTime:0.000765s ]
+[ sql ] [ SQL ] SELECT * FROM `h_admin` WHERE  `username` = 'admin' LIMIT 1 [ RunTime:0.000397s ]
+[ sql ] [ SQL ] UPDATE `h_admin`  SET `loginfailure`=1,`updatetime`=1566199800  WHERE  `id` = 1 [ RunTime:0.019527s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.000685s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('登录' , '{\"url\":\"\\/admin\\/userinfo?ref=addtabs\",\"__token__\":\"81c9ff340976a099f16d8af43b095cca\",\"username\":\"admin\",\"captcha\":\"3q4e\"}' , '/admin/index/login?url=%2Fadmin%2Fuserinfo%3Fref%3Daddtabs' , 0 , 'Unknown' , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36' , '61.144.173.58' , 1566199800) [ RunTime:0.006638s ]
+---------------------------------------------------------------
+[ 2019-08-19T15:30:00+08:00 ] 61.144.173.58 GET c.yaoget.cn/index.php?s=/captcha&r=0.8289977435827287
+[运行时间：0.020001s] [吞吐率：50.00req/s] [内存消耗：2,057.78kb] [文件加载：106]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000021s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000833s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1565921613; PHPSESSID=da7psgpr069spr7h0sjvq714lo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://c.yaoget.cn/admin/index/login?url=%2Fadmin%2Fuserinfo%3Fref%3Daddtabs',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'r' => '0.8289977435827287',
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ /www/wwwroot/c.yaoget.cn/vendor/topthink/think-captcha/src/CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T15:30:06+08:00 ] 61.144.173.58 POST c.yaoget.cn/admin/index/login?url=%2Fadmin%2Fuserinfo%3Fref%3Daddtabs
+[运行时间：0.085186s] [吞吐率：11.74req/s] [内存消耗：4,102.69kb] [文件加载：138]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000019s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000836s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1565921613; PHPSESSID=da7psgpr069spr7h0sjvq714lo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://c.yaoget.cn/admin/index/login?url=%2Fadmin%2Fuserinfo%3Fref%3Daddtabs',
+  'origin' => 'http://c.yaoget.cn',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '89',
+  'connection' => 'keep-alive',
+  'host' => 'c.yaoget.cn',
+)
+[ info ] [ PARAM ] array (
+  'url' => '/admin/userinfo?ref=addtabs',
+  '__token__' => '7a1f33e2336f53b8265bbce96cee3b6b',
+  'username' => 'admin',
+  'password' => 'huang0416',
+  'captcha' => '4tpm',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001185s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/index.php
+[ info ] [ RUN ] app\admin\controller\Index->login[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.005976s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000387s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin` [ RunTime:0.000659s ]
+[ sql ] [ SQL ] SELECT * FROM `h_admin` WHERE  `username` = 'admin' LIMIT 1 [ RunTime:0.000381s ]
+[ sql ] [ SQL ] UPDATE `h_admin`  SET `loginfailure`=0,`logintime`=1566199806,`token`='4cd5715c-2eea-4279-a8f8-1082389c9d86',`updatetime`=1566199806  WHERE  `id` = 1 [ RunTime:0.043271s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.000666s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('登录' , '{\"url\":\"\\/admin\\/userinfo?ref=addtabs\",\"__token__\":\"7a1f33e2336f53b8265bbce96cee3b6b\",\"username\":\"admin\",\"captcha\":\"4tpm\"}' , '/admin/index/login?url=%2Fadmin%2Fuserinfo%3Fref%3Daddtabs' , 1 , 'admin' , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36' , '61.144.173.58' , 1566199806) [ RunTime:0.004780s ]
+---------------------------------------------------------------
+[ 2019-08-19T15:30:06+08:00 ] 61.144.173.58 GET c.yaoget.cn/admin/userinfo?ref=addtabs
+[运行时间：0.033017s] [吞吐率：30.29req/s] [内存消耗：3,912.22kb] [文件加载：132]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000022s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000933s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'userinfo',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1565921613; PHPSESSID=da7psgpr069spr7h0sjvq714lo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://c.yaoget.cn/admin/index/login?url=%2Fadmin%2Fuserinfo%3Fref%3Daddtabs',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'ref' => 'addtabs',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001125s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000066s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000806s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000654s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000198s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000451s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000307s ]
+---------------------------------------------------------------
+[ 2019-08-19T15:30:06+08:00 ] 61.144.173.58 GET c.yaoget.cn/admin/index/index
+[运行时间：0.087783s] [吞吐率：11.39req/s] [内存消耗：4,439.52kb] [文件加载：147]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000025s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001045s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1565921613; PHPSESSID=da7psgpr069spr7h0sjvq714lo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://c.yaoget.cn/admin/index/login?url=%2Fadmin%2Fuserinfo%3Fref%3Daddtabs',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001740s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/index.php
+[ info ] [ RUN ] app\admin\controller\Index->index[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/c.yaoget.cn/public/../application/admin/view/index/index.html [ array (
+  0 => 'breadcrumb',
+  1 => 'site',
+  2 => 'config',
+  3 => 'auth',
+  4 => 'admin',
+  5 => 'menulist',
+  6 => 'navlist',
+  7 => 'fixedmenu',
+  8 => 'referermenu',
+  9 => 'title',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000064s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000518s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000707s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000271s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000596s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000492s ]
+[ sql ] [ SQL ] SELECT `name`,`pid` FROM `h_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 0  AND `name` LIKE '%/index' [ RunTime:0.000413s ]
+---------------------------------------------------------------
+[ 2019-08-19T15:30:06+08:00 ] 61.144.173.58 GET c.yaoget.cn/admin/dashboard?addtabs=1
+[运行时间：0.037553s] [吞吐率：26.63req/s] [内存消耗：4,278.74kb] [文件加载：137]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000018s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000754s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'dashboard',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1565921613; PHPSESSID=da7psgpr069spr7h0sjvq714lo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://c.yaoget.cn/admin/index/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'addtabs' => '1',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001125s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/dashboard.php
+[ info ] [ RUN ] app\admin\controller\Dashboard->index[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Dashboard.php ]
+[ info ] [ VIEW ] /www/wwwroot/c.yaoget.cn/public/../application/admin/view/dashboard/index.html [ array (
+  0 => 'breadcrumb',
+  1 => 'site',
+  2 => 'config',
+  3 => 'auth',
+  4 => 'admin',
+  5 => 'totaluser',
+  6 => 'totalviews',
+  7 => 'totalorder',
+  8 => 'totalorderamount',
+  9 => 'todayuserlogin',
+  10 => 'todayusersignup',
+  11 => 'todayorder',
+  12 => 'unsettleorder',
+  13 => 'sevendnu',
+  14 => 'sevendau',
+  15 => 'paylist',
+  16 => 'createlist',
+  17 => 'addonversion',
+  18 => 'uploadmode',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000070s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000466s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000588s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000223s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000694s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000417s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'dashboard' LIMIT 1 [ RunTime:0.000325s ]
+---------------------------------------------------------------
+[ 2019-08-19T15:30:06+08:00 ] 61.144.173.58 GET c.yaoget.cn/admin/userinfo?addtabs=1
+[运行时间：0.054917s] [吞吐率：18.21req/s] [内存消耗：4,230.88kb] [文件加载：136]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000019s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000821s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'userinfo',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1565921613; PHPSESSID=da7psgpr069spr7h0sjvq714lo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://c.yaoget.cn/admin/index/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'addtabs' => '1',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001255s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/userinfo.php
+[ info ] [ RUN ] app\admin\controller\Userinfo->index[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Userinfo.php ]
+[ info ] [ VIEW ] /www/wwwroot/c.yaoget.cn/public/../application/admin/view/userinfo/index.html [ array (
+  0 => 'breadcrumb',
+  1 => 'site',
+  2 => 'config',
+  3 => 'auth',
+  4 => 'admin',
+  5 => 'genderList',
+  6 => 'statusList',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000101s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000464s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000742s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000444s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000767s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000457s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'userinfo' LIMIT 1 [ RunTime:0.000277s ]
+---------------------------------------------------------------
+[ 2019-08-19T15:30:06+08:00 ] 61.144.173.58 GET c.yaoget.cn/admin/ajax/lang?callback=define&controllername=index&v=1566199806
+[运行时间：0.028067s] [吞吐率：35.63req/s] [内存消耗：3,299.97kb] [文件加载：128]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000020s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000851s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'lang',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1565921613; PHPSESSID=da7psgpr069spr7h0sjvq714lo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://c.yaoget.cn/admin/index/index',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'define',
+  'controllername' => 'index',
+  'v' => '1566199806',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001189s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/ajax.php
+[ info ] [ RUN ] app\admin\controller\Ajax->lang[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Ajax.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/index.php
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000056s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T15:30:06+08:00 ] 61.144.173.58 GET c.yaoget.cn/admin/ajax/lang?callback=define&controllername=dashboard&v=1566199806
+[运行时间：0.040730s] [吞吐率：24.55req/s] [内存消耗：3,298.66kb] [文件加载：128]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000017s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000796s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'lang',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1565921613; PHPSESSID=da7psgpr069spr7h0sjvq714lo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://c.yaoget.cn/admin/dashboard?addtabs=1',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'define',
+  'controllername' => 'dashboard',
+  'v' => '1566199806',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.002472s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/ajax.php
+[ info ] [ RUN ] app\admin\controller\Ajax->lang[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Ajax.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/dashboard.php
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000060s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T15:30:06+08:00 ] 61.144.173.58 GET c.yaoget.cn/admin/ajax/lang?callback=define&controllername=userinfo&v=1566199806
+[运行时间：0.034427s] [吞吐率：29.05req/s] [内存消耗：3,296.29kb] [文件加载：128]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000018s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000753s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'lang',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1565921613; PHPSESSID=da7psgpr069spr7h0sjvq714lo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://c.yaoget.cn/admin/userinfo?addtabs=1',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'define',
+  'controllername' => 'userinfo',
+  'v' => '1566199806',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001198s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/ajax.php
+[ info ] [ RUN ] app\admin\controller\Ajax->lang[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Ajax.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/userinfo.php
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000059s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T15:30:09+08:00 ] 61.144.173.58 GET c.yaoget.cn/admin/userinfo/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1566199808680
+[运行时间：0.039461s] [吞吐率：25.34req/s] [内存消耗：4,467.14kb] [文件加载：142]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000020s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000876s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'userinfo',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1565921613; PHPSESSID=da7psgpr069spr7h0sjvq714lo',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://c.yaoget.cn/admin/userinfo?addtabs=1',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'c.yaoget.cn',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'addtabs' => '1',
+  'sort' => 'id',
+  'order' => 'desc',
+  'offset' => '0',
+  'limit' => '10',
+  'filter' => '{}',
+  'op' => '{}',
+  '_' => '1566199808680',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001412s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/userinfo.php
+[ info ] [ RUN ] app\admin\controller\Userinfo->index[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Userinfo.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000098s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000353s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000521s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000218s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000409s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000292s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_userinfo` [ RunTime:0.000590s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_member_service` [ RunTime:0.000429s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_userinfo` `userinfo` LEFT JOIN `h_member_service` `memberservice` ON `userinfo`.`member_service_id`=`memberservice`.`id` ORDER BY `userinfo`.`id` DESC LIMIT 1 [ RunTime:0.000236s ]
+[ sql ] [ SQL ] SELECT `userinfo`.`id`,`userinfo`.`openid`,`userinfo`.`name`,`userinfo`.`nickname`,`userinfo`.`phone`,`userinfo`.`email`,`userinfo`.`avatar`,`userinfo`.`gender`,`userinfo`.`country`,`userinfo`.`province`,`userinfo`.`citys`,`userinfo`.`member_service_id`,`userinfo`.`subordinate_count`,`userinfo`.`money`,`userinfo`.`status`,`userinfo`.`createtime`,`userinfo`.`prevtime`,`userinfo`.`logintime`,`userinfo`.`jointime`,`userinfo`.`topid`,memberservice.id AS memberservice__id,memberservice.title AS memberservice__title,memberservice.price AS memberservice__price,memberservice.give AS memberservice__give,memberservice.member_discount AS memberservice__member_discount,memberservice.status AS memberservice__status,memberservice.weigh AS memberservice__weigh,memberservice.commission AS memberservice__commission FROM `h_userinfo` `userinfo` LEFT JOIN `h_member_service` `memberservice` ON `userinfo`.`member_service_id`=`memberservice`.`id` ORDER BY `userinfo`.`id` DESC LIMIT 0,10 [ RunTime:0.000307s ]
+---------------------------------------------------------------
+[ 2019-08-19T16:30:31+08:00 ] 223.166.222.111 POST c.yaoget.cn/addons/wechat/index/index?signature=b82b79db0088df76240cd45afde7b5795a1760b4&timestamp=1566203431&nonce=490305853&openid=ocBqp0fDbKljfTG1SXsVbRey9mj8&encrypt_type=aes&msg_signature=ef094e8d63a0b4ae7001c0571936b551bbb9780c
+[运行时间：0.034878s] [吞吐率：28.67req/s] [内存消耗：4,178.56kb] [文件加载：180]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000018s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000754s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'text/xml',
+  'content-length' => '821',
+  'pragma' => 'no-cache',
+  'host' => 'c.yaoget.cn',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/4.0',
+)
+[ info ] [ PARAM ] array (
+  'signature' => 'b82b79db0088df76240cd45afde7b5795a1760b4',
+  'timestamp' => '1566203431',
+  'nonce' => '490305853',
+  'openid' => 'ocBqp0fDbKljfTG1SXsVbRey9mj8',
+  'encrypt_type' => 'aes',
+  'msg_signature' => 'ef094e8d63a0b4ae7001c0571936b551bbb9780c',
+  'addon' => 'wechat',
+  'controller' => 'index',
+  'action' => 'index',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ /www/wwwroot/c.yaoget.cn/vendor/karsonzhang/fastadmin-addons/src/addons/Route.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/common/lang/zh-cn/addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001225s ]
+[ info ] [ LOG ] INIT File
+[ error ] [-40005]Invalid appId.[/www/wwwroot/c.yaoget.cn/vendor/overtrue/wechat/src/Encryption/Encryptor.php:284]
+---------------------------------------------------------------
+[ 2019-08-19T16:30:37+08:00 ] 223.166.222.111 POST c.yaoget.cn/addons/wechat/index/index?signature=2244b7d5b513d5b2969f6d924bdc40dd2b008c55&timestamp=1566203437&nonce=911132568&openid=ocBqp0fDbKljfTG1SXsVbRey9mj8&encrypt_type=aes&msg_signature=2fdaf17fd30a72917e9c32d63910d68540cbdf81
+[运行时间：0.037402s] [吞吐率：26.74req/s] [内存消耗：4,178.56kb] [文件加载：180]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000018s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001076s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'text/xml',
+  'content-length' => '821',
+  'pragma' => 'no-cache',
+  'host' => 'c.yaoget.cn',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/4.0',
+)
+[ info ] [ PARAM ] array (
+  'signature' => '2244b7d5b513d5b2969f6d924bdc40dd2b008c55',
+  'timestamp' => '1566203437',
+  'nonce' => '911132568',
+  'openid' => 'ocBqp0fDbKljfTG1SXsVbRey9mj8',
+  'encrypt_type' => 'aes',
+  'msg_signature' => '2fdaf17fd30a72917e9c32d63910d68540cbdf81',
+  'addon' => 'wechat',
+  'controller' => 'index',
+  'action' => 'index',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ /www/wwwroot/c.yaoget.cn/vendor/karsonzhang/fastadmin-addons/src/addons/Route.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/common/lang/zh-cn/addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001756s ]
+[ info ] [ LOG ] INIT File
+[ error ] [-40005]Invalid appId.[/www/wwwroot/c.yaoget.cn/vendor/overtrue/wechat/src/Encryption/Encryptor.php:284]
+---------------------------------------------------------------
+[ 2019-08-19T16:31:27+08:00 ] 223.166.222.111 POST c.yaoget.cn/addons/wechat/index/index?signature=16dcb74d1832c315c3b7f641be282952a42b83a4&timestamp=1566203487&nonce=834240918&openid=ocBqp0fDbKljfTG1SXsVbRey9mj8&encrypt_type=aes&msg_signature=16a1d9796252417c678b4b0f93e6df42f3764d7a
+[运行时间：0.036185s] [吞吐率：27.64req/s] [内存消耗：4,178.56kb] [文件加载：180]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000020s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000823s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'text/xml',
+  'content-length' => '821',
+  'pragma' => 'no-cache',
+  'host' => 'c.yaoget.cn',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/4.0',
+)
+[ info ] [ PARAM ] array (
+  'signature' => '16dcb74d1832c315c3b7f641be282952a42b83a4',
+  'timestamp' => '1566203487',
+  'nonce' => '834240918',
+  'openid' => 'ocBqp0fDbKljfTG1SXsVbRey9mj8',
+  'encrypt_type' => 'aes',
+  'msg_signature' => '16a1d9796252417c678b4b0f93e6df42f3764d7a',
+  'addon' => 'wechat',
+  'controller' => 'index',
+  'action' => 'index',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ /www/wwwroot/c.yaoget.cn/vendor/karsonzhang/fastadmin-addons/src/addons/Route.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/common/lang/zh-cn/addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001432s ]
+[ info ] [ LOG ] INIT File
+[ error ] [-40005]Invalid appId.[/www/wwwroot/c.yaoget.cn/vendor/overtrue/wechat/src/Encryption/Encryptor.php:284]
+---------------------------------------------------------------
+[ 2019-08-19T16:31:53+08:00 ] 223.166.222.111 POST c.yaoget.cn/addons/wechat/index/index?signature=08536abf41fb22f06c3d6d76a9646eb785d17f02&timestamp=1566203513&nonce=1945610354&openid=ocBqp0fDbKljfTG1SXsVbRey9mj8&encrypt_type=aes&msg_signature=e29d9b05e713de08fc6820c8108970c16015fc26
+[运行时间：0.036742s] [吞吐率：27.22req/s] [内存消耗：4,178.81kb] [文件加载：180]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000019s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000892s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'text/xml',
+  'content-length' => '922',
+  'pragma' => 'no-cache',
+  'host' => 'c.yaoget.cn',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/4.0',
+)
+[ info ] [ PARAM ] array (
+  'signature' => '08536abf41fb22f06c3d6d76a9646eb785d17f02',
+  'timestamp' => '1566203513',
+  'nonce' => '1945610354',
+  'openid' => 'ocBqp0fDbKljfTG1SXsVbRey9mj8',
+  'encrypt_type' => 'aes',
+  'msg_signature' => 'e29d9b05e713de08fc6820c8108970c16015fc26',
+  'addon' => 'wechat',
+  'controller' => 'index',
+  'action' => 'index',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ /www/wwwroot/c.yaoget.cn/vendor/karsonzhang/fastadmin-addons/src/addons/Route.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/common/lang/zh-cn/addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001213s ]
+[ info ] [ LOG ] INIT File
+[ error ] [-40005]Invalid appId.[/www/wwwroot/c.yaoget.cn/vendor/overtrue/wechat/src/Encryption/Encryptor.php:284]
+---------------------------------------------------------------
+[ 2019-08-19T16:31:55+08:00 ] 106.91.201.229 GET c.yaoget.cn/addons/wechat/index/oauth
+[运行时间：0.039705s] [吞吐率：25.19req/s] [内存消耗：4,702.44kb] [文件加载：201]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000020s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000792s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'x-forwarded-for-pound' => '106.91.201.229',
+  'x-forwarded-for' => '106.91.201.229',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 4.4.2; Che2-TL00 Build/HonorChe2-TL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044807 Mobile Safari/537.36 MMWEBID/5782 MicroMessenger/6.7.3.1360(0x2607033D) NetType/WIFI Language/zh_CN Process/tools',
+  'upgrade-insecure-requests' => '1',
+  'host' => 'c.yaoget.cn',
+  'connection' => 'close',
+  'accept-language' => 'zh-CN,en-US;q=0.9',
+  'accept-encoding' => 'gzip',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,image/wxpic,image/sharpp,image/apng,image/tpg,*/*;q=0.8',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'addon' => 'wechat',
+  'controller' => 'index',
+  'action' => 'oauth',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ /www/wwwroot/c.yaoget.cn/vendor/karsonzhang/fastadmin-addons/src/addons/Route.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/common/lang/zh-cn/addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001337s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ error ] [2]Cannot modify header information - headers already sent by (output started at /www/wwwroot/c.yaoget.cn/vendor/symfony/http-foundation/Response.php:377)[/www/wwwroot/c.yaoget.cn/addons/wechat/controller/Index.php:181]
+---------------------------------------------------------------
+[ 2019-08-19T16:31:59+08:00 ] 106.91.201.229 GET c.yaoget.cn/addons/wechat/index/callback?code=021cWKfZ1tTFAU07K5dZ1rZGfZ1cWKfW&state=7c979c5743bd00a7965701426898253e
+[运行时间：0.503352s] [吞吐率：1.99req/s] [内存消耗：5,992.16kb] [文件加载：247]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000019s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000747s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'x-forwarded-for-pound' => '106.91.201.229',
+  'x-forwarded-for' => '106.91.201.229',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 4.4.2; Che2-TL00 Build/HonorChe2-TL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044807 Mobile Safari/537.36 MMWEBID/5782 MicroMessenger/6.7.3.1360(0x2607033D) NetType/WIFI Language/zh_CN Process/tools',
+  'upgrade-insecure-requests' => '1',
+  'host' => 'c.yaoget.cn',
+  'cookie' => 'PHPSESSID=2e25tdmj9hbn0llp3jc4uf7lfl',
+  'connection' => 'close',
+  'accept-language' => 'zh-CN,en-US;q=0.9',
+  'accept-encoding' => 'gzip',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,image/wxpic,image/sharpp,image/apng,image/tpg,*/*;q=0.8',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'code' => '021cWKfZ1tTFAU07K5dZ1rZGfZ1cWKfW',
+  'state' => '7c979c5743bd00a7965701426898253e',
+  'addon' => 'wechat',
+  'controller' => 'index',
+  'action' => 'callback',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ /www/wwwroot/c.yaoget.cn/vendor/karsonzhang/fastadmin-addons/src/addons/Route.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/common/lang/zh-cn/addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001270s ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000397s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_userinfo` [ RunTime:0.000641s ]
+[ sql ] [ SQL ] SELECT * FROM `h_userinfo` WHERE  `openid` = 'oH4181O3bzGZbdM3bj9_95BqTaNk' LIMIT 1 [ RunTime:0.000367s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_only` [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT * FROM `h_only` WHERE  `key` = 'oH4181O3bzGZbdM3bj9_95BqTaNk' LIMIT 1 [ RunTime:0.000218s ]
+[ sql ] [ SQL ] INSERT INTO `h_userinfo` (`openid` , `nickname` , `avatar` , `email` , `gender` , `country` , `province` , `citys` , `createtime` , `topid`) VALUES ('oH4181O3bzGZbdM3bj9_95BqTaNk' , '超' , 'http://thirdwx.qlogo.cn/mmopen/vi_32/cGzMKNXYf1LmpSatlpUicrxfWCk7yVDNTBQQvr9IYk9L3vK927Qict88QSiaKIicPicSINORpBQ09qmVSQsySldhjDQ/132' , NULL , '0' , '' , '' , '' , 1566203519 , 0) [ RunTime:0.006186s ]
+[ sql ] [ SQL ] SELECT `id`,`openid` FROM `h_userinfo` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000384s ]
+[ error ] [0]Attribute 'touser' can not be empty![/www/wwwroot/c.yaoget.cn/vendor/overtrue/wechat/src/Notice/Notice.php:181]
+---------------------------------------------------------------
+[ 2019-08-19T16:32:00+08:00 ] 106.91.201.229 GET c.yaoget.cn/addons/wechat/index/callback?code=021cWKfZ1tTFAU07K5dZ1rZGfZ1cWKfW&state=7c979c5743bd00a7965701426898253e
+[运行时间：0.155873s] [吞吐率：6.42req/s] [内存消耗：5,123.55kb] [文件加载：226]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000021s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000785s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=2e25tdmj9hbn0llp3jc4uf7lfl',
+  'accept-language' => 'zh-CN,en-US;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,image/wxpic,image/sharpp,image/apng,image/tpg,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 4.4.2; Che2-TL00 Build/HonorChe2-TL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044807 Mobile Safari/537.36 MMWEBID/5782 MicroMessenger/6.7.3.1360(0x2607033D) NetType/WIFI Language/zh_CN Process/tools',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'code' => '021cWKfZ1tTFAU07K5dZ1rZGfZ1cWKfW',
+  'state' => '7c979c5743bd00a7965701426898253e',
+  'addon' => 'wechat',
+  'controller' => 'index',
+  'action' => 'callback',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ /www/wwwroot/c.yaoget.cn/vendor/karsonzhang/fastadmin-addons/src/addons/Route.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/common/lang/zh-cn/addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001249s ]
+[ info ] [ LOG ] INIT File
+[ error ] [-1]Authorize Failed: {"errcode":40163,"errmsg":"code been used, hints: [ req_id: PHjDY6yFe-4Mm84 ]"}[/www/wwwroot/c.yaoget.cn/vendor/overtrue/socialite/src/Providers/AbstractProvider.php:439]
+---------------------------------------------------------------
+[ 2019-08-19T16:32:01+08:00 ] 106.91.201.229 GET c.yaoget.cn/favicon.ico
+[运行时间：0.017612s] [吞吐率：56.78req/s] [内存消耗：2,035.58kb] [文件加载：107]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000019s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000728s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'x-forwarded-for-pound' => '106.91.201.229',
+  'x-forwarded-for' => '106.91.201.229',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 4.4.2; Che2-TL00 Build/HonorChe2-TL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044807 Mobile Safari/537.36 MMWEBID/5782 MicroMessenger/6.7.3.1360(0x2607033D) NetType/WIFI Language/zh_CN Process/tools',
+  'referer' => 'http://c.yaoget.cn/addons/wechat/index/callback?code=021cWKfZ1tTFAU07K5dZ1rZGfZ1cWKfW&state=7c979c5743bd00a7965701426898253e',
+  'host' => 'c.yaoget.cn',
+  'cookie' => 'PHPSESSID=2e25tdmj9hbn0llp3jc4uf7lfl',
+  'accept-language' => 'zh-CN,en-US;q=0.9',
+  'accept-encoding' => 'gzip, deflate,qzip',
+  'accept' => 'image/webp,image/wxpic,image/sharpp,image/apng,image/tpg,image/*,*/*;q=0.8',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T16:32:01+08:00 ] 106.91.201.229 GET c.yaoget.cn/favicon.ico
+[运行时间：0.017396s] [吞吐率：57.48req/s] [内存消耗：2,035.61kb] [文件加载：107]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000019s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000792s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '404',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'x-forwarded-for-pound' => '106.91.201.229',
+  'x-forwarded-for' => '106.91.201.229',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 4.4.2; Che2-TL00 Build/HonorChe2-TL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044807 Mobile Safari/537.36 MMWEBID/5782 MicroMessenger/6.7.3.1360(0x2607033D) NetType/WIFI Language/zh_CN Process/tools',
+  'referer' => 'http://c.yaoget.cn/addons/wechat/index/callback?code=021cWKfZ1tTFAU07K5dZ1rZGfZ1cWKfW&state=7c979c5743bd00a7965701426898253e',
+  'host' => 'c.yaoget.cn',
+  'cookie' => 'PHPSESSID=2e25tdmj9hbn0llp3jc4uf7lfl',
+  'accept-language' => 'zh-CN,en-US;q=0.9',
+  'accept-encoding' => 'gzip, deflate,qzip',
+  'accept' => 'image/webp,image/wxpic,image/sharpp,image/apng,image/tpg,image/*,*/*;q=0.8',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File

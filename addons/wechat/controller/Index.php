@@ -10,8 +10,12 @@ use EasyWeChat\Foundation\Application;
 use EasyWeChat\Payment\Order;
 use addons\wechat\library\Wechat as WechatService;
 use addons\wechat\library\Config as ConfigService;
+use think\cache\driver\Redis;
+use think\Config;
+use think\Db;
 use think\Log;
-
+use think\Response;
+use think\Session;
 /**
  * 微信接口
  */
@@ -19,19 +23,43 @@ class Index extends \think\addons\Controller
 {
 
     public $app = null;
+    public $site = null;
 
     public function _initialize()
     {
         parent::_initialize();
         $this->app = new Application(ConfigService::load());
+        $this->site = Config::get("site");
     }
 
     /**
-     *
+     *公众号首页
      */
     public function index()
     {
-        $this->error("当前插件暂无前台页面");
+        $this->app->server->setMessageHandler(function ($message) {
+            $user = $this->app->user->get($message['FromUserName']);
+            $id = explode('_',$message['EventKey']);
+            if(count($id)>1){
+                $id = $id[1];
+            }else{
+                $id = $id[0];
+            }
+            $a = Db::name('only')->where('key',$message['FromUserName'])->find();
+
+            if(empty($a)) if($id !== 0) Db::name('only')->insert(['key' =>$message['FromUserName'],'value' => $id]);
+
+            //拿openid做 唯一标识符
+//            $redis = new Redis();
+//            $redis->set($message['FromUserName'],$aa);
+
+            return "您好！欢迎关注我!你的父级ID为：".$message['EventKey'];
+        });
+
+        $response = $this->app->server->serve();
+
+        // 将响应输出
+        $response->send(); // Laravel 里请使用：return $response;
     }
 
     /**
@@ -134,11 +162,85 @@ class Index extends \think\addons\Controller
     }
 
     /**
+     * 用户授权
+     */
+    public function oauth(){
+
+        $oauth = $this->app->oauth;
+
+        if(empty(Session::get('wechat_user'))){
+
+            Session::set('target_url','/');
+            $response = $oauth->scopes(['snsapi_userinfo'])
+                ->redirect();
+            $response->send();
+        }
+//        $user = Session::get('wechat_user');
+
+        //已经授权过
+        header('location:'.'/');
+    }
+
+    /**
      * 登录回调
      */
     public function callback()
     {
+        $oauth = $this->app->oauth;
 
+        $user = $oauth->user()->toArray();
+
+        $res['openid'] = $user['original']['openid'];
+
+        //查询是否已经注册过  如果注册过则跳过此步骤
+        $users = Db::name('userinfo')->where('openid',$res['openid'])->find();
+        //dump(Session::get('aa'));
+        if(empty($users)){
+            $res['nickname'] = $user['nickname'];
+            $res['avatar'] = $user['avatar'];
+            $res['email'] = $user['email'];
+            $res['gender'] = $user['original']['sex'];
+            $res['country'] = $user['original']['country'];
+            $res['province'] = $user['original']['province'];
+            $res['citys'] = $user['original']['city'];
+            $res['createtime'] = time();
+
+//            $redis = new Redis();
+//            $topid = $redis->get($res['openid']);
+            $topid = Db::name('only')->where('key',$res['openid'])->find();
+
+
+            $res['topid'] = empty($topid) ? '0' : $topid['value'];
+
+            try{
+                $info = Db::name('userinfo')->insert($res);
+            }catch(\Exception $e){
+                return $this->error('添加用户出错');
+            }
+
+            if(!$info) return $this->error('数据异常，请稍后再试');
+
+            $parent = Db::name('userinfo')->where('id',$res['topid'])->field('id,openid')->find();//获取父级信息
+
+//            dump($res['openid']);
+            //推荐成功模版ID
+            $template = $this->site['download_notice'];
+            $url = 'http://www.baidu.com';
+            $data = [
+                'first' => ['您好，有学员通过您的推荐进入平台','#3686c5'],
+                'keyword1' => $res['nickname'],
+                'keyword2' => $res['createtime'],
+                'remark' => ['感谢您的支持','#3686c5']
+            ];
+
+            $this->tempMessage($parent['openid'],$template,$url,$data);
+        }
+
+        Session::set('wechat_user',$user);
+
+        $targetUrl = empty(Session::get('target_url')) ? 'http://www.baidu.com' : Session::get('target_url');
+
+        header('location:'.$targetUrl);
     }
 
     /**
@@ -174,6 +276,103 @@ class Index extends \think\addons\Controller
         });
 
         $response->send();
+    }
+
+    /**
+     * 关联二维码  返回二维码链接
+     */
+    public function qrcode(){
+
+        $ticket = $this->getTicket();
+        $url = "https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=$ticket";
+
+//        echo "<img src='$url'>";
+
+        return $url;
+
+    }
+
+    /**
+     * 获取ticket
+     * @return mixed
+     */
+    public function getTicket(){
+        $accessToken = $this->app->access_token; // EasyWeChat\Core\AccessToken 实例
+        $token = $accessToken->getToken(); // token 字符串
+        $token = $accessToken->getToken(true); // 强制重新从微信服务器获取 token.
+
+        $userinfo = Session::get('wechat_user');
+        $openid = $userinfo['original']['openid'];
+        $user = Db::name('userinfo')->where('openid',$openid)->field('id')->find();
+
+//        dump($user);
+//        //永久二维码
+        $api = "https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token=$token&connect_redirect=1";
+        $params = [
+//            'expire_seconds' => 604800,
+            'action_name' => 'QR_LIMIT_SCENE',
+            'action_info' => [
+                'scene' => [
+                    'scene_id' => $user['id']
+                ]
+            ]
+        ];
+        $json = \GuzzleHttp\json_encode($params);
+//
+        $ret = \GuzzleHttp\json_decode($this->curl($api,$json));
+        return $ret->ticket;
+    }
+
+
+    /**
+     * 模版消息推送
+     * @param $openid
+     * @param $template
+     * @param $url
+     * @param $data
+     */
+    public function tempMessage($openid,$template,$url,$data){
+
+        $notice = $this->app->notice;
+
+        $messageId = $notice->send([
+            'touser' => $openid,
+            'template_id' => $template,
+            'url' => $url,
+            'data' => $data
+        ]);
+    }
+
+    function curl($api,  $params, $timeout = 60)
+    {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $api);
+        //以返回的形式接受信息
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        //设置为POST方式
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
+        //不验证https证书
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($ch, CURLOPT_TIMEOUT, $timeout);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+            'Content-Type: application/json;charset=UTF-8'
+        ));
+        //发送数据
+        $response = curl_exec($ch);
+        //释放资源
+        curl_close($ch);
+        return $response;
+    }
+
+    public function aa(){
+//        $redis = new Redis();
+//        $aa= $redis->get('oH4181D_65XSzrMkmYJQL8IJj_jU');
+        $aa = Db::name('only')->where('key','oH4181D_65XSzrMkmYJQL8IJj_jU')->find();
+        //$redis->clear();
+        dump($aa['value']);
+//        dump($this->site['download_notice']);
     }
 
 }

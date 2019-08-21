@@ -1,0 +1,94 @@
+---------------------------------------------------------------
+[ 2019-08-17T23:16:59+08:00 ] 183.11.69.249 POST c.yaoget.cn/admin/index/login?url=%2Fadmin
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000832s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin` [ RunTime:0.000725s ]
+[ sql ] [ SQL ] SELECT * FROM `h_admin` WHERE  `username` = 'admin' LIMIT 1 [ RunTime:0.000415s ]
+[ sql ] [ SQL ] UPDATE `h_admin`  SET `logintime`=1566055018,`token`='078f395d-22c2-429a-99a4-f361d767e21b',`updatetime`=1566055018  WHERE  `id` = 1 [ RunTime:0.005522s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.000734s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('登录' , '{\"url\":\"\\/admin\",\"__token__\":\"3f05745f368c87d45efcfc4b2e5d9fe2\",\"username\":\"admin\",\"captcha\":\"b4ws\"}' , '/admin/index/login?url=%2Fadmin' , 1 , 'admin' , 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36' , '183.11.69.249' , 1566055019) [ RunTime:0.004227s ]
+---------------------------------------------------------------
+[ 2019-08-17T23:16:59+08:00 ] 183.11.69.249 GET c.yaoget.cn/admin
+[ error ] [8]未定义数组索引: fixedpage
+---------------------------------------------------------------
+[ 2019-08-17T23:17:47+08:00 ] 183.11.69.249 GET c.yaoget.cn/admin
+[ error ] [8]未定义数组索引: fixedpage
+---------------------------------------------------------------
+[ 2019-08-17T23:19:17+08:00 ] 113.110.255.189 GET c.yaoget.cn/admin
+[ error ] [8]未定义数组索引: fixedpage
+---------------------------------------------------------------
+[ 2019-08-17T23:19:20+08:00 ] 113.110.255.189 GET c.yaoget.cn/admin
+[ error ] [8]未定义数组索引: fixedpage
+---------------------------------------------------------------
+[ 2019-08-17T23:19:29+08:00 ] 113.110.255.189 GET c.yaoget.cn/admin
+[ error ] [8]未定义数组索引: fixedpage
+---------------------------------------------------------------
+[ 2019-08-17T23:19:34+08:00 ] 113.110.255.189 GET c.yaoget.cn/admin
+[ error ] [8]未定义数组索引: fixedpage
+---------------------------------------------------------------
+[ 2019-08-17T23:19:45+08:00 ] 113.110.255.189 GET c.yaoget.cn/admin
+[ error ] [8]未定义数组索引: fixedpage
+---------------------------------------------------------------
+[ 2019-08-17T23:19:54+08:00 ] 113.110.255.189 GET c.yaoget.cn/admin/course/index
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000674s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000597s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000361s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000844s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000382s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'course' LIMIT 1 [ RunTime:0.000552s ]
+---------------------------------------------------------------
+[ 2019-08-17T23:19:55+08:00 ] 113.110.255.189 GET c.yaoget.cn/admin/course/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1566055194883
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000695s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000635s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000239s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000458s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000478s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_course` [ RunTime:0.000734s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.000577s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_teacher` [ RunTime:0.000442s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_course` `course` LEFT JOIN `h_category` `category` ON `course`.`category_id`=`category`.`id` LEFT JOIN `h_teacher` `teacher` ON `course`.`teacher_id`=`teacher`.`id` ORDER BY `course`.`id` DESC LIMIT 1 [ RunTime:0.000249s ]
+[ sql ] [ SQL ] SELECT `course`.`id`,`course`.`type`,`course`.`teacher_id`,`course`.`image`,`course`.`title`,`course`.`category_id`,`course`.`sales`,`course`.`stock`,`course`.`price`,`course`.`gratisrank`,`course`.`studynum`,`course`.`updatestatus`,`course`.`weight`,`course`.`status`,`course`.`coursecontent`,category.id AS category__id,category.pid AS category__pid,category.type AS category__type,category.name AS category__name,category.nickname AS category__nickname,category.flag AS category__flag,category.image AS category__image,category.keywords AS category__keywords,category.description AS category__description,category.diyname AS category__diyname,category.createtime AS category__createtime,category.updatetime AS category__updatetime,category.weigh AS category__weigh,category.status AS category__status,teacher.id AS teacher__id,teacher.name AS teacher__name,teacher.image AS teacher__image,teacher.wechatimage AS teacher__wechatimage,teacher.qq AS teacher__qq,teacher.description AS teacher__description,teacher.weigh AS teacher__weigh,teacher.status AS teacher__status,teacher.createtime AS teacher__createtime FROM `h_course` `course` LEFT JOIN `h_category` `category` ON `course`.`category_id`=`category`.`id` LEFT JOIN `h_teacher` `teacher` ON `course`.`teacher_id`=`teacher`.`id` ORDER BY `course`.`id` DESC LIMIT 0,10 [ RunTime:0.000333s ]
+---------------------------------------------------------------
+[ 2019-08-17T23:19:58+08:00 ] 113.110.255.189 GET c.yaoget.cn/admin/course/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%22status%22%3A%221%22%7D&op=%7B%22status%22%3A%22%3D%22%7D&_=1566055194884
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000666s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000626s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000217s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000515s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000327s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_course` [ RunTime:0.000664s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.000901s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_teacher` [ RunTime:0.000560s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_course` `course` LEFT JOIN `h_category` `category` ON `course`.`category_id`=`category`.`id` LEFT JOIN `h_teacher` `teacher` ON `course`.`teacher_id`=`teacher`.`id` WHERE  (  `course`.`status` = '1' ) ORDER BY `course`.`id` DESC LIMIT 1 [ RunTime:0.000432s ]
+[ sql ] [ SQL ] SELECT `course`.`id`,`course`.`type`,`course`.`teacher_id`,`course`.`image`,`course`.`title`,`course`.`category_id`,`course`.`sales`,`course`.`stock`,`course`.`price`,`course`.`gratisrank`,`course`.`studynum`,`course`.`updatestatus`,`course`.`weight`,`course`.`status`,`course`.`coursecontent`,category.id AS category__id,category.pid AS category__pid,category.type AS category__type,category.name AS category__name,category.nickname AS category__nickname,category.flag AS category__flag,category.image AS category__image,category.keywords AS category__keywords,category.description AS category__description,category.diyname AS category__diyname,category.createtime AS category__createtime,category.updatetime AS category__updatetime,category.weigh AS category__weigh,category.status AS category__status,teacher.id AS teacher__id,teacher.name AS teacher__name,teacher.image AS teacher__image,teacher.wechatimage AS teacher__wechatimage,teacher.qq AS teacher__qq,teacher.description AS teacher__description,teacher.weigh AS teacher__weigh,teacher.status AS teacher__status,teacher.createtime AS teacher__createtime FROM `h_course` `course` LEFT JOIN `h_category` `category` ON `course`.`category_id`=`category`.`id` LEFT JOIN `h_teacher` `teacher` ON `course`.`teacher_id`=`teacher`.`id` WHERE  (  `course`.`status` = '1' ) ORDER BY `course`.`id` DESC LIMIT 0,10 [ RunTime:0.000598s ]
+---------------------------------------------------------------
+[ 2019-08-17T23:19:59+08:00 ] 113.110.255.189 GET c.yaoget.cn/admin/course/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%22status%22%3A%220%22%7D&op=%7B%22status%22%3A%22%3D%22%7D&_=1566055194885
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000683s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000615s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000199s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000454s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000301s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_course` [ RunTime:0.000602s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.000484s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_teacher` [ RunTime:0.000860s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_course` `course` LEFT JOIN `h_category` `category` ON `course`.`category_id`=`category`.`id` LEFT JOIN `h_teacher` `teacher` ON `course`.`teacher_id`=`teacher`.`id` WHERE  (  `course`.`status` = '0' ) ORDER BY `course`.`id` DESC LIMIT 1 [ RunTime:0.000334s ]
+[ sql ] [ SQL ] SELECT `course`.`id`,`course`.`type`,`course`.`teacher_id`,`course`.`image`,`course`.`title`,`course`.`category_id`,`course`.`sales`,`course`.`stock`,`course`.`price`,`course`.`gratisrank`,`course`.`studynum`,`course`.`updatestatus`,`course`.`weight`,`course`.`status`,`course`.`coursecontent`,category.id AS category__id,category.pid AS category__pid,category.type AS category__type,category.name AS category__name,category.nickname AS category__nickname,category.flag AS category__flag,category.image AS category__image,category.keywords AS category__keywords,category.description AS category__description,category.diyname AS category__diyname,category.createtime AS category__createtime,category.updatetime AS category__updatetime,category.weigh AS category__weigh,category.status AS category__status,teacher.id AS teacher__id,teacher.name AS teacher__name,teacher.image AS teacher__image,teacher.wechatimage AS teacher__wechatimage,teacher.qq AS teacher__qq,teacher.description AS teacher__description,teacher.weigh AS teacher__weigh,teacher.status AS teacher__status,teacher.createtime AS teacher__createtime FROM `h_course` `course` LEFT JOIN `h_category` `category` ON `course`.`category_id`=`category`.`id` LEFT JOIN `h_teacher` `teacher` ON `course`.`teacher_id`=`teacher`.`id` WHERE  (  `course`.`status` = '0' ) ORDER BY `course`.`id` DESC LIMIT 0,10 [ RunTime:0.000558s ]
+---------------------------------------------------------------
+[ 2019-08-17T23:20:00+08:00 ] 113.110.255.189 GET c.yaoget.cn/admin/course/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1566055194886
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000667s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000583s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000203s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000484s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000322s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_course` [ RunTime:0.000595s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.000807s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_teacher` [ RunTime:0.000514s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_course` `course` LEFT JOIN `h_category` `category` ON `course`.`category_id`=`category`.`id` LEFT JOIN `h_teacher` `teacher` ON `course`.`teacher_id`=`teacher`.`id` ORDER BY `course`.`id` DESC LIMIT 1 [ RunTime:0.000211s ]
+[ sql ] [ SQL ] SELECT `course`.`id`,`course`.`type`,`course`.`teacher_id`,`course`.`image`,`course`.`title`,`course`.`category_id`,`course`.`sales`,`course`.`stock`,`course`.`price`,`course`.`gratisrank`,`course`.`studynum`,`course`.`updatestatus`,`course`.`weight`,`course`.`status`,`course`.`coursecontent`,category.id AS category__id,category.pid AS category__pid,category.type AS category__type,category.name AS category__name,category.nickname AS category__nickname,category.flag AS category__flag,category.image AS category__image,category.keywords AS category__keywords,category.description AS category__description,category.diyname AS category__diyname,category.createtime AS category__createtime,category.updatetime AS category__updatetime,category.weigh AS category__weigh,category.status AS category__status,teacher.id AS teacher__id,teacher.name AS teacher__name,teacher.image AS teacher__image,teacher.wechatimage AS teacher__wechatimage,teacher.qq AS teacher__qq,teacher.description AS teacher__description,teacher.weigh AS teacher__weigh,teacher.status AS teacher__status,teacher.createtime AS teacher__createtime FROM `h_course` `course` LEFT JOIN `h_category` `category` ON `course`.`category_id`=`category`.`id` LEFT JOIN `h_teacher` `teacher` ON `course`.`teacher_id`=`teacher`.`id` ORDER BY `course`.`id` DESC LIMIT 0,10 [ RunTime:0.000322s ]
+---------------------------------------------------------------
+[ 2019-08-17T23:21:01+08:00 ] 113.110.255.189 GET c.yaoget.cn/admin
+[ error ] [8]未定义数组索引: fixedpage
+---------------------------------------------------------------
+[ 2019-08-17T23:21:09+08:00 ] 113.110.255.189 GET c.yaoget.cn/admin/index/index
+[ error ] [8]未定义数组索引: fixedpage
+---------------------------------------------------------------
+[ 2019-08-17T23:59:50+08:00 ] 113.110.255.189 GET c.yaoget.cn/admin
+[ error ] [8]未定义数组索引: fixedpage
