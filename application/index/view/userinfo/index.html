@@ -1,0 +1,119 @@
+{include file="common/meta"}
+<style>
+    a{
+        color:#333333;
+    }
+
+
+</style>
+<body>
+{include file="common/nav"}
+<div class="my-header">
+    <div class="my-img content-fixe">
+<!--        <a href="setting.html">-->
+            <img src="{$info.avatar}" />
+<!--        </a>-->
+
+    </div>
+    <div class="my-username" style="margin-left: 10px;">
+        {$info.nickname}
+    </div>
+    <div>
+        {if condition = "$auth eq null"}
+        <button type="button" class="mui-btn my-bnt">未认证</button>
+        {else}
+        <button type="button" class="mui-btn my-bnt">已认证</button>
+        {/if}
+    </div>
+</div>
+<div class="my-container">
+    <div class="tt">
+        个人信息
+    </div>
+    <ul>
+        <li>
+            <a href="/index/order/alllist/user_id/{$info.id}">
+                <div class="my-icon">
+                    <img src="/index/images/lesson.png" />
+                </div>
+                <div class="my-name">
+                    课程订单
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="/index/userinfo/share">
+                <div class="my-icon">
+                    <img src="/index/images/share.png" />
+                </div>
+                <div class="my-name">
+                    分享好友
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="/index/userinfo/card/user_id/{$info.id}">
+                <div class="my-icon">
+                    <img src="/index/images/myinfo.png" />
+                </div>
+                <div class="my-name">
+                    我的名片
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="/index/userinfo/infos/id/{$info.id}">
+                <div class="my-icon">
+                    <img src="/index/images/info.png" />
+                </div>
+
+                <div class="my-name">
+                    我的信息
+                </div>
+            </a>
+        </li>
+
+    </ul>
+
+<!--    <div class="my-next-bnt">-->
+<!--        <a class="mui-btn">退出登录</a>-->
+<!--    </div>-->
+
+</div>
+<div class="my-menu">
+    <div class="tt">
+        客服中心
+    </div>
+    <ul>
+        <li>
+            <a href="/index/userinfo/card/user_id/{$info.id}">
+                <div class="my-icon">
+                    <img src="/index/images/teacher.png" />
+                </div>
+                <div class="my-name">
+                    服务老师
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="/index/userinfo/complaint/user_id/{$info.id}">
+                <div class="my-icon">
+                    <img src="/index/images/tou.png" />
+                </div>
+                <div class="my-name">
+                    投诉建议
+                </div>
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+
+{include file="common/footer"}
+<script type="text/javascript">
+
+</script>
+</body>
+
+</html>

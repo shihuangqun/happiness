@@ -3,7 +3,9 @@
 namespace app\index\controller;
 
 use app\common\controller\Frontend;
+use think\Config;
 use think\Db;
+use think\Session;
 
 class Index extends Frontend
 {
@@ -12,27 +14,62 @@ class Index extends Frontend
     protected $noNeedRight = '*';
     protected $layout = '';
 
-    public function index()
-    {
+    /**
+     * 底部按钮
+     * @return string
+     * @throws \think\Exception
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
+//    public function index()
+//    {
+//        return $this->view->fetch();
+//    }
+
+    /**
+     * 首页
+     * @return mixed
+     */
+    public function index(){
+
+        $info = $this->getUserInfo();//获取当前用户信息
+
+        $authstatus = $this->is_auth();//是否认证
+
+
+        $banner = Db::name('advertising')->select();//首页banner
+
         $cate = Db::name('category')
             ->where('type','default')
             ->where('pid',0)
             ->select();//首页分类
-        $banner = Db::name('notice')->select();//首页banner
-        $course = Db::name('course')//课程信息
-                ->alias('ce')
-                ->join('category c','c.id = ce.category_id')
-                ->where('c.type','course')
-                ->where('c.pid',0)
-                ->field('c.name,ce.*')
-                ->select();
-//        dump($course);
+
+        $courses = Db::name('course')
+            ->alias('ce')
+            ->join('category c','c.id = ce.category_id')
+            ->where('c.type','course')
+            ->where('c.pid',0)
+            ->order('ce.studynum desc')
+            ->field('c.name,ce.*')
+            ->select();//课程信息
+        $notice = Db::name('notice')->select();
+//        dump($courses);
+        $course = [];
+        foreach ($courses as $k => $v){
+            $v['chapter_num'] = count(Db::name('chapter')->where('course_id',$v['id'])->select());//获取当前课程总集数
+            $course[] = $v;
+        }
+
         $this->assign([
             'cate' => $cate,
             'banner' => $banner,
-            'course' => $course
+            'course' => $course,
+            'authstatus' => $authstatus,
+            'info' => $info,
+            'notice' => $notice
         ]);
-        return $this->view->fetch();
+        return $this->fetch('home');
     }
 
     public function news()

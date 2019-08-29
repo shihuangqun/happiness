@@ -17,6 +17,8 @@ return [
     // +----------------------------------------------------------------------
     // 应用命名空间
     'app_namespace'          => 'app',
+    //当前域名
+    'HOST' => $_SERVER['HTTP_HOST'],
     // 应用调试模式
     'app_debug'              => Env::get('app.debug', true),
     // 应用Trace
@@ -138,6 +140,7 @@ return [
         '__PUBLIC__' => '',
         '__ROOT__'   => '',
         '__CDN__'    => '',
+
     ],
     // 默认跳转页面对应的模板文件
     'dispatch_success_tmpl'  => APP_PATH . 'common' . DS . 'view' . DS . 'tpl' . DS . 'dispatch_jump.tpl',

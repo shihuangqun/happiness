@@ -1,0 +1,542 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f7f7f7;
+    font-size: 14px;
+}
+
+.content {
+    padding-bottom: 70px;
+}
+
+.content .video {
+    width: 100%;
+    display: block;
+}
+
+.content .video-box {
+    position: relative;
+}
+
+.content .video-box .video-play {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content .video-box .video-play .icon {
+    width: 26px;
+}
+
+.content .page-box {
+    background-color: white;
+    padding: 0px 17px 0 17px;
+    margin-bottom: 14px;
+    /*position: relative;*/
+    /*top: -60px;*/
+}
+
+.content .page-box .page-title-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.content .page-box .page-title-box .left {
+    color: #000;
+    font-weight: bold;
+}
+
+.content .page-box .page-title-box .right {
+    color: #666666;
+    font-size: 12px;
+}
+
+.content .info-box {
+    padding: 10px 0 20px 0;
+}
+
+.content .info-box .info-title-box, .content .info-box .info-share-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content .info-box .info-title-box .left {
+    font-size: 18px;
+}
+
+.content .info-box .info-title-box .right {
+    font-size: 18px;
+    color: #fe7704;
+}
+
+.content .info-box .info-share-box {
+    margin-top: 7px;
+    font-size: 12px;
+    color: #999999;
+}
+
+.content .info-box .info-share-box .left, .content .info-box .info-share-box .right {
+    display: flex;
+    align-items: center;
+}
+
+.content .info-box .info-share-box .icon {
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+}
+
+.content .info-box .info-share-box .right {
+    display: flex;
+}
+
+.content .info-box .info-share-box .right .item {
+    border: 1px solid #f2f2f2;
+    border-radius: 100px;
+    line-height: 20px;
+    padding: 0 7px;
+    display: flex;
+    align-items: center;
+    margin-left: 6px;
+}
+
+.content .info-box .info-text {
+    font-size: 13px;
+    color: #777777;
+    padding: 8px 0;
+}
+
+.content .info-box .control-box {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #f6f6f6;
+    border-radius: 6px;
+    padding: 4px 10px;
+}
+
+.content .info-box .control-box > div {
+    display: flex;
+}
+
+.content .info-box .control-box .left, .content .info-box .control-box .right {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.content .info-box .control-box .title {
+    text-align: center;
+    width: 100%;
+    font-size: 11px;
+    color: #999999;
+    margin-top: 4px;
+}
+
+.content .info-box .control-box .icon {
+    width: 20px;
+    height: 20px;
+}
+
+.content .info-box .control-box .center img {
+    width: 24px;
+}
+
+.content .info-box .control-box .center .item {
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content .introduce-box {
+    padding-bottom: 20px;
+}
+
+.introduce-box-tap {
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f2f2f2;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9;
+    background-color: white;
+}
+
+.introduce-box-tap .item {
+    line-height: 50px;
+    font-size: 13px;
+    position: relative;
+    color: #000;
+    text-decoration: none;
+}
+
+.introduce-box-tap .item.act {
+    color: #fe7704;
+}
+
+.introduce-box-tap .item.act:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: #fe7704;
+    height: 3px;
+    border-radius: 2px;
+}
+
+.content .introduce-box {
+    padding: 1px;
+}
+
+.content .introduce-box .content-introduce {
+    font-size: 13px;
+    margin: 10px 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+.content .introduce-box .look {
+    text-align: center;
+    font-size: 12px;
+    color: #999999;
+    padding: 10px 0 20px 0;
+}
+
+.content .comment-box .list-box .comment-item {
+    border-bottom: 1px solid #f2f2f2;
+    padding: 15px 0;
+    display: flex;
+    position: relative;
+}
+
+.content .comment-box .list-box .comment-item .face {
+    width: 34px;
+    height: 34px;
+    overflow: hidden;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 15px;
+    z-index: 1;
+}
+
+.content .comment-box .list-box .comment-item .face img {
+    width: 100%;
+}
+
+.content .comment-box .list-box .comment-item .comment-content {
+    padding-left: 46px;
+}
+
+.content .comment-box .list-box .comment-item .comment-content .top-name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 34px;
+    font-size: 13px;
+}
+
+.content .comment-box .list-box .comment-item .comment-content .top-name .stars {
+    display: flex;
+}
+
+.content .comment-box .list-box .comment-item .comment-content .top-name .stars .stars-icon {
+    width: 15px;
+    height: 15px;
+    display: block;
+}
+
+.content .comment-box .list-box .comment-item .comment-content .comment-text {
+    font-size: 13px;
+    padding: 10px 0;
+}
+
+.content .comment-box .list-box .comment-item .comment-content .bottom-time {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #999999;
+}
+
+.content .comment-box .list-box .comment-item .comment-content .bottom-time .right {
+    display: flex;
+}
+
+.content .comment-box .list-box .comment-item .comment-content .bottom-time .right .item {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.content .comment-box .list-box .comment-item .comment-content .bottom-time .right .item .icon {
+    width: 15px;
+    padding-right: 5px;
+}
+
+.content .relevant-item .item-lfet {
+    width: 130px;
+    height: 82px;
+    overflow: hidden;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 15px;
+    z-index: 1;
+}
+
+.content .relevant-item .item-lfet img {
+    width: 100%;
+    min-height: 100%;
+}
+
+.content .relevant-item .right-content {
+    width: 100%;
+}
+
+.content .relevant-item .right-content .title {
+    font-size: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.content .relevant-item .right-content p {
+    padding-left: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.content .relevant-item .right-content .text {
+    font-size: 12px;
+    color: #999999;
+    margin-top: 10px;
+}
+
+.content .relevant-item .right-content .bottom {
+    padding-left: 140px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.content .relevant-item .right-content .bottom .left {
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    color: #999999;
+}
+
+.content .relevant-item .right-content .bottom img {
+    width: 20px;
+    margin-right: 6px;
+}
+
+.content .relevant-item .right-content .bottom .right {
+    font-size: 14px;
+    color: #fe7704;
+}
+
+.content .bottom-box {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9;
+    height: 35px;
+    background-color: white;
+    display: flex;
+    padding: 8px 20px;
+}
+
+.content .bottom-box .input {
+    flex: 8;
+    background-color: #f6f6f6;
+    border-radius: 100px;
+    border: none;
+    padding: 0 14px;
+    line-height: 35px;
+    color: #999999;
+}
+
+.content .bottom-box .input:focus {
+    outline: none;
+}
+
+.content .bottom-box .right {
+    /*flex: 2;*/
+    padding-left: 14px;
+}
+
+.content .go-home {
+    position: fixed;
+    right: 13px;
+    bottom: 110px;
+    z-index: 8;
+    width: 45px;
+    height: 45px;
+    border-radius: 100px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(46, 56, 86, 0.7);
+}
+
+.content .go-home .icon {
+    width: 30px;
+}
+
+.play-list-box {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 9;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.play-list-box .bg {
+    height: 100%;
+    width: 100%;
+}
+
+.play-list-box .box-content {
+    background-color: white;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    height: 40%;
+    overflow: auto;
+    padding: 10px 0 60px 0;
+}
+
+.play-list-box .box-content .item {
+    font-size: 14px;
+    padding: 15px 16px;
+    border-bottom: 1px solid #efefef;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.play-list-box .box-content .item.act {
+    color: #fe7704;
+    padding-left: 38px;
+    background-image: url(/index/images/video_03.png);
+    background-size: 17px;
+    background-repeat: no-repeat;
+    background-position: 16px 16px;
+}
+
+.play-list-box .box-content .close {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    padding: 14px 0;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    background-color: white;
+    border-top: 1px solid #efefef;
+}
+
+.comment-win {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: white;
+    z-index: 9;
+    padding: 16px 10px;
+}
+
+.comment-win .input {
+    width: -webkit-fill-available;
+    height: 280px;
+    background-color: #d9d9d9;
+    border-radius: 7px;
+    padding: 14px;
+    border: none;
+    font-size: 18px;
+}
+
+.comment-win .input:focus {
+    outline: none;
+}
+
+.comment-win .score {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #666666;
+    margin-top: 20px;
+}
+
+.comment-win .score .score-list {
+    display: flex;
+    align-items: center;
+}
+
+.comment-win .score .score-list .item .icon {
+    width: 36px;
+}
+
+.comment-win .score .score-list .item .stars {
+    display: none;
+}
+
+.comment-win .submit {
+    margin: 60px auto 0;
+    display: block;
+    height: 36px;
+    width: 96%;
+    border-radius: 50px;
+    background-color: #777777;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+}
+
+.comment-win .submit-s {
+    background-color: #35436f;
+}

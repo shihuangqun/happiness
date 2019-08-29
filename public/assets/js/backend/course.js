@@ -46,6 +46,24 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
             Table.api.bindevent(table);
         },
         add: function () {
+
+            $('#c-course_id').change(function(){
+                $couse_id = $(this).val();
+                $("#c-chapter_id").selectPageClear();//清空联动内容
+                $.ajax({
+                    type: "POST",
+                    url: "/admin/course/get_chapter",
+                    contentType: 'application/x-www-form-urlencoded;charset=utf-8',
+                    data: {
+                        course_id:$couse_id
+                    },
+                    dataType: "json",
+                    success: function(data){
+                        $("#c-chapter_id").val(data).selectPageRefresh();
+                    }
+                });
+            });
+
             Controller.api.bindevent();
         },
         edit: function () {

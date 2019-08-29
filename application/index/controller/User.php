@@ -189,6 +189,7 @@ class User extends Frontend
         return $this->view->fetch();
     }
 
+
     /**
      * 注销登录
      */

@@ -20,9 +20,19 @@ class Video extends Frontend{
      */
     public function index(){
 
-        $id = $this->request->request('id');
+        $id = input('course_id');
 
-        $course = Db::name('course')->find($id);
+        $chapter = Db::name('chapter')->where('course_id',$id)->select();//章节
+        $one = Db::name('chapter')->where('course_id',$id)->order('weigh desc')->find();//按照降序排序 取默认第一
+
+        $recommend = Db::name('course')->where('id','neq',$id)->select();//相关推荐
+//        dump($recommend);
+        $this->assign([
+            'chapter' => $chapter,
+            'recommend' => $recommend,
+            'one' => $one
+        ]);
+        return $this->fetch();
     }
 
 

@@ -3,6 +3,7 @@
 namespace app\admin\controller;
 
 use app\common\controller\Backend;
+use think\Db;
 
 /**
  * 课程列管理
@@ -77,5 +78,18 @@ class Course extends Backend
             return json($result);
         }
         return $this->view->fetch();
+    }
+
+    /**
+     * 根据选择课程ID 获取对应章节信息
+     */
+    public function getChapter(){
+        $course_id = $this->request->request('course_id');
+
+        $data = Db::name('chapter')
+            ->where('course_id',$course_id)
+            ->select();
+
+        return json_decode($data,true);
     }
 }

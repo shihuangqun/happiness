@@ -13,6 +13,7 @@ use addons\wechat\library\Config as ConfigService;
 use think\cache\driver\Redis;
 use think\Config;
 use think\Db;
+use think\Exception;
 use think\Log;
 use think\Response;
 use think\Session;
@@ -170,15 +171,16 @@ class Index extends \think\addons\Controller
 
         if(empty(Session::get('wechat_user'))){
 
-            Session::set('target_url','/');
+            $http_top = Session::get('topUrl');//授权前地址
+
+            Session::set('target_url',$http_top);
             $response = $oauth->scopes(['snsapi_userinfo'])
                 ->redirect();
             $response->send();
         }
 //        $user = Session::get('wechat_user');
-
         //已经授权过
-        header('location:'.'/');
+//        header('location:'.'/');
     }
 
     /**
@@ -194,7 +196,7 @@ class Index extends \think\addons\Controller
 
         //查询是否已经注册过  如果注册过则跳过此步骤
         $users = Db::name('userinfo')->where('openid',$res['openid'])->find();
-        //dump(Session::get('aa'));
+
         if(empty($users)){
             $res['nickname'] = $user['nickname'];
             $res['avatar'] = $user['avatar'];
@@ -212,7 +214,9 @@ class Index extends \think\addons\Controller
 
             $res['topid'] = empty($topid) ? '0' : $topid['value'];
 
+
             try{
+//                $this->logs($res);
                 $info = Db::name('userinfo')->insert($res);
             }catch(\Exception $e){
                 return $this->error('添加用户出错');
@@ -223,17 +227,18 @@ class Index extends \think\addons\Controller
             $parent = Db::name('userinfo')->where('id',$res['topid'])->field('id,openid')->find();//获取父级信息
 
 //            dump($res['openid']);
-            //推荐成功模版ID
-            $template = $this->site['download_notice'];
-            $url = 'http://www.baidu.com';
-            $data = [
-                'first' => ['您好，有学员通过您的推荐进入平台','#3686c5'],
-                'keyword1' => $res['nickname'],
-                'keyword2' => $res['createtime'],
-                'remark' => ['感谢您的支持','#3686c5']
-            ];
-
-            $this->tempMessage($parent['openid'],$template,$url,$data);
+            if(!empty($parent)){
+                //推荐成功模版ID
+                $template = $this->site['download_notice'];
+                $url = 'http://www.baidu.com';
+                $data = [
+                    'first' => ['您好，有学员通过您的推荐进入平台','#3686c5'],
+                    'keyword1' => $res['nickname'],
+                    'keyword2' => date('Y-m-d H:i:s',$res['crealogime']),
+                    'remark' => ['感谢您的支持','#3686c5']
+                ];
+                $this->tempMessage($parent['openid'],$template,$url,$data);
+            }
         }
 
         Session::set('wechat_user',$user);
@@ -248,29 +253,81 @@ class Index extends \think\addons\Controller
      */
     public function notify()
     {
+
         Log::record(file_get_contents('php://input'), "notify");
         $response = $this->app->payment->handleNotify(function ($notify, $successful) {
             // 使用通知里的 "微信支付订单号" 或者 "商户订单号" 去自己的数据库找到订单
-            $orderinfo = Order::findByTransactionId($notify->transaction_id);
-            if ($orderinfo) {
-                //订单已处理
-                return true;
-            }
-            $orderinfo = Order::get($notify->out_trade_no);
+
+//            $orderinfo = Order::findByTransactionId($notify->transaction_id);
+//            $orderinfo = $payment->queryByTransactionId($notify->transaction_id);
+//            if ($orderinfo) {
+//                //订单已处理
+////                $this->logs('订单已处理');
+//                return true;
+//            }
+//            $orderinfo = Order::get($notify->out_trade_no);
+            $payment = $this->app->payment;
+            $orderinfo = $payment->query($notify->out_trade_no);
+            $this->logs($orderinfo);
             if (!$orderinfo) { // 如果订单不存在
+                $this->logs('订单不存在');
                 return 'Order not exist.'; // 告诉微信，我已经处理完了，订单没找到，别再通知我了
             }
             // 如果订单存在
             // 检查订单是否已经更新过支付状态,已经支付成功了就不再更新了
-            if ($orderinfo['paytime']) {
+            if ($orderinfo['paymenttime']) {
+                $this->logs('支付状态已更新过');
                 return true;
             }
             // 用户是否支付成功
             if ($successful) {
                 // 请在这里编写处理成功的处理逻辑
+                $this->logs('支付成功');
+
+                $res['paymenttime'] = time();
+                $res['order_status'] = 1;
+
+                try{
+                    Db::name('order')->where('order_num',$notify->out_trade_no)->update($res);
+                }catch (Exception $e){
+                    $this->error('Update status failed');
+                }
+
+                $info = Db::name('order')
+                    ->where('order_num',$notify->out_trade_no)
+                    ->alias('o')
+                    ->join('course c','c.id = o.course_id')
+                    ->join('userinfo u','u.id = o.user_id')
+                    ->field('o.*,c.title,u.openid,u.topid,u.name')
+                    ->find();//获取课程,订单,用户信息
+
+                $template = $this->site['pay_success'];//模板ID
+                $url = Config::get('HOST').'/index/video/index/course_id/'.$info['course_id'];//跳转URL
+
+                if($info['topid'] != 0){//父级模板消息推送
+                    $parent_openid = Db::name('userinfo')->where('id',$info['topid'])->value('openid');//获取父级openid
+
+                    $datas = [
+                        'first' => $info['name'].'报名成功通知',
+                        'keyword1' => $info['title'],
+                        'keyword2' => date('Y-m-d H:i:s',$res['paymenttime']),
+                        'remark' => '您的客户'.$info['name'].'，已成功报名课程，请及时邀请进入对应学习群以及推荐给辅导老师'
+                    ];
+                    $this->tempMessage($parent_openid,$template,$url,$datas);//推送报名成功通知给父级
+                }
+
+                $openid = $info['openid'];//获取当前用户openid
+                $data = [
+                    'first' => '您好，恭喜成功报名【'.$info['title'].'】',
+                    'keyword1' => $info['title'],
+                    'keyword2' => date('Y-m-d H:i:s',$res['paymenttime']),
+                    'remark' => '点击开始学习对应课程吧'
+                ];
+                $this->tempMessage($openid,$template,$url,$data);//当前用户报名成功推送
 
                 return true; // 返回处理完成
             } else { // 用户支付失败
+                $this->logs('失败');
                 return true;
             }
         });
@@ -278,6 +335,10 @@ class Index extends \think\addons\Controller
         $response->send();
     }
 
+    public function logs($data){
+
+        file_put_contents(ROOT_PATH . '/runtime/log/pay.log', $data);
+    }
     /**
      * 关联二维码  返回二维码链接
      */

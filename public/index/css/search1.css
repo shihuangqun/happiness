@@ -1,0 +1,90 @@
+/* 新改头部样式 */
+.box {
+    padding: 20px;
+    background-color: #f7f8fa;
+}
+
+.header {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.study_time {
+    color: red;
+    font-size: 18px;
+    padding-right: 2px;
+}
+
+.study {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 55px;
+    justify-content: space-between;
+}
+
+.time {
+    color: #949494;
+    font-size: 12px;
+}
+
+.tady_time {
+    color: #8d8d8d;
+    font-size: 13px;
+}
+
+.rank_place {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 55px;
+    justify-content: space-between;
+}
+
+.total_study {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 55px;
+    justify-content: space-between;
+}
+
+.number {
+    position: relative;
+    padding: 0px 5px;
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+}
+
+.number_icon {
+
+    margin-top: -20px;
+}
+
+.icon {
+    /*color: red;*/
+    font-size: 18px;
+    display: inline-block;
+    height: 20px;
+    line-height: 4px;
+    margin-left: -5px;
+}
+
+.rank {
+    display: flex;
+    align-items: center;
+}
+.line_to{
+    width: 1px;
+    height: 52px;
+    border-left: 1px solid #f7f8fa;
+}
+
+
+/* 新改头部样式 */
+

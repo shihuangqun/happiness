@@ -3,9 +3,12 @@ namespace app\index\controller;
 
 
 use app\common\controller\Frontend;
+use think\Cookie;
 use think\Session;
 
 class Sms extends Frontend{
+
+    protected $noNeedLogin = ['*'];
 
     public function _initialize()
     {
@@ -17,14 +20,18 @@ class Sms extends Frontend{
      * @param $pnone    手机号
      * @param $template 模板ID
      */
-    public function SendSms($phone,$template){
+    public function SendSms(){
 
-        require './extend/aliyun-dysms-php-sdk/api_demo/SmsDemo.php';
+        $phone = $this->request->request('phone');
 
         $code = $this->getNumberCode(6);
 
-        Session::set($phone,$code);//验证码保存到session中
+        Cookie::set($phone,$code,'180');//验证码保存到cookie中
+
+        $template = $this->site['other_temp_id'];
+        import('send.api_demo.SmsDemo', EXTEND_PATH);
         $sms = new \SmsDemo();
         $sms->SendSms($code,$phone,$template);
+        return $this->return_msg(200,'发送成功');
     }
 }

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:75:"/www/wwwroot/c.yaoget.cn/public/../application/admin/view/addon/config.html";i:1562338656;s:67:"/www/wwwroot/c.yaoget.cn/application/admin/view/layout/default.html";i:1562338656;s:64:"/www/wwwroot/c.yaoget.cn/application/admin/view/common/meta.html";i:1562338656;s:66:"/www/wwwroot/c.yaoget.cn/application/admin/view/common/script.html";i:1562338656;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:75:"/www/wwwroot/c.yaoget.cn/public/../application/admin/view/addon/config.html";i:1562338656;s:67:"/www/wwwroot/c.yaoget.cn/application/admin/view/layout/default.html";i:1562338656;s:64:"/www/wwwroot/c.yaoget.cn/application/admin/view/common/meta.html";i:1566096906;s:66:"/www/wwwroot/c.yaoget.cn/application/admin/view/common/script.html";i:1566096255;}*/ ?>
 <!DOCTYPE html>
 <html lang="<?php echo $config['language']; ?>">
     <head>
@@ -6,21 +6,26 @@
 <title><?php echo (isset($title) && ($title !== '')?$title:''); ?></title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <meta name="renderer" content="webkit">
-
 <link rel="shortcut icon" href="/assets/img/favicon.ico" />
+
 <!-- Loading Bootstrap -->
 <link href="/assets/css/backend<?php echo \think\Config::get('app_debug')?'':'.min'; ?>.css?v=<?php echo \think\Config::get('site.version'); ?>" rel="stylesheet">
 
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
 <!--[if lt IE 9]>
-  <script src="/assets/js/html5shiv.js"></script>
+
+
+<script src="/assets/js/html5shiv.js"></script>
   <script src="/assets/js/respond.min.js"></script>
+
+
 <![endif]-->
 <script type="text/javascript">
     var require = {
         config:  <?php echo json_encode($config); ?>
     };
 </script>
+
     </head>
 
     <body class="inside-header inside-aside <?php echo defined('IS_DIALOG') && IS_DIALOG ? 'is-dialog' : ''; ?>">
@@ -138,6 +143,8 @@
                 </div>
             </div>
         </div>
-        <script src="/assets/js/require<?php echo \think\Config::get('app_debug')?'':'.min'; ?>.js" data-main="/assets/js/require-backend<?php echo \think\Config::get('app_debug')?'':'.min'; ?>.js?v=<?php echo $site['version']; ?>"></script>
+        
+<script src="/assets/js/require<?php echo \think\Config::get('app_debug')?'':'.min'; ?>.js" data-main="/assets/js/require-backend<?php echo \think\Config::get('app_debug')?'':'.min'; ?>.js?v=<?php echo $site['version']; ?>"></script>
+
     </body>
 </html>

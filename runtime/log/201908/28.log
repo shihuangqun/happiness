@@ -1,0 +1,694 @@
+---------------------------------------------------------------
+[ 2019-08-28T00:53:28+08:00 ] 139.162.187.19 GET 47.98.186.219/invoker/readonly
+[运行时间：0.018749s] [吞吐率：53.34req/s] [内存消耗：2,029.88kb] [文件加载：107]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000017s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000941s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'invoker',
+    1 => 'readonly',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'host' => '47.98.186.219',
+  'accept-encoding' => 'gzip',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-28T01:19:41+08:00 ] 128.14.209.234 GET 47.98.186.219/
+[运行时间：0.037304s] [吞吐率：26.81req/s] [内存消耗：3,849.39kb] [文件加载：128]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000016s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000935s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'host' => '47.98.186.219',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/index/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001199s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->index[ /www/wwwroot/c.yaoget.cn/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/c.yaoget.cn/public/../application/index/view/index/home.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+  3 => 'cate',
+  4 => 'banner',
+  5 => 'course',
+  6 => 'authstatus',
+  7 => 'info',
+  8 => 'notice',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000320s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_userinfo` [ RunTime:0.000695s ]
+[ sql ] [ SQL ] SELECT * FROM `h_userinfo` WHERE  `openid` IS NULL LIMIT 1 [ RunTime:0.000215s ]
+[ sql ] [ SQL ] SELECT * FROM `h_userinfo` WHERE  `openid` IS NULL LIMIT 1 [ RunTime:0.000163s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_notice` [ RunTime:0.000468s ]
+[ sql ] [ SQL ] SELECT * FROM `h_notice` [ RunTime:0.000141s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.000467s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` WHERE  `type` = 'default'  AND `pid` = 0 [ RunTime:0.000186s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_course` [ RunTime:0.000487s ]
+[ sql ] [ SQL ] SELECT `c`.`name`,`ce`.* FROM `h_course` `ce` INNER JOIN `h_category` `c` ON `c`.`id`=`ce`.`category_id` WHERE  `c`.`type` = 'course'  AND `c`.`pid` = 0 ORDER BY `ce`.`studynum` DESC [ RunTime:0.000207s ]
+[ sql ] [ SQL ] SELECT * FROM `h_notice` [ RunTime:0.000138s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_chapter` [ RunTime:0.000467s ]
+[ sql ] [ SQL ] SELECT * FROM `h_chapter` WHERE  `course_id` = 5 [ RunTime:0.000177s ]
+[ sql ] [ SQL ] SELECT * FROM `h_chapter` WHERE  `course_id` = 6 [ RunTime:0.000163s ]
+---------------------------------------------------------------
+[ 2019-08-28T02:35:35+08:00 ] 198.108.66.240 GET 47.98.186.219/
+[运行时间：0.040329s] [吞吐率：24.80req/s] [内存消耗：3,848.70kb] [文件加载：128]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000018s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000970s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 zgrab/0.x',
+  'host' => '47.98.186.219',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/index/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001242s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->index[ /www/wwwroot/c.yaoget.cn/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/c.yaoget.cn/public/../application/index/view/index/home.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+  3 => 'cate',
+  4 => 'banner',
+  5 => 'course',
+  6 => 'authstatus',
+  7 => 'info',
+  8 => 'notice',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000317s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_userinfo` [ RunTime:0.000773s ]
+[ sql ] [ SQL ] SELECT * FROM `h_userinfo` WHERE  `openid` IS NULL LIMIT 1 [ RunTime:0.000225s ]
+[ sql ] [ SQL ] SELECT * FROM `h_userinfo` WHERE  `openid` IS NULL LIMIT 1 [ RunTime:0.000208s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_notice` [ RunTime:0.000466s ]
+[ sql ] [ SQL ] SELECT * FROM `h_notice` [ RunTime:0.000151s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.000521s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` WHERE  `type` = 'default'  AND `pid` = 0 [ RunTime:0.000186s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_course` [ RunTime:0.000529s ]
+[ sql ] [ SQL ] SELECT `c`.`name`,`ce`.* FROM `h_course` `ce` INNER JOIN `h_category` `c` ON `c`.`id`=`ce`.`category_id` WHERE  `c`.`type` = 'course'  AND `c`.`pid` = 0 ORDER BY `ce`.`studynum` DESC [ RunTime:0.000189s ]
+[ sql ] [ SQL ] SELECT * FROM `h_notice` [ RunTime:0.000151s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_chapter` [ RunTime:0.000529s ]
+[ sql ] [ SQL ] SELECT * FROM `h_chapter` WHERE  `course_id` = 5 [ RunTime:0.000160s ]
+[ sql ] [ SQL ] SELECT * FROM `h_chapter` WHERE  `course_id` = 6 [ RunTime:0.000580s ]
+---------------------------------------------------------------
+[ 2019-08-28T04:08:36+08:00 ] 157.55.39.181 GET www.yaoget.cn/
+[运行时间：0.037455s] [吞吐率：26.70req/s] [内存消耗：3,851.84kb] [文件加载：128]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000017s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000958s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)',
+  'host' => 'www.yaoget.cn',
+  'from' => 'bingbot(at)microsoft.com',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => '*/*',
+  'pragma' => 'no-cache',
+  'connection' => 'Keep-Alive',
+  'cache-control' => 'no-cache',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/index/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001181s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->index[ /www/wwwroot/c.yaoget.cn/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/c.yaoget.cn/public/../application/index/view/index/home.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+  3 => 'cate',
+  4 => 'banner',
+  5 => 'course',
+  6 => 'authstatus',
+  7 => 'info',
+  8 => 'notice',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000345s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_userinfo` [ RunTime:0.000722s ]
+[ sql ] [ SQL ] SELECT * FROM `h_userinfo` WHERE  `openid` IS NULL LIMIT 1 [ RunTime:0.000219s ]
+[ sql ] [ SQL ] SELECT * FROM `h_userinfo` WHERE  `openid` IS NULL LIMIT 1 [ RunTime:0.000165s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_notice` [ RunTime:0.000462s ]
+[ sql ] [ SQL ] SELECT * FROM `h_notice` [ RunTime:0.000133s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.000477s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` WHERE  `type` = 'default'  AND `pid` = 0 [ RunTime:0.000199s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_course` [ RunTime:0.000498s ]
+[ sql ] [ SQL ] SELECT `c`.`name`,`ce`.* FROM `h_course` `ce` INNER JOIN `h_category` `c` ON `c`.`id`=`ce`.`category_id` WHERE  `c`.`type` = 'course'  AND `c`.`pid` = 0 ORDER BY `ce`.`studynum` DESC [ RunTime:0.000188s ]
+[ sql ] [ SQL ] SELECT * FROM `h_notice` [ RunTime:0.000165s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_chapter` [ RunTime:0.000479s ]
+[ sql ] [ SQL ] SELECT * FROM `h_chapter` WHERE  `course_id` = 5 [ RunTime:0.000158s ]
+[ sql ] [ SQL ] SELECT * FROM `h_chapter` WHERE  `course_id` = 6 [ RunTime:0.000156s ]
+---------------------------------------------------------------
+[ 2019-08-28T06:08:18+08:00 ] 71.6.232.7 GET 47.98.186.219/
+[运行时间：0.038182s] [吞吐率：26.19req/s] [内存消耗：3,849.39kb] [文件加载：128]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000017s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000961s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+  'host' => '47.98.186.219',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/index/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001197s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->index[ /www/wwwroot/c.yaoget.cn/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/c.yaoget.cn/public/../application/index/view/index/home.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+  3 => 'cate',
+  4 => 'banner',
+  5 => 'course',
+  6 => 'authstatus',
+  7 => 'info',
+  8 => 'notice',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000328s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_userinfo` [ RunTime:0.000695s ]
+[ sql ] [ SQL ] SELECT * FROM `h_userinfo` WHERE  `openid` IS NULL LIMIT 1 [ RunTime:0.000220s ]
+[ sql ] [ SQL ] SELECT * FROM `h_userinfo` WHERE  `openid` IS NULL LIMIT 1 [ RunTime:0.000177s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_notice` [ RunTime:0.000491s ]
+[ sql ] [ SQL ] SELECT * FROM `h_notice` [ RunTime:0.000140s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.000502s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` WHERE  `type` = 'default'  AND `pid` = 0 [ RunTime:0.000218s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_course` [ RunTime:0.000530s ]
+[ sql ] [ SQL ] SELECT `c`.`name`,`ce`.* FROM `h_course` `ce` INNER JOIN `h_category` `c` ON `c`.`id`=`ce`.`category_id` WHERE  `c`.`type` = 'course'  AND `c`.`pid` = 0 ORDER BY `ce`.`studynum` DESC [ RunTime:0.000219s ]
+[ sql ] [ SQL ] SELECT * FROM `h_notice` [ RunTime:0.000139s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_chapter` [ RunTime:0.000492s ]
+[ sql ] [ SQL ] SELECT * FROM `h_chapter` WHERE  `course_id` = 5 [ RunTime:0.000188s ]
+[ sql ] [ SQL ] SELECT * FROM `h_chapter` WHERE  `course_id` = 6 [ RunTime:0.000175s ]
+---------------------------------------------------------------
+[ 2019-08-28T09:14:08+08:00 ] 61.144.175.156 GET c.yaoget.cn/
+[运行时间：0.037459s] [吞吐率：26.70req/s] [内存消耗：3,855.27kb] [文件加载：128]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000019s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000951s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'sec-fetch-user' => '?F',
+  'sec-fetch-site' => 'cross-site',
+  'sec-fetch-dest' => 'document',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_2 like Mac OS X) AppleWebKit/602.3.12 (KHTML, like Gecko) Mobile/14C92 Safari/601.1 wechatdevtools/1.02.1907160 MicroMessenger/7.0.4 Language/zh_CN webview/1566954798058772 webdebugger port/63442',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/index/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001222s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->index[ /www/wwwroot/c.yaoget.cn/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/c.yaoget.cn/public/../application/index/view/index/home.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+  3 => 'cate',
+  4 => 'banner',
+  5 => 'course',
+  6 => 'authstatus',
+  7 => 'info',
+  8 => 'notice',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000395s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_userinfo` [ RunTime:0.000703s ]
+[ sql ] [ SQL ] SELECT * FROM `h_userinfo` WHERE  `openid` IS NULL LIMIT 1 [ RunTime:0.000210s ]
+[ sql ] [ SQL ] SELECT * FROM `h_userinfo` WHERE  `openid` IS NULL LIMIT 1 [ RunTime:0.000179s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_notice` [ RunTime:0.000483s ]
+[ sql ] [ SQL ] SELECT * FROM `h_notice` [ RunTime:0.000129s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.000486s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` WHERE  `type` = 'default'  AND `pid` = 0 [ RunTime:0.000213s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_course` [ RunTime:0.000503s ]
+[ sql ] [ SQL ] SELECT `c`.`name`,`ce`.* FROM `h_course` `ce` INNER JOIN `h_category` `c` ON `c`.`id`=`ce`.`category_id` WHERE  `c`.`type` = 'course'  AND `c`.`pid` = 0 ORDER BY `ce`.`studynum` DESC [ RunTime:0.000211s ]
+[ sql ] [ SQL ] SELECT * FROM `h_notice` [ RunTime:0.000131s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_chapter` [ RunTime:0.000485s ]
+[ sql ] [ SQL ] SELECT * FROM `h_chapter` WHERE  `course_id` = 5 [ RunTime:0.000183s ]
+[ sql ] [ SQL ] SELECT * FROM `h_chapter` WHERE  `course_id` = 6 [ RunTime:0.000155s ]
+---------------------------------------------------------------
+[ 2019-08-28T09:14:09+08:00 ] 61.144.175.156 GET c.yaoget.cn/favicon.ico
+[运行时间：0.020470s] [吞吐率：48.85req/s] [内存消耗：2,036.99kb] [文件加载：107]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000018s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000942s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=n4o34mnnbmk50mhm5a1558l9r5',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_2 like Mac OS X) AppleWebKit/602.3.12 (KHTML, like Gecko) Mobile/14C92 Safari/601.1 wechatdevtools/1.02.1907160 MicroMessenger/7.0.4 Language/zh_CN webview/1566954798058772 webdebugger port/63442',
+  'sec-fetch-site' => 'same-origin',
+  'sec-fetch-user' => '?F',
+  'sec-fetch-dest' => 'image',
+  'connection' => 'keep-alive',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-28T09:14:09+08:00 ] 61.144.175.156 GET c.yaoget.cn/index/js/maps/swiper.min.js.map
+[运行时间：0.022316s] [吞吐率：44.81req/s] [内存消耗：2,224.34kb] [文件加载：111]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000017s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001002s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'js',
+    2 => 'maps',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/index/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001204s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-28T09:14:11+08:00 ] 61.144.175.156 GET c.yaoget.cn/index/userinfo/index
+[运行时间：0.032812s] [吞吐率：30.48req/s] [内存消耗：3,824.47kb] [文件加载：127]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000017s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000931s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'userinfo',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=n4o34mnnbmk50mhm5a1558l9r5',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'sec-origin-policy' => '0',
+  'sec-fetch-user' => '?T',
+  'sec-fetch-site' => 'same-origin',
+  'sec-fetch-dest' => 'document',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_2 like Mac OS X) AppleWebKit/602.3.12 (KHTML, like Gecko) Mobile/14C92 Safari/601.1 wechatdevtools/1.02.1907160 MicroMessenger/7.0.4 Language/zh_CN webview/1566954798058772 webdebugger port/63442',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/index/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001193s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Userinfo->index[ /www/wwwroot/c.yaoget.cn/application/index/controller/Userinfo.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/c.yaoget.cn/public/../application/index/view/userinfo/index.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+  3 => 'info',
+  4 => 'auth',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000363s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_userinfo` [ RunTime:0.000712s ]
+[ sql ] [ SQL ] SELECT * FROM `h_userinfo` WHERE  `openid` IS NULL LIMIT 1 [ RunTime:0.000206s ]
+---------------------------------------------------------------
+[ 2019-08-28T09:14:12+08:00 ] 61.144.175.156 GET c.yaoget.cn/
+[运行时间：0.038450s] [吞吐率：26.01req/s] [内存消耗：3,856.74kb] [文件加载：128]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000020s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001003s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=n4o34mnnbmk50mhm5a1558l9r5',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/index/userinfo/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'sec-origin-policy' => '0',
+  'sec-fetch-user' => '?T',
+  'sec-fetch-site' => 'same-origin',
+  'sec-fetch-dest' => 'document',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_2 like Mac OS X) AppleWebKit/602.3.12 (KHTML, like Gecko) Mobile/14C92 Safari/601.1 wechatdevtools/1.02.1907160 MicroMessenger/7.0.4 Language/zh_CN webview/1566954798058772 webdebugger port/63442',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/index/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001258s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->index[ /www/wwwroot/c.yaoget.cn/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/c.yaoget.cn/public/../application/index/view/index/home.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+  3 => 'cate',
+  4 => 'banner',
+  5 => 'course',
+  6 => 'authstatus',
+  7 => 'info',
+  8 => 'notice',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000336s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_userinfo` [ RunTime:0.000747s ]
+[ sql ] [ SQL ] SELECT * FROM `h_userinfo` WHERE  `openid` IS NULL LIMIT 1 [ RunTime:0.000208s ]
+[ sql ] [ SQL ] SELECT * FROM `h_userinfo` WHERE  `openid` IS NULL LIMIT 1 [ RunTime:0.000168s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_notice` [ RunTime:0.000470s ]
+[ sql ] [ SQL ] SELECT * FROM `h_notice` [ RunTime:0.000132s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.000499s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` WHERE  `type` = 'default'  AND `pid` = 0 [ RunTime:0.000189s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_course` [ RunTime:0.000515s ]
+[ sql ] [ SQL ] SELECT `c`.`name`,`ce`.* FROM `h_course` `ce` INNER JOIN `h_category` `c` ON `c`.`id`=`ce`.`category_id` WHERE  `c`.`type` = 'course'  AND `c`.`pid` = 0 ORDER BY `ce`.`studynum` DESC [ RunTime:0.000193s ]
+[ sql ] [ SQL ] SELECT * FROM `h_notice` [ RunTime:0.000129s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_chapter` [ RunTime:0.000503s ]
+[ sql ] [ SQL ] SELECT * FROM `h_chapter` WHERE  `course_id` = 5 [ RunTime:0.000169s ]
+[ sql ] [ SQL ] SELECT * FROM `h_chapter` WHERE  `course_id` = 6 [ RunTime:0.000160s ]
+---------------------------------------------------------------
+[ 2019-08-28T09:14:12+08:00 ] 61.144.175.156 GET c.yaoget.cn/index/js/maps/swiper.min.js.map
+[运行时间：0.022434s] [吞吐率：44.58req/s] [内存消耗：2,224.34kb] [文件加载：111]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000019s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001000s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'js',
+    2 => 'maps',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/index/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001264s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-28T09:14:14+08:00 ] 61.144.175.156 GET c.yaoget.cn/index/userinfo/share
+[运行时间：0.448389s] [吞吐率：2.23req/s] [内存消耗：5,258.70kb] [文件加载：212]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000020s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.002425s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'userinfo',
+    2 => 'share',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=n4o34mnnbmk50mhm5a1558l9r5',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'sec-origin-policy' => '0',
+  'sec-fetch-user' => '?T',
+  'sec-fetch-site' => 'same-origin',
+  'sec-fetch-dest' => 'document',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_2 like Mac OS X) AppleWebKit/602.3.12 (KHTML, like Gecko) Mobile/14C92 Safari/601.1 wechatdevtools/1.02.1907160 MicroMessenger/7.0.4 Language/zh_CN webview/1566954798058772 webdebugger port/63442',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/index/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001286s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Userinfo->share[ /www/wwwroot/c.yaoget.cn/application/index/controller/Userinfo.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/c.yaoget.cn/public/../application/index/view/userinfo/share.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+  3 => 'qrcode',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000412s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_userinfo` [ RunTime:0.000692s ]
+[ sql ] [ SQL ] SELECT `id` FROM `h_userinfo` WHERE  `openid` IS NULL LIMIT 1 [ RunTime:0.000165s ]
+---------------------------------------------------------------
+[ 2019-08-28T09:14:15+08:00 ] 61.144.175.156 GET c.yaoget.cn/index/userinfo/index
+[运行时间：0.033916s] [吞吐率：29.48req/s] [内存消耗：3,824.66kb] [文件加载：127]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000018s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000965s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'userinfo',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=n4o34mnnbmk50mhm5a1558l9r5',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/index/userinfo/share',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'sec-origin-policy' => '0',
+  'sec-fetch-user' => '?T',
+  'sec-fetch-site' => 'same-origin',
+  'sec-fetch-dest' => 'document',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_2 like Mac OS X) AppleWebKit/602.3.12 (KHTML, like Gecko) Mobile/14C92 Safari/601.1 wechatdevtools/1.02.1907160 MicroMessenger/7.0.4 Language/zh_CN webview/1566954798058772 webdebugger port/63442',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/index/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001218s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Userinfo->index[ /www/wwwroot/c.yaoget.cn/application/index/controller/Userinfo.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/c.yaoget.cn/public/../application/index/view/userinfo/index.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+  3 => 'info',
+  4 => 'auth',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000441s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_userinfo` [ RunTime:0.000728s ]
+[ sql ] [ SQL ] SELECT * FROM `h_userinfo` WHERE  `openid` IS NULL LIMIT 1 [ RunTime:0.000213s ]

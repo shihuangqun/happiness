@@ -5,9 +5,11 @@ namespace app\common\controller;
 use app\common\library\Auth;
 use think\Config;
 use think\Controller;
+use think\Db;
 use think\Hook;
 use think\Lang;
 use think\Loader;
+use think\Session;
 
 /**
  * 前台控制器基类
@@ -41,9 +43,16 @@ class Frontend extends Controller
 
     protected $site = null;
 
+    protected $user = null;
+
     public function _initialize()
     {
+        if(empty(Session::get('wechat_user'))){
+            Session::set('topUrl',$_SERVER['REQUEST_URI']);//记录授权前地址
+            header('location:'.'/addons/wechat/index/oauth');//判断session是否存在  反之跳转授权
+        }
 
+        $this->user = Session::get('wechat_user');//获取当前用户session
         $this->site = Config::get("site");//获取系统配置
         //移除HTML标签
         $this->request->filter('trim,strip_tags,htmlspecialchars');
@@ -155,13 +164,45 @@ class Frontend extends Controller
      * @param string $msg   提示消息
      * @param string $datas 返回信息
      */
-    public function return_msg($code,$msg='',$datas=''){
+    public function return_msg($code,$msg='',$datas='',$url=''){
 
         $data['code'] = $code;
         $data['msg'] = $msg;
         $data['data'] = $datas;
+        $data['url'] = $url;
 
         echo json_encode($data);
         die;
+    }
+
+    /**
+     * 获取当前用户信息
+     * @return array|false|\PDOStatement|string|\think\Model
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
+    public function getUserInfo(){
+
+        $user = $this->user;
+        $info = Db::name('userinfo')->where('openid',$user['original']['openid'])->find();
+        return $info;
+    }
+
+    /**
+     * 判断当前用户是否认证 （不为空  且已认证）
+     */
+
+    public function is_auth(){
+
+        $user = $this->user;
+
+        $info = Db::name('userinfo')->where('openid',$user['original']['openid'])->find();
+
+        $isauth = '';
+        if(!empty($info['name']) && !empty($info['phone'])) $isauth = 1;
+
+        return $isauth;
+
     }
 }
