@@ -75,6 +75,7 @@
 </body>
 <script type="text/javascript" src="/index/js/jquery-3.1.1.min.js"></script>
 <script>
+    //a链接点击之后 选中当前
     $(".footer a").each(function () {
     if ($(this)[0].href == String(window.location)) {
         $(this).find('.tab-icon').addClass("active").siblings().removeClass("active");

@@ -106,7 +106,3 @@ function showCommentWin() {
     document.getElementById('commtentWin').style.display = 'block'
 }
 
-// 隐藏评论弹窗
-function hideCommentWin() {
-    document.getElementById('commtentWin').style.display = 'none'
-}

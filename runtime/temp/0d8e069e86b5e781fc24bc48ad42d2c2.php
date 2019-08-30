@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"/www/wwwroot/c.yaoget.cn/public/../application/index/view/userinfo/auth.html";i:1566538967;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:76:"/www/wwwroot/c.yaoget.cn/public/../application/index/view/userinfo/auth.html";i:1566986107;s:66:"/www/wwwroot/c.yaoget.cn/application/index/view/common/footer.html";i:1566983242;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
     <title>注册</title>
-    <link rel="stylesheet" href="/index/layui-v2.5.4/layui/css/layui.css">
+
     <!--<link href="css/owl.carousel.css" rel="stylesheet">-->
     <!--<link href="css/lz_gg.css" rel="stylesheet" type="text/css" />-->
     <style>
@@ -233,6 +233,9 @@
             width: 80%;
             text-align: left;
         }
+        .mui-toast-container {bottom: 50% !important}
+        .mui-toast-message {background: url(/index/images/success.png) no-repeat center 10px #000; opacity: 0.6; color: #fff; width: 120px;
+            padding: 70px 5px 10px 5px;margin: auto;text-align: center;margin-top: -75%;border-radius: 12px;}
     </style>
 
 
@@ -261,11 +264,11 @@
                 </div>
                 <div class="div_c_r"><input type="tel" id="code" name="code" onBlur="sub()" value="" placeholder="请输入验证码" style=" width: 45%;">
                     <span style="float: right;margin-top: -30px;background:#fff" id="tss"></span>
-                    <input onClick="sendMessage(60)" id="dynamic" type="button" value="获取验证码" style="width: 100px;
+                    <input onClick="sendMessage(60)" id="dynamic" type="button" value="获取验证码" style="width: 45%;
     float: right;
     background-color: #F2F2F2;
     height: 30px;
-    padding: 4px 8px;
+    /*padding: 4px 8px;*/
     line-height: 22px;
     font-size: 14px;
     font-weight: 500;
@@ -300,9 +303,11 @@ text-align: center;">
     </form>
 
 </div>
-<script src="/index/js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/index/js/mui.min.js"></script>
+<script type="text/javascript" src="/index/js/jquery-3.1.1.min.js"></script>
 <script src="/index/layui-v2.5.4/layui/layui.js"></script>
 <script type="text/javascript">
+
     layui.use(['layer', 'form'], function(){
         var layer = layui.layer
             ,form = layui.form;
@@ -364,9 +369,9 @@ text-align: center;">
             url:'/index/userinfo/save',
             success: function (data) {
                 if(data.code == 200){
-                    layer.msg(data.msg,{icon:1});
+                    mui.toast(data.msg,{ duration:'long', type:'div' })
                     setTimeout(function(){
-                        location.href='/index/index/home'
+                        location.href='/'
                     },1500)
                 }else{
                     layer.msg(data.msg,{icon:5});
@@ -374,6 +379,8 @@ text-align: center;">
             }
         })
     }
+
+
 </script>
 
 </body>

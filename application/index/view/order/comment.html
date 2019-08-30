@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>Title</title>
+</head>
+<link rel="stylesheet" href="/index/layui-v2.5.4/layui/css/layui.css">
+<body>
+<style>
+    .mui-toast-message {background: url(/index/images/success.png) no-repeat center 10px #000; opacity: 0.6; color: #fff; width: 120px;
+        padding: 70px 5px 10px 5px;margin: auto;text-align: center;margin-top: -45%;border-radius: 12px;}
+    .layui-input, .layui-textarea{
+        width: 90%;
+    }
+    .layui-input-block{
+        margin-left: 18%;
+    }
+</style>
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 5%;">
+    <legend>订单评论</legend>
+</fieldset>
+<form class="layui-form" action="" lay-filter="example" id="forms">
+    <div class="layui-form-item">
+
+        <div class="layui-input-block">
+            <input type="radio" name="comment_rank" value="0" title="好评" checked=""><div class="layui-unselect layui-form-radio layui-form-radioed"><i class="layui-anim layui-icon layui-anim-scaleSpring"></i><div>好评</div></div>
+            <input type="radio" name="comment_rank" value="1" title="中评"><div class="layui-unselect layui-form-radio"><i class="layui-anim layui-icon"></i><div>中评</div></div>
+            <input type="radio" name="comment_rank" value="2" title="差评"><div class="layui-unselect layui-form-radio"><i class="layui-anim layui-icon"></i><div>差评</div></div>
+
+        </div>
+    </div>
+
+    <div class="layui-form-item layui-form-text">
+
+        <div class="layui-input-block">
+            <textarea placeholder="请输入评价内容" class="layui-textarea" name="comment"></textarea>
+        </div>
+    </div>
+    <input type="hidden" name="course_id" value="{$course_id}">
+    <input type="hidden" name="order_id" value="{$order_id}">
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit="" lay-filter="demo1">提交</button>
+        </div>
+    </div>
+</form>
+</body>
+{include file="common/footer"}
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,laydate = layui.laydate;
+
+        //日期
+        laydate.render({
+            elem: '#date'
+        });
+        laydate.render({
+            elem: '#date1'
+        });
+
+        //创建一个编辑器
+        var editIndex = layedit.build('LAY_demo_editor');
+
+
+        //监听提交
+        form.on('submit(demo1)', function(data){
+            $.ajax({
+                type:'post',
+                data:$('#forms').serialize(),
+                dataType:'json',
+                url:'/index/order/comment',
+                success: function (data) {
+                    console.log(data);
+                    if(data.code == 200){
+                        mui.toast(data.msg,{ duration:'long', type:'div' })
+                        setTimeout(function () {
+                            location.href='/index/order/alllist';
+                        },1500)
+                    }else{
+                        layer.msg(data.msg,{icon:5});
+                    }
+                }
+            })
+            return false;
+        });
+
+    });
+
+</script>
+
+</html>

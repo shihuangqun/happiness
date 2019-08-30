@@ -1,13 +1,16 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:81:"/www/wwwroot/c.yaoget.cn/public/../application/index/view/userinfo/complaint.html";i:1566545574;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:81:"/www/wwwroot/c.yaoget.cn/public/../application/index/view/userinfo/complaint.html";i:1566985933;s:66:"/www/wwwroot/c.yaoget.cn/application/index/view/common/footer.html";i:1566983242;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
     <title>Title</title>
 </head>
 <link rel="stylesheet" href="/index/layui-v2.5.4/layui/css/layui.css">
 <body>
 <style>
+    .mui-toast-message {background: url(/index/images/success.png) no-repeat center 10px #000; opacity: 0.6; color: #fff; width: 120px;
+        padding: 70px 5px 10px 5px;margin: auto;text-align: center;margin-top: -45%;border-radius: 12px;}
     .layui-input, .layui-textarea{
         width: 80%;
     }
@@ -43,7 +46,8 @@
     </div>
 </form>
 </body>
-<script src="/index/js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/index/js/mui.min.js"></script>
+<script type="text/javascript" src="/index/js/jquery-3.1.1.min.js"></script>
 <script src="/index/layui-v2.5.4/layui/layui.js"></script>
 <script>
     layui.use(['form', 'layedit', 'laydate'], function(){
@@ -74,7 +78,7 @@
                 success: function (data) {
                     console.log(data);
                     if(data.code == 200){
-                        layer.msg(data.msg,{icon:1});
+                        mui.toast(data.msg,{ duration:'long', type:'div' })
                         setTimeout(function () {
                             location.href='/index/userinfo/index';
                         },1500)

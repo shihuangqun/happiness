@@ -3,6 +3,7 @@ namespace app\index\controller;
 
 use app\common\controller\Frontend;
 use think\Db;
+use think\Session;
 use think\Validate;
 
 class Video extends Frontend{
@@ -22,15 +23,52 @@ class Video extends Frontend{
 
         $id = input('course_id');
 
-        $chapter = Db::name('chapter')->where('course_id',$id)->select();//章节
-        $one = Db::name('chapter')->where('course_id',$id)->order('weigh desc')->find();//按照降序排序 取默认第一
+        $chapter = Db::name('chapter')->where('course_id',$id)->order('weigh desc')->select();//章节
+
+        $chapter_id = input('chapter_id');//播放列表传来的ID
+
+        if(!empty($chapter_id)){
+            $one = Db::name('chapter')
+                ->where('course_id',$id)
+                ->where('id',$chapter_id)
+                ->order('weigh desc')
+                ->find();//按照降序排序 取默认第一
+
+            $comment = Db::name('comment_chapter')
+                ->where('chapter_status',1)
+                ->where('course_id',$one['course_id'])
+                ->where('chapter_id',$chapter_id)
+                ->alias('c')
+                ->join('userinfo u','u.id = c.user_id')
+                ->field('c.*,u.nickname,u.avatar')
+                ->select();//需要增加章节ID判断
+        }else{
+            $one = Db::name('chapter')
+                ->where('course_id',$id)
+                ->order('weigh desc')
+                ->find();//按照降序排序 取默认第一
+
+            $comment = Db::name('comment_chapter')
+                ->where('chapter_status',1)
+                ->where('course_id',$one['course_id'])
+                ->alias('c')
+                ->join('userinfo u','u.id = c.user_id')
+                ->field('c.*,u.nickname,u.avatar')
+                ->select();//需要增加章节ID判断
+        }
 
         $recommend = Db::name('course')->where('id','neq',$id)->select();//相关推荐
-//        dump($recommend);
+
+        $user = $this->getUserInfo();//获取当前用户
+
+
+//        dump($comment);
         $this->assign([
             'chapter' => $chapter,
             'recommend' => $recommend,
-            'one' => $one
+            'one' => $one,
+            'comment' => $comment,
+            'user' => $user
         ]);
         return $this->fetch();
     }
@@ -48,20 +86,18 @@ class Video extends Frontend{
         if(Request()->isPost()){
             $res = $this->request->except('s');
 
-
             $rule = [
-                'user_id|用户ID' => 'require',
-                'chapter_id|章节ID' => 'require',
-                'course_id|课程ID' => 'require',
                 'content|内容' => 'require'
             ];
             $validate = new Validate($rule);
             if(!$validate->check($res)) return $this->return_msg(400,$validate->getError());
+            $user = $this->getUserInfo();//获取当前用户信息
+            $res['user_id'] = $user['id'];
             $res['createtime'] = time();
-
+//            dump($res);
             $data = Db::name('comment_chapter')->insert($res);
 
-            if($data) return $this->return_msg(200,'发表成功');
+            if($data) return $this->return_msg(200,'提交成功');
         }
     }
 }

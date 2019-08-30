@@ -83,9 +83,40 @@ href="./index.php?i=2&c=entry&cat_id=11&do=search&m=fy_lessonv2">女性课堂</a
 </div> -->
                     </div>
                     <ul id="js-course-list" class="course-list list-view" style="min-height:1px;">
-                        <li class="lesson_list">			<div class="demo">			<div class="progress blue">			<span class="progress-left">				<span class="progress-bar"></span>			</span>			<span class="progress-right">				<span class="progress-bar"></span>			</span>			<div class="progress-value">			</div>				<div class="value">90 %</div>			</div>				<div class="study_to">已学习</div>			</div>	<a href="./index.php?i=2&amp;c=entry&amp;do=lesson&amp;m=fy_lessonv2&amp;id=18" class="package">		<div class="package__cover-wrap">			<div class="package__cover" style="background-image: url(http://xingfu.yc2i40.cn/attachment/images/2/2019/06/KZgzPvgw34q4KYkYG1GQc2iGpUYcSg.png);">			</div>		</div>		<div class="package__content">			<h3 class="package__name">男士延时入门课</h3>			<div class="package__study">				<span class="">最近学习:2019-5-09 </span>			</div>			<div class="package__info">				<span class="u-price">¥0</span>			</div>			<div class="package__info">				<div class="package__course-num"><i class="blue-color"></i></div><i class="blue-color">			</i></div><i class="blue-color">		</i></div><i class="blue-color">	</i></a></li><li class="lesson_list"><i class="blue-color">			<div class="demo">			<div class="progress blue">			<span class="progress-left">				<span class="progress-bar"></span>			</span>			<span class="progress-right">				<span class="progress-bar"></span>			</span>			<div class="progress-value">			</div>				<div class="value">90 %</div>			</div>				<div class="study_to">已学习</div>			</div>	<a onclick="javascript:muiConfirmHref('此课程需要购买后才能学习，是否立即购买？','./index.php?i=2&amp;c=entry&amp;do=confirm&amp;m=fy_lessonv2&amp;id=19&amp;spec_id=55');" class="package">		<div class="package__cover-wrap">			<div class="package__cover" style="background-image: url(http://xingfu.yc2i40.cn/attachment/images/2/2019/06/NKgbB0DiZ755qjBk4gGBoqbJm4nI0D.png);">			</div>		</div>		<div class="package__content">			<h3 class="package__name">男士延时中级课</h3>			<div class="package__study">				<span class="">最近学习:2019-5-09 </span>			</div>			<div class="package__info">				<span class="u-price">¥9.90</span>			</div>			<div class="package__info">				<div class="package__course-num"><i class="blue-color">86%</i>好评</div>			</div>		</div>	</a></i></li><li class="lesson_list"><i class="blue-color">			<div class="demo">			<div class="progress blue">			<span class="progress-left">				<span class="progress-bar"></span>			</span>			<span class="progress-right">				<span class="progress-bar"></span>			</span>			<div class="progress-value">			</div>				<div class="value">90 %</div>			</div>				<div class="study_to">已学习</div>			</div>	<a onclick="javascript:muiConfirmHref('此课程需要购买后才能学习，是否立即购买？','./index.php?i=2&amp;c=entry&amp;do=confirm&amp;m=fy_lessonv2&amp;id=16&amp;spec_id=56');" class="package">		<div class="package__cover-wrap">			<div class="package__cover" style="background-image: url(http://xingfu.yc2i40.cn/attachment/images/2/2019/06/FMt2gU2lGSBMMM55HXmMYTycpYmaBC.png);">			</div>		</div>		<div class="package__content">			<h3 class="package__name">男士延时高级课</h3>			<div class="package__study">				<span class="">最近学习:2019-5-09 </span>			</div>			<div class="package__info">				<span class="u-price">¥999.00</span>			</div>			<div class="package__info">				<div class="package__course-num"><i class="blue-color">67%</i>好评</div>			</div>		</div>	</a></i></li></ul>
+                       {volist name="data" id="vo"}
+                        <li class="lesson_list">
+                            <div class="demo">
+                                <div class="progress blue">
+                                    <span class="progress-left">
+                                        <span class="progress-bar"></span>
+                                    </span>			<span class="progress-right">
+                                    <span class="progress-bar"></span>
+                                </span>
+                                    <div class="progress-value">			</div>
+                                    <div class="value">90 %</div>			</div>
+                                <div class="study_to">已学习</div>			</div>
+                            <a href="#" class="package">
+                                <div class="package__cover-wrap">
+                                    <div class="package__cover" style="background-image: url({$vo.image});">
+                                </div>		</div>
+                                <div class="package__content">
+                                    <h3 class="package__name">{$vo.title}</h3>
+                                    <div class="package__study">
+                                        <span class="">最近学习:<?php echo date('Y-m-d',time())?></span>
+                                    </div>
+                                    <div class="package__info">
+                                        <span class="u-price">¥{$vo.price}</span>
+                                    </div>
+                                    <div class="package__info">
+                                        <div class="package__course-num"><i class="blue-color"></i></div><i class="blue-color">			</i></div>
+                                    <i class="blue-color">		</i>
+                                </div><i class="blue-color">	</i>
+                            </a>
+                        </li>
+                        {/volist}
+                    </ul>
                     <div id="loading_div" class="loading_div">
-                        <a href="javascript:void(0);" id="btn_Page"><i class="fa fa-arrow-circle-down"></i> 加载更多</a>
+<!--                        <a href="javascript:void(0);" id="btn_Page"><i class="fa fa-arrow-circle-down"></i> 加载更多</a>-->
                     </div>
                 </div>
                 <footer>

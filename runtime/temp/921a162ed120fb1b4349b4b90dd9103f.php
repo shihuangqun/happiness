@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:79:"/www/wwwroot/c.yaoget.cn/public/../application/index/view/order/pay_detail.html";i:1566881282;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:79:"/www/wwwroot/c.yaoget.cn/public/../application/index/view/order/pay_detail.html";i:1566990034;}*/ ?>
 
 <!--
  * ============================================================================
@@ -116,20 +116,20 @@
         </ul>
         <h5 class="mui-desc-title mui-pl10">选择支付方式</h5>
         <ul class="mui-table-view mui-table-view-chevron pay-style">
-            <li class="mui-table-view-cell credit">
-                <a class="mui-navigate-right mui-media credit-js-pay" href="javascript:;">
-                    <form action="./index.php?i=2&c=mc&a=cash&do=credit&" method="post" id="credit_pay">
-                        <input type="hidden" name="params" value="eyJ0aWQiOjEyNzcsInVzZXIiOiIzNzA3IiwiZmVlIjoiOS45MCIsInRpdGxlIjoiXHU4ZDJkXHU0ZTcwW1x1NzUzN1x1NThlYlx1NWVmNlx1NjVmNlx1NGUyZFx1N2VhN1x1OGJmZV1cdThiZmVcdTdhMGIiLCJvcmRlcnNuIjoiMjAxOTA4MjQ1MTQ4NTI0OCIsInZpcnR1YWwiOmZhbHNlLCJtb2R1bGUiOiJmeV9sZXNzb252MiJ9" />
-                        <input type="hidden" name="code" value="" />
-                        <input type="hidden" name="coupon_id" value="" />
-                    </form>
-                    <img src="/index/images/money.png" alt="" class="mui-media-object mui-pull-left"/>
-                    <span class="mui-media-body mui-block">
-					余额
-					<span class="mui-block mui-text-muted mui-rmb mui-mt5"> 0.00</span>
-				</span>
-                </a>
-            </li>
+<!--            <li class="mui-table-view-cell credit">-->
+<!--                <a class="mui-navigate-right mui-media credit-js-pay" href="javascript:;">-->
+<!--                    <form action="./index.php?i=2&c=mc&a=cash&do=credit&" method="post" id="credit_pay">-->
+<!--                        <input type="hidden" name="params" value="eyJ0aWQiOjEyNzcsInVzZXIiOiIzNzA3IiwiZmVlIjoiOS45MCIsInRpdGxlIjoiXHU4ZDJkXHU0ZTcwW1x1NzUzN1x1NThlYlx1NWVmNlx1NjVmNlx1NGUyZFx1N2VhN1x1OGJmZV1cdThiZmVcdTdhMGIiLCJvcmRlcnNuIjoiMjAxOTA4MjQ1MTQ4NTI0OCIsInZpcnR1YWwiOmZhbHNlLCJtb2R1bGUiOiJmeV9sZXNzb252MiJ9" />-->
+<!--                        <input type="hidden" name="code" value="" />-->
+<!--                        <input type="hidden" name="coupon_id" value="" />-->
+<!--                    </form>-->
+<!--                    <img src="/index/images/money.png" alt="" class="mui-media-object mui-pull-left"/>-->
+<!--                    <span class="mui-media-body mui-block">-->
+<!--					余额-->
+<!--					<span class="mui-block mui-text-muted mui-rmb mui-mt5"> 0.00</span>-->
+<!--				</span>-->
+<!--                </a>-->
+<!--            </li>-->
             <li class="mui-table-view-cell mui-disabled js-wechat-pay">
                 <a class="mui-navigate-right mui-media" onclick="callpay()">
                     <form action="./index.php?i=2&c=mc&a=cash&do=wechat&" method="post">
@@ -162,6 +162,41 @@
 
         </ul>
     </div>
+    <script>
+        console.log(<?php echo $info['user_id']; ?>)
+        //调用微信JS api 支付
+        function jsApiCall()
+        {
+            WeixinJSBridge.invoke(
+                'getBrandWCPayRequest',<?php echo $config; ?>,
+                function(res){
+                    if (res.err_msg == "get_brand_wcpay_request:ok") { // 支付成功
+                        location.href = '/';
+                    }
+                    if(res.err_msg == "get_brand_wcpay_request:fail") { // 支付失败
+                        location.href = 'fail';
+                    }
+                    if (res.err_msg == "get_brand_wcpay_request:cancel") { // 取消支付
+                        location.href = '/index/order/alllist/user_id/'+<?php echo $info['user_id']; ?>;
+                    }
+                }
+            );
+        }
+
+        function callpay()
+        {
+            if (typeof WeixinJSBridge == "undefined"){
+                if( document.addEventListener ){
+                    document.addEventListener('WeixinJSBridgeReady', jsApiCall, false);
+                }else if (document.attachEvent){
+                    document.attachEvent('WeixinJSBridgeReady', jsApiCall);
+                    document.attachEvent('onWeixinJSBridgeReady', jsApiCall);
+                }
+            }else{
+                jsApiCall();
+            }
+        }
+    </script>
     <script type="text/javascript">
         // check_password = '';
         // $('.credit-js-pay').click(function() {
@@ -197,8 +232,6 @@
         //
         //     return false;
         // });
-
-
 
 
         $('[name="mix"]').click(function() {
@@ -240,39 +273,6 @@
             $(this).prop('disabled', true);
             $(this).find('form').submit();
         })
-
-            //调用微信JS api 支付
-            function jsApiCall()
-            {
-                WeixinJSBridge.invoke(
-                    'getBrandWCPayRequest',<?php echo $config; ?>,
-                    function(res){
-                        if (res.err_msg == "get_brand_wcpay_request:ok") { // 支付成功
-                            location.href = 'success';
-                        }
-                        if(res.err_msg == "get_brand_wcpay_request:fail") { // 支付失败
-                            location.href = 'fail';
-                        }
-                        if (res.err_msg == "get_brand_wcpay_request:cancel") { // 取消支付
-                            location.href = 'cancel';
-                        }
-                    }
-                );
-            }
-
-            function callpay()
-            {
-                if (typeof WeixinJSBridge == "undefined"){
-                    if( document.addEventListener ){
-                        document.addEventListener('WeixinJSBridgeReady', jsApiCall, false);
-                    }else if (document.attachEvent){
-                        document.attachEvent('WeixinJSBridgeReady', jsApiCall);
-                        document.attachEvent('onWeixinJSBridgeReady', jsApiCall);
-                    }
-                }else{
-                    jsApiCall();
-                }
-            }
 
     </script>
 

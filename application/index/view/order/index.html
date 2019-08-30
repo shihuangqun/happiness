@@ -8,6 +8,7 @@
  *
  *
 -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +22,7 @@
 
     <link rel="stylesheet" href="/index/css/order.css"/>
 
-
+    {include file="common/meta"}
 </head>
 <body>
 <div class="tabbar tabbar_wrap page_wrap">
@@ -30,33 +31,36 @@
             .weui_tab{overflow-y: scroll;}
             .weui_tabbar{position: fixed;}
             .submit_list{margin-top:15px;}
-            .submit_list .bookname{position: absolute; bottom: 17px; left: 0; width: 120px; height: 16px; font-size: 12px; color: #fff; background-color: rgba(0, 0, 0, .7); text-align: center;}
+            .submit_list .bookname{position: absolute; bottom: 22%; left: 0; width: 120px; height: 16px; font-size: 12px; color: #fff; background-color: rgba(0, 0, 0, .7); text-align: center;}
             .submit_list .item h3{max-height: 23px;}
             .fr{margin-top: -5px;}
             .cancle-btn, .pay-btn, .evaluate-btn {display: inline-block;width: 80px;height: 30px; border-radius: 5px;text-align: center;line-height: 32px;color: #fff;font-size: 14px;margin-left: 5px;}
             .cancle-btn{background-color:#a0a0a0;}
             .pay-btn{background-color:#f23030;}
             .evaluate-btn{background-color:#326fde;}
+            #order-list{
+                margin: 20px
+            }
         </style>
 
 
         <!-- 顶部导航  -->
         <ul class="tab_wrap">
-            <li class="tab_item tab_item_on">
-                <a href="./index.php?i=2&c=entry&status=all&do=mylesson&m=fy_lessonv2">全部课程</a>
+            <li class="tab_item ">
+                <a href="/index/order/alllist">全部课程</a>
             </li>
             <li class="tab_item ">
-                <a href="./index.php?i=2&c=entry&status=0&do=mylesson&m=fy_lessonv2">待付款</a>
+                <a href="/index/order/alllist/order_status/0">待付款</a>
             </li>
             <li class="tab_item ">
-                <a href="./index.php?i=2&c=entry&status=1&do=mylesson&m=fy_lessonv2">已付款</a>
+                <a href="/index/order/alllist/order_status/1">已付款</a>
             </li>
         </ul>
         <!-- /顶部导航  -->
 
         <!-- 订单列表  -->
         <div id="order-list">
-            {volist name="data" id="vo"}
+            {volist name="data" id="vo" empty="<img src='/index/images/loaded.png'>"}
             <div class="submit_list">
                 <div class="item">
                     <img src="{$vo.image}" alt="男士延时中级课">
@@ -84,22 +88,59 @@
                 </div>
                 <div class="sum">		订单总额：<em>￥{$vo.price}</em>
                     <span class="fr">
-                        <a href="./index.php?i=2&amp;c=entry&amp;op=cancle&amp;do=mylesson&amp;m=fy_lessonv2&amp;orderid=1277" class="cancle-btn" onclick="changeOrder()">取消订单</a>
-                        <a href="/index/order/payDetail/id/{$vo.id}" class="pay-btn" onclick="changeOrder()">立即支付</a>
+                        {if condition = "$vo.order_status eq 0"}
+                             <a href="#" class="cancle-btn" onclick="cancel('{$vo.id}')">取消订单</a>
+                            <a href="/index/order/payDetail/id/{$vo.id}" class="pay-btn" >立即支付</a>
+                            {elseif condition="$vo.order_status eq 1"}
+                            <a href="/index/order/comment/course_id/{$vo.course_id}/order_id/{$vo.id}" class="pay-btn" >立即评价</a>
+
+                            {/if}
+
                     </span>
                 </div>
             </div>
             {/volist}
 
         </div>
-        <!-- 订单列表  -->
-        <div id="loading_div" class="loading_div">
-            <a href="javascript:void(0);" id="btn_Page"><i class="fa fa-arrow-circle-down"></i> 加载更多</a>
-        </div>
+
+
+        
+
         <footer>
 <!--            <a href="./index.php?i=2&c=entry&do=index&m=fy_lessonv2"></a>-->
         </footer>
+        {include file="common/footer"}
+        <script>
 
+        $(".tab_item a").each(function () {
+            if ($(this)[0].href == String(window.location)) {
+                $(this).parent('.tab_item').addClass("tab_item_on").siblings().removeClass("tab_item_on");
+            }
+        });
+        function cancel(id){
+            mui.confirm('确定要取消订单吗？','温馨提示',['立即取消','放弃'],function(e){
+                // console.log(e.index);
+                if(e.index == 0){
+                    $.ajax({
+                        type:'post',
+                        data:{id:id},
+                        dataType:'json',
+                        url:'/index/order/cancel',
+                        success: function (data) {
+                            console.log(data);
+                            if(data.code == 200){
+                                mui.toast(data.msg);
+                                setTimeout(function () {
+                                    location.reload()
+                                },1500)
+                            }
+                        }
+                    })
+                }
+            })
+        }
+
+        </script>
 
         <script type="text/javascript">
             // function GetQueryString(name) {

@@ -1,4 +1,31 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:73:"/www/wwwroot/c.yaoget.cn/public/../application/index/view/index/home.html";i:1566901757;s:66:"/www/wwwroot/c.yaoget.cn/application/index/view/common/nav.html";i:1566916827;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:73:"/www/wwwroot/c.yaoget.cn/public/../application/index/view/index/home.html";i:1567086277;s:64:"/www/wwwroot/c.yaoget.cn/application/index/view/common/meta.html";i:1566985948;s:63:"/www/wwwroot/c.yaoget.cn/application/index/view/common/nav.html";i:1567044755;s:66:"/www/wwwroot/c.yaoget.cn/application/index/view/common/footer.html";i:1566983242;}*/ ?>
+<!--<meta charset="utf-8">-->
+<!--<title><?php echo (isset($title) && ($title !== '')?$title:''); ?> – <?php echo __('The fastest framework based on ThinkPHP5 and Bootstrap'); ?></title>-->
+<!--<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">-->
+<!--<meta name="renderer" content="webkit">-->
+
+<!--<?php if(isset($keywords)): ?>-->
+<!--<meta name="keywords" content="<?php echo $keywords; ?>">-->
+<!--<?php endif; ?>-->
+<!--<?php if(isset($description)): ?>-->
+<!--<meta name="description" content="<?php echo $description; ?>">-->
+<!--<?php endif; ?>-->
+<!--<meta name="author" content="FastAdmin">-->
+
+<!--<link rel="shortcut icon" href="/assets/img/favicon.ico" />-->
+
+<!--<link href="/assets/css/frontend<?php echo \think\Config::get('app_debug')?'':'.min'; ?>.css?v=<?php echo \think\Config::get('site.version'); ?>" rel="stylesheet">-->
+
+<!--&lt;!&ndash; HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. &ndash;&gt;-->
+<!--&lt;!&ndash;[if lt IE 9]>-->
+<!--  <script src="/assets/js/html5shiv.js"></script>-->
+<!--  <script src="/assets/js/respond.min.js"></script>-->
+<!--<![endif]&ndash;&gt;-->
+<!--<script type="text/javascript">-->
+<!--    var require = {-->
+<!--        config: <?php echo json_encode($config); ?>-->
+<!--    };-->
+<!--</script>-->
 <!doctype html>
 <html>
 
@@ -10,6 +37,12 @@
     <link rel="stylesheet" type="text/css" href="/index/css/style.css" />
     <link rel="stylesheet" type="text/css" href="/index/css/swiper.min.css" />
     <link rel="stylesheet" type="text/css" href="/index/iconfont/iconfont.css"/>
+
+    <style>
+        .mui-toast-container {bottom: 50% !important}
+        .mui-toast-message {background: url(/index/images/success.png) no-repeat center 10px #000; opacity: 0.6; color: #fff; width: 120px;
+            padding: 70px 5px 10px 5px;border-radius: 12px;}
+    </style>
 <!--    <link rel="stylesheet" href="/index/layui-v2.5.4/layui/css/layui.css">-->
     <style type="text/css">
         body {
@@ -74,8 +107,6 @@
             -webkit-box-flex: 1;
             background: rgba(255,255,255,.95);
         }
-        .mui-toast-container {bottom: 50% !important}
-        .mui-toast-message {background: url(/index/images/head1.jpg) no-repeat center 10px #000; opacity: 0.6; color: #fff; width: 180px; padding: 70px 5px 10px 5px;}
 
 
     </style>
@@ -133,7 +164,7 @@
         </a>
         </div>
         <div>
-        	<a href="#" class="tab-item">
+        	<a href="/index/course/index" class="tab-item">
             <div class="tab-icon">
                 <i class="icon iconfont" style="font-size: 22px;">&#xe600;</i>
                 <p>在线课程</p>
@@ -200,7 +231,7 @@
                     </button>
                     <?php else: ?>
                     <button type="button" style="padding: 2px 5px;background-color: orange;border-radius: 20px;height: 24px;width: 80px;margin-right: 10px;font-size: 12px;color: white;border: 1px" class="mui-btn mui-btn-outlined">
-                        <a href="/index/pay/publicWxPay">我要报名</a>
+                        <a href="#">我要报名</a>
                     </button>
                     <?php endif; ?>
                 </div>
@@ -211,15 +242,12 @@
         <div class="banner">
             <div class="swiper-container index-banner-phone">
                 <div class="swiper-wrapper">
+                    <?php if(is_array($banner) || $banner instanceof \think\Collection || $banner instanceof \think\Paginator): $i = 0; $__LIST__ = $banner;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$b): $mod = ($i % 2 );++$i;?>
                     <div class="swiper-slide">
-                        <img src="/index/images/phoneanner.jpg" />
+                        <img src="<?php echo $b['image']; ?>" />
                     </div>
-                    <div class="swiper-slide">
-                        <img src="/index/images/phonebanner2.jpg" />
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="/index/images/phoneanner.jpg" />
-                    </div>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
+
                 </div>
                 <!-- 如果需要分页器 -->
                 <div class="swiper-pagination" style="position: relative;margin-top: -7%"></div>
@@ -519,38 +547,39 @@
 
 <input type="hidden" id="authstatus" value="<?php echo $authstatus; ?>">
 <script src="/index/js/mui.min.js"></script>
-
 <script type="text/javascript" src="/index/js/jquery-3.1.1.min.js"></script>
-<script src="/index/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="/index/js/util.js" type="text/javascript" charset="utf-8"></script>
 <script src="/index/layui-v2.5.4/layui/layui.js"></script>
+<script src="/index/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+
 <script type="text/javascript">
     mui.init();
 
-    // 手机端轮播
+    // // 手机端轮播
     // var mySwiper = new Swiper('.index-banner-phone', {
+    // 	autoplay:3000,
     //     loop: true, // 循环模式选项
     //     autoplay: true,
     //     // 如果需要分页器
     //     pagination: {
     //         el: '.swiper-pagination',
     //     },
-    //
+    //     // effect:"flip"
+    
     // });
-    // var mySwiper = new Swiper(".index-banner-phone",{
-    //     autoplay:3000,
-    //     loop:true,
-    //     autoplayDisableOnInteraction:false,
-    //     pagination:".swiper-pagination",
-    //     paginationClickable:true,
-    //     effect:"flip"
-    // })
+    var mySwiper = new Swiper(".index-banner-phone",{
+        autoplay:3000,
+        loop:true,
+        autoplayDisableOnInteraction:false,
+        pagination:".swiper-pagination",
+        paginationClickable:true,
+        // effect:"flip"
+    })
 
 
     //判断是否认证  且是否免费
     function tips(price,course_id){
         if(price == 0){
-            location.href='/index/video/index';
+            location.href='/index/video/index/course_id/'+course_id;
         }else{
             mui.confirm("此课程需要购买后才能学习，是否立即购买？",'温馨提示',['购买','取消'],function(e){
                 // console.log(e);
@@ -609,13 +638,13 @@
 
     }
 
-    $('.tab-item').on('click',function () {
-        // var index = $(this).index();
-        $(this).addClass("active").siblings().removeClass("active");
-        // $(".redpacket-con").eq(index).show().siblings(".redpacket-con").hide();
-        // $(this).css('color','red');
-
-    });
+    // $('.tab-item').on('click',function () {
+    //     // var index = $(this).index();
+    //     $(this).addClass("active").siblings().removeClass("active");
+    //     // $(".redpacket-con").eq(index).show().siblings(".redpacket-con").hide();
+    //     // $(this).css('color','red');
+    //
+    // });
 
 
 

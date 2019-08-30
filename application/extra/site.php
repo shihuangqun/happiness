@@ -28,7 +28,7 @@ return array (
   'mail_smtp_pass' => 'password',
   'mail_verify_type' => '2',
   'mail_from' => '10000@qq.com',
-  'pay_success' => '',
+  'pay_success' => '1MioCrKxl5EUXFKyl8e6baFv7rBrKC2PcuReEpPxKpA',
   'commission_notice' => '',
   'download_notice' => 'C_eZDhpv8zFGgnxDrvsbvheA5nBVlYaOfq-H-rp_TsU',
   'course' => '',

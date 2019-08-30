@@ -77,6 +77,9 @@ class CommentChapter extends Backend
         return $this->view->fetch();
     }
 
+    /**
+     * 留言审核
+     */
     public function examine(){
 
         if(!IS_AJAX) $this->error('非法访问');
@@ -84,7 +87,7 @@ class CommentChapter extends Backend
         $id = $this->request->request('ids');
 
 
-        $data =$this->model->where('id',$id)->update(['status' => 1]);
+        $data =$this->model->where('id',$id)->update(['chapter_status' => 1]);
 
         if($data !== false) $this->success('更新成功','',$id);
     }

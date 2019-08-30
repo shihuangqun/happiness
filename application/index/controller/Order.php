@@ -3,6 +3,7 @@ namespace app\index\controller;
 
 use app\common\controller\Frontend;
 use think\Db;
+use think\Exception;
 use think\Request;
 use think\Session;
 
@@ -22,13 +23,13 @@ class Order extends Frontend{
      */
     public function allList(){
 
-        $user_id = input('user_id');
+        $user = $this->getUserInfo();//获取当用户信息
         $order_status = input('order_status','0,1,2,3,4,5');
 
         $data = Db::name('order')
             ->order('createtime desc')
             ->where('order_status','in',$order_status)
-            ->where('user_id',$user_id)
+            ->where('user_id',$user['id'])
             ->alias('o')
             ->join('course c','c.id = o.course_id')
             ->field('o.*,c.title,c.image')
@@ -151,6 +152,50 @@ class Order extends Frontend{
         $this->assign([
             'info' => $info,
             'config' => $config
+        ]);
+        return $this->fetch();
+    }
+
+    /**
+     * 取消订单
+     */
+    public function cancel(){
+
+        $id = input('id');
+
+        $data = Db::name('order')->where('id',$id)->update(['order_status' => 3]);
+
+        if($data) return $this->return_msg(200,'取消成功');
+    }
+
+    /**
+     * 立即评价
+     */
+    public function comment(){
+
+        $course_id = input('course_id');
+        $order_id = input('order_id');
+
+        if(Request()->isPost()){
+            $res = $this->request->except('s,order_id');
+            $order_id = input('order_id');
+            $user = $this->getUserInfo();//当前用户信息
+            $res['user_id'] = $user['id'];
+            $res['createtime'] = time();
+
+            $data = Db::name('comment')->insert($res);
+            try{
+                $order = Db::name('order')->where('id',$order_id)->update(['order_status' => 2]);//修改当前订单状态为已评价
+            }catch (Exception $e){
+                return $this->return_msg('400','数据异常，请稍后再试...');
+            }
+
+            if($order) return $this->return_msg(200,'评价成功');
+        }
+
+        $this->assign([
+            'course_id' => $course_id,
+            'order_id' => $order_id
         ]);
         return $this->fetch();
     }

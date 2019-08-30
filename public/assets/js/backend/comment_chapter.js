@@ -30,7 +30,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'course.title', title: __('Course.title')},
                         {field: 'chapter.title', title: __('章节标题')},
                         {field: 'content', title: __('Content')},
-                        {field: 'status', title: __('Status'), searchList: {"1":__('Status 1'),"0":__('Status 0')}, formatter: Table.api.formatter.status},
+                        {field: 'chapter_status', title: __('Status'), searchList: {"1":__('Status 1'),"0":__('Status 0')}, formatter: Table.api.formatter.status},
                         {
                             field: 'buttons',
                             width: "120px",

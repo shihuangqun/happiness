@@ -2,6 +2,7 @@
 namespace app\index\controller;
 
 use app\common\controller\Frontend;
+use think\Db;
 
 class Course extends Frontend{
 
@@ -17,6 +18,11 @@ class Course extends Frontend{
      */
     public function index(){
 
+        $data = Db::name('course')->order('price asc')->select();
+
+        $this->assign([
+            'data' => $data
+        ]);
         return $this->fetch();
     }
 }

@@ -81,7 +81,39 @@ class Index extends Frontend
     }
 
 
+    /**
+     * 首页精选材料
+     */
+    public function show(){
 
+        $id = input('id');
+        $info = Db::name('notice')->find($id);
+//        dump($info['name']);
+
+        $this->assign([
+            'info' => $info
+        ]);
+        return $this->fetch();
+    }
+
+    /**
+     * 查询当前用户当前课程 是否购买
+     */
+    public function isBuy(){
+        if(request()->isPost()){
+            $res = $this->request->except('s');
+
+            $where = [
+                'course_id' => $res['course_id'],
+                'user_id' => $res['user_id']
+            ];
+            $data = Db::name('order')->where($where)->where('order_status','neq',0)->find();
+
+            if($data) return $this->return_msg('200','该用户已购买该产品','','/index/video/index/course_id/'.$res['course_id'].'');
+
+            return $this->return_msg('400','未购买');
+        }
+    }
 
 
 }

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"/www/wwwroot/c.yaoget.cn/public/../application/index/view/order/index.html";i:1566633259;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:74:"/www/wwwroot/c.yaoget.cn/public/../application/index/view/order/index.html";i:1566982533;}*/ ?>
 
 <!--
  * 我的课程
@@ -18,9 +18,9 @@
     <title>我的课程</title>
 
 
-    <link rel="stylesheet" href="http://xingfu.yc2i40.cn/addons/fy_lessonv2/template/mobile/style/cssv2/weui.min.css?v=2.5.0" />
+    <link rel="stylesheet" href="/index/css/weui.css" />
 
-    <link rel="stylesheet" href="http://xingfu.yc2i40.cn/addons/fy_lessonv2/template/mobile/style/cssv2/index.css?v=2.5.0"/>
+    <link rel="stylesheet" href="/index/css/order.css"/>
 
 
 </head>
