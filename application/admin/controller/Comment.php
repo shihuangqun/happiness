@@ -117,7 +117,7 @@ class Comment extends Backend
 
     public function CommentReply(){
 
-        $ret = $this->request->request();
+        $ret = $this->request->except('s');
 
 
         $ret['reply_status'] = 1; //回复状态更改为已审核

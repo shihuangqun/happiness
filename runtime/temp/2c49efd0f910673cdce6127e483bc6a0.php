@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:81:"/www/wwwroot/c.yaoget.cn/public/../application/index/view/userinfo/complaint.html";i:1566985933;s:66:"/www/wwwroot/c.yaoget.cn/application/index/view/common/footer.html";i:1566983242;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:81:"/www/wwwroot/c.yaoget.cn/public/../application/index/view/userinfo/complaint.html";i:1567158412;s:66:"/www/wwwroot/c.yaoget.cn/application/index/view/common/footer.html";i:1567132625;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +15,7 @@
         width: 80%;
     }
 </style>
-<fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 5%;">
     <legend>投诉建议</legend>
 </fieldset>
 <form class="layui-form" action="" lay-filter="example" id="forms">
@@ -49,6 +49,14 @@
 <script src="/index/js/mui.min.js"></script>
 <script type="text/javascript" src="/index/js/jquery-3.1.1.min.js"></script>
 <script src="/index/layui-v2.5.4/layui/layui.js"></script>
+<script>
+    layui.use(['layer', 'form'], function(){
+        var layer = layui.layer
+            ,form = layui.form;
+
+        // layer.msg('Hello World');
+    });
+</script>
 <script>
     layui.use(['form', 'layedit', 'laydate'], function(){
         var form = layui.form

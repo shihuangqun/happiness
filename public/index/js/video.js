@@ -73,12 +73,24 @@ function collection(e) {
 function showPlayWin() {
     document.getElementById('playWin').style.display = 'block'
 }
+//显示分享页
+function showShare() {
+    document.getElementById('share').style.display = 'block'
+}
 
 // 隐藏播放列表
 function hidePlayWin() {
     document.getElementById('playWin').style.display = 'none'
 }
+//显示分享页
+function showShare() {
+    document.getElementById('share').style.display = 'block'
+}
 
+// 隐藏播放列表
+function hideShare() {
+    document.getElementById('share').style.display = 'none'
+}
 // 评论输入框输入事件
 function input(e) {
     var val = e.value;

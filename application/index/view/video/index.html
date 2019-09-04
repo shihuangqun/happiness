@@ -22,8 +22,14 @@
     .list-box a{
        color:black;
     }
+    .play-list-box .box-content .share{
+        border-bottom: 1px solid white;
+        padding: 10px 20px 0px 10px;
+    }
+
 </style>
 <body>
+
 <div class="content">
     <!--视频显示-->
     <!--poster=视频封面-->
@@ -32,7 +38,7 @@
                src="{$one.video_file}"
                playsinline="true"
                webkit-playsinline="true" x-webkit-airplay="true" x5-video-orientation="portraint" x5-video-player-fullscreen="true"
-               type="video/mp4" poster="{$one.image}">
+               type="video/mp4/qlv" poster="{$one.image}">
         </video>
         <div class="video-play" id="videoPlay" onclick="btnPlay()">
             <img src="/index/images/play_02.png" class="icon" alt="">
@@ -57,7 +63,7 @@
                         </div>
                         <input type="hidden" id="audio" value="{$one.audio_file}">
                         <input type="hidden" id="videofile" value="{$one.video_file}">
-                        <div class="item">
+                        <div class="item" onclick="showShare()">
                             <img src="/index/images/shares.png" class="icon" alt="">
                             分享
                         </div>
@@ -153,7 +159,7 @@
         </div>
     </div>
     <!--相关推荐-->
-    <div class="page-box" id="recommend">
+    <div class="page-box" id="recommend" style="margin-bottom: 60px;">
         <div class="comment-box">
             <div class="page-title-box">
                 <div class="left">相关推荐</div>
@@ -177,7 +183,11 @@
                                 {$r.studynum}人观看过
                             </div>
                             <div class="right">
+                                {if condition="$r.price eq 0"}
+                                免费
+                                {else}
                                 ￥{$r.price}
+                                {/if}
                             </div>
                         </div>
                     </div>
@@ -211,6 +221,28 @@
             <div class="close" onclick="hidePlayWin()">关闭</div>
         </div>
     </div>
+
+<!--分享页-->
+<div class="play-list-box" id="share" style="display: none">
+    <div class="bg" onclick="hideShare()"></div>
+    <div class="box-content" style="height: 31%;">
+        <div class="list-content" style="margin-top: 10px;">
+
+            <div class="item share" id="links"><img src="/index/images/wx-icon.png" alt="" width="50" style="border-radius: 25px;float: left">
+                <div style="margin-left: 15px;line-height: 50px;float: left;color: #666;">生成链接</div>
+            </div>
+
+            <div class="item share"><img src="/index/images/url.png" alt="" width="50" style="border-radius: 25px;float: left">
+                <div style="margin-left: 15px;margin-top:8px;float: left;color: #666;" id="copy_content">链接地址
+                    <p><input id="copys" value="<?php echo 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['PATH_INFO']?>" disabled="true" style="border:none;color: black;"></p>
+                </div>
+                <span style="width: 50px;height: 27px;float: right;font-size: 12px;background: #efeff4;text-align: center;line-height: 27px;margin-top: 4%;" id="fz">复制</span>
+            </div>
+
+    </div>
+    <div class="close" onclick="hideShare()">关闭</div>
+</div>
+</div>
 
     <!--评论弹窗-->
     <!--默认隐藏-->
@@ -253,15 +285,69 @@
         <img src="/index/images/home.png" class="icon" alt="">
     </a>
 </div>
+
 </body>
+
 {include file="common/footer"}
+<script>
+    document.querySelector('body').addEventListener('touchstart', function (ev) {event.preventDefault();});
+    var btn = document.getElementById('links');
+    btn.addEventListener('click', function(){
+
+        var inputText = document.getElementById('copys');
+        var currentFocus = document.activeElement;
+        inputText.focus();
+        inputText.setSelectionRange(0, inputText.value.length);
+        document.execCommand('copy', true);
+        // currentFocus.focus();
+
+        mui.toast('分享链接已生成');
+
+    });
+    $('#fz').click(function () {
+
+        var inputText = document.getElementById('copys');
+        var currentFocus = document.activeElement;
+        inputText.focus();
+        inputText.setSelectionRange(0, inputText.value.length);
+        document.execCommand('copy', true);
+        currentFocus.focus();
+
+        mui.toast('复制成功');
+    });
+</script>
+</body>
+
+</html>
+
+
+</script>
 <script>
 
     //默认选中播放列表第一个
     // $('.list-content').find('.item').eq(0).addClass('act')
 
     //切换音频
-    $(document).on('click','#switch_audio',function () {
+    $('#switch_audio').on('click',function () {
+        // alert(111)
+        //获取音频地址
+        var audio = $('#audio').val();
+        //替换当前视频值
+        $('#video').attr('src',audio);
+
+        var video_html = ` <div class="item" id="switch_video">
+                                <img src="/index/images/video.png" class="icon" alt="">
+                                视频
+                            </div>`;
+        //点击后替换之前的html
+        $('#cli').html(video_html)
+        //切换后自动播放
+        btnPlay()
+    });
+
+    //切换音频 苹果端BUG
+    $(document).on('click','#switch_audios',function () {
+        // alert(111)
         //获取音频地址
         var audio = $('#audio').val();
         //替换当前视频值
@@ -279,13 +365,13 @@
 
     //切换视频
     $(document).on('click','#switch_video',function () {
-        // console.log(111)
+        // alert(222)
         //获取音频地址
         var video = $('#videofile').val();
         //替换当前视频值
         $('#video').attr('src',video);
 
-        var audio_html = ` <div class="item" id="switch_audio">
+        var audio_html = ` <div class="item" id="switch_audios">
                                 <img src="/index/images/headset.png" class="icon" alt="">
                                 音频
                             </div>`;
@@ -373,9 +459,6 @@
                                         if(e.index == 0) location.href='/index/userinfo/save';
                                     })
                                 }
-
-
-
                             }
                         });
                     }

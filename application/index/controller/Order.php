@@ -2,6 +2,7 @@
 namespace app\index\controller;
 
 use app\common\controller\Frontend;
+use think\Config;
 use think\Db;
 use think\Exception;
 use think\Request;
@@ -36,7 +37,8 @@ class Order extends Frontend{
             ->paginate(10,false,['query' => Request::instance()->request()]);
 
         $this->assign([
-            'data' => $data
+            'data' => $data,
+            'user' => $user
         ]);
         return $this->fetch('index');
     }
@@ -154,6 +156,120 @@ class Order extends Frontend{
             'config' => $config
         ]);
         return $this->fetch();
+    }
+
+    /**
+     * 分支
+     * @param topid 当前用户上级ID
+     * @param num      当前级数
+     */
+    public function branch($topid,$num=1){
+
+        $info = Db::name('userinfo')->where('id',$topid)->field('id,topid')->select();
+
+        $data = [];
+        foreach ($info as $k => $v){
+
+                $v['num'] = $num;
+                if($v['topid'] != 0){
+
+                    $v['sub'] = $this->branch($v['topid'],$num+1);
+
+                }
+
+            $data[] = $v;
+        }
+        return $data;
+    }
+    /**
+     * 获取所有上级   计算佣金比例
+     * @param topid 当前用户上级ID
+     * @param int   price   付款金额
+     */
+    public function getAllTop($topid='4',$price='1'){
+
+        $data[] = $this->branch($topid);//获取到所有上级
+        $commission = Db::name('commission')->find();//佣金比例
+
+        foreach ($data as $v){
+//            dump(111);
+            if(!empty($v)){
+                foreach ($v as $val){
+
+                    $money = ($price * $commission['one']) / 100;
+//                    dump($money);
+                    $this->sendTemp($val['id'],$money);
+
+                    if(!empty($val['sub'])){
+                        foreach ($val['sub'] as $two){
+                            //二级
+//                            dump(333);
+                            $money = ($price * $commission['two']) / 100;
+                            $this->sendTemp($two['id'],$money);
+
+
+                            if(!empty($two['sub'])){
+                                foreach ($two['sub'] as $three){
+                                    //三级
+//                                    dump(444);
+                                    $money = ($price * $commission['three']) / 100;
+                                    $this->sendTemp($three['id'],$money);}
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+    /**
+     * 给上级用户推送佣金模版消息
+     * @param id int    用户ID
+     * @param money int 佣金
+     */
+    public function sendTemp($id,$money){
+
+        $user = Db::name('userinfo')->where('id',$id)->field('openid,money')->find();//获取当前用户余额
+        $res = [
+            'id' => $id,
+            'money' => $money + $user['money']//佣金+当前余额
+        ];
+
+        try{
+            $save = Db::name('userinfo')->update($res);//更新用户余额
+        }catch (Exception $e){
+            return $this->logs('user_money.log','更新余额出错');
+        }
+
+//        $temp = new \addons\wechat\controller\Index();
+//
+//        $template = $this->site['commission_notice'];//佣金提醒模版ID
+//        $url = Config::get('HOST').'/index/userinfo/index';
+//        $data = [
+//            'first' => '',
+//            'keywords1' => '',
+//            'keywords2' => '',
+//            'remark' => ''
+//
+//        ];
+//        $temp->tempMessage($user['openid'],$template,$url,$data);//推送模版消息
+
+    }
+
+    public function aa(){
+        $res = [
+            '0' => 1,
+            '1' =>2
+        ];
+
+        $r = [
+            '0' => 5,
+            '1' =>6
+        ];
+        $aa = implode(',', array_values($res));
+        dump($aa);
+
     }
 
     /**

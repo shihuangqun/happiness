@@ -29,7 +29,7 @@ return array (
   'mail_verify_type' => '2',
   'mail_from' => '10000@qq.com',
   'pay_success' => '1MioCrKxl5EUXFKyl8e6baFv7rBrKC2PcuReEpPxKpA',
-  'commission_notice' => '',
+  'commission_notice' => 'WCqz6bFZjEsNr3oeWxurGhAqBwV9Kc5uD9NpCzBnwkA',
   'download_notice' => 'C_eZDhpv8zFGgnxDrvsbvheA5nBVlYaOfq-H-rp_TsU',
   'course' => '',
   'order_notice' => '',

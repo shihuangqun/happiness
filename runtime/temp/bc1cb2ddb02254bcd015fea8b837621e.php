@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:77:"/www/wwwroot/c.yaoget.cn/public/../application/index/view/userinfo/share.html";i:1566983883;s:64:"/www/wwwroot/c.yaoget.cn/application/index/view/common/meta.html";i:1566985948;s:63:"/www/wwwroot/c.yaoget.cn/application/index/view/common/nav.html";i:1567044755;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:77:"/www/wwwroot/c.yaoget.cn/public/../application/index/view/userinfo/share.html";i:1566983883;s:64:"/www/wwwroot/c.yaoget.cn/application/index/view/common/meta.html";i:1566985948;s:63:"/www/wwwroot/c.yaoget.cn/application/index/view/common/nav.html";i:1567156502;}*/ ?>
 <!--<meta charset="utf-8">-->
 <!--<title><?php echo (isset($title) && ($title !== '')?$title:''); ?> – <?php echo __('The fastest framework based on ThinkPHP5 and Bootstrap'); ?></title>-->
 <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">-->
@@ -132,6 +132,7 @@
 </body>
 <script type="text/javascript" src="/index/js/jquery-3.1.1.min.js"></script>
 <script>
+    //a链接点击之后 选中当前
     $(".footer a").each(function () {
     if ($(this)[0].href == String(window.location)) {
         $(this).find('.tab-icon').addClass("active").siblings().removeClass("active");

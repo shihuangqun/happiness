@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:73:"/www/wwwroot/c.yaoget.cn/public/../application/index/view/index/home.html";i:1567086277;s:64:"/www/wwwroot/c.yaoget.cn/application/index/view/common/meta.html";i:1566985948;s:63:"/www/wwwroot/c.yaoget.cn/application/index/view/common/nav.html";i:1567044755;s:66:"/www/wwwroot/c.yaoget.cn/application/index/view/common/footer.html";i:1566983242;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:73:"/www/wwwroot/c.yaoget.cn/public/../application/index/view/index/home.html";i:1567512986;s:64:"/www/wwwroot/c.yaoget.cn/application/index/view/common/meta.html";i:1566985948;s:63:"/www/wwwroot/c.yaoget.cn/application/index/view/common/nav.html";i:1567156502;s:66:"/www/wwwroot/c.yaoget.cn/application/index/view/common/footer.html";i:1567132625;}*/ ?>
 <!--<meta charset="utf-8">-->
 <!--<title><?php echo (isset($title) && ($title !== '')?$title:''); ?> – <?php echo __('The fastest framework based on ThinkPHP5 and Bootstrap'); ?></title>-->
 <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">-->
@@ -76,7 +76,7 @@
             font-weight:800
         }
         .day-list{
-            margin-bottom: 5%;
+            margin-bottom: 8%;
         }
         a{
             color:white
@@ -194,6 +194,7 @@
 </body>
 <script type="text/javascript" src="/index/js/jquery-3.1.1.min.js"></script>
 <script>
+    //a链接点击之后 选中当前
     $(".footer a").each(function () {
     if ($(this)[0].href == String(window.location)) {
         $(this).find('.tab-icon').addClass("active").siblings().removeClass("active");
@@ -213,7 +214,15 @@
                         <?php echo $info['nickname']; ?>
                     </div>
                     <div class="usertype">
+                        <?php if($info['member_service_id'] == 4): ?>
+                        A级合伙人
+                        <?php elseif($info['member_service_id'] == 5): ?>
+                        B级合伙人
+                        <?php elseif($info['member_service_id'] == 6): ?>
+                        C级合伙人
+                        {/else}
                         普通用户
+                        <?php endif; ?>
                     </div>
                 </div>
                 <div class="mui-input-row mui-search">
@@ -231,7 +240,7 @@
                     </button>
                     <?php else: ?>
                     <button type="button" style="padding: 2px 5px;background-color: orange;border-radius: 20px;height: 24px;width: 80px;margin-right: 10px;font-size: 12px;color: white;border: 1px" class="mui-btn mui-btn-outlined">
-                        <a href="#">我要报名</a>
+                        <a href="/index/course/index">我要报名</a>
                     </button>
                     <?php endif; ?>
                 </div>
@@ -258,40 +267,20 @@
                         
 
         <div class="home-list padd10">
+        	<?php if(is_array($cate) || $cate instanceof \think\Collection || $cate instanceof \think\Paginator): $i = 0; $__LIST__ = $cate;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$ca): $mod = ($i % 2 );++$i;?>
             <div class="item">
                 <div class="item-img">
-                    <img src="/index/images/1.png" />
+                    <img src="<?php echo $ca['image']; ?>" />
                 </div>
                 <div class="item-nane">
-                    企业发展
+                    <?php echo $ca['name']; ?>
                 </div>
             </div>
-            <div class="item">
-                <div class="item-img">
-                    <img src="/index/images/3.png" />
-                </div>
-                <div class="item-nane">
-                    企业发展
-                </div>
-            </div>
+           <?php endforeach; endif; else: echo "" ;endif; ?>
 
-            <div class="item">
-                <div class="item-img">
-                    <img src="/index/images/4.png" />
-                </div>
-                <div class="item-nane">
-                    企业发展
-                </div>
-            </div>
+            
 
-            <div class="item">
-                <div class="item-img">
-                    <img src="/index/images/6.png" />
-                </div>
-                <div class="item-nane">
-                    企业发展
-                </div>
-            </div>
+           
 
 
 
@@ -432,111 +421,113 @@
            <?php endforeach; endif; else: echo "" ;endif; ?>
             <!--					</ul>-->
         </div>
-        <div class="day-list padd10">
-            <div class="title cu" style="float: left;">最新上架</div>
-            <!--					<div style="float: right;font-size: 12px;color: #666;">更多></div>-->
-            <br>
-            <!--					<ul>-->
-                <li>
-                    <div class="dat-top content-fixe">
-                        <div class="img">
-                            <img src="/index/images/20190822111531.jpg" height="90"/>
-                        </div>
-                        <div class="font">
-                            <div class="title">
-                                商业仲裁视频全集达到阿萨德按时发斯蒂芬撒答复
-                            </div>
-                            <div class="font-text">
-                                是的发生的是方法是红薯粉破丰厚的是佛isad哈佛怕到时候富婆啥都符合粉红色doif后生地黄佛山佛山店和佛山敌后方藕丝大活佛is大活佛是建凡酒叟的积分董事局佛是建凡
-                            </div>
-                            <div class="font-bottom content-fixe">
-                                <div class="suo">
-                                    <span class="iconfont mv-midder">&#xe61d;</span>
-                                    <span class="">12.03万人学习过</span>
-                                </div>
-                                <div class="suo">
-                                    <span class="iconfont v-midder">&#xe64d;</span>
-                                    <span class="r">11集</span>
-                                </div>
-                                <div class="money suo">￥368元</div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 	<div class="day-bottom content-fixe">
-                            <div class="mui-icon mui-icon-star"></div>
-                            <div class="mui-icon mui-icon-chatbubble money"></div>
-                            <div><span class="mui-icon mui-icon-undo money"><span class="" style="font-size: 12px;">分享</span></span></div>
-                        </div> -->
+<!--        <div class="day-list padd10">-->
+<!--            <div class="title cu" style="float: left;">最新上架</div>-->
+<!--            &lt;!&ndash;					<div style="float: right;font-size: 12px;color: #666;">更多></div>&ndash;&gt;-->
+<!--            <br>-->
+<!--            &lt;!&ndash;					<ul>&ndash;&gt;-->
+<!--                <li>-->
+<!--                    <div class="dat-top content-fixe">-->
+<!--                        <div class="img">-->
+<!--                            <img src="/index/images/20190822111531.jpg" height="90"/>-->
+<!--                        </div>-->
+<!--                        <div class="font">-->
+<!--                            <div class="title">-->
+<!--                                商业仲裁视频全集达到阿萨德按时发斯蒂芬撒答复-->
+<!--                            </div>-->
+<!--                            <div class="font-text">-->
+<!--                                是的发生的是方法是红薯粉破丰厚的是佛isad哈佛怕到时候富婆啥都符合粉红色doif后生地黄佛山佛山店和佛山敌后方藕丝大活佛is大活佛是建凡酒叟的积分董事局佛是建凡-->
+<!--                            </div>-->
+<!--                            <div class="font-bottom content-fixe">-->
+<!--                                <div class="suo">-->
+<!--                                    <span class="iconfont mv-midder">&#xe61d;</span>-->
+<!--                                    <span class="">12.03万人学习过</span>-->
+<!--                                </div>-->
+<!--                                <div class="suo">-->
+<!--                                    <span class="iconfont v-midder">&#xe64d;</span>-->
+<!--                                    <span class="r">11集</span>-->
+<!--                                </div>-->
+<!--                                <div class="money suo">￥368元</div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash; 	<div class="day-bottom content-fixe">-->
+<!--                            <div class="mui-icon mui-icon-star"></div>-->
+<!--                            <div class="mui-icon mui-icon-chatbubble money"></div>-->
+<!--                            <div><span class="mui-icon mui-icon-undo money"><span class="" style="font-size: 12px;">分享</span></span></div>-->
+<!--                        </div> &ndash;&gt;-->
 
-                </li>
-            <li>
-                <div class="dat-top content-fixe">
-                    <div class="img">
-                        <img src="/index/images/20190822111531.jpg" height="90"/>
-                    </div>
-                    <div class="font">
-                        <div class="title">
-                            233sfafsaf
-                        </div>
-                        <div class="font-text">
-                            是的发生的是方法是红薯粉破丰厚的是佛isad哈佛怕到时候富婆啥都符合粉红色doif后生地黄佛山佛山店和佛山敌后方藕丝大活佛is大活佛是建凡酒叟的积分董事局佛是建凡
-                        </div>
-                        <div class="font-bottom content-fixe">
-                            <div class="suo">
-                                <span class="iconfont mv-midder">&#xe61d;</span>
-                                <span class="">12.03万人学习过</span>
-                            </div>
-                            <div class="suo">
-                                <span class="iconfont v-midder">&#xe64d;</span>
-                                <span class="r">11集</span>
-                            </div>
-                            <div class="money suo">￥368元</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- 	<div class="day-bottom content-fixe">
-                        <div class="mui-icon mui-icon-star"></div>
-                        <div class="mui-icon mui-icon-chatbubble money"></div>
-                        <div><span class="mui-icon mui-icon-undo money"><span class="" style="font-size: 12px;">分享</span></span></div>
-                    </div> -->
+<!--                </li>-->
+<!--            <li>-->
+<!--                <div class="dat-top content-fixe">-->
+<!--                    <div class="img">-->
+<!--                        <img src="/index/images/20190822111531.jpg" height="90"/>-->
+<!--                    </div>-->
+<!--                    <div class="font">-->
+<!--                        <div class="title">-->
+<!--                            233sfafsaf-->
+<!--                        </div>-->
+<!--                        <div class="font-text">-->
+<!--                            是的发生的是方法是红薯粉破丰厚的是佛isad哈佛怕到时候富婆啥都符合粉红色doif后生地黄佛山佛山店和佛山敌后方藕丝大活佛is大活佛是建凡酒叟的积分董事局佛是建凡-->
+<!--                        </div>-->
+<!--                        <div class="font-bottom content-fixe">-->
+<!--                            <div class="suo">-->
+<!--                                <span class="iconfont mv-midder">&#xe61d;</span>-->
+<!--                                <span class="">12.03万人学习过</span>-->
+<!--                            </div>-->
+<!--                            <div class="suo">-->
+<!--                                <span class="iconfont v-midder">&#xe64d;</span>-->
+<!--                                <span class="r">11集</span>-->
+<!--                            </div>-->
+<!--                            <div class="money suo">￥368元</div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; 	<div class="day-bottom content-fixe">-->
+<!--                        <div class="mui-icon mui-icon-star"></div>-->
+<!--                        <div class="mui-icon mui-icon-chatbubble money"></div>-->
+<!--                        <div><span class="mui-icon mui-icon-undo money"><span class="" style="font-size: 12px;">分享</span></span></div>-->
+<!--                    </div> &ndash;&gt;-->
 
-            </li>
-            <!--					</ul>-->
-        </div>
+<!--            </li>-->
+<!--            &lt;!&ndash;					</ul>&ndash;&gt;-->
+<!--        </div>-->
         <div class="day-list padd10">
          <div class="title cu" style="float: left;">精选资料</div>
             <!--					<div style="float: right;font-size: 12px;color: #666;">更多></div>-->
             <br>
             <!--					<ul>-->
             <?php if(is_array($notice) || $notice instanceof \think\Collection || $notice instanceof \think\Paginator): $i = 0; $__LIST__ = $notice;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$n): $mod = ($i % 2 );++$i;?>
-            <li>
-                <div class="dat-top content-fixe">
-                    <div class="img" style="margin-top: 3%;">
-                        <img src="<?php echo $n['image']; ?>" height="90"/>
-                    </div>
-                    <div class="font">
-                        <div class="title">
-                            <?php echo $n['name']; ?>
+            <a href="/index/index/show/id/<?php echo $n['id']; ?>">
+                <li>
+                    <div class="dat-top content-fixe">
+                        <div class="img" style="margin-top: 3%;">
+                            <img src="<?php echo $n['image']; ?>" height="90"/>
                         </div>
-                        <div class="font-text" style="-webkit-line-clamp: 3">
-                            <?php echo $n['content']; ?>
+                        <div class="font">
+                            <div class="title">
+                                <?php echo $n['name']; ?>
+                            </div>
+                            <div class="font-text" style="-webkit-line-clamp: 3">
+                                <?php echo $n['description']; ?>
+                            </div>
+                            <!--                        <div class="font-bottom content-fixe">-->
+                            <!--                            <div class="suo">-->
+                            <!--                                <span class="iconfont mv-midder">&#xe61d;</span>-->
+                            <!--                                <span class="">12.03万人学习过</span>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="suo">-->
+                            <!--                                <span class="iconfont v-midder">&#xe64d;</span>-->
+                            <!--                                <span class="r">11集</span>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="money suo">￥368元</div>-->
+                            <!--                        </div>-->
                         </div>
-                        <!--                        <div class="font-bottom content-fixe">-->
-                        <!--                            <div class="suo">-->
-                        <!--                                <span class="iconfont mv-midder">&#xe61d;</span>-->
-                        <!--                                <span class="">12.03万人学习过</span>-->
-                        <!--                            </div>-->
-                        <!--                            <div class="suo">-->
-                        <!--                                <span class="iconfont v-midder">&#xe64d;</span>-->
-                        <!--                                <span class="r">11集</span>-->
-                        <!--                            </div>-->
-                        <!--                            <div class="money suo">￥368元</div>-->
-                        <!--                        </div>-->
                     </div>
-                </div>
 
 
-            </li>
+                </li>
+            </a>
             <?php endforeach; endif; else: echo "" ;endif; ?>
 
             <!--					</ul>-->
@@ -549,6 +540,14 @@
 <script src="/index/js/mui.min.js"></script>
 <script type="text/javascript" src="/index/js/jquery-3.1.1.min.js"></script>
 <script src="/index/layui-v2.5.4/layui/layui.js"></script>
+<script>
+    layui.use(['layer', 'form'], function(){
+        var layer = layui.layer
+            ,form = layui.form;
+
+        // layer.msg('Hello World');
+    });
+</script>
 <script src="/index/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
 
 <script type="text/javascript">
@@ -581,62 +580,70 @@
         if(price == 0){
             location.href='/index/video/index/course_id/'+course_id;
         }else{
-            mui.confirm("此课程需要购买后才能学习，是否立即购买？",'温馨提示',['购买','取消'],function(e){
-                // console.log(e);
 
-                var user_id = <?php echo $info['id']; ?>;//当前用户ID
+            var user_id = <?php echo $info['id']; ?>;//当前用户ID
 
-                if(e.index == 0){
-                    // console.log('确定');
-                    var authstatus = $('#authstatus').val();
+            $.ajax({
+                type:'post',
+                data:{course_id:course_id,user_id:user_id},
+                dataType:'json',
+                url:'/index/index/isbuy',
+                success:function (data) {
+                    //已购买
+                    if(data.code == 200){
+                        //跳转当前课程页面
+                        location.href = data.url;
+                    }else{
+                        mui.confirm("此课程需要购买后才能学习，是否立即购买？",'温馨提示',['购买','取消'],function(e){
+                            // console.log(e);
 
-                    //不为空即已认证
-                    // if(authstatus != '') location.href = '/index/order/confirm';
-                    if(authstatus != ''){
-                        $.ajax({
-                            type:'post',
-                            data:{user_id:user_id,course_id:course_id},
-                            dataType:'json',
-                            url:'/index/order/ispay',
-                            success: function (data) {
-                                console.log(data);
-                                if(data.code == 200){
+                            if(e.index == 0){
+                                // console.log('确定');
+                                var authstatus = $('#authstatus').val();
 
-                                    location.href = data.url+'/user_id/'+user_id+'/course_id/'+course_id;
-                                }else{
-                                    mui.confirm(data.msg,'温馨提示',['是否前往','取消'],function (e) {
-                                        if(e.index == 0){
-                                            location.href=data.url+'/user_id/'+user_id;
+                                //不为空即已认证
+                                // if(authstatus != '') location.href = '/index/order/confirm';
+                                if(authstatus != ''){
+                                    $.ajax({
+                                        type:'post',
+                                        data:{user_id:user_id,course_id:course_id},
+                                        dataType:'json',
+                                        url:'/index/order/ispay',
+                                        success: function (data) {
+                                            console.log(data);
+                                            if(data.code == 200){
+
+                                                location.href = data.url+'/user_id/'+user_id+'/course_id/'+course_id;
+                                            }else{
+                                                mui.confirm(data.msg,'温馨提示',['是否前往','取消'],function (e) {
+                                                    if(e.index == 0){
+                                                        location.href=data.url+'/user_id/'+user_id;
+                                                    }
+                                                })
+                                            }
+                                        },
+                                        error: function () {
+                                            console.log('error');
                                         }
                                     })
+                                    // location.href = '/index/order/confirm/user_id/'+user_id+'/course_id/'+course_id;
+                                }else{
+                                    mui.confirm("请先完善你的个人信息",'温馨提示',['立即前往','取消'],function(e){
+                                        if(e.index == 0) location.href='/index/userinfo/save';
+                                    })
                                 }
-                            },
-                            error: function () {
-                                console.log('error');
                             }
-                        })
-                        // location.href = '/index/order/confirm/user_id/'+user_id+'/course_id/'+course_id;
-                    }else{
-                        mui.confirm("请先完善你的个人信息",'温馨提示',['立即前往','取消'],function(e){
-                            if(e.index == 0) location.href='/index/userinfo/save';
-                        })
+                        });
                     }
-
-
-
                 }
-            });
+            })
         }
-
-
-
-
     }
-    function aa(){
-
-        location.href = '/index/pay/prePay';
-
-    }
+    // function aa(){
+    //
+    //     location.href = '/index/pay/prePay';
+    //
+    // }
 
     // $('.tab-item').on('click',function () {
     //     // var index = $(this).index();

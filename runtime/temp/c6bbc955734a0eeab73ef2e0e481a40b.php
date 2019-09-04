@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:74:"/www/wwwroot/c.yaoget.cn/public/../application/admin/view/index/index.html";i:1562338656;s:64:"/www/wwwroot/c.yaoget.cn/application/admin/view/common/meta.html";i:1566096906;s:66:"/www/wwwroot/c.yaoget.cn/application/admin/view/common/header.html";i:1562338656;s:64:"/www/wwwroot/c.yaoget.cn/application/admin/view/common/menu.html";i:1562338656;s:67:"/www/wwwroot/c.yaoget.cn/application/admin/view/common/control.html";i:1562338656;s:66:"/www/wwwroot/c.yaoget.cn/application/admin/view/common/script.html";i:1566096255;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:74:"/www/wwwroot/c.yaoget.cn/public/../application/admin/view/index/index.html";i:1562338656;s:64:"/www/wwwroot/c.yaoget.cn/application/admin/view/common/meta.html";i:1566096906;s:66:"/www/wwwroot/c.yaoget.cn/application/admin/view/common/header.html";i:1567420393;s:64:"/www/wwwroot/c.yaoget.cn/application/admin/view/common/menu.html";i:1567420300;s:67:"/www/wwwroot/c.yaoget.cn/application/admin/view/common/control.html";i:1562338656;s:66:"/www/wwwroot/c.yaoget.cn/application/admin/view/common/script.html";i:1566096255;}*/ ?>
 <!DOCTYPE html>
 <html lang="<?php echo $config['language']; ?>">
     <head>
@@ -121,19 +121,7 @@
                             </p>
                         </li>
                         <!-- Menu Body -->
-                        <li class="user-body">
-                            <div class="row">
-                                <div class="col-xs-4 text-center">
-                                    <a href="https://www.fastadmin.net" target="_blank"><?php echo __('FastAdmin'); ?></a>
-                                </div>
-                                <div class="col-xs-4 text-center">
-                                    <a href="https://forum.fastadmin.net" target="_blank"><?php echo __('Forum'); ?></a>
-                                </div>
-                                <div class="col-xs-4 text-center">
-                                    <a href="https://doc.fastadmin.net" target="_blank"><?php echo __('Docs'); ?></a>
-                                </div>
-                            </div>
-                        </li>
+
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
@@ -210,10 +198,7 @@
         <?php echo $menulist; ?>
 
         <!--以下4行可以删除或改成自己的链接,但建议你在你的网站上添加一个FastAdmin的链接-->
-        <li class="header" data-rel="external"><?php echo __('Links'); ?></li>
-        <li data-rel="external"><a href="https://doc.fastadmin.net" target="_blank"><i class="fa fa-list text-red"></i> <span><?php echo __('Docs'); ?></span></a></li>
-        <li data-rel="external"><a href="https://forum.fastadmin.net" target="_blank"><i class="fa fa-comment text-yellow"></i> <span><?php echo __('Forum'); ?></span></a></li>
-        <li data-rel="external"><a href="https://jq.qq.com/?_wv=1027&k=487PNBb" target="_blank"><i class="fa fa-qq text-aqua"></i> <span><?php echo __('QQ qun'); ?></span></a></li>
+
     </ul>
 </section>
             </aside>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"/www/wwwroot/c.yaoget.cn/public/../application/index/view/userinfo/card.html";i:1566549564;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:76:"/www/wwwroot/c.yaoget.cn/public/../application/index/view/userinfo/card.html";i:1567182618;s:63:"/www/wwwroot/c.yaoget.cn/application/index/view/common/nav.html";i:1567156502;}*/ ?>
 
 <!--
  * ============================================================================
@@ -18,7 +18,100 @@
 
 
 </head>
+<style>
+    p{
+        margin: auto;
+    }
+    .footer{
+        margin-left: -2%;
+    }
+</style>
 <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel="stylesheet" href="/index/iconfont/tab/iconfont.css">
+<style>
+    .footer{
+        position:fixed;
+        z-index:40;
+        width:100%;
+        /*max-width:640px;*/
+        bottom:0px;
+        height: 9%;
+        background: #FBFBFC;
+    }
+    .tab-icon{
+        margin: 0 auto;
+        padding: 8px 0 0;
+        width: 25%;
+        float: left;
+        text-align: center;
+        line-height: 20px;
+    }
+
+    .active{
+        color: #4285f4;
+    }
+
+    .footer a{
+    	color: #A4A4A8;
+    	position: relative;
+    }
+</style>
+<body>
+    <div class="footer">
+        <div>
+        	<a href="/" class="tab-item">
+            <div class="tab-icon">
+                <i class="icon iconfont" style="font-size: 22px;">&#xe615;</i>
+                <p>首页</p>
+            </div>
+
+        </a>
+        </div>
+        <div>
+        	<a href="/index/course/index" class="tab-item">
+            <div class="tab-icon">
+                <i class="icon iconfont" style="font-size: 22px;">&#xe600;</i>
+                <p>在线课程</p>
+            </div>
+
+        </a>
+        </div>
+        <div>
+        	<a href="/index/userinfo/share" class="tab-item">
+            <div class="tab-icon">
+                <i class="icon iconfont" style="font-size: 22px;">&#xe646;</i>
+                <p>二维码</p>
+            </div>
+
+        </a>
+        </div>
+        <div>
+        	<a href="/index/userinfo/index" class="tab-item">
+            <div class="tab-icon">
+                <i class="icon iconfont" style="font-size: 22px;">&#xe6a8;</i>
+                <p>我的</p>
+            </div>
+
+        </a>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="/index/js/jquery-3.1.1.min.js"></script>
+<script>
+    //a链接点击之后 选中当前
+    $(".footer a").each(function () {
+    if ($(this)[0].href == String(window.location)) {
+        $(this).find('.tab-icon').addClass("active").siblings().removeClass("active");
+    }
+});
+</script>
+</html>
 <div class="tabbar tabbar_wrap page_wrap">
     <div class="weui_tab">
 
@@ -71,6 +164,7 @@
 
 
     </div>
+
 </div>
 
 <script>

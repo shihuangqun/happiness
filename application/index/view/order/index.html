@@ -46,7 +46,7 @@
 
         <!-- 顶部导航  -->
         <ul class="tab_wrap">
-            <li class="tab_item ">
+            <li class="tab_item tab_item_on">
                 <a href="/index/order/alllist">全部课程</a>
             </li>
             <li class="tab_item ">
@@ -60,9 +60,9 @@
 
         <!-- 订单列表  -->
         <div id="order-list">
-            {volist name="data" id="vo" empty="<img src='/index/images/loaded.png'>"}
-            <div class="submit_list">
-                <div class="item">
+            {volist name="data" id="vo" empty="<img src='/index/images/loaded.png' width='300' style='margin-left: 10%;'>"}
+            <div class="submit_list" >
+                <div class="item" onclick="tips('{$vo.price}','{$vo.course_id}')">
                     <img src="{$vo.image}" alt="男士延时中级课">
                     <span class="bookname">{$vo.title}</span>
                     <div class="info">
@@ -104,7 +104,7 @@
         </div>
 
 
-        
+        {include file="common/nav"}
 
         <footer>
 <!--            <a href="./index.php?i=2&c=entry&do=index&m=fy_lessonv2"></a>-->
@@ -138,6 +138,73 @@
                     })
                 }
             })
+        }
+
+        //判断是否认证  且是否免费
+        function tips(price,course_id){
+            if(price == 0){
+                location.href='/index/video/index/course_id/'+course_id;
+            }else{
+
+                var user_id = {$user.id};//当前用户ID
+
+                $.ajax({
+                    type:'post',
+                    data:{course_id:course_id,user_id:user_id},
+                    dataType:'json',
+                    url:'/index/index/isbuy',
+                    success: function (data) {
+                        //已购买
+                        if(data.code == 200){
+                            //跳转当前课程页面
+                            // location.href = data.url;
+                            alert(22);
+                        }else{
+                            mui.confirm("此课程需要购买后才能学习，是否立即购买？",'温馨提示',['购买','取消'],function(e){
+                                // console.log(e);
+
+                                if(e.index == 0){
+                                    // console.log('确定');
+                                    var authstatus = $('#authstatus').val();
+
+                                    //不为空即已认证
+                                    // if(authstatus != '') location.href = '/index/order/confirm';
+                                    if(authstatus != ''){
+                                        $.ajax({
+                                            type:'post',
+                                            data:{user_id:user_id,course_id:course_id},
+                                            dataType:'json',
+                                            url:'/index/order/ispay',
+                                            success: function (data) {
+                                                console.log(data);
+                                                if(data.code == 200){
+
+                                                    location.href = data.url+'/user_id/'+user_id+'/course_id/'+course_id;
+                                                }else{
+                                                    mui.confirm(data.msg,'温馨提示',['是否前往','取消'],function (e) {
+                                                        if(e.index == 0){
+                                                            location.href=data.url+'/user_id/'+user_id;
+                                                        }
+                                                    })
+                                                }
+                                            },
+                                            error: function () {
+                                                console.log('error');
+                                            }
+                                        })
+                                        // location.href = '/index/order/confirm/user_id/'+user_id+'/course_id/'+course_id;
+                                    }else{
+                                        mui.confirm("请先完善你的个人信息",'温馨提示',['立即前往','取消'],function(e){
+                                            if(e.index == 0) location.href='/index/userinfo/save';
+                                        })
+                                    }
+                                }
+                            });
+                        }
+                    }
+                })
+
+            }
         }
 
         </script>

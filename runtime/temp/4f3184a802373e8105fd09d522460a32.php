@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:77:"/www/wwwroot/c.yaoget.cn/public/../application/index/view/userinfo/index.html";i:1566984057;s:64:"/www/wwwroot/c.yaoget.cn/application/index/view/common/meta.html";i:1566985948;s:63:"/www/wwwroot/c.yaoget.cn/application/index/view/common/nav.html";i:1567044755;s:66:"/www/wwwroot/c.yaoget.cn/application/index/view/common/footer.html";i:1566983242;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:77:"/www/wwwroot/c.yaoget.cn/public/../application/index/view/userinfo/index.html";i:1567156313;s:64:"/www/wwwroot/c.yaoget.cn/application/index/view/common/meta.html";i:1566985948;s:63:"/www/wwwroot/c.yaoget.cn/application/index/view/common/nav.html";i:1567156502;s:66:"/www/wwwroot/c.yaoget.cn/application/index/view/common/footer.html";i:1567132625;}*/ ?>
 <!--<meta charset="utf-8">-->
 <!--<title><?php echo (isset($title) && ($title !== '')?$title:''); ?> – <?php echo __('The fastest framework based on ThinkPHP5 and Bootstrap'); ?></title>-->
 <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">-->
@@ -128,6 +128,7 @@
 </body>
 <script type="text/javascript" src="/index/js/jquery-3.1.1.min.js"></script>
 <script>
+    //a链接点击之后 选中当前
     $(".footer a").each(function () {
     if ($(this)[0].href == String(window.location)) {
         $(this).find('.tab-icon').addClass("active").siblings().removeClass("active");
@@ -159,7 +160,7 @@
     </div>
     <ul>
         <li>
-            <a href="/index/order/alllist/user_id/<?php echo $info['id']; ?>">
+            <a href="/index/order/alllist">
                 <div class="my-icon">
                     <img src="/index/images/lesson.png" />
                 </div>
@@ -240,6 +241,14 @@
 <script src="/index/js/mui.min.js"></script>
 <script type="text/javascript" src="/index/js/jquery-3.1.1.min.js"></script>
 <script src="/index/layui-v2.5.4/layui/layui.js"></script>
+<script>
+    layui.use(['layer', 'form'], function(){
+        var layer = layui.layer
+            ,form = layui.form;
+
+        // layer.msg('Hello World');
+    });
+</script>
 <script type="text/javascript">
 
 </script>

@@ -100,7 +100,7 @@ class Userinfo extends Frontend{
                 if($parent_info){//推送模版消息给当前用户父级
 
                     $template = $this->site['download_notice'];
-                    $url = 'http://www.baidu.com';
+                    $url = Config::get('HOST');
                     $data = [
                         'first' => ['客户认证成功通知','#3686c5'],
                         'keyword1' => $user['nickname'].'~'.$user['name'],

@@ -34,6 +34,7 @@ class Index extends Frontend
     public function index(){
 
         $info = $this->getUserInfo();//获取当前用户信息
+        // dump($info);
 
         $authstatus = $this->is_auth();//是否认证
 
@@ -107,7 +108,8 @@ class Index extends Frontend
                 'course_id' => $res['course_id'],
                 'user_id' => $res['user_id']
             ];
-            $data = Db::name('order')->where($where)->where('order_status','neq',0)->find();
+            $data = Db::name('order')->where($where)->where('order_status','in','1,2')->find();//1为已付款 2为已评价
+//            dump($data);
 
             if($data) return $this->return_msg('200','该用户已购买该产品','','/index/video/index/course_id/'.$res['course_id'].'');
 

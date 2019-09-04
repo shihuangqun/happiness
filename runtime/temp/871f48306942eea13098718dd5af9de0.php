@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:74:"/www/wwwroot/c.yaoget.cn/public/../application/admin/view/notice/edit.html";i:1565599832;s:67:"/www/wwwroot/c.yaoget.cn/application/admin/view/layout/default.html";i:1562338656;s:64:"/www/wwwroot/c.yaoget.cn/application/admin/view/common/meta.html";i:1566096906;s:66:"/www/wwwroot/c.yaoget.cn/application/admin/view/common/script.html";i:1566096255;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:74:"/www/wwwroot/c.yaoget.cn/public/../application/admin/view/notice/edit.html";i:1567153900;s:67:"/www/wwwroot/c.yaoget.cn/application/admin/view/layout/default.html";i:1562338656;s:64:"/www/wwwroot/c.yaoget.cn/application/admin/view/common/meta.html";i:1566096906;s:66:"/www/wwwroot/c.yaoget.cn/application/admin/view/common/script.html";i:1566096255;}*/ ?>
 <!DOCTYPE html>
 <html lang="<?php echo $config['language']; ?>">
     <head>
@@ -75,6 +75,12 @@
                 <span class="msg-box n-right" for="c-image"></span>
             </div>
             <ul class="row list-inline plupload-preview" id="p-image"></ul>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2"><?php echo __('描述'); ?>:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-description" data-rule="required" class="form-control" rows="5" name="row[description]" cols="50"><?php echo htmlentities($row['description']); ?></textarea>
         </div>
     </div>
     <div class="form-group">

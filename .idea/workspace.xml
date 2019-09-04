@@ -2,63 +2,83 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ea3a377-e41b-4243-b984-8970e54c792e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/application/index/view/index/show.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/index/view/order/comment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/happiness.iml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/happiness.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ceshi.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLinters/jshint.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLinters/jshint.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/admin/controller/CommentChapter.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/controller/CommentChapter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/admin/view/chapter/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/chapter/add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/admin/view/chapter/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/chapter/edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/admin/view/notice/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/notice/add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/admin/view/notice/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/notice/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/wechat/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/addons/wechat/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/wechat/controller/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/addons/wechat/controller/Index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/controller/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/controller/Comment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/common/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/common/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/common/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/common/menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/dashboard/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/dashboard/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/index/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/index/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/member_service/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/member_service/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/order_vip/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/order_vip/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/order_vip/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/order_vip/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/controller/Frontend.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/common/controller/Frontend.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/extra/site.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/extra/site.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/index/controller/Course.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/controller/Course.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/index/controller/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/controller/Index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/index/controller/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/controller/Order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/controller/Video.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/controller/Video.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/view/common/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/view/common/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/view/common/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/view/common/nav.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/index/controller/Pay.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/controller/Pay.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/index/controller/Userinfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/controller/Userinfo.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/index/view/course/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/view/course/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/index/view/index/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/view/index/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/index/view/order/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/view/order/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/view/userinfo/complaint.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/view/userinfo/complaint.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/index/view/order/pay_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/view/order/pay_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/index/view/userinfo/card.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/view/userinfo/card.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/index/view/userinfo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/view/userinfo/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/index/view/userinfo/infos.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/view/userinfo/infos.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/index/view/video/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/view/video/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/backend/comment_chapter.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/backend/comment_chapter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/happiness.sql" beforeDir="false" afterPath="$PROJECT_DIR$/happiness.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/backend/comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/backend/comment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/backend/member_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/backend/member_service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/backend/order_vip.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/backend/order_vip.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/layui-v2.5.4/иpйдиeиeи]зэиmи_й╕бш/Gitй╨зэи/иb.url" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index/css/mui.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/index/css/mui.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index/css/video.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/index/css/video.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index/js/video.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/index/js/video.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/20190823/bdcf2f26354de4f73b863faab43727e9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/log/201908/1566622453-24.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/log/201908/1566810101-26.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/log/201908/1566883262-27.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/log/201908/1566893411-27.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/log/201908/1566916403-27.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/log/201908/23.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/log/201908/24.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/log/201908/25.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/log/201908/26.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/log/201908/27.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/log/201908/28.log" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/log/201908/28.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/cache/cb/78ef4a9130f39208ff10858ddd8377.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/cache/cb/78ef4a9130f39208ff10858ddd8377.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201908/30.log" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/log/201908/30.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/log/easywechat.log" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/log/easywechat.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/log/pay.log" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/log/pay.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/07ede984367c906a01dd2b3c9423e007.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/0d8e069e86b5e781fc24bc48ad42d2c2.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/0d8e069e86b5e781fc24bc48ad42d2c2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/20c9438c3826f5fcc50f526260c8fa6e.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/23494a876f716a28a88f336160af2570.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/137e0d3e69c77946af2aa92f162e2706.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/1c431648705ab424af2f9003e0143619.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/2c49efd0f910673cdce6127e483bc6a0.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/2c49efd0f910673cdce6127e483bc6a0.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/31766f676fe8a36e0f7181d2180fb5df.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/31766f676fe8a36e0f7181d2180fb5df.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/380dd5d3b865aa2b512c397930680072.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/48db5a65381f99c4d214954415263b6b.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/48db5a65381f99c4d214954415263b6b.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/4b370403483eeb1049bda59c51f0c890.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/4f0cf3f536f168b96a0aee42b5a66090.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/4f3184a802373e8105fd09d522460a32.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/4f3184a802373e8105fd09d522460a32.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/6da574c4d105b0c4a82cbd21c909aa51.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/6da574c4d105b0c4a82cbd21c909aa51.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/871f48306942eea13098718dd5af9de0.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/871f48306942eea13098718dd5af9de0.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/8b8c3cdbb42958c28d010fe87b6abfea.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/8b8c3cdbb42958c28d010fe87b6abfea.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/921a162ed120fb1b4349b4b90dd9103f.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/921a162ed120fb1b4349b4b90dd9103f.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/8d64fb06240cef8f4a32c89a270d82ca.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/8d9e76638f59a5565f38138ca9019dc6.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/921a162ed120fb1b4349b4b90dd9103f.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/926dbefeb8a7f4dfd7c2a0ce6f2d6d80.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/a8a864f2c2ad82b9d59e739c4c29510d.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/b63d05cb94376dc8c19467db5191d802.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/bc1cb2ddb02254bcd015fea8b837621e.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/bc1cb2ddb02254bcd015fea8b837621e.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/be63e9d0a9692b97e9bc45d848ce7823.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/be63e9d0a9692b97e9bc45d848ce7823.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/d92ab2fdcca97340f66178e2981a0332.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/bc5d8a49f89254be7d51e999a4708f72.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/be63e9d0a9692b97e9bc45d848ce7823.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/c6a36ceeb3a7a6add921013a743a2ede.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/c6bbc955734a0eeab73ef2e0e481a40b.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/c6bbc955734a0eeab73ef2e0e481a40b.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/cb1d8deca6c2fe6eed5850d09040fcf9.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/cb1d8deca6c2fe6eed5850d09040fcf9.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/cb33fb66efa11f36056357da8ac202a8.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/cb33fb66efa11f36056357da8ac202a8.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/d166e6d2001e89789b7e8556d4817f6e.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/de3d02497dc78d41362d4ef1ff77f05f.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/df96f4c309d2b577679fd40a2d4c336d.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/df96f4c309d2b577679fd40a2d4c336d.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/efb14c0baa2681be62e9f90670c12e60.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime/temp/f73c14b4e1ea2ddbd74505097f41b5d2.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/ea3ce443dd72d3379efca5684828351f.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/ebc248e16a0e0fcedac6a2afb29b3e25.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/ebc248e16a0e0fcedac6a2afb29b3e25.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/f2c44b6269ad33c0cbc9b9f39b4e8469.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -84,37 +104,37 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
-      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
-      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
-      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
-      <path value="$PROJECT_DIR$/vendor/composer" />
-      <path value="$PROJECT_DIR$/vendor/mtdowling/cron-expression" />
-      <path value="$PROJECT_DIR$/vendor/topthink/think-installer" />
-      <path value="$PROJECT_DIR$/vendor/topthink/think-helper" />
-      <path value="$PROJECT_DIR$/vendor/topthink/think-captcha" />
-      <path value="$PROJECT_DIR$/vendor/karsonzhang/fastadmin-addons" />
+      <path value="$PROJECT_DIR$/vendor/symfony/psr-http-message-bridge" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
       <path value="$PROJECT_DIR$/vendor/overtrue/pinyin" />
       <path value="$PROJECT_DIR$/vendor/overtrue/socialite" />
       <path value="$PROJECT_DIR$/vendor/overtrue/wechat" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
-      <path value="$PROJECT_DIR$/vendor/phpmailer/phpmailer" />
-      <path value="$PROJECT_DIR$/vendor/psr/log" />
-      <path value="$PROJECT_DIR$/vendor/psr/container" />
-      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
-      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
-      <path value="$PROJECT_DIR$/vendor/symfony/psr-http-message-bridge" />
-      <path value="$PROJECT_DIR$/vendor/symfony/options-resolver" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php70" />
-      <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
-      <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/topthink/think-captcha" />
+      <path value="$PROJECT_DIR$/vendor/topthink/think-helper" />
+      <path value="$PROJECT_DIR$/vendor/topthink/think-installer" />
       <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
       <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
-      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/mtdowling/cron-expression" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/phpmailer/phpmailer" />
+      <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/karsonzhang/fastadmin-addons" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
       <path value="$PROJECT_DIR$/vendor/pimple/pimple" />
       <path value="$PROJECT_DIR$/vendor/endroid/qr-code" />
-      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
-      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php70" />
     </include_path>
   </component>
   <component name="ProjectId" id="1PIqqC3EmkpfKKgnGZKBWcRyem2" />
@@ -128,7 +148,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/ssmdrh.com" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -171,6 +191,13 @@
       <workItem from="1566978903161" duration="13168000" />
       <workItem from="1567040438242" duration="24552000" />
       <workItem from="1567126599113" duration="24821000" />
+      <workItem from="1567389249598" duration="1437000" />
+      <workItem from="1567413500015" duration="6643000" />
+      <workItem from="1567473063989" duration="1706000" />
+      <workItem from="1567482272751" duration="59000" />
+      <workItem from="1567482414515" duration="57000" />
+      <workItem from="1567559830389" duration="5671000" />
+      <workItem from="1567581321245" duration="3961000" />
     </task>
     <servers />
   </component>

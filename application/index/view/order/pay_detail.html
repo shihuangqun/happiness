@@ -170,7 +170,7 @@
                 'getBrandWCPayRequest',{$config},
                 function(res){
                     if (res.err_msg == "get_brand_wcpay_request:ok") { // 支付成功
-                        location.href = '/';
+                        location.href = '/index/video/index/course_id/'+{$info.course_id};
                     }
                     if(res.err_msg == "get_brand_wcpay_request:fail") { // 支付失败
                         location.href = 'fail';

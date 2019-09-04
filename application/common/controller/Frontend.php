@@ -48,10 +48,12 @@ class Frontend extends Controller
     public function _initialize()
     {
         if(empty(Session::get('wechat_user'))){
+//            dump('110');
             Session::set('topUrl',$_SERVER['REQUEST_URI']);//记录授权前地址
             header('location:'.'/addons/wechat/index/oauth');//判断session是否存在  反之跳转授权
         }
 
+//        dump(Session::get('wechat_user'));
         $this->user = Session::get('wechat_user');//获取当前用户session
         $this->site = Config::get("site");//获取系统配置
         //移除HTML标签
@@ -204,5 +206,36 @@ class Frontend extends Controller
 
         return $isauth;
 
+    }
+
+    //获取openid
+    public function getOpenId(){
+        if(isset($_SESSION['openid'])){
+            return $_SESSION['openid'];
+        }else{
+            //1.用户访问一个地址 先获取到code
+
+            if(!isset($_GET['code'])){
+                //print_r($_SERVER);
+                $redurl = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+                $url = self::CODEURL . "appid=" .self::APPID ."&redirect_uri={$redurl}&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect";
+                //构建跳转地址 跳转
+                header("location:{$url}");
+            }else{
+                //2.根据code获取到openid
+                //调用接口获取openid
+                $openidurl = self::OPENIDURL . "appid=" . self::APPID . "&secret=".self::SECRET . "&code=" . $_GET['code'] . "&grant_type=authorization_code";
+                $data = file_get_contents($openidurl);
+                $arr = json_decode($data,true);
+                $_SESSION['openid'] = $arr['openid'];
+                return $_SESSION['openid'];
+            }
+        }
+    }
+
+    //捕获异常
+    public function logs($filename,$data){
+
+        file_put_contents(ROOT_PATH . '/runtime/log/'.$filename, $data);
     }
 }

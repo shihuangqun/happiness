@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:76:"/www/wwwroot/c.yaoget.cn/public/../application/index/view/userinfo/auth.html";i:1566986107;s:66:"/www/wwwroot/c.yaoget.cn/application/index/view/common/footer.html";i:1566983242;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:76:"/www/wwwroot/c.yaoget.cn/public/../application/index/view/userinfo/auth.html";i:1566986107;s:66:"/www/wwwroot/c.yaoget.cn/application/index/view/common/footer.html";i:1567132625;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -306,6 +306,14 @@ text-align: center;">
 <script src="/index/js/mui.min.js"></script>
 <script type="text/javascript" src="/index/js/jquery-3.1.1.min.js"></script>
 <script src="/index/layui-v2.5.4/layui/layui.js"></script>
+<script>
+    layui.use(['layer', 'form'], function(){
+        var layer = layui.layer
+            ,form = layui.form;
+
+        // layer.msg('Hello World');
+    });
+</script>
 <script type="text/javascript">
 
     layui.use(['layer', 'form'], function(){

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:77:"/www/wwwroot/c.yaoget.cn/public/../application/index/view/userinfo/infos.html";i:1566984119;s:64:"/www/wwwroot/c.yaoget.cn/application/index/view/common/meta.html";i:1566985948;s:66:"/www/wwwroot/c.yaoget.cn/application/index/view/common/footer.html";i:1566983242;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:77:"/www/wwwroot/c.yaoget.cn/public/../application/index/view/userinfo/infos.html";i:1566984119;s:64:"/www/wwwroot/c.yaoget.cn/application/index/view/common/meta.html";i:1566985948;s:66:"/www/wwwroot/c.yaoget.cn/application/index/view/common/footer.html";i:1567132625;}*/ ?>
 <!--<meta charset="utf-8">-->
 <!--<title><?php echo (isset($title) && ($title !== '')?$title:''); ?> – <?php echo __('The fastest framework based on ThinkPHP5 and Bootstrap'); ?></title>-->
 <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">-->
@@ -103,6 +103,14 @@
 <script src="/index/js/mui.min.js"></script>
 <script type="text/javascript" src="/index/js/jquery-3.1.1.min.js"></script>
 <script src="/index/layui-v2.5.4/layui/layui.js"></script>
+<script>
+    layui.use(['layer', 'form'], function(){
+        var layer = layui.layer
+            ,form = layui.form;
+
+        // layer.msg('Hello World');
+    });
+</script>
 <script src="/index/js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
 
 <!--		<script src="/index/js/mui.poppicker.js" type="text/javascript" charset="utf-8"></script>-->

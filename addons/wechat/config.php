@@ -109,7 +109,7 @@ return array (
     'content' => 
     array (
     ),
-    'value' => 'http://c.yaoget.cn/addons/wechat/index/callback',
+    'value' => 'https://c.yaoget.cn/addons/wechat/index/callback',
     'rule' => 'required',
     'msg' => '',
     'tip' => '',

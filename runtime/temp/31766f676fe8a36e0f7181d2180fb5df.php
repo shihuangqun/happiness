@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:75:"/www/wwwroot/c.yaoget.cn/public/../application/admin/view/chapter/edit.html";i:1565839102;s:67:"/www/wwwroot/c.yaoget.cn/application/admin/view/layout/default.html";i:1562338656;s:64:"/www/wwwroot/c.yaoget.cn/application/admin/view/common/meta.html";i:1566096906;s:66:"/www/wwwroot/c.yaoget.cn/application/admin/view/common/script.html";i:1566096255;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:75:"/www/wwwroot/c.yaoget.cn/public/../application/admin/view/chapter/edit.html";i:1567134667;s:67:"/www/wwwroot/c.yaoget.cn/application/admin/view/layout/default.html";i:1562338656;s:64:"/www/wwwroot/c.yaoget.cn/application/admin/view/common/meta.html";i:1566096906;s:66:"/www/wwwroot/c.yaoget.cn/application/admin/view/common/script.html";i:1566096255;}*/ ?>
 <!DOCTYPE html>
 <html lang="<?php echo $config['language']; ?>">
     <head>
@@ -60,7 +60,7 @@
     <div class="form-group">
         <label class="control-label col-xs-12 col-sm-2"><?php echo __('Course_id'); ?>:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-course_id" data-rule="required" data-source="course/index" class="form-control selectpage" name="row[course_id]" type="text" value="<?php echo htmlentities($row['course_id']); ?>">
+            <input id="c-course_id" data-rule="required" data-field="title" data-source="course/index" class="form-control selectpage" name="row[course_id]" type="text" value="<?php echo htmlentities($row['course_id']); ?>">
         </div>
     </div>
     <div class="form-group">
@@ -125,10 +125,22 @@
             </div>
         </div>
     </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2"><?php echo __('描述'); ?>:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-description" class="form-control" rows="5" name="row[description]" cols="50"><?php echo htmlentities($row['description']); ?></textarea>
+        </div>
+    </div>
     <div class="form-group" id="con" style="display: none">
         <label class="control-label col-xs-12 col-sm-2"><?php echo __('Content'); ?>:</label>
         <div class="col-xs-12 col-sm-8">
             <textarea id="c-content" class="form-control editor" rows="5" name="row[content]" cols="50"><?php echo htmlentities($row['content']); ?></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2"><?php echo __('学习人数'); ?>:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-studynum" class="form-control" name="row[studynum]" type="text" value="<?php echo htmlentities($row['studynum']); ?>">
         </div>
     </div>
     <div class="form-group">
@@ -150,6 +162,12 @@
         </div>
     </div>
     <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2"><?php echo __('详情介绍'); ?>:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-video_content" class="form-control editor" rows="5" name="row[video_content]" cols="50"><?php echo htmlentities($row['video_content']); ?></textarea>
+        </div>
+    </div>
+    <div class="form-group">
         <label class="control-label col-xs-12 col-sm-2"><?php echo __('Weigh'); ?>:</label>
         <div class="col-xs-12 col-sm-8">
             <input id="c-weigh" data-rule="required" class="form-control" name="row[weigh]" type="number" value="<?php echo htmlentities($row['weigh']); ?>">
@@ -161,7 +179,7 @@
             
             <div class="radio">
             <?php if(is_array($statusList) || $statusList instanceof \think\Collection || $statusList instanceof \think\Paginator): if( count($statusList)==0 ) : echo "" ;else: foreach($statusList as $key=>$vo): ?>
-            <label for="row[status]-<?php echo $key; ?>"><input id="row[status]-<?php echo $key; ?>" name="row[status]" type="radio" value="<?php echo $key; ?>" <?php if(in_array(($key), is_array($row['status'])?$row['status']:explode(',',$row['status']))): ?>checked<?php endif; ?> /> <?php echo $vo; ?></label> 
+            <label for="row[status]-<?php echo $key; ?>"><input id="row[status]-<?php echo $key; ?>" name="row[status]" type="radio" value="<?php echo $key; ?>" <?php if(in_array(($key), is_array($row['status'])?$row['status']:explode(',',$row['status']))): ?>checked<?php endif; ?> /> <?php echo $vo; ?></label>
             <?php endforeach; endif; else: echo "" ;endif; ?>
             </div>
 

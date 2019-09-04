@@ -9,12 +9,13 @@ body {
 }
 
 .content {
-    padding-bottom: 70px;
+    /*padding-bottom: 70px;*/
 }
 
 .content .video {
     width: 100%;
     display: block;
+    height: 235px;
 }
 
 .content .video-box {

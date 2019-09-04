@@ -50,11 +50,8 @@ class Index extends \think\addons\Controller
 
             if(empty($a)) if($id !== 0) Db::name('only')->insert(['key' =>$message['FromUserName'],'value' => $id]);
 
-            //拿openid做 唯一标识符
-//            $redis = new Redis();
-//            $redis->set($message['FromUserName'],$aa);
 
-            return "您好！欢迎关注我!你的父级ID为：".$message['EventKey'];
+            return "您好！欢迎关注幸福传承!";
         });
 
         $response = $this->app->server->serve();
@@ -230,11 +227,11 @@ class Index extends \think\addons\Controller
             if(!empty($parent)){
                 //推荐成功模版ID
                 $template = $this->site['download_notice'];
-                $url = 'http://www.baidu.com';
+                $url = '/';
                 $data = [
                     'first' => ['您好，有学员通过您的推荐进入平台','#3686c5'],
                     'keyword1' => $res['nickname'],
-                    'keyword2' => date('Y-m-d H:i:s',$res['crealogime']),
+                    'keyword2' => date('Y-m-d H:i:s',$res['createtime']),
                     'remark' => ['感谢您的支持','#3686c5']
                 ];
                 $this->tempMessage($parent['openid'],$template,$url,$data);
@@ -305,6 +302,7 @@ class Index extends \think\addons\Controller
                 $url = Config::get('HOST').'/index/video/index/course_id/'.$info['course_id'];//跳转URL
 
                 if($info['topid'] != 0){//父级模板消息推送
+
                     $parent_openid = Db::name('userinfo')->where('id',$info['topid'])->value('openid');//获取父级openid
 
                     $datas = [
@@ -313,7 +311,8 @@ class Index extends \think\addons\Controller
                         'keyword2' => date('Y-m-d H:i:s',$res['paymenttime']),
                         'remark' => '您的客户'.$info['name'].'，已成功报名课程，请及时邀请进入对应学习群以及推荐给辅导老师'
                     ];
-                    $this->tempMessage($parent_openid,$template,$url,$datas);//推送报名成功通知给父级
+                    $this->tempMessage($parent_openid,$template,Config::get('HOST'),$datas);//推送报名成功通知给父级
+
                 }
 
                 $openid = $info['openid'];//获取当前用户openid
@@ -325,6 +324,52 @@ class Index extends \think\addons\Controller
                 ];
                 $this->tempMessage($openid,$template,$url,$data);//当前用户报名成功推送
 
+//                $order = new \app\index\controller\Order();
+//                $order->getAllTop($info['topid'],($orderinfo->total_fee) / 100);//结算父级佣金
+
+                if($info['topid'] != 0){//一级
+                    $commission = Db::name('commission')->find();//佣金比例
+
+                    $one = Db::name('userinfo')->where('id',$info['topid'])->field('id,topid')->find();//一级
+
+                    $money = ($orderinfo->total_fee * $commission['one']) / 10000;
+
+                    $user = Db::name('userinfo')->where('id',$one['id'])->field('openid,money')->find();//获取当前用户余额
+                    $res = [
+                        'id' => $one['id'],
+                        'money' => $money + $user['money']//佣金+当前余额
+                    ];
+
+                    $this->SaveMoney($res);
+                    if($one['topid'] != 0){//二级
+                        $two = Db::name('userinfo')->where('id',$one['topid'])->field('id,topid')->find();
+
+                        $money = ($orderinfo->total_fee * $commission['two']) / 10000;
+
+                        $user = Db::name('userinfo')->where('id',$two['id'])->field('openid,money')->find();//获取当前用户余额
+                        $res = [
+                            'id' => $two['id'],
+                            'money' => $money + $user['money']//佣金+当前余额
+                        ];
+
+                        $this->SaveMoney($res);
+                        if($two['topid'] != 0){//三级
+                            $three = Db::name('userinfo')->where('id',$two['topid'])->field('id,topid')->find();
+                            $money = ($orderinfo->total_fee * $commission['three']) / 10000;
+
+                            $user = Db::name('userinfo')->where('id',$three['id'])->field('openid,money')->find();//获取当前用户余额
+                            $res = [
+                                'id' => $three['id'],
+                                'money' => $money + $user['money']//佣金+当前余额
+                            ];
+
+                            $this->SaveMoney($res);
+                        }
+                    }
+
+                }
+
+
                 return true; // 返回处理完成
             } else { // 用户支付失败
                 $this->logs('失败');
@@ -335,6 +380,19 @@ class Index extends \think\addons\Controller
         $response->send();
     }
 
+    /**
+     * 更新用户佣金
+     * @param $res
+     */
+    public function SaveMoney($res){
+        try{
+            $save = Db::name('userinfo')->update($res);//更新用户余额
+        }catch (Exception $e){
+            return $this->logs('user_money.log','更新余额出错');
+        }
+
+        if($save) return true;
+    }
     public function logs($data){
 
         file_put_contents(ROOT_PATH . '/runtime/log/pay.log', $data);

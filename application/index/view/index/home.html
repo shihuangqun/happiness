@@ -32,7 +32,7 @@
             font-weight:800
         }
         .day-list{
-            margin-bottom: 5%;
+            margin-bottom: 8%;
         }
         a{
             color:white
@@ -79,14 +79,22 @@
         <div class="">
             <div class="nav-top">
                 <div class="userimg">
-                    <img src="{$info.avatar}" />
+                    <a href="/index/userinfo/infos/id/{$info.id}"><img src="{$info.avatar}" /></a>
                 </div>
                 <div class="username" style="margin-left: 5%;">
                     <div class="name">
                         {$info.nickname}
                     </div>
                     <div class="usertype">
+                        {if condition="$info.member_service_id eq 4"}
+                        A级合伙人
+                        {elseif condition="$info.member_service_id eq 5"}
+                        B级合伙人
+                        {elseif condition="$info.member_service_id eq 6"}
+                        C级合伙人
+                        {/else}
                         普通用户
+                        {/if}
                     </div>
                 </div>
                 <div class="mui-input-row mui-search">
@@ -117,7 +125,7 @@
                 <div class="swiper-wrapper">
                     {volist name="banner" id="b"}
                     <div class="swiper-slide">
-                        <img src="{$b.image}" />
+                        <a href="{if condition="$b.url neq null"}{$b.url}{else/}#{/if}"><img src="{$b.image}" /></a>
                     </div>
                     {/volist}
 
@@ -131,40 +139,20 @@
                         
 
         <div class="home-list padd10">
+        	{volist name="cate" id="ca"}
             <div class="item">
                 <div class="item-img">
-                    <img src="/index/images/1.png" />
+                    <img src="{$ca.image}" />
                 </div>
                 <div class="item-nane">
-                    企业发展
+                    {$ca.name}
                 </div>
             </div>
-            <div class="item">
-                <div class="item-img">
-                    <img src="/index/images/3.png" />
-                </div>
-                <div class="item-nane">
-                    企业发展
-                </div>
-            </div>
+           {/volist}
 
-            <div class="item">
-                <div class="item-img">
-                    <img src="/index/images/4.png" />
-                </div>
-                <div class="item-nane">
-                    企业发展
-                </div>
-            </div>
+            
 
-            <div class="item">
-                <div class="item-img">
-                    <img src="/index/images/6.png" />
-                </div>
-                <div class="item-nane">
-                    企业发展
-                </div>
-            </div>
+           
 
 
 

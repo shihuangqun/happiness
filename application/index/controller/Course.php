@@ -18,10 +18,12 @@ class Course extends Frontend{
      */
     public function index(){
 
+        $user = $this->getUserInfo();
         $data = Db::name('course')->order('price asc')->select();
 
         $this->assign([
-            'data' => $data
+            'data' => $data,
+            'user' => $user
         ]);
         return $this->fetch();
     }

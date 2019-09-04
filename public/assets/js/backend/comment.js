@@ -25,8 +25,10 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                     [
                         {checkbox: true},
                         {field: 'id', title: __('Id')},
-                        {field: 'nickname', title: __('Nickname')},
-                        {field: 'title', title: __('Title')},
+                        // {field: 'nickname', title: __('Nickname')},
+                        // {field: 'title', title: __('Title')},
+                        {field: 'userinfo.nickname', title: __('昵称')},
+                        {field: 'course.title', title: __('课程名称')},
                         {field: 'comment_rank', title: __('Comment_rank'), searchList: {"0":__('Comment_rank 0'),"1":__('Comment_rank 1'),"2":__('Comment_rank 2')}, formatter: Table.api.formatter.status},
                         {field: 'comment', title: __('评价内容')},
                         {field: 'status', title: __('Status'), searchList: {"0":__('Status 0'),"1":__('Status 1'),"2":__('Status 2')}, formatter: Table.api.formatter.status},
@@ -35,7 +37,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {
                             field: 'buttons',
                             width: "120px",
-                            title: __('按钮组'),
+                            title: __('审核'),
                             table: table,
                             events: Table.api.events.operate,
                             buttons: [

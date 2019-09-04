@@ -8,7 +8,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                     index_url: 'member_service/index' + location.search,
                     add_url: 'member_service/add',
                     edit_url: 'member_service/edit',
-                    del_url: 'member_service/del',
+                    // del_url: 'member_service/del',
                     multi_url: 'member_service/multi',
                     table: 'member_service',
                 }
