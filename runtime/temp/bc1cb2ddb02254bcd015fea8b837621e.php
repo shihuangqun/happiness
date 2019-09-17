@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:77:"/www/wwwroot/c.yaoget.cn/public/../application/index/view/userinfo/share.html";i:1566983883;s:64:"/www/wwwroot/c.yaoget.cn/application/index/view/common/meta.html";i:1566985948;s:63:"/www/wwwroot/c.yaoget.cn/application/index/view/common/nav.html";i:1567156502;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:77:"/www/wwwroot/c.yaoget.cn/public/../application/index/view/userinfo/share.html";i:1568100192;s:64:"/www/wwwroot/c.yaoget.cn/application/index/view/common/meta.html";i:1568100133;s:63:"/www/wwwroot/c.yaoget.cn/application/index/view/common/nav.html";i:1568191990;}*/ ?>
 <!--<meta charset="utf-8">-->
 <!--<title><?php echo (isset($title) && ($title !== '')?$title:''); ?> – <?php echo __('The fastest framework based on ThinkPHP5 and Bootstrap'); ?></title>-->
 <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">-->
@@ -31,7 +31,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <title></title>
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <link href="/index/css/mui.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="/index/css/style.css" />
@@ -43,7 +42,7 @@
         .mui-toast-message {background: url(/index/images/success.png) no-repeat center 10px #000; opacity: 0.6; color: #fff; width: 120px;
             padding: 70px 5px 10px 5px;border-radius: 12px;}
     </style>
-
+<title>推广海报</title>
 <body>
 
 <div>
@@ -93,7 +92,7 @@
 <body>
     <div class="footer">
         <div>
-        	<a href="/" class="tab-item">
+        	<a href="/index/index/index/openid/<?php echo \think\Request::instance()->session('wechat_user.original.openid'); ?>" class="tab-item">
             <div class="tab-icon">
                 <i class="icon iconfont" style="font-size: 22px;">&#xe615;</i>
                 <p>首页</p>
@@ -102,7 +101,7 @@
         </a>
         </div>
         <div>
-        	<a href="/index/course/index" class="tab-item">
+        	<a href="/index/course/index/openid/<?php echo \think\Request::instance()->session('wechat_user.original.openid'); ?>" class="tab-item">
             <div class="tab-icon">
                 <i class="icon iconfont" style="font-size: 22px;">&#xe600;</i>
                 <p>在线课程</p>

@@ -5,6 +5,8 @@ namespace app\admin\controller;
 use app\admin\model\AdminLog;
 use app\common\controller\Backend;
 use think\Config;
+use think\Db;
+use think\Exception;
 use think\Hook;
 use think\Validate;
 
@@ -115,6 +117,77 @@ class Index extends Backend
         $this->auth->logout();
         Hook::listen("admin_logout_after", $this->request);
         $this->success(__('Logout successful'), 'index/login');
+    }
+
+    public function ceshi(){
+
+//        $aa = Db::name('mc_members')
+//            ->alias('m')
+//            ->join('lesson_member lm','lm.uid = m.uid')
+////            ->limit('0,10')
+//            ->field('m.*,lm.openid,lm.parentid,lm.total_sale')
+//            ->select();
+
+//        $bb = Db::name('userinfo')->where('member_service_id','neq','')->select();
+
+
+//        foreach($aa as $k => $v){
+//            $data[] = [
+//                'openid' => $v['openid'],
+//                'phone' => $v['mobile'],
+//                'name' => $v['realname'],
+//                'nickname' => $v['nickname'],
+//                'avatar' => $v['avatar'],
+//                'gender' => $v['gender'],
+//                'country' => $v['nationality'],
+//                'province' => $v['resideprovince'],
+//                'citys' => $v['residecity'],
+//                'createtime' => $v['createtime'],
+//                'money' => $v['credit2'],
+//                'member_service_id' => $v['member_id'],
+//                'topid' => $v['parentid'],
+//                'quota' => $v['total_sale']
+//            ];
+//        }
+//        dump($data);
+
+//        try{
+//            $bb = Db::name('userinfo')->insertAll($data);
+//        }catch(Exception $e){
+//            echo '失败';
+//        }
+//        $aa = Db::name('lesson_order')->where('status','-1')->select();
+////        dump($aa);
+//        foreach($aa as $k => $v){
+//            Db::name('lesson_order')->where('id',$v['id'])->update(['status' => 3]);
+//        }
+//        dump($aa);
+        $aa = Db::name('lesson_order')
+            ->alias('o')
+            ->join('lesson_member m','m.uid = o.uid')
+            ->join('userinfo u','u.openid = m.openid')
+            ->where('o.status','in','1,2')
+            ->field('o.lessonid,o.status,u.nickname,u.openid,o.price,o.ordersn,u.id,o.addtime,o.paytime')
+            ->select();
+//
+        foreach($aa as $k => $v){
+            $data[] = [
+                'order_status' => $v['status'],
+                'order_num' => $v['ordersn'],
+                'user_id' => $v['id'],
+                'course_id' => $v['lessonid'],
+                'price' => $v['price'],
+                'createtime' => $v['addtime'],
+                'paymenttime' => $v['paytime'],
+
+            ];
+        }
+        try{
+            $bb = Db::name('order')->insertAll($data);
+        }catch(Exception $e){
+            echo '失败';
+        }
+//        dump($data);
     }
 
 }

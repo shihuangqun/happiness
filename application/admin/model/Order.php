@@ -71,9 +71,9 @@ class Order extends Model
     }
 
 
-    public function user()
+    public function userinfo()
     {
-        return $this->belongsTo('User', 'user_id', 'id', [], 'LEFT')->setEagerlyType(0);
+        return $this->belongsTo('Userinfo', 'user_id', 'id', [], 'LEFT')->setEagerlyType(0);
     }
 
 

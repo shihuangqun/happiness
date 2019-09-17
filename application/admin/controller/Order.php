@@ -4,9 +4,6 @@ namespace app\admin\controller;
 
 use app\common\controller\Backend;
 use think\Db;
-use think\Exception;
-use think\exception\PDOException;
-use think\exception\ValidateException;
 
 /**
  * 课程订单管理
@@ -54,14 +51,16 @@ class Order extends Backend
                 return $this->selectpage();
             }
             list($where, $sort, $order, $offset, $limit) = $this->buildparams();
+
+
             $total = $this->model
-                    ->with(['user','course','memberservice'])
+                    ->with(['userinfo','course','memberservice'])
                     ->where($where)
                     ->order($sort, $order)
                     ->count();
 
             $list = $this->model
-                    ->with(['user','course','memberservice'])
+                    ->with(['userinfo','course','memberservice'])
                     ->where($where)
                     ->order($sort, $order)
                     ->limit($offset, $limit)
@@ -69,15 +68,23 @@ class Order extends Backend
 
             foreach ($list as $row) {
                 $row->visible(['id','order_num','user_id','course_id','member_service_id','price','pay_type','order_status','createtime']);
-                $row->visible(['user']);
-				$row->getRelation('user')->visible(['nickname']);
+                $row->visible(['userinfo']);
+				$row->getRelation('userinfo')->visible(['name','phone','topid']);
 				$row->visible(['course']);
-				$row->getRelation('course')->visible(['title']);
+				$row->getRelation('course')->visible(['title','type']);
 				$row->visible(['memberservice']);
 				$row->getRelation('memberservice')->visible(['title']);
             }
+
             $list = collection($list)->toArray();
-            $result = array("total" => $total, "rows" => $list);
+            $data = [];
+            foreach($list as $v){
+                $v['userinfo']['topid'] = Db::name('userinfo')->where('id',$v['userinfo']['topid'])->value('name');
+//                $v['userinfo']['name'] = Db::name('userinfo')->where('id',$v['userinfo']['topid'])->value('name');
+                $data[] = $v;
+            }
+
+            $result = array("total" => $total, "rows" => $data);
 
             return json($result);
         }
@@ -85,110 +92,150 @@ class Order extends Backend
     }
 
     /**
-     * 添加
+     * 生成查询所需要的条件,排序方式
+     * @param mixed   $searchfields   快速查询的字段
+     * @param boolean $relationSearch 是否关联查询
+     * @return array
      */
-    public function add()
+    protected function buildparams($searchfields = null, $relationSearch = null)
     {
-        if ($this->request->isPost()) {
-            $params = $this->request->post("row/a");
-
-//            $commission = Db::name('commission')->find(1);
-//            //获取上级ID
-//            $topinfo = Db::name('userinfo')->field('topid')->find($params['user_id']);
-//
-//            //获取当前用户上级是否是顶级
-//            $topnum = $this->levelnum($params['user_id']);
-//
-//            //当前ID的topid为0  即顶级  不为0  即有下级
-//            if($topinfo['topid'] !== 0){
-//                //如果当前topid为0  即为二级
-//                $bb= Db::name('userinfo')->field('topid')->find($topnum['topid']);
-//
-//                //上级topid为0的时候  为一级
-//                if($topnum['topid'] == 0){
-//                    $onetotal = $params['price'] * ($commission['one']/100); //$topinfo
-//                    dump('一级');
-//                }
-//                if($bb['topid'] == 0 && !empty($bb)){//为二级
-//                    $twototal_one = $params['price'] * ($commission['one']/100);   //上级ID为　　　$topinfo
-//                    $twototal_two = $params['price'] * ($commission['two']/100);    //上级ID为      $topnum
-////                    $twoid = Db::name('userinfo')->field('topid')->find($topnum['topid']);
-////                    dump($topnum);
-//                    dump('二级');
-//                }
-//
-//                //如果当前topid为0  即为三级
-//                if(!empty($bb) && $bb['topid'] != 0){
-//                    $cc = Db::name('userinfo')->field('topid')->find($bb['topid']);
-//
-//                    if($cc['topid'] == 0){
-//                        $threetotal_one = $params['price'] * ($commission['one']/100);  //$topinfo
-//                        $threetotal_two = $params['price'] * ($commission['two']/100);  //$topnum
-//                        $threeid = Db::name('userinfo')->field('topid')->find($topnum['topid']);
-//                        $threetotal_three = $params['price'] * ($commission['three']/100);  //$threeid
-//
-//                        dump('三级');
-//                    }
-//                }
-//
-//            }
-
-
-
-            if ($params) {
-                $params = $this->preExcludeFields($params);
-
-                if ($this->dataLimit && $this->dataLimitFieldAutoFill) {
-                    $params[$this->dataLimitField] = $this->auth->id;
-                }
-                $result = false;
-                Db::startTrans();
-                try {
-                    //是否采用模型验证
-                    if ($this->modelValidate) {
-                        $name = str_replace("\\model\\", "\\validate\\", get_class($this->model));
-                        $validate = is_bool($this->modelValidate) ? ($this->modelSceneValidate ? $name . '.add' : $name) : $this->modelValidate;
-                        $this->model->validateFailException(true)->validate($validate);
+        $searchfields = is_null($searchfields) ? $this->searchFields : $searchfields;
+        $relationSearch = is_null($relationSearch) ? $this->relationSearch : $relationSearch;
+        $search = $this->request->get("search", '');
+        $filter = $this->request->get("filter", '');
+        $op = $this->request->get("op", '', 'trim');
+        $sort = $this->request->get("sort", !empty($this->model) && $this->model->getPk() ? $this->model->getPk() : 'id');
+        $order = $this->request->get("order", "DESC");
+        $offset = $this->request->get("offset", 0);
+        $limit = $this->request->get("limit", 0);
+        $filter = (array)json_decode($filter, true);
+        $op = (array)json_decode($op, true);
+        $filter = $filter ? $filter : [];
+        $where = [];
+        $tableName = '';
+        if ($relationSearch) {
+            if (!empty($this->model)) {
+                $name = \think\Loader::parseName(basename(str_replace('\\', '/', get_class($this->model))));
+                $tableName = $name . '.';
+            }
+            $sortArr = explode(',', $sort);
+            foreach ($sortArr as $index => & $item) {
+                $item = stripos($item, ".") === false ? $tableName . trim($item) : $item;
+            }
+            unset($item);
+            $sort = implode(',', $sortArr);
+        }
+        $adminIds = $this->getDataLimitAdminIds();
+        if (is_array($adminIds)) {
+            $where[] = [$tableName . $this->dataLimitField, 'in', $adminIds];
+        }
+        if ($search) {
+            $searcharr = is_array($searchfields) ? $searchfields : explode(',', $searchfields);
+            foreach ($searcharr as $k => &$v) {
+                $v = stripos($v, ".") === false ? $tableName . $v : $v;
+            }
+            unset($v);
+            $where[] = [implode("|", $searcharr), "LIKE", "%{$search}%"];
+        }
+        foreach ($filter as $k => $v) {
+            $sym = isset($op[$k]) ? $op[$k] : '=';
+            if (stripos($k, ".") === false) {
+                $k = $tableName . $k;
+            }
+            $v = !is_array($v) ? trim($v) : $v;
+            $sym = strtoupper(isset($op[$k]) ? $op[$k] : $sym);
+            switch ($sym) {
+                case '=':
+                case '<>':
+                    $where[] = [$k, $sym, (string)$v];
+                    break;
+                case 'LIKE':
+                case 'NOT LIKE':
+                case 'LIKE %...%':
+                case 'NOT LIKE %...%':
+                    $where[] = [$k, trim(str_replace('%...%', '', $sym)), "%{$v}%"];
+                    break;
+                case '>':
+                case '>=':
+                case '<':
+                case '<=':
+                    $where[] = [$k, $sym, intval($v)];
+                    break;
+                case 'FINDIN':
+                case 'FINDINSET':
+                case 'FIND_IN_SET':
+                    $where[] = "FIND_IN_SET('{$v}', " . ($relationSearch ? $k : '`' . str_replace('.', '`.`', $k) . '`') . ")";
+                    break;
+                case 'IN':
+                case 'IN(...)':
+                case 'NOT IN':
+                case 'NOT IN(...)':
+                    $where[] = [$k, str_replace('(...)', '', $sym), is_array($v) ? $v : explode(',', $v)];
+                    break;
+                case 'BETWEEN':
+                case 'NOT BETWEEN':
+                    $arr = array_slice(explode(',', $v), 0, 2);
+                    if (stripos($v, ',') === false || !array_filter($arr)) {
+                        continue 2;
                     }
-                    $result = $this->model->allowField(true)->save($params);
-                    Db::commit();
-                } catch (ValidateException $e) {
-                    Db::rollback();
-                    $this->error($e->getMessage());
-                } catch (PDOException $e) {
-                    Db::rollback();
-                    $this->error($e->getMessage());
-                } catch (Exception $e) {
-                    Db::rollback();
-                    $this->error($e->getMessage());
-                }
-                if ($result !== false) {
-                    $this->success();
+                    //当出现一边为空时改变操作符
+                    if ($arr[0] === '') {
+                        $sym = $sym == 'BETWEEN' ? '<=' : '>';
+                        $arr = $arr[1];
+                    } elseif ($arr[1] === '') {
+                        $sym = $sym == 'BETWEEN' ? '>=' : '<';
+                        $arr = $arr[0];
+                    }
+                    $where[] = [$k, $sym, $arr];
+                    break;
+                case 'RANGE':
+                case 'NOT RANGE':
+                    $v = str_replace(' - ', ',', $v);
+                    $arr = array_slice(explode(',', $v), 0, 2);
+                    if (stripos($v, ',') === false || !array_filter($arr)) {
+                        continue 2;
+                    }
+                    //当出现一边为空时改变操作符
+                    if ($arr[0] === '') {
+                        $sym = $sym == 'RANGE' ? '<=' : '>';
+                        $arr = $arr[1];
+                    } elseif ($arr[1] === '') {
+                        $sym = $sym == 'RANGE' ? '>=' : '<';
+                        $arr = $arr[0];
+                    }
+                    $where[] = [$k, str_replace('RANGE', 'BETWEEN', $sym) . ' time', $arr];
+                    break;
+                case 'LIKE':
+                case 'LIKE %...%':
+                    $where[] = [$k, 'LIKE', "%{$v}%"];
+                    break;
+                case 'NULL':
+                case 'IS NULL':
+                case 'NOT NULL':
+                case 'IS NOT NULL':
+                    $where[] = [$k, strtolower(str_replace('IS ', '', $sym))];
+                    break;
+                default:
+                    break;
+            }
+        }
+        $where = function ($query) use ($where) {
+            foreach ($where as $k => $v) {
+
+                if (is_array($v)) {
+                    if(in_array('userinfo.topid',$v)){
+                        $new_id = Db::name('userinfo')->where('name','like','%'.$v[2].'%')->value('id');
+                        $v[2] = $new_id;
+                    }
+                    call_user_func_array([$query, 'where'], $v);
                 } else {
-                    $this->error(__('No rows were inserted'));
+                    $query->where($v);
                 }
             }
-            $this->error(__('Parameter %s can not be empty', ''));
-        }
-        return $this->view->fetch();
+        };
+
+        return [$where, $sort, $order, $offset, $limit];
     }
 
-    //获取上级topid
-    public function levelnum($userid){
 
-        $info = Db::name('userinfo')->field('topid')->find($userid);
-
-        foreach($info as $k => $v){
-            $aa = Db::name('userinfo')->field('topid')->find($v);
-        }
-        return $aa;
-    }
-
-    /**
-     * 导出
-     */
-    public function export(){
-        $id = $this->request->request();
-        return $this->success('success','',$id);
-    }
 }

@@ -1,4 +1,5 @@
 {include file="common/meta"}
+<title>{$info.name}</title>
 <link href="/index/css/article.css" rel="stylesheet" />
 <body>
 <div class="tabbar tabbar_wrap page_wrap">
@@ -20,9 +21,34 @@
 <!--                        <div class="rich_tool_text">阅读 299</div>-->
                     </div>
                 </div>
+
             </div>
+            <div style="padding-bottom: 100px;">
+                <div style="font-weight: 900;font-size: 18px; margin-left: 5%;margin-right: 5%; border-bottom: 1px solid #f7f7f7;padding-bottom: 20px;">推荐阅读</div>
+                {volist name="recommend" id="vo"}
+                <a href="/index/index/show/id/{$vo.id}/openid/{$Request.session.wechat_user.original.openid}" style="color: black">
+                    <div style="margin: 15px 5% 10px 5%;position: relative;line-height: 1.5">
+                        <div style="float: left">
+                            <img src="{$vo.image}" alt="" width="130" style="border-radius: 5px;">
+                        </div>
+                        <div style="margin-left: 140px;">
+                            <div style="margin: 10px 0;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">{$vo.name}</div>
+                            <div style="color: #666;font-size: 12px;display: -webkit-box;overflow: hidden;text-overflow: ellipsis;word-wrap: break-word;white-space: normal !important;-webkit-line-clamp: 3;-webkit-box-orient: vertical;">{$vo.description}</div>
+                        </div>
+                    </div>
+                </a>
+                {/volist}
 
 
+            </div>
         </div>
+
+
 </body>
+<input type="hidden" id="share_title" value="{$info.name}">
+<input type="hidden" id="share_desc" value="{$info.description}">
+<input type="hidden" id="share_img" value="{$info.image}">
+{include file="common/nav"}
+{include file="common/footer"}
+{include file="common/share"}
 </html>

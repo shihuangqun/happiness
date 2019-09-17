@@ -580,7 +580,9 @@ if (!function_exists('collection')) {
     function collection($resultSet)
     {
         $item = current($resultSet);
+
         if ($item instanceof Model) {
+
             return \think\model\Collection::make($resultSet);
         } else {
             return \think\Collection::make($resultSet);

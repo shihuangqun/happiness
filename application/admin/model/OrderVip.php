@@ -84,14 +84,14 @@ class OrderVip extends Model
     }
 
 
-    public function user()
+    public function memberservice()
     {
-        return $this->belongsTo('User', 'user_id', 'id', [], 'LEFT')->setEagerlyType(0);
+        return $this->belongsTo('MemberService', 'member_service_id', 'id', [], 'LEFT')->setEagerlyType(0);
     }
 
 
-    public function memberservice()
+    public function userinfo()
     {
-        return $this->belongsTo('MemberService', 'memberservice_id', 'id', [], 'LEFT')->setEagerlyType(0);
+        return $this->belongsTo('Userinfo', 'user_id', 'id', [], 'LEFT')->setEagerlyType(0);
     }
 }

@@ -90,7 +90,7 @@
                     <span class="fr">
                         {if condition = "$vo.order_status eq 0"}
                              <a href="#" class="cancle-btn" onclick="cancel('{$vo.id}')">取消订单</a>
-                            <a href="/index/order/payDetail/id/{$vo.id}" class="pay-btn" >立即支付</a>
+                            <a href="#" class="pay-btn" onclick="buy('{$vo.id}')">立即支付</a>
                             {elseif condition="$vo.order_status eq 1"}
                             <a href="/index/order/comment/course_id/{$vo.course_id}/order_id/{$vo.id}" class="pay-btn" >立即评价</a>
 
@@ -102,8 +102,9 @@
             {/volist}
 
         </div>
-
-
+        <input type="hidden" id="member_service" value="{$user.member_service_id}">
+        <input type="hidden" id="is_height" value="{$is_height['type']}">
+        <input type="hidden" id="openid" value="{$Request.session.wechat_user.original.openid}">
         {include file="common/nav"}
 
         <footer>
@@ -117,6 +118,52 @@
                 $(this).parent('.tab_item').addClass("tab_item_on").siblings().removeClass("tab_item_on");
             }
         });
+        function buy(id) {
+            $.ajax({
+                type:'post',
+                data:{id:id},
+                dataType:'json',
+                url:'/index/pay/payment',
+                success: function (res) {
+                    console.log(res);
+                    if(res.code == 200){
+                        //调用微信JS api 支付
+                        function jsApiCall()
+                        {
+                            WeixinJSBridge.invoke(
+                                'getBrandWCPayRequest',JSON.parse(res.data),
+                                function(res){
+                                    if (res.err_msg == "get_brand_wcpay_request:ok") { // 支付成功
+                                        location.href = '/index/video/index/course_id/'+course_id;
+                                    }
+                                    if(res.err_msg == "get_brand_wcpay_request:fail") { // 支付失败
+                                        location.href = 'fail';
+                                    }
+                                    if (res.err_msg == "get_brand_wcpay_request:cancel") { // 取消支付
+                                        location.href = '/index/order/alllist/user_id/'+user_id;
+                                    }
+                                }
+                            );
+                        }
+                        function callpay()
+                        {
+                            if (typeof WeixinJSBridge == "undefined"){
+                                if( document.addEventListener ){
+                                    document.addEventListener('WeixinJSBridgeReady', jsApiCall, false);
+                                }else if (document.attachEvent){
+                                    document.attachEvent('WeixinJSBridgeReady', jsApiCall);
+                                    document.attachEvent('onWeixinJSBridgeReady', jsApiCall);
+                                }
+                            }else{
+                                jsApiCall();
+                            }
+                        }
+                        callpay();
+                    }
+                }
+            })
+
+        }
         function cancel(id){
             mui.confirm('确定要取消订单吗？','温馨提示',['立即取消','放弃'],function(e){
                 // console.log(e.index);
@@ -142,8 +189,11 @@
 
         //判断是否认证  且是否免费
         function tips(price,course_id){
-            if(price == 0){
-                location.href='/index/video/index/course_id/'+course_id;
+            var member_service = $('#member_service').val();//不为空则为合伙人  空则普通用户
+            var is_height = $('#is_height').val();
+            var openid = $('#openid').val();
+            if(price == 0 || member_service != '' || is_height != ''){
+                location.href='/index/video/index/course_id/'+course_id+'/openid/'+openid;
             }else{
 
                 var user_id = {$user.id};//当前用户ID
@@ -157,49 +207,49 @@
                         //已购买
                         if(data.code == 200){
                             //跳转当前课程页面
-                            // location.href = data.url;
-                            alert(22);
+                            location.href = data.url;
                         }else{
-                            mui.confirm("此课程需要购买后才能学习，是否立即购买？",'温馨提示',['购买','取消'],function(e){
-                                // console.log(e);
-
-                                if(e.index == 0){
-                                    // console.log('确定');
-                                    var authstatus = $('#authstatus').val();
-
-                                    //不为空即已认证
-                                    // if(authstatus != '') location.href = '/index/order/confirm';
-                                    if(authstatus != ''){
-                                        $.ajax({
-                                            type:'post',
-                                            data:{user_id:user_id,course_id:course_id},
-                                            dataType:'json',
-                                            url:'/index/order/ispay',
-                                            success: function (data) {
-                                                console.log(data);
-                                                if(data.code == 200){
-
-                                                    location.href = data.url+'/user_id/'+user_id+'/course_id/'+course_id;
-                                                }else{
-                                                    mui.confirm(data.msg,'温馨提示',['是否前往','取消'],function (e) {
-                                                        if(e.index == 0){
-                                                            location.href=data.url+'/user_id/'+user_id;
-                                                        }
-                                                    })
-                                                }
-                                            },
-                                            error: function () {
-                                                console.log('error');
-                                            }
-                                        })
-                                        // location.href = '/index/order/confirm/user_id/'+user_id+'/course_id/'+course_id;
-                                    }else{
-                                        mui.confirm("请先完善你的个人信息",'温馨提示',['立即前往','取消'],function(e){
-                                            if(e.index == 0) location.href='/index/userinfo/save';
-                                        })
-                                    }
-                                }
-                            });
+                            location.href = data.url+'/openid/'+openid;
+                            // mui.confirm("此课程需要购买后才能学习，是否立即购买？",'温馨提示',['购买','取消'],function(e){
+                            //     // console.log(e);
+                            //
+                            //     if(e.index == 0){
+                            //         // console.log('确定');
+                            //         var authstatus = $('#authstatus').val();
+                            //
+                            //         //不为空即已认证
+                            //         // if(authstatus != '') location.href = '/index/order/confirm';
+                            //         if(authstatus != ''){
+                            //             $.ajax({
+                            //                 type:'post',
+                            //                 data:{user_id:user_id,course_id:course_id},
+                            //                 dataType:'json',
+                            //                 url:'/index/order/ispay',
+                            //                 success: function (data) {
+                            //                     console.log(data);
+                            //                     if(data.code == 200){
+                            //
+                            //                         location.href = data.url+'/user_id/'+user_id+'/course_id/'+course_id;
+                            //                     }else{
+                            //                         mui.confirm(data.msg,'温馨提示',['是否前往','取消'],function (e) {
+                            //                             if(e.index == 0){
+                            //                                 location.href=data.url+'/user_id/'+user_id;
+                            //                             }
+                            //                         })
+                            //                     }
+                            //                 },
+                            //                 error: function () {
+                            //                     console.log('error');
+                            //                 }
+                            //             })
+                            //             // location.href = '/index/order/confirm/user_id/'+user_id+'/course_id/'+course_id;
+                            //         }else{
+                            //             mui.confirm("请先完善你的个人信息",'温馨提示',['立即前往','取消'],function(e){
+                            //                 if(e.index == 0) location.href='/index/userinfo/save';
+                            //             })
+                            //         }
+                            //     }
+                            // });
                         }
                     }
                 })

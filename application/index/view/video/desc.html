@@ -1,0 +1,262 @@
+{include file="common/meta"}
+<title>{$course.title}</title>
+<style>
+    body{
+        margin: 0;
+        background-color: #f9f9f9;
+    }
+    .title{
+        font-size: 18px;
+        font-weight:700;
+        color: #333;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        display:-webkit-box;
+        -webkit-box-orient:vertical;
+        -webkit-line-clamp:1;
+    }
+    .ic{
+        position: relative;
+        color: #999;
+        font-size: 12px;
+    }
+    .le{
+        float: left;
+        margin: 0 20px 15px 2px;
+        line-height: 13px;
+    }
+    .fo{
+        width: 100%;
+        background: white;
+        margin: 5% 0 0 0%;
+        /*height: 500px;*/
+        padding-bottom: 20%;
+    }
+    .des{
+        width: 50%;
+        height: 40px;
+        color: #333;
+        background: white;
+        /*font-weight: bolder;*/
+        float: left;
+        text-align: center;
+        line-height: 40px;
+        border-bottom: 1px solid #f9f9f9;
+    }
+    .con{
+        padding: 0 5% 0 5%;
+        color:#333;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 5;
+        overflow: hidden;
+        line-height: 1.5;
+    }
+    .tar{
+        width: 100%;
+        height: 50px;
+        background: linear-gradient(90deg,#f73b58,#f97e69);
+        color: #fff;
+        text-align: center;
+        line-height: 50px;
+        font-size: 18px;
+        font-weight: 500;
+        position: fixed;
+        bottom: 0;
+    }
+    .active{
+        position:relative;
+        width:18px;
+        margin-left: 45%;
+        border-radius: 5px;
+        border-bottom:3px solid #f73657;
+        margin-top: -5px;
+    }
+    .list{
+        display: none;
+        padding: 5% 10% 10% 10%;
+        line-height: 2;
+        position: relative;
+    }
+    .list p{
+        border-bottom: 1px solid rgba(153, 153, 153, 0.08);
+    }
+    .ps{
+        margin-top: 20px;
+        color: #666;
+    }
+
+
+</style>
+<body>
+
+<div>
+    <img src="{$course.image}" alt="" style="width: 100%;height: 220px">
+    <div style="width: 100%;padding: 5% 0 0 5%;background: white;height: 100px">
+        <p class="title">{$course.title}</p>
+        <div class="ic">
+            <!--                <div>-->
+            <!--                    <img src="shu.png" alt="" width="13" style="float: left;"><div class="le">单颗</div>-->
+            <!--                </div>-->
+            <div>
+                <img src="/index/images/bo.png" alt="" width="13" style="float: left;"><div class="le">{$course.studynum}次学习</div>
+            </div>
+            <div>
+                <img src="/index/images/hui.png" alt="" width="13" style="float: left;"><div class="le">永久回听</div>
+            </div>
+            <div>
+                <img src="/index/images/qun.png" alt="" width="13" style="float: left;"><div class="le">进同学群</div>
+            </div>
+            <div>
+                <img src="/index/images/study.png" alt="" width="13" style="float: left;"><div class="le">助教辅导练习</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fo">
+        <div style="position: relative">
+            <div class="des" id="desc">课程介绍<div class="act active"></div></div>
+            <div class="des" id="list">课程目录<div class="act"></div></div>
+        </div>
+        <br>
+        <div class="description">
+            <div style="font-size: 16px;font-weight: 600;padding:10% 0 3% 5%">课程介绍</div>
+            <div class="con" id="contentIntroduce">
+                {$course.coursecontent}
+            </div>
+            <div class="look" onclick="lookIntroduce(this)" style="text-align: center;font-size: 14px;color: #999;margin-top: 30px;">查看更多</div>
+        </div>
+        <div class="list">
+            {volist name="chapter" id="vo"}
+            <div class="ps" onclick="buy('{$course.price}','{$course.id}')">
+                <img src="/index/images/video_01.png" alt="" width='20' style="float: left">
+                <div style="line-height: 1.3;margin-left:27px;">{$vo.title}</div>
+            </div>
+            {/volist}
+
+        </div>
+
+    </div>
+    <div class="tar" onclick="buy('{$course.price}','{$course.id}')"><img src="/index/images/huo.png" alt="" width="22" style="margin-bottom: -5px;margin-right: 2%">立即学习<s style="font-size: 12px;">￥</s>{$course.price} </div>
+</div>
+<input type="hidden" id="share_title" value="{$course.title}">
+<input type="hidden" id="share_desc" value="{$course.coursecontent}">
+<input type="hidden" id="share_img" value="{$course.image}">
+<input type="hidden" id="authstatus" value="{$authstatus}">
+</body>
+<!--<script src="/index/js/jquery-3.1.1.min.js"></script>-->
+{include file="common/footer"}
+{include file="common/share"}
+<script>
+
+    function buy(price,course_id){
+        if(price >0){
+            var authstatus = $('#authstatus').val();
+
+            //不为空即已认证
+            // if(authstatus != '') location.href = '/index/order/confirm';
+            if(authstatus != ''){
+                var user_id = {$info.id};
+                $.ajax({
+                    type:'post',
+                    data:{user_id:user_id,course_id:course_id},
+                    dataType:'json',
+                    url:'/index/order/ispay',
+                    success: function (data) {
+                        // console.log(data);
+                        if(data.code == 200){
+
+                            $.ajax({
+                                type:'post',
+                                data:{
+                                    user_id:user_id,
+                                    price:price,
+                                    course_id:course_id
+                                },
+                                dataType:'json',
+                                url:data.url,
+                                success: function (res) {
+                                    console.log(res);
+                                    if(res.code == 200){
+                                        //调用微信JS api 支付
+                                        function jsApiCall()
+                                        {
+                                            WeixinJSBridge.invoke(
+                                                'getBrandWCPayRequest',JSON.parse(res.data),
+                                                function(res){
+                                                    if (res.err_msg == "get_brand_wcpay_request:ok") { // 支付成功
+                                                        location.href = '/index/video/index/course_id/'+course_id;
+                                                    }
+                                                    if(res.err_msg == "get_brand_wcpay_request:fail") { // 支付失败
+                                                        location.href = 'fail';
+                                                    }
+                                                    if (res.err_msg == "get_brand_wcpay_request:cancel") { // 取消支付
+                                                        location.href = '/index/order/alllist/user_id/'+user_id;
+                                                    }
+                                                }
+                                            );
+                                        }
+
+                                        function callpay()
+                                        {
+                                            if (typeof WeixinJSBridge == "undefined"){
+                                                if( document.addEventListener ){
+                                                    document.addEventListener('WeixinJSBridgeReady', jsApiCall, false);
+                                                }else if (document.attachEvent){
+                                                    document.attachEvent('WeixinJSBridgeReady', jsApiCall);
+                                                    document.attachEvent('onWeixinJSBridgeReady', jsApiCall);
+                                                }
+                                            }else{
+                                                jsApiCall();
+                                            }
+                                        }
+                                        callpay();
+                                    }
+
+                                }
+                            })
+                            // location.href = data.url+'/user_id/'+user_id+'/course_id/'+course_id;
+                        }else{
+                            mui.confirm(data.msg,'温馨提示',['是否前往','取消'],function (e) {
+                                if(e.index == 0){
+                                    location.href=data.url+'/user_id/'+user_id;
+                                }
+                            })
+                        }
+                    },
+                    error: function () {
+                        console.log('error');
+                    }
+                })
+                // location.href = '/index/order/confirm/user_id/'+user_id+'/course_id/'+course_id;
+            }else{
+                mui.confirm("请先完善你的个人信息",'温馨提示',['立即前往','取消'],function(e){
+                    if(e.index == 0) location.href='/index/userinfo/save';
+                })
+            }
+        }
+    }
+
+    function lookIntroduce(e) {
+        var obj = document.getElementById('contentIntroduce')
+        obj.style.display = "block";
+        e.style.display = "none";
+    }
+
+    $('.des').click(function () {
+        $('.des').find('.act').toggleClass('active');
+
+    });
+    $('#desc').click(function () {
+        $('.description').css('display','block');
+        $('.list').css('display','none');
+    })
+
+    $('#list').click(function () {
+        $('.description').css('display','none');
+        $('.list').css('display','block');
+    })
+
+
+</script>
+</html>

@@ -1,4 +1,5 @@
 {include file="common/meta"}
+<title>幸福传承</title>
 <!--    <link rel="stylesheet" href="/index/layui-v2.5.4/layui/css/layui.css">-->
     <style type="text/css">
         body {
@@ -63,7 +64,9 @@
             -webkit-box-flex: 1;
             background: rgba(255,255,255,.95);
         }
-
+        .padd10 a{
+            color: black;
+        }
 
     </style>
 </head>
@@ -79,11 +82,11 @@
         <div class="">
             <div class="nav-top">
                 <div class="userimg">
-                    <a href="/index/userinfo/infos/id/{$info.id}"><img src="{$info.avatar}" /></a>
+                    <img src="{$info.avatar}" />
                 </div>
                 <div class="username" style="margin-left: 5%;">
                     <div class="name">
-                        {$info.nickname}
+                        {if condition="$info.phone neq null and $info.name neq null"}{$info.name}{else}{$info.nickname}{/if}
                     </div>
                     <div class="usertype">
                         {if condition="$info.member_service_id eq 4"}
@@ -92,8 +95,12 @@
                         B级合伙人
                         {elseif condition="$info.member_service_id eq 6"}
                         C级合伙人
-                        {/else}
+                        {elseif condition="$grade eq null"}
                         普通用户
+                        {elseif condition="$grade.type eq 1"}
+                        中级用户
+                        {elseif condition="$grade.type eq 2"}
+                        高级用户
                         {/if}
                     </div>
                 </div>
@@ -112,7 +119,8 @@
                     </button>
                     {else}
                     <button type="button" style="padding: 2px 5px;background-color: orange;border-radius: 20px;height: 24px;width: 80px;margin-right: 10px;font-size: 12px;color: white;border: 1px" class="mui-btn mui-btn-outlined">
-                        <a href="/index/course/index">我要报名</a>
+<!--                        <a href="/index/course/index">我要报名</a>-->
+                        <a href="#">已认证</a>
                     </button>
                     {/if}
                 </div>
@@ -141,12 +149,14 @@
         <div class="home-list padd10">
         	{volist name="cate" id="ca"}
             <div class="item">
-                <div class="item-img">
-                    <img src="{$ca.image}" />
-                </div>
-                <div class="item-nane">
-                    {$ca.name}
-                </div>
+                <a href="{if condition="$ca.url neq null"}{$ca.url}{else}#{/if}">
+                    <div class="item-img">
+                        <img src="{$ca.image}" />
+                    </div>
+                    <div class="item-nane">
+                        {$ca.name}
+                    </div>
+                </a>
             </div>
            {/volist}
 
@@ -281,7 +291,7 @@
                                 </div>
                                 <div class="suo">
                                     <span class="iconfont v-midder">&#xe64d;</span>
-                                    <span class="r">{$c.chapter_num}集</span>
+                                    <span class="r">{$c.chapter_num}段</span>
                                 </div>
                                 <div class="money suo">{if condition="$c.price eq 0"}免费{else}￥{$c.price}元{/if}</div>
                             </div>
@@ -370,7 +380,7 @@
             <br>
             <!--					<ul>-->
             {volist name="notice" id="n"}
-            <a href="/index/index/show/id/{$n.id}">
+            <a href="/index/index/show/id/{$n.id}/openid/{$Request.session.wechat_user.original.openid}">
                 <li>
                     <div class="dat-top content-fixe">
                         <div class="img" style="margin-top: 3%;">
@@ -380,7 +390,7 @@
                             <div class="title">
                                 {$n.name}
                             </div>
-                            <div class="font-text" style="-webkit-line-clamp: 3">
+                            <div class="font-text" style="-webkit-line-clamp: 2">
                                 {$n.description}
                             </div>
                             <!--                        <div class="font-bottom content-fixe">-->
@@ -407,12 +417,20 @@
 
     </div>
 </div>
+<input type="hidden" id="share_title" value="幸福传承">
+<input type="hidden" id="share_desc" value="幸福传承-首页">
+<input type="hidden" id="share_img" value="/index/images/head1.jpg">
 
+<input type="hidden" id="openid" value="{$Request.session.wechat_user.original.openid}">
 <input type="hidden" id="authstatus" value="{$authstatus}">
+<input type="hidden" id="member_service" value="{$info.member_service_id}">
+<input type="hidden" id="is_height" value="{$is_height['type']}">
 {include file="common/footer"}
+{include file="common/share"}
 <script src="/index/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
 
 <script type="text/javascript">
+    console.log(location.href.split('#')[0]);
     mui.init();
 
     // // 手机端轮播
@@ -427,6 +445,7 @@
     //     // effect:"flip"
     
     // });
+
     var mySwiper = new Swiper(".index-banner-phone",{
         autoplay:3000,
         loop:true,
@@ -439,10 +458,16 @@
 
     //判断是否认证  且是否免费
     function tips(price,course_id){
-        if(price == 0){
-            location.href='/index/video/index/course_id/'+course_id;
+        var member_service = $('#member_service').val();//不为空则为合伙人  空则普通用户
+        var is_height = $('#is_height').val();
+        var openid = $('#openid').val();
+        if(price == 0 || member_service != '' || is_height != ''){
+            // console.log('为合伙人');
+            // return false;
+            location.href='/index/video/index/course_id/'+course_id+'/openid/'+openid;
         }else{
-
+            // console.log('普通用户');
+            // return false;
             var user_id = {$info.id};//当前用户ID
 
             $.ajax({
@@ -456,46 +481,47 @@
                         //跳转当前课程页面
                         location.href = data.url;
                     }else{
-                        mui.confirm("此课程需要购买后才能学习，是否立即购买？",'温馨提示',['购买','取消'],function(e){
-                            // console.log(e);
-
-                            if(e.index == 0){
-                                // console.log('确定');
-                                var authstatus = $('#authstatus').val();
-
-                                //不为空即已认证
-                                // if(authstatus != '') location.href = '/index/order/confirm';
-                                if(authstatus != ''){
-                                    $.ajax({
-                                        type:'post',
-                                        data:{user_id:user_id,course_id:course_id},
-                                        dataType:'json',
-                                        url:'/index/order/ispay',
-                                        success: function (data) {
-                                            console.log(data);
-                                            if(data.code == 200){
-
-                                                location.href = data.url+'/user_id/'+user_id+'/course_id/'+course_id;
-                                            }else{
-                                                mui.confirm(data.msg,'温馨提示',['是否前往','取消'],function (e) {
-                                                    if(e.index == 0){
-                                                        location.href=data.url+'/user_id/'+user_id;
-                                                    }
-                                                })
-                                            }
-                                        },
-                                        error: function () {
-                                            console.log('error');
-                                        }
-                                    })
-                                    // location.href = '/index/order/confirm/user_id/'+user_id+'/course_id/'+course_id;
-                                }else{
-                                    mui.confirm("请先完善你的个人信息",'温馨提示',['立即前往','取消'],function(e){
-                                        if(e.index == 0) location.href='/index/userinfo/save';
-                                    })
-                                }
-                            }
-                        });
+                        location.href = data.url+'/openid/'+openid;
+                        // mui.confirm("此课程需要购买后才能学习，是否立即购买？",'温馨提示',['购买','取消'],function(e){
+                        //     // console.log(e);
+                        //
+                        //     if(e.index == 0){
+                        //         // console.log('确定');
+                        //         var authstatus = $('#authstatus').val();
+                        //
+                        //         //不为空即已认证
+                        //         // if(authstatus != '') location.href = '/index/order/confirm';
+                        //         if(authstatus != ''){
+                        //             $.ajax({
+                        //                 type:'post',
+                        //                 data:{user_id:user_id,course_id:course_id},
+                        //                 dataType:'json',
+                        //                 url:'/index/order/ispay',
+                        //                 success: function (data) {
+                        //                     console.log(data);
+                        //                     if(data.code == 200){
+                        //
+                        //                         location.href = data.url+'/user_id/'+user_id+'/course_id/'+course_id;
+                        //                     }else{
+                        //                         mui.confirm(data.msg,'温馨提示',['是否前往','取消'],function (e) {
+                        //                             if(e.index == 0){
+                        //                                 location.href=data.url+'/user_id/'+user_id;
+                        //                             }
+                        //                         })
+                        //                     }
+                        //                 },
+                        //                 error: function () {
+                        //                     console.log('error');
+                        //                 }
+                        //             })
+                        //             // location.href = '/index/order/confirm/user_id/'+user_id+'/course_id/'+course_id;
+                        //         }else{
+                        //             mui.confirm("请先完善你的个人信息",'温馨提示',['立即前往','取消'],function(e){
+                        //                 if(e.index == 0) location.href='/index/userinfo/save';
+                        //             })
+                        //         }
+                        //     }
+                        // });
                     }
                 }
             })

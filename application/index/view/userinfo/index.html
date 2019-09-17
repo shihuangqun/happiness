@@ -1,4 +1,5 @@
 {include file="common/meta"}
+<title>个人中心</title>
 <style>
     a{
         color:#333333;
@@ -11,13 +12,29 @@
 <div class="my-header">
     <div class="my-img content-fixe">
 <!--        <a href="setting.html">-->
-        <a href="/index/userinfo/infos/id/{$info.id}"><img src="{$info.avatar}" /></a>
+        <img src="{$info.avatar}" />
 <!--        </a>-->
 
     </div>
-    <div class="my-username" style="margin-left: 10px;">
-        {$info.nickname}
+    <div class="my-username" style="margin-left: 10px;line-height: 1.8;">
+        <span>{$info.nickname}</span><br>
+        <span style="font-size: 12px;font-weight: 700;">
+            {if condition="$info.member_service_id eq 4"}
+            A级合伙人
+            {elseif condition="$info.member_service_id eq 5"}
+            B级合伙人
+            {elseif condition="$info.member_service_id eq 6"}
+            C级合伙人
+            {elseif condition="$grade eq null"}
+            普通用户
+            {elseif condition="$grade.type eq 1"}
+            中级用户
+            {elseif condition="$grade.type eq 2"}
+            高级用户
+            {/if}
+        </span>
     </div>
+
     <div>
         {if condition = "$auth eq null"}
         <button type="button" class="mui-btn my-bnt"><a href="/index/userinfo/save" style="color:white">未认证</a></button>
@@ -61,17 +78,52 @@
                 </div>
             </a>
         </li>
-        <li>
-            <a href="/index/userinfo/infos/id/{$info.id}">
-                <div class="my-icon">
-                    <img src="/index/images/info.png" />
-                </div>
+<!--        <li>-->
+<!--            <a href="/index/userinfo/infos/id/{$info.id}">-->
+<!--                <div class="my-icon">-->
+<!--                    <img src="/index/images/info.png" />-->
+<!--                </div>-->
 
-                <div class="my-name">
-                    我的信息
-                </div>
-            </a>
-        </li>
+<!--                <div class="my-name">-->
+<!--                    我的信息-->
+<!--                </div>-->
+<!--            </a>-->
+<!--        </li>-->
+         <div style="display: {if condition="$info.member_service_id neq null"}block{else}none{/if}">
+             <li>
+                 <a href="/index/userinfo/team">
+                     <div class="my-icon">
+                         <img src="/index/images/xueyuan.png" />
+                     </div>
+
+                     <div class="my-name">
+                         我的学员
+                     </div>
+                 </a>
+             </li>
+             <li>
+                 <a href="/index/userinfo/partnercommision">
+                     <div class="my-icon">
+                         <img src="/index/images/yongjin.png" />
+                     </div>
+
+                     <div class="my-name">
+                         佣金明细
+                     </div>
+                 </a>
+             </li>
+             <li>
+                 <a href="/index/finance/index">
+                     <div class="my-icon">
+                         <img src="/index/images/yongjin.png" />
+                     </div>
+
+                     <div class="my-name">
+                         我的佣金
+                     </div>
+                 </a>
+             </li>
+         </div>
 
     </ul>
 

@@ -1,31 +1,84 @@
 <?php
+
 namespace app\admin\controller;
 
 use app\common\controller\Backend;
-use think\Request;
 
-class Finance extends Backend{
+/**
+ * 提现管理
+ *
+ * @icon fa fa-circle-o
+ */
+class Finance extends Backend
+{
+    
+    /**
+     * Finance模型对象
+     * @var \app\admin\model\Finance
+     */
+    protected $model = null;
 
-    public function __construct(Request $request = null)
+    public function _initialize()
     {
-        parent::__construct($request);
+        parent::_initialize();
+        $this->model = new \app\admin\model\Finance;
+        $this->view->assign("statusList", $this->model->getStatusList());
     }
+    
+    /**
+     * 默认生成的控制器所继承的父类中有index/add/edit/del/multi五个基础方法、destroy/restore/recyclebin三个回收站方法
+     * 因此在当前控制器中可不用编写增删改查的代码,除非需要自己控制这部分逻辑
+     * 需要将application/admin/library/traits/Backend.php中对应的方法复制到当前控制器,然后进行修改
+     */
+    
 
     /**
-     * 财务列表
-     * @return mixed|\think\response\Json
+     * 查看
      */
     public function index()
     {
-        return $this->fetch();
+        //当前是否为关联查询
+        $this->relationSearch = true;
+        //设置过滤方法
+        $this->request->filter(['strip_tags']);
+        if ($this->request->isAjax())
+        {
+            //如果发送的来源是Selectpage，则转发到Selectpage
+            if ($this->request->request('keyField'))
+            {
+                return $this->selectpage();
+            }
+            list($where, $sort, $order, $offset, $limit) = $this->buildparams();
+            $total = $this->model
+                    ->with(['userinfo'])
+                    ->where($where)
+                    ->order($sort, $order)
+                    ->count();
+
+            $list = $this->model
+                    ->with(['userinfo'])
+                    ->where($where)
+                    ->order($sort, $order)
+                    ->limit($offset, $limit)
+                    ->select();
+
+            foreach ($list as $row) {
+                $row->visible(['id','user_id','money','status','order_no','createtime']);
+                $row->visible(['userinfo']);
+				$row->getRelation('userinfo')->visible(['name','phone','avatar']);
+            }
+            $list = collection($list)->toArray();
+            $result = array("total" => $total, "rows" => $list);
+
+            return json($result);
+        }
+        return $this->view->fetch();
     }
 
     /**
-     * 提现管理
+     * 财务概况
      */
-
-    public function withdrawal(){
-
+    public function finance(){
         return $this->fetch();
     }
 }

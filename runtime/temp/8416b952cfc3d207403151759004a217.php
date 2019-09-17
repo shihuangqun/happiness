@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:76:"/www/wwwroot/c.yaoget.cn/public/../application/admin/view/userinfo/edit.html";i:1565854502;s:67:"/www/wwwroot/c.yaoget.cn/application/admin/view/layout/default.html";i:1562338656;s:64:"/www/wwwroot/c.yaoget.cn/application/admin/view/common/meta.html";i:1566096906;s:66:"/www/wwwroot/c.yaoget.cn/application/admin/view/common/script.html";i:1566096255;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:76:"/www/wwwroot/c.yaoget.cn/public/../application/admin/view/userinfo/edit.html";i:1568252168;s:67:"/www/wwwroot/c.yaoget.cn/application/admin/view/layout/default.html";i:1562338656;s:64:"/www/wwwroot/c.yaoget.cn/application/admin/view/common/meta.html";i:1566096906;s:66:"/www/wwwroot/c.yaoget.cn/application/admin/view/common/script.html";i:1566096255;}*/ ?>
 <!DOCTYPE html>
 <html lang="<?php echo $config['language']; ?>">
     <head>
@@ -57,10 +57,16 @@
                             <div class="content">
                                 <form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
 
+<!--    <div class="form-group">-->
+<!--        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Openid'); ?>:</label>-->
+<!--        <div class="col-xs-12 col-sm-8">-->
+<!--            <input id="c-openid" data-rule="required" class="form-control" name="row[openid]" type="text" value="<?php echo htmlentities($row['openid']); ?>">-->
+<!--        </div>-->
+<!--    </div>-->
     <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Openid'); ?>:</label>
+        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Name'); ?>:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-openid" data-rule="required" class="form-control" name="row[openid]" type="text" value="<?php echo htmlentities($row['openid']); ?>">
+            <input id="c-name" class="form-control" name="row[name]" type="text" value="<?php echo htmlentities($row['name']); ?>">
         </div>
     </div>
     <div class="form-group">
@@ -75,20 +81,26 @@
             <input id="c-phone" class="form-control" name="row[phone]" type="text" value="<?php echo htmlentities($row['phone']); ?>">
         </div>
     </div>
-    <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Avatar'); ?>:</label>
-        <div class="col-xs-12 col-sm-8">
-            <div class="input-group">
-                <input id="c-avatar" data-rule="required" class="form-control" size="50" name="row[avatar]" type="text" value="<?php echo htmlentities($row['avatar']); ?>">
-                <div class="input-group-addon no-border no-padding">
-                    <span><button type="button" id="plupload-avatar" class="btn btn-danger plupload" data-input-id="c-avatar" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-preview-id="p-avatar"><i class="fa fa-upload"></i> <?php echo __('Upload'); ?></button></span>
-                    <span><button type="button" id="fachoose-avatar" class="btn btn-primary fachoose" data-input-id="c-avatar" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> <?php echo __('Choose'); ?></button></span>
-                </div>
-                <span class="msg-box n-right" for="c-avatar"></span>
-            </div>
-            <ul class="row list-inline plupload-preview" id="p-avatar"></ul>
-        </div>
-    </div>
+<!--    <div class="form-group">-->
+<!--        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Email'); ?>:</label>-->
+<!--        <div class="col-xs-12 col-sm-8">-->
+<!--            <input id="c-email" class="form-control" name="row[email]" type="text" value="<?php echo htmlentities($row['email']); ?>">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Avatar'); ?>:</label>-->
+<!--        <div class="col-xs-12 col-sm-8">-->
+<!--            <div class="input-group">-->
+<!--                <input id="c-avatar" data-rule="required" class="form-control" size="50" name="row[avatar]" type="text" value="<?php echo htmlentities($row['avatar']); ?>">-->
+<!--                <div class="input-group-addon no-border no-padding">-->
+<!--                    <span><button type="button" id="plupload-avatar" class="btn btn-danger plupload" data-input-id="c-avatar" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-preview-id="p-avatar"><i class="fa fa-upload"></i> <?php echo __('Upload'); ?></button></span>-->
+<!--                    <span><button type="button" id="fachoose-avatar" class="btn btn-primary fachoose" data-input-id="c-avatar" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> <?php echo __('Choose'); ?></button></span>-->
+<!--                </div>-->
+<!--                <span class="msg-box n-right" for="c-avatar"></span>-->
+<!--            </div>-->
+<!--            <ul class="row list-inline plupload-preview" id="p-avatar"></ul>-->
+<!--        </div>-->
+<!--    </div>-->
     <div class="form-group">
         <label class="control-label col-xs-12 col-sm-2"><?php echo __('Gender'); ?>:</label>
         <div class="col-xs-12 col-sm-8">
@@ -101,42 +113,48 @@
 
         </div>
     </div>
-    <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Country'); ?>:</label>
-        <div class="col-xs-12 col-sm-8">
-            <input id="c-country" data-rule="required" class="form-control" name="row[country]" type="text" value="<?php echo htmlentities($row['country']); ?>">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Province'); ?>:</label>
-        <div class="col-xs-12 col-sm-8">
-            <input id="c-province" data-rule="required" class="form-control" name="row[province]" type="text" value="<?php echo htmlentities($row['province']); ?>">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Citys'); ?>:</label>
-        <div class="col-xs-12 col-sm-8">
-            <input id="c-citys" data-rule="required" class="form-control" name="row[citys]" type="text" value="<?php echo htmlentities($row['citys']); ?>">
-        </div>
-    </div>
+<!--    <div class="form-group">-->
+<!--        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Country'); ?>:</label>-->
+<!--        <div class="col-xs-12 col-sm-8">-->
+<!--            <input id="c-country" data-rule="required" class="form-control" name="row[country]" type="text" value="<?php echo htmlentities($row['country']); ?>">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Province'); ?>:</label>-->
+<!--        <div class="col-xs-12 col-sm-8">-->
+<!--            <input id="c-province" data-rule="required" class="form-control" name="row[province]" type="text" value="<?php echo htmlentities($row['province']); ?>">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Citys'); ?>:</label>-->
+<!--        <div class="col-xs-12 col-sm-8">-->
+<!--            <input id="c-citys" data-rule="required" class="form-control" name="row[citys]" type="text" value="<?php echo htmlentities($row['citys']); ?>">-->
+<!--        </div>-->
+<!--    </div>-->
     <div class="form-group">
         <label class="control-label col-xs-12 col-sm-2"><?php echo __('Member_service_id'); ?>:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-member_service_id" data-rule="required" data-field="title" data-source="member_service/index" class="form-control selectpage" name="row[member_service_id]" type="text" value="<?php echo htmlentities($row['member_service_id']); ?>">
+            <input id="c-member_service_id" data-field="title" data-source="member_service/index" class="form-control selectpage" name="row[member_service_id]" type="text" value="<?php echo htmlentities($row['member_service_id']); ?>" <?php if($row['member_service_id'] != null): ?>disabled="true" <?php endif; ?>>
         </div>
     </div>
-    <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Subordinate_count'); ?>:</label>
-        <div class="col-xs-12 col-sm-8">
-            <input id="c-subordinate_count" data-rule="required" class="form-control" name="row[subordinate_count]" type="text" value="<?php echo htmlentities($row['subordinate_count']); ?>">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Money'); ?>:</label>
-        <div class="col-xs-12 col-sm-8">
-            <input id="c-money" data-rule="required" class="form-control" step="0.01" name="row[money]" type="number" value="<?php echo htmlentities($row['money']); ?>">
-        </div>
-    </div>
+<!--    <div class="form-group" style="display: none" id="quota">-->
+<!--        <label class="control-label col-xs-12 col-sm-2"><?php echo __('高级课名额'); ?>:</label>-->
+<!--        <div class="col-xs-12 col-sm-8">-->
+<!--            <input id="c-quota" data-rule="required" class="form-control" step="0.01" name="row[quota]" type="number" value="<?php echo htmlentities($row['quota']); ?>">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Subordinate_count'); ?>:</label>-->
+<!--        <div class="col-xs-12 col-sm-8">-->
+<!--            <input id="c-subordinate_count" data-rule="required" class="form-control" name="row[subordinate_count]" type="text" value="<?php echo htmlentities($row['subordinate_count']); ?>">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Money'); ?>:</label>-->
+<!--        <div class="col-xs-12 col-sm-8">-->
+<!--            <input id="c-money" data-rule="required" class="form-control" step="0.01" name="row[money]" type="number" value="<?php echo htmlentities($row['money']); ?>">-->
+<!--        </div>-->
+<!--    </div>-->
     <div class="form-group">
         <label class="control-label col-xs-12 col-sm-2"><?php echo __('Status'); ?>:</label>
         <div class="col-xs-12 col-sm-8">
@@ -149,29 +167,47 @@
 
         </div>
     </div>
+<!--    <div class="form-group">-->
+<!--        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Prevtime'); ?>:</label>-->
+<!--        <div class="col-xs-12 col-sm-8">-->
+<!--            <input id="c-prevtime" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[prevtime]" type="text" value="<?php echo $row['prevtime']?datetime($row['prevtime']):''; ?>">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Logintime'); ?>:</label>-->
+<!--        <div class="col-xs-12 col-sm-8">-->
+<!--            <input id="c-logintime" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[logintime]" type="text" value="<?php echo $row['logintime']?datetime($row['logintime']):''; ?>">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Jointime'); ?>:</label>-->
+<!--        <div class="col-xs-12 col-sm-8">-->
+<!--            <input id="c-jointime" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[jointime]" type="text" value="<?php echo $row['jointime']?datetime($row['jointime']):''; ?>">-->
+<!--        </div>-->
+<!--    </div>-->
     <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Prevtime'); ?>:</label>
+        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Topid'); ?>:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-prevtime" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[prevtime]" type="text" value="<?php echo $row['prevtime']?datetime($row['prevtime']):''; ?>">
+            <input id="c-topid" data-rule="required" class="form-control" name="row[topid]" type="number" value="<?php echo htmlentities($row['topid']); ?>">
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Logintime'); ?>:</label>
+        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Card'); ?>:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-logintime" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[logintime]" type="text" value="<?php echo $row['logintime']?datetime($row['logintime']):''; ?>">
+            <input id="c-card" class="form-control" name="row[card]" type="text" value="<?php echo htmlentities($row['card']); ?>">
         </div>
     </div>
-    <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Jointime'); ?>:</label>
-        <div class="col-xs-12 col-sm-8">
-            <input id="c-jointime" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[jointime]" type="text" value="<?php echo $row['jointime']?datetime($row['jointime']):''; ?>">
-        </div>
-    </div>
+<!--    <div class="form-group">-->
+<!--        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Birth'); ?>:</label>-->
+<!--        <div class="col-xs-12 col-sm-8">-->
+<!--            <input id="c-birth" class="form-control" name="row[birth]" type="text" value="<?php echo htmlentities($row['birth']); ?>">-->
+<!--        </div>-->
+<!--    </div>-->
     <div class="form-group layer-footer">
         <label class="control-label col-xs-12 col-sm-2"></label>
         <div class="col-xs-12 col-sm-8">
             <button type="submit" class="btn btn-success btn-embossed disabled"><?php echo __('OK'); ?></button>
-            <button type="reset" class="btn btn-default btn-embossed"><?php echo __('Reset'); ?></button>
+<!--            <button type="reset" class="btn btn-default btn-embossed"><?php echo __('Reset'); ?></button>-->
         </div>
     </div>
 </form>

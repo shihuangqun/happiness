@@ -35,10 +35,27 @@ class Order extends Frontend{
             ->join('course c','c.id = o.course_id')
             ->field('o.*,c.title,c.image')
             ->paginate(10,false,['query' => Request::instance()->request()]);
+        $grade = Db::name('order')
+            ->where('user_id',$user['id'])
+            ->where('order_status','neq','0')
+            ->alias('o')
+            ->join('course c','c.id = o.course_id')
+            ->field('type')
+            ->find();//查看当前等级
 
+        $is_height = Db::name('order')
+            ->where('user_id',$user['id'])
+            ->where('order_status','neq','0')
+            ->alias('o')
+            ->join('course c','c.id = o.course_id')
+            ->where('c.type','2')//为2  等于高级用户 则可以免费学习中级
+            ->field('type')
+            ->find();
         $this->assign([
             'data' => $data,
-            'user' => $user
+            'user' => $user,
+            'grade' => $grade,
+            'is_height' => $is_height
         ]);
         return $this->fetch('index');
     }
@@ -71,7 +88,7 @@ class Order extends Frontend{
 //    }
 
     /**
-     * 支付确认页面
+     * 支付确认页面  (作废)
      * @param int   user_id 用户ID
      * @param int   price   产品价格
      * @param int   course_id   当前课程ID
@@ -103,12 +120,12 @@ class Order extends Frontend{
 
         if(!empty($pay_status)) return $this->return_msg(400,'你还有该课程未付款的订单!','','/index/order/allList');
 
-        return $this->return_msg('200','success','','/index/order/confirm');
+        return $this->return_msg('200','success','','/index/pay/payment');
 
     }
 
     /**
-     * 支付信息
+     * 支付信息 (作废)
      * @param int   user_id 用户ID
      * @param int   price   产品价格
      * @param int   course_id   当前课程ID

@@ -3,7 +3,7 @@ var rate = 1;// 播放倍率
 function fast() {
     rate < 2 ? rate = rate + 0.5 : rate = 1;
     // 视频元素
-    var video = document.getElementById('video');
+    var video = document.getElementById('videoShow');
     video.playbackRate = rate;
     video.play(); // 播放视频
     document.getElementById('rateDom').innerHTML = rate;
@@ -13,20 +13,20 @@ function fast() {
 
 // 视频播放暂停
 function btnPlay() {
-    var video = document.getElementById('video');
+    var video = document.getElementById('videoShow');
     video.playbackRate = rate;
     if (video.paused) {
         video.play(); // 播放视频
         document.getElementById('playIcon').style.display = 'none';
         document.getElementById('stopIcon').style.display = 'block';
 
-        document.getElementById('videoPlay').style.display = 'none'; // 隐藏video上的播放小图标
+        // document.getElementById('videoPlay').style.display = 'none'; // 隐藏video上的播放小图标
     } else {
         video.pause(); // 暂停视频
         document.getElementById('stopIcon').style.display = 'none';
         document.getElementById('playIcon').style.display = 'block';
 
-        document.getElementById('videoPlay').style.display = 'flex'; // 显示video上的播放小图标
+        // document.getElementById('videoPlay').style.display = 'flex'; // 显示video上的播放小图标
     }
 }
 

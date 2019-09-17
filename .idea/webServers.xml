@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="438b19e5-2687-4dd8-935e-a8db40b900e7" name="111" url="http://47.98.186.219">
+      <webServer id="376b20fe-78a8-4e84-81ce-1f420ba633f5" name="fast" url="http://47.98.186.219">
         <fileTransfer host="47.98.186.219" port="22" rootFolder="/www/wwwroot/c.yaoget.cn/" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />

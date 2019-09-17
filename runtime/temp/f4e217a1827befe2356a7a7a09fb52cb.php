@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:72:"/www/wwwroot/c.yaoget.cn/public/../application/admin/view/order/add.html";i:1565858561;s:67:"/www/wwwroot/c.yaoget.cn/application/admin/view/layout/default.html";i:1562338656;s:64:"/www/wwwroot/c.yaoget.cn/application/admin/view/common/meta.html";i:1566096906;s:66:"/www/wwwroot/c.yaoget.cn/application/admin/view/common/script.html";i:1566096255;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:72:"/www/wwwroot/c.yaoget.cn/public/../application/admin/view/order/add.html";i:1568426026;s:67:"/www/wwwroot/c.yaoget.cn/application/admin/view/layout/default.html";i:1562338656;s:64:"/www/wwwroot/c.yaoget.cn/application/admin/view/common/meta.html";i:1566096906;s:66:"/www/wwwroot/c.yaoget.cn/application/admin/view/common/script.html";i:1566096255;}*/ ?>
 <!DOCTYPE html>
 <html lang="<?php echo $config['language']; ?>">
     <head>
@@ -55,18 +55,24 @@
                             <!-- END RIBBON -->
                             <?php endif; ?>
                             <div class="content">
-                                <form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+                                <style>
+    div.sp_result_area.shadowDown{
+        width:50%;
+    }
+</style>
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
 
-    <div class="form-group">
+    <div class="form-group" style="display: none">
         <label class="control-label col-xs-12 col-sm-2"><?php echo __('Order_num'); ?>:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-order_num" data-rule="required" class="form-control" name="row[order_num]" type="text">
+            <input id="c-order_num" data-rule="required" class="form-control" name="row[order_num]" type="text" value="<?php echo time()?>">
         </div>
     </div>
+
     <div class="form-group">
         <label class="control-label col-xs-12 col-sm-2"><?php echo __('User_id'); ?>:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-user_id" data-rule="required" data-source="userinfo/index" data-field="nickname" class="form-control selectpage" name="row[user_id]" type="text" value="">
+            <input id="c-user_id" data-rule="required" data-source="userinfo/selectpage_new" data-field="nickname" class="form-control selectpage" name="row[user_id]" type="text" value="">
         </div>
     </div>
     <div class="form-group">
@@ -75,19 +81,64 @@
             <input id="c-course_id" data-rule="required" data-field="title" data-source="course/index" class="form-control selectpage" name="row[course_id]" type="text" value="">
         </div>
     </div>
+<!--    <div class="form-group">-->
+<!--        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Member_service_id'); ?>:</label>-->
+<!--        <div class="col-xs-12 col-sm-8">-->
+<!--            <input id="c-member_service_id" data-rule="required" data-field='title' data-source="member_service/index" class="form-control selectpage" name="row[member_service_id]" type="text" value="">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Price'); ?>:</label>-->
+<!--        <div class="col-xs-12 col-sm-8">-->
+<!--            <input id="c-price" data-rule="required" class="form-control" step="0.01" name="row[price]" type="number">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Commission'); ?>:</label>-->
+<!--        <div class="col-xs-12 col-sm-8">-->
+<!--            <input id="c-commission" class="form-control" name="row[commission]" type="text">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Recommend'); ?>:</label>-->
+<!--        <div class="col-xs-12 col-sm-8">-->
+<!--            <input id="c-recommend" class="form-control" name="row[recommend]" type="text">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Commission_two'); ?>:</label>-->
+<!--        <div class="col-xs-12 col-sm-8">-->
+<!--            <input id="c-commission_two" class="form-control" name="row[commission_two]" type="text">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Recommend_two'); ?>:</label>-->
+<!--        <div class="col-xs-12 col-sm-8">-->
+<!--            <input id="c-recommend_two" class="form-control" name="row[recommend_two]" type="text">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Commission_three'); ?>:</label>-->
+<!--        <div class="col-xs-12 col-sm-8">-->
+<!--            <input id="c-commission_three" class="form-control" name="row[commission_three]" type="text">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Recommend_three'); ?>:</label>-->
+<!--        <div class="col-xs-12 col-sm-8">-->
+<!--            <input id="c-recommend_three" class="form-control" name="row[recommend_three]" type="text">-->
+<!--        </div>-->
+<!--    </div>-->
     <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Member_service_id'); ?>:</label>
+        <label class="control-label col-xs-12 col-sm-2"><?php echo __('是否产生提成'); ?>:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-member_service_id"  data-field="title" data-source="member_service/index" class="form-control selectpage" name="row[member_service_id]" type="text" value="">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Price'); ?>:</label>
-        <div class="col-xs-12 col-sm-8">
-            <input id="c-price" data-rule="required" class="form-control" step="0.01" name="row[price]" type="number">
-        </div>
-    </div>
 
+            <div class="radio">
+                <label for="row[is_royalty]-1"><input id="row[is_royalty]-1" name="row[is_royalty]" type="radio" value="1" /> 是</label>
+                <label for="row[is_royalty]-0"><input id="row[is_royalty]-0" name="row[is_royalty]" type="radio" value="0" checked /> 否</label>
+            </div>
+        </div>
+    </div>
     <div class="form-group">
         <label class="control-label col-xs-12 col-sm-2"><?php echo __('Pay_type'); ?>:</label>
         <div class="col-xs-12 col-sm-8">
@@ -100,19 +151,24 @@
 
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group" style="display: none">
         <label class="control-label col-xs-12 col-sm-2"><?php echo __('Order_status'); ?>:</label>
         <div class="col-xs-12 col-sm-8">
             
             <div class="radio">
             <?php if(is_array($orderStatusList) || $orderStatusList instanceof \think\Collection || $orderStatusList instanceof \think\Paginator): if( count($orderStatusList)==0 ) : echo "" ;else: foreach($orderStatusList as $key=>$vo): ?>
-            <label for="row[order_status]-<?php echo $key; ?>"><input id="row[order_status]-<?php echo $key; ?>" name="row[order_status]" type="radio" value="<?php echo $key; ?>" <?php if(in_array(($key), explode(',',"0"))): ?>checked<?php endif; ?> /> <?php echo $vo; ?></label> 
+            <label for="row[order_status]-<?php echo $key; ?>"><input id="row[order_status]-<?php echo $key; ?>" name="row[order_status]" type="radio" value="1" <?php if(in_array(($key), explode(',',"0"))): ?>checked<?php endif; ?> /> <?php echo $vo; ?></label>
             <?php endforeach; endif; else: echo "" ;endif; ?>
             </div>
 
         </div>
     </div>
-
+<!--    <div class="form-group">-->
+<!--        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Paymenttime'); ?>:</label>-->
+<!--        <div class="col-xs-12 col-sm-8">-->
+<!--            <input id="c-paymenttime" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[paymenttime]" type="text" value="<?php echo date('Y-m-d H:i:s'); ?>">-->
+<!--        </div>-->
+<!--    </div>-->
     <div class="form-group layer-footer">
         <label class="control-label col-xs-12 col-sm-2"></label>
         <div class="col-xs-12 col-sm-8">

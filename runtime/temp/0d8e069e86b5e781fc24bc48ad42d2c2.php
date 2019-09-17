@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:76:"/www/wwwroot/c.yaoget.cn/public/../application/index/view/userinfo/auth.html";i:1566986107;s:66:"/www/wwwroot/c.yaoget.cn/application/index/view/common/footer.html";i:1567132625;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:76:"/www/wwwroot/c.yaoget.cn/public/../application/index/view/userinfo/auth.html";i:1567873529;s:66:"/www/wwwroot/c.yaoget.cn/application/index/view/common/footer.html";i:1567132625;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -264,17 +264,17 @@
                 </div>
                 <div class="div_c_r"><input type="tel" id="code" name="code" onBlur="sub()" value="" placeholder="请输入验证码" style=" width: 45%;">
                     <span style="float: right;margin-top: -30px;background:#fff" id="tss"></span>
-                    <input onClick="sendMessage(60)" id="dynamic" type="button" value="获取验证码" style="width: 45%;
+                    <input onClick="sendMessage(60)" id="dynamic" type="button" value="获取验证码" style="width: 40%;
     float: right;
     background-color: #F2F2F2;
     height: 30px;
     /*padding: 4px 8px;*/
     line-height: 22px;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
     margin: 5px 5px 0 0;
     border: 1px solid #DBDBDB;
-    border-radius: 6px;
+    border-radius: 2px;
     outline: none;
 text-align: center;">
                 </div>
@@ -374,12 +374,12 @@ text-align: center;">
             type:'post',
             data:$('#forms').serialize(),
             dataType:'json',
-            url:'/index/userinfo/save',
+            url:'/index/userinfo/authSave',
             success: function (data) {
                 if(data.code == 200){
                     mui.toast(data.msg,{ duration:'long', type:'div' })
                     setTimeout(function(){
-                        location.href='/'
+                        location.href=data.url;
                     },1500)
                 }else{
                     layer.msg(data.msg,{icon:5});

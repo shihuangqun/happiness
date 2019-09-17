@@ -1,0 +1,3120 @@
+---------------------------------------------------------------
+[ 2019-09-13T23:09:21+08:00 ] 183.11.69.244 POST c.yaoget.cn/addons/wechat/index/getsubscribe
+[运行时间：1.743213s] [吞吐率：0.57req/s] [内存消耗：4,614.03kb] [文件加载：210]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000015s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.012762s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=mntuqeronn0dpvat68kpb2mh3m',
+  'accept-language' => 'zh-CN,en-US;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 8.0.0; SM-G9500 Build/R16NW; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044904 Mobile Safari/537.36 MMWEBID/2992 MicroMessenger/7.0.6.1500(0x2700063D) Process/tools NetType/WIFI Language/zh_CN',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'https://c.yaoget.cn',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '0',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'addon' => 'wechat',
+  'controller' => 'index',
+  'action' => 'getsubscribe',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ /www/wwwroot/c.yaoget.cn/vendor/karsonzhang/fastadmin-addons/src/addons/Route.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/common/lang/zh-cn/addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001377s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-09-13T23:09:41+08:00 ] 183.11.69.244 GET c.yaoget.cn/
+[运行时间：0.049523s] [吞吐率：20.19req/s] [内存消耗：4,077.18kb] [文件加载：134]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000016s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001524s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=5frcfrpul26f1l4usrebrggaa4; Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1565840228,1565927933,1565972855,1566014404',
+  'accept-encoding' => 'br, gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.5(0x17000523) NetType/WIFI Language/zh_CN',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/index/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.007051s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000144s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/index/lang/zh-cn/index.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000028s ]
+[ info ] [ RUN ] app\index\controller\Index->index[ /www/wwwroot/c.yaoget.cn/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/c.yaoget.cn/public/../application/index/view/index/home.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+  3 => 'cate',
+  4 => 'banner',
+  5 => 'course',
+  6 => 'authstatus',
+  7 => 'info',
+  8 => 'notice',
+  9 => 'grade',
+  10 => 'is_height',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000311s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_userinfo` [ RunTime:0.000841s ]
+[ sql ] [ SQL ] SELECT * FROM `h_userinfo` WHERE  `openid` = 'oH4181LNlP1WAZf1TG3eD4_RBoVc' LIMIT 1 [ RunTime:0.000247s ]
+[ sql ] [ SQL ] SELECT * FROM `h_userinfo` WHERE  `openid` = 'oH4181LNlP1WAZf1TG3eD4_RBoVc' LIMIT 1 [ RunTime:0.001022s ]
+[ sql ] [ SQL ] SELECT * FROM `h_userinfo` WHERE  `openid` = 'oH4181LNlP1WAZf1TG3eD4_RBoVc' LIMIT 1 [ RunTime:0.000187s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_order` [ RunTime:0.000551s ]
+[ sql ] [ SQL ] SELECT `type` FROM `h_order` `o` INNER JOIN `h_course` `c` ON `c`.`id`=`o`.`course_id` WHERE  `user_id` = 4  AND `order_status` IN ('1','2') LIMIT 1 [ RunTime:0.000200s ]
+[ sql ] [ SQL ] SELECT `type` FROM `h_order` `o` INNER JOIN `h_course` `c` ON `c`.`id`=`o`.`course_id` WHERE  `user_id` = 4  AND `order_status` <> '0'  AND `c`.`type` = '2' LIMIT 1 [ RunTime:0.000178s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_advertising` [ RunTime:0.000550s ]
+[ sql ] [ SQL ] SELECT * FROM `h_advertising` [ RunTime:0.000158s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_category` [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT * FROM `h_category` WHERE  `type` = 'default'  AND `pid` = 0 [ RunTime:0.000255s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_course` [ RunTime:0.000517s ]
+[ sql ] [ SQL ] SELECT `c`.`name`,`ce`.* FROM `h_course` `ce` INNER JOIN `h_category` `c` ON `c`.`id`=`ce`.`category_id` WHERE  `c`.`type` = 'course'  AND `c`.`pid` = 0 ORDER BY `ce`.`weight` DESC [ RunTime:0.000192s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_notice` [ RunTime:0.000583s ]
+[ sql ] [ SQL ] SELECT * FROM `h_notice` [ RunTime:0.000182s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_chapter` [ RunTime:0.000596s ]
+[ sql ] [ SQL ] SELECT * FROM `h_chapter` WHERE  `course_id` = 6 [ RunTime:0.000173s ]
+[ sql ] [ SQL ] SELECT * FROM `h_chapter` WHERE  `course_id` = 5 [ RunTime:0.000165s ]
+[ sql ] [ SQL ] SELECT * FROM `h_chapter` WHERE  `course_id` = 7 [ RunTime:0.000166s ]
+---------------------------------------------------------------
+[ 2019-09-13T23:09:41+08:00 ] 223.166.222.112 POST c.yaoget.cn/addons/wechat/index/index?signature=c240e1a343bf9887a9040d71ec71d78d22e69e88&timestamp=1568387380&nonce=1045988624&openid=oH4181LNlP1WAZf1TG3eD4_RBoVc&encrypt_type=aes&msg_signature=34bb87e6066394a4236b0d092353dc99816ac100
+[运行时间：0.184729s] [吞吐率：5.41req/s] [内存消耗：5,971.02kb] [文件加载：228]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000018s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001474s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'text/xml',
+  'content-length' => '897',
+  'pragma' => 'no-cache',
+  'host' => 'c.yaoget.cn',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/4.0',
+)
+[ info ] [ PARAM ] array (
+  'signature' => 'c240e1a343bf9887a9040d71ec71d78d22e69e88',
+  'timestamp' => '1568387380',
+  'nonce' => '1045988624',
+  'openid' => 'oH4181LNlP1WAZf1TG3eD4_RBoVc',
+  'encrypt_type' => 'aes',
+  'msg_signature' => '34bb87e6066394a4236b0d092353dc99816ac100',
+  'addon' => 'wechat',
+  'controller' => 'index',
+  'action' => 'index',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ /www/wwwroot/c.yaoget.cn/vendor/karsonzhang/fastadmin-addons/src/addons/Route.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/common/lang/zh-cn/addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001513s ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000288s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_userinfo` [ RunTime:0.000818s ]
+[ sql ] [ SQL ] SELECT `member_service_id`,`id`,`topid`,`nickname`,`createtime` FROM `h_userinfo` WHERE  `openid` = 'oH4181LNlP1WAZf1TG3eD4_RBoVc' LIMIT 1 [ RunTime:0.000231s ]
+[ sql ] [ SQL ] SELECT `member_service_id`,`topid`,`id`,`openid` FROM `h_userinfo` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000158s ]
+[ sql ] [ SQL ] SELECT `member_service_id`,`id`,`openid` FROM `h_userinfo` WHERE  `id` IS NULL LIMIT 1 [ RunTime:0.000143s ]
+---------------------------------------------------------------
+[ 2019-09-13T23:09:41+08:00 ] 183.11.69.244 POST c.yaoget.cn/index/video/share
+[运行时间：0.081327s] [吞吐率：12.30req/s] [内存消耗：3,944.38kb] [文件加载：137]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000018s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001503s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'video',
+    2 => 'share',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=5frcfrpul26f1l4usrebrggaa4; Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1565840228,1565927933,1565972855,1566014404',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.5(0x17000523) NetType/WIFI Language/zh_CN',
+  'content-length' => '33',
+  'referer' => 'https://c.yaoget.cn/',
+  'origin' => 'https://c.yaoget.cn',
+  'accept-encoding' => 'br, gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'host' => 'c.yaoget.cn',
+)
+[ info ] [ PARAM ] array (
+  'urls' => 'https://c.yaoget.cn/',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/index/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001247s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000161s ]
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000038s ]
+[ info ] [ RUN ] app\index\controller\Video->share[ /www/wwwroot/c.yaoget.cn/application/index/controller/Video.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000313s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_userinfo` [ RunTime:0.000856s ]
+[ sql ] [ SQL ] SELECT * FROM `h_userinfo` WHERE  `openid` = 'oH4181LNlP1WAZf1TG3eD4_RBoVc' LIMIT 1 [ RunTime:0.031486s ]
+---------------------------------------------------------------
+[ 2019-09-13T23:09:41+08:00 ] 183.11.69.244 POST c.yaoget.cn/addons/wechat/index/getsubscribe
+[运行时间：0.300722s] [吞吐率：3.33req/s] [内存消耗：4,614.38kb] [文件加载：210]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000017s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001478s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=5frcfrpul26f1l4usrebrggaa4; Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1565840228,1565927933,1565972855,1566014404',
+  'accept-encoding' => 'br, gzip, deflate',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.5(0x17000523) NetType/WIFI Language/zh_CN',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept-language' => 'zh-cn',
+  'referer' => 'https://c.yaoget.cn/',
+  'origin' => 'https://c.yaoget.cn',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'addon' => 'wechat',
+  'controller' => 'index',
+  'action' => 'getsubscribe',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ /www/wwwroot/c.yaoget.cn/vendor/karsonzhang/fastadmin-addons/src/addons/Route.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/common/lang/zh-cn/addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001381s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-09-13T23:09:41+08:00 ] 183.11.69.244 GET c.yaoget.cn/index/video/index/course_id/6/openid/oH4181LNlP1WAZf1TG3eD4_RBoVc
+[运行时间：0.043099s] [吞吐率：23.20req/s] [内存消耗：4,147.36kb] [文件加载：135]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000034s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001604s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'video',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=5frcfrpul26f1l4usrebrggaa4; Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1565840228,1565927933,1565972855,1566014404',
+  'referer' => 'https://c.yaoget.cn/',
+  'accept-language' => 'zh-cn',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.5(0x17000523) NetType/WIFI Language/zh_CN',
+  'accept-encoding' => 'br, gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'course_id' => '6',
+  'openid' => 'oH4181LNlP1WAZf1TG3eD4_RBoVc',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/index/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001211s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000157s ]
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000024s ]
+[ info ] [ RUN ] app\index\controller\Video->index[ /www/wwwroot/c.yaoget.cn/application/index/controller/Video.php ]
+[ info ] [ VIEW ] /www/wwwroot/c.yaoget.cn/public/../application/index/view/video/index.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+  3 => 'chapter',
+  4 => 'recommend',
+  5 => 'one',
+  6 => 'comment',
+  7 => 'course',
+  8 => 'grade',
+  9 => 'is_height',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000355s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_userinfo` [ RunTime:0.000716s ]
+[ sql ] [ SQL ] SELECT * FROM `h_userinfo` WHERE  `openid` = 'oH4181LNlP1WAZf1TG3eD4_RBoVc' LIMIT 1 [ RunTime:0.000237s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_course` [ RunTime:0.000633s ]
+[ sql ] [ SQL ] SELECT `title`,`coursecontent`,`image` FROM `h_course` WHERE  `id` = 6 LIMIT 1 [ RunTime:0.000171s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_chapter` [ RunTime:0.000591s ]
+[ sql ] [ SQL ] SELECT * FROM `h_chapter` WHERE  `course_id` = 6 ORDER BY `weigh` DESC [ RunTime:0.000239s ]
+[ sql ] [ SQL ] SELECT * FROM `h_chapter` WHERE  `course_id` = 6 ORDER BY `weigh` DESC LIMIT 1 [ RunTime:0.000164s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_comment_chapter` [ RunTime:0.000522s ]
+[ sql ] [ SQL ] SELECT `c`.*,`u`.`nickname`,`u`.`avatar` FROM `h_comment_chapter` `c` INNER JOIN `h_userinfo` `u` ON `u`.`id`=`c`.`user_id` WHERE  `chapter_status` = '1'  AND `course_id` = 6 [ RunTime:0.000185s ]
+[ sql ] [ SQL ] SELECT * FROM `h_course` WHERE  `id` <> 6 [ RunTime:0.000178s ]
+[ sql ] [ SQL ] SELECT * FROM `h_userinfo` WHERE  `openid` = 'oH4181LNlP1WAZf1TG3eD4_RBoVc' LIMIT 1 [ RunTime:0.000169s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_order` [ RunTime:0.000572s ]
+[ sql ] [ SQL ] SELECT `type` FROM `h_order` `o` INNER JOIN `h_course` `c` ON `c`.`id`=`o`.`course_id` WHERE  `user_id` = 4  AND `order_status` <> '0' LIMIT 1 [ RunTime:0.000166s ]
+[ sql ] [ SQL ] SELECT `type` FROM `h_order` `o` INNER JOIN `h_course` `c` ON `c`.`id`=`o`.`course_id` WHERE  `user_id` = 4  AND `order_status` <> '0'  AND `c`.`type` = '2' LIMIT 1 [ RunTime:0.000174s ]
+---------------------------------------------------------------
+[ 2019-09-13T23:09:41+08:00 ] 183.11.69.244 POST c.yaoget.cn/index/video/share
+[运行时间：0.066082s] [吞吐率：15.13req/s] [内存消耗：3,944.86kb] [文件加载：137]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000017s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001448s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'video',
+    2 => 'share',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=5frcfrpul26f1l4usrebrggaa4; Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1565840228,1565927933,1565972855,1566014404',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.5(0x17000523) NetType/WIFI Language/zh_CN',
+  'content-length' => '110',
+  'referer' => 'https://c.yaoget.cn/index/video/index/course_id/6/openid/oH4181LNlP1WAZf1TG3eD4_RBoVc',
+  'origin' => 'https://c.yaoget.cn',
+  'accept-encoding' => 'br, gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'host' => 'c.yaoget.cn',
+)
+[ info ] [ PARAM ] array (
+  'urls' => 'https://c.yaoget.cn/index/video/index/course_id/6/openid/oH4181LNlP1WAZf1TG3eD4_RBoVc',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/index/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001244s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000154s ]
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000033s ]
+[ info ] [ RUN ] app\index\controller\Video->share[ /www/wwwroot/c.yaoget.cn/application/index/controller/Video.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.014409s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_userinfo` [ RunTime:0.000751s ]
+[ sql ] [ SQL ] SELECT * FROM `h_userinfo` WHERE  `openid` = 'oH4181LNlP1WAZf1TG3eD4_RBoVc' LIMIT 1 [ RunTime:0.000249s ]
+---------------------------------------------------------------
+[ 2019-09-13T23:09:42+08:00 ] 183.11.69.244 POST c.yaoget.cn/addons/wechat/index/getsubscribe
+[运行时间：0.297585s] [吞吐率：3.36req/s] [内存消耗：4,614.76kb] [文件加载：210]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000019s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001455s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=5frcfrpul26f1l4usrebrggaa4; Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1565840228,1565927933,1565972855,1566014404',
+  'accept-encoding' => 'br, gzip, deflate',
+  'content-length' => '0',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.5(0x17000523) NetType/WIFI Language/zh_CN',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept-language' => 'zh-cn',
+  'referer' => 'https://c.yaoget.cn/index/video/index/course_id/6/openid/oH4181LNlP1WAZf1TG3eD4_RBoVc',
+  'origin' => 'https://c.yaoget.cn',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'addon' => 'wechat',
+  'controller' => 'index',
+  'action' => 'getsubscribe',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ /www/wwwroot/c.yaoget.cn/vendor/karsonzhang/fastadmin-addons/src/addons/Route.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/common/lang/zh-cn/addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.001382s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-09-13T23:11:59+08:00 ] 183.11.69.244 GET c.yaoget.cn/admin
+[运行时间：0.027466s] [吞吐率：36.41req/s] [内存消耗：2,893.20kb] [文件加载：127]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000016s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001490s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'sec-fetch-site' => 'none',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'sec-fetch-user' => '?1',
+  'sec-fetch-mode' => 'navigate',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001360s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] /www/wwwroot/c.yaoget.cn/public/../application/common/view/tpl/dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000092s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-09-13T23:12:01+08:00 ] 183.11.69.244 GET c.yaoget.cn/admin/index/login?url=%2Fadmin
+[运行时间：0.031604s] [吞吐率：31.64req/s] [内存消耗：3,349.81kb] [文件加载：131]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000018s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.002060s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin',
+  'sec-fetch-site' => 'same-origin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'sec-fetch-user' => '?1',
+  'sec-fetch-mode' => 'navigate',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'url' => '/admin',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001253s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000155s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/index.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000035s ]
+[ info ] [ RUN ] app\admin\controller\Index->login[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/c.yaoget.cn/public/../application/admin/view/index/login.html [ array (
+  0 => 'breadcrumb',
+  1 => 'site',
+  2 => 'config',
+  3 => 'auth',
+  4 => 'admin',
+  5 => 'background',
+  6 => 'title',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000096s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-09-13T23:12:01+08:00 ] 183.11.69.244 GET c.yaoget.cn/index.php?s=/captcha
+[运行时间：0.020394s] [吞吐率：49.03req/s] [内存消耗：2,093.42kb] [文件加载：108]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000017s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001622s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/index/login?url=%2Fadmin',
+  'sec-fetch-site' => 'same-origin',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'sec-fetch-mode' => 'no-cors',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ /www/wwwroot/c.yaoget.cn/vendor/topthink/think-captcha/src/CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-09-13T23:12:02+08:00 ] 183.11.69.244 GET c.yaoget.cn/admin/ajax/lang?callback=define&controllername=index&v=1568387521
+[运行时间：0.030054s] [吞吐率：33.27req/s] [内存消耗：3,354.88kb] [文件加载：131]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000017s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001445s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'lang',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/index/login?url=%2Fadmin',
+  'sec-fetch-site' => 'same-origin',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'sec-fetch-mode' => 'no-cors',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'define',
+  'controllername' => 'index',
+  'v' => '1568387521',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001223s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000149s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/ajax.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000028s ]
+[ info ] [ RUN ] app\admin\controller\Ajax->lang[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Ajax.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/index.php
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000092s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-09-13T23:12:02+08:00 ] 183.11.69.244 POST c.yaoget.cn/addons/geetest/index/start
+[运行时间：0.061293s] [吞吐率：16.32req/s] [内存消耗：3,013.31kb] [文件加载：129]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000017s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001444s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\addons\\Route',
+    1 => 'execute',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/index/login?url=%2Fadmin',
+  'sec-fetch-site' => 'same-origin',
+  'sec-fetch-mode' => 'cors',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'https://c.yaoget.cn',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '0',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'addon' => 'geetest',
+  'controller' => 'index',
+  'action' => 'start',
+)
+[ info ] [ RUN ] think\addons\Route->execute[ /www/wwwroot/c.yaoget.cn/vendor/karsonzhang/fastadmin-addons/src/addons/Route.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/common/lang/zh-cn/addon.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @addon_begin [ RunTime:0.003433s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-09-13T23:12:13+08:00 ] 183.11.69.244 POST c.yaoget.cn/admin/index/login?url=%2Fadmin
+[运行时间：0.079461s] [吞吐率：12.58req/s] [内存消耗：4,128.38kb] [文件加载：141]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000018s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001602s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/index/login?url=%2Fadmin',
+  'sec-fetch-site' => 'same-origin',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'sec-fetch-mode' => 'cors',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'https://c.yaoget.cn',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '245',
+  'host' => 'c.yaoget.cn',
+)
+[ info ] [ PARAM ] array (
+  'url' => '/admin',
+  '__token__' => '8cfa54252ec7ca821054996ee899aba8',
+  'username' => 'admin',
+  'password' => '112233',
+  'captcha' => 'ok',
+  'geetest_challenge' => '76ab102b006e244be80d5f65f8ebedd84g',
+  'geetest_validate' => '98a8609419c4c0b3ee62bf47a2071dd8',
+  'geetest_seccode' => '98a8609419c4c0b3ee62bf47a2071dd8|jordan',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001260s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000149s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/index.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000027s ]
+[ info ] [ RUN ] app\admin\controller\Index->login[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.008586s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000500s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin` [ RunTime:0.001101s ]
+[ sql ] [ SQL ] SELECT * FROM `h_admin` WHERE  `username` = 'admin' LIMIT 1 [ RunTime:0.000504s ]
+[ sql ] [ SQL ] UPDATE `h_admin`  SET `logintime`=1568387533,`token`='fb86cb6d-cdaa-4f57-b7ba-13941cef5c98',`updatetime`=1568387533  WHERE  `id` = 1 [ RunTime:0.004482s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.000552s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('登录' , '{\"url\":\"\\/admin\",\"__token__\":\"8cfa54252ec7ca821054996ee899aba8\",\"username\":\"admin\",\"captcha\":\"ok\",\"geetest_challenge\":\"76ab102b006e244be80d5f65f8ebedd84g\",\"geetest_validate\":\"98a8609419c4c0b3ee62bf47a2071dd8\",\"geetest_seccode\":\"98a8609419c4c0b3ee62bf47a2071dd8|jordan\"}' , '/admin/index/login?url=%2Fadmin' , 1 , 'admin' , 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36' , '183.11.69.244' , 1568387533) [ RunTime:0.007530s ]
+---------------------------------------------------------------
+[ 2019-09-13T23:12:13+08:00 ] 183.11.69.244 GET c.yaoget.cn/admin
+[运行时间：0.078379s] [吞吐率：12.76req/s] [内存消耗：4,572.83kb] [文件加载：150]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000017s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001469s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/index/login?url=%2Fadmin',
+  'sec-fetch-site' => 'same-origin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'sec-fetch-user' => '?1',
+  'sec-fetch-mode' => 'navigate',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001225s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000134s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/index.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000027s ]
+[ info ] [ RUN ] app\admin\controller\Index->index[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/c.yaoget.cn/public/../application/admin/view/index/index.html [ array (
+  0 => 'breadcrumb',
+  1 => 'site',
+  2 => 'config',
+  3 => 'auth',
+  4 => 'admin',
+  5 => 'menulist',
+  6 => 'navlist',
+  7 => 'fixedmenu',
+  8 => 'referermenu',
+  9 => 'title',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000125s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000350s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000608s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000242s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000516s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000348s ]
+[ sql ] [ SQL ] SELECT `name`,`pid` FROM `h_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 0  AND `name` LIKE '%/index' [ RunTime:0.000247s ]
+---------------------------------------------------------------
+[ 2019-09-13T23:12:13+08:00 ] 183.11.69.244 GET c.yaoget.cn/admin/dashboard?addtabs=1
+[运行时间：0.038316s] [吞吐率：26.10req/s] [内存消耗：4,352.87kb] [文件加载：140]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000017s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001482s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'dashboard',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin',
+  'sec-fetch-site' => 'same-origin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'sec-fetch-mode' => 'nested-navigate',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'addtabs' => '1',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001196s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000146s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/dashboard.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000025s ]
+[ info ] [ RUN ] app\admin\controller\Dashboard->index[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Dashboard.php ]
+[ info ] [ VIEW ] /www/wwwroot/c.yaoget.cn/public/../application/admin/view/dashboard/index.html [ array (
+  0 => 'breadcrumb',
+  1 => 'site',
+  2 => 'config',
+  3 => 'auth',
+  4 => 'admin',
+  5 => 'totaluser',
+  6 => 'totalviews',
+  7 => 'totalorder',
+  8 => 'totalorderamount',
+  9 => 'todayuserlogin',
+  10 => 'todayusersignup',
+  11 => 'todayorder',
+  12 => 'unsettleorder',
+  13 => 'sevendnu',
+  14 => 'sevendau',
+  15 => 'paylist',
+  16 => 'createlist',
+  17 => 'addonversion',
+  18 => 'uploadmode',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000090s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000314s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000685s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000205s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000605s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000335s ]
+---------------------------------------------------------------
+[ 2019-09-13T23:12:13+08:00 ] 183.11.69.244 GET c.yaoget.cn/admin/ajax/lang?callback=define&controllername=index&v=1568387533
+[运行时间：0.049843s] [吞吐率：20.06req/s] [内存消耗：3,356.77kb] [文件加载：131]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000034s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001552s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'lang',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin',
+  'sec-fetch-site' => 'same-origin',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'sec-fetch-mode' => 'no-cors',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'define',
+  'controllername' => 'index',
+  'v' => '1568387533',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001230s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000156s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/ajax.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000026s ]
+[ info ] [ RUN ] app\admin\controller\Ajax->lang[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Ajax.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/index.php
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000096s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-09-13T23:12:13+08:00 ] 183.11.69.244 GET c.yaoget.cn/admin/ajax/lang?callback=define&controllername=dashboard&v=1568387533
+[运行时间：0.059480s] [吞吐率：16.81req/s] [内存消耗：3,355.48kb] [文件加载：131]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000018s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001471s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'lang',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/dashboard?addtabs=1',
+  'sec-fetch-site' => 'same-origin',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'sec-fetch-mode' => 'no-cors',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'define',
+  'controllername' => 'dashboard',
+  'v' => '1568387533',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001415s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000145s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/ajax.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000027s ]
+[ info ] [ RUN ] app\admin\controller\Ajax->lang[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Ajax.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/dashboard.php
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000097s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-09-13T23:12:18+08:00 ] 183.11.69.244 GET c.yaoget.cn/admin/order?addtabs=1
+[运行时间：0.038563s] [吞吐率：25.93req/s] [内存消耗：4,332.78kb] [文件加载：139]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000016s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001445s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'order',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/order?ref=addtabs',
+  'sec-fetch-site' => 'same-origin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'sec-fetch-mode' => 'nested-navigate',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'addtabs' => '1',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001257s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000148s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/order.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000029s ]
+[ info ] [ RUN ] app\admin\controller\Order->index[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Order.php ]
+[ info ] [ VIEW ] /www/wwwroot/c.yaoget.cn/public/../application/admin/view/order/index.html [ array (
+  0 => 'breadcrumb',
+  1 => 'site',
+  2 => 'config',
+  3 => 'auth',
+  4 => 'admin',
+  5 => 'payTypeList',
+  6 => 'orderStatusList',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000095s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000353s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000639s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000211s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000492s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000318s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'order' LIMIT 1 [ RunTime:0.000200s ]
+---------------------------------------------------------------
+[ 2019-09-13T23:12:19+08:00 ] 183.11.69.244 GET c.yaoget.cn/admin/ajax/lang?callback=define&controllername=order&v=1568387538
+[运行时间：0.029796s] [吞吐率：33.56req/s] [内存消耗：3,353.95kb] [文件加载：131]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000018s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001463s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'lang',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/order?addtabs=1',
+  'sec-fetch-site' => 'same-origin',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'sec-fetch-mode' => 'no-cors',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'define',
+  'controllername' => 'order',
+  'v' => '1568387538',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001209s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000152s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/ajax.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000026s ]
+[ info ] [ RUN ] app\admin\controller\Ajax->lang[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Ajax.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/order.php
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000090s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-09-13T23:12:20+08:00 ] 183.11.69.244 GET c.yaoget.cn/admin/order/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1568387539327
+[运行时间：0.045113s] [吞吐率：22.17req/s] [内存消耗：4,597.36kb] [文件加载：147]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000016s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001483s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'order',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/order?addtabs=1',
+  'sec-fetch-site' => 'same-origin',
+  'content-type' => 'application/json',
+  'sec-fetch-mode' => 'cors',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'host' => 'c.yaoget.cn',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'addtabs' => '1',
+  'sort' => 'id',
+  'order' => 'desc',
+  'offset' => '0',
+  'limit' => '10',
+  'filter' => '{}',
+  'op' => '{}',
+  '_' => '1568387539327',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.002297s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000137s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/order.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000029s ]
+[ info ] [ RUN ] app\admin\controller\Order->index[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Order.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000095s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000311s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000732s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000216s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000497s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000408s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_order` [ RunTime:0.000585s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_userinfo` [ RunTime:0.000563s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_course` [ RunTime:0.000520s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_member_service` [ RunTime:0.000555s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_order` `order` LEFT JOIN `h_userinfo` `userinfo` ON `order`.`user_id`=`userinfo`.`id` LEFT JOIN `h_course` `course` ON `order`.`course_id`=`course`.`id` LEFT JOIN `h_member_service` `memberservice` ON `order`.`member_service_id`=`memberservice`.`id` ORDER BY `order`.`id` DESC LIMIT 1 [ RunTime:0.000193s ]
+[ sql ] [ SQL ] SELECT `order`.`id`,`order`.`order_num`,`order`.`user_id`,`order`.`course_id`,`order`.`member_service_id`,`order`.`price`,`order`.`commission`,`order`.`recommend`,`order`.`commission_two`,`order`.`recommend_two`,`order`.`commission_three`,`order`.`recommend_three`,`order`.`pay_type`,`order`.`order_status`,`order`.`createtime`,`order`.`paymenttime`,`order`.`is_royalty`,userinfo.id AS userinfo__id,userinfo.openid AS userinfo__openid,userinfo.name AS userinfo__name,userinfo.nickname AS userinfo__nickname,userinfo.phone AS userinfo__phone,userinfo.email AS userinfo__email,userinfo.avatar AS userinfo__avatar,userinfo.gender AS userinfo__gender,userinfo.country AS userinfo__country,userinfo.province AS userinfo__province,userinfo.citys AS userinfo__citys,userinfo.member_service_id AS userinfo__member_service_id,userinfo.subordinate_count AS userinfo__subordinate_count,userinfo.money AS userinfo__money,userinfo.status AS userinfo__status,userinfo.createtime AS userinfo__createtime,userinfo.prevtime AS userinfo__prevtime,userinfo.logintime AS userinfo__logintime,userinfo.jointime AS userinfo__jointime,userinfo.topid AS userinfo__topid,userinfo.card AS userinfo__card,userinfo.birth AS userinfo__birth,userinfo.quota AS userinfo__quota,course.id AS course__id,course.type AS course__type,course.teacher_id AS course__teacher_id,course.image AS course__image,course.title AS course__title,course.category_id AS course__category_id,course.sales AS course__sales,course.stock AS course__stock,course.price AS course__price,course.gratisrank AS course__gratisrank,course.studynum AS course__studynum,course.updatestatus AS course__updatestatus,course.weight AS course__weight,course.status AS course__status,course.coursecontent AS course__coursecontent,course.chapter_id AS course__chapter_id,memberservice.id AS memberservice__id,memberservice.title AS memberservice__title,memberservice.price AS memberservice__price,memberservice.give AS memberservice__give,memberservice.member_discount AS memberservice__member_discount,memberservice.status AS memberservice__status,memberservice.weigh AS memberservice__weigh,memberservice.commission AS memberservice__commission FROM `h_order` `order` LEFT JOIN `h_userinfo` `userinfo` ON `order`.`user_id`=`userinfo`.`id` LEFT JOIN `h_course` `course` ON `order`.`course_id`=`course`.`id` LEFT JOIN `h_member_service` `memberservice` ON `order`.`member_service_id`=`memberservice`.`id` ORDER BY `order`.`id` DESC LIMIT 0,10 [ RunTime:0.000373s ]
+[ sql ] [ SQL ] SELECT `name` FROM `h_userinfo` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000164s ]
+---------------------------------------------------------------
+[ 2019-09-13T23:12:28+08:00 ] 183.11.69.244 GET c.yaoget.cn/admin/partner?addtabs=1
+[运行时间：0.039723s] [吞吐率：25.17req/s] [内存消耗：4,313.28kb] [文件加载：139]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000018s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001531s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'partner',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/partner?ref=addtabs',
+  'sec-fetch-site' => 'same-origin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'sec-fetch-mode' => 'nested-navigate',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'addtabs' => '1',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001216s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000158s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/partner.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000030s ]
+[ info ] [ RUN ] app\admin\controller\Partner->index[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Partner.php ]
+[ info ] [ VIEW ] /www/wwwroot/c.yaoget.cn/public/../application/admin/view/partner/index.html [ array (
+  0 => 'breadcrumb',
+  1 => 'site',
+  2 => 'config',
+  3 => 'auth',
+  4 => 'admin',
+  5 => 'payTypeList',
+  6 => 'orderStatusList',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000120s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000330s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000718s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000212s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000590s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000334s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'partner' LIMIT 1 [ RunTime:0.000205s ]
+---------------------------------------------------------------
+[ 2019-09-13T23:12:28+08:00 ] 183.11.69.244 GET c.yaoget.cn/admin/ajax/lang?callback=define&controllername=partner&v=1568387548
+[运行时间：0.031274s] [吞吐率：31.98req/s] [内存消耗：3,352.98kb] [文件加载：131]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000042s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001476s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'lang',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/partner?addtabs=1',
+  'sec-fetch-site' => 'same-origin',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'sec-fetch-mode' => 'no-cors',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'define',
+  'controllername' => 'partner',
+  'v' => '1568387548',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001237s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000158s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/ajax.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000027s ]
+[ info ] [ RUN ] app\admin\controller\Ajax->lang[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Ajax.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/partner.php
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000111s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-09-13T23:12:29+08:00 ] 183.11.69.244 GET c.yaoget.cn/admin/partner/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1568387548313
+[运行时间：0.044803s] [吞吐率：22.32req/s] [内存消耗：4,544.59kb] [文件加载：146]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000018s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001486s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'partner',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/partner?addtabs=1',
+  'sec-fetch-site' => 'same-origin',
+  'content-type' => 'application/json',
+  'sec-fetch-mode' => 'cors',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'host' => 'c.yaoget.cn',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'addtabs' => '1',
+  'sort' => 'id',
+  'order' => 'desc',
+  'offset' => '0',
+  'limit' => '10',
+  'filter' => '{}',
+  'op' => '{}',
+  '_' => '1568387548313',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001233s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000146s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/partner.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000031s ]
+[ info ] [ RUN ] app\admin\controller\Partner->index[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Partner.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000098s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000301s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000718s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000219s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000619s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000336s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_partner` [ RunTime:0.000521s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_member_service` [ RunTime:0.000590s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_userinfo` [ RunTime:0.000570s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_partner` `partner` LEFT JOIN `h_member_service` `memberservice` ON `partner`.`member_service_id`=`memberservice`.`id` LEFT JOIN `h_userinfo` `userinfo` ON `partner`.`user_id`=`userinfo`.`id` ORDER BY `partner`.`id` DESC LIMIT 1 [ RunTime:0.000183s ]
+[ sql ] [ SQL ] SELECT `partner`.`id`,`partner`.`member_service_id`,`partner`.`user_id`,`partner`.`pay_type`,`partner`.`order_status`,`partner`.`crearetime`,memberservice.id AS memberservice__id,memberservice.title AS memberservice__title,memberservice.price AS memberservice__price,memberservice.give AS memberservice__give,memberservice.member_discount AS memberservice__member_discount,memberservice.status AS memberservice__status,memberservice.weigh AS memberservice__weigh,memberservice.commission AS memberservice__commission,userinfo.id AS userinfo__id,userinfo.openid AS userinfo__openid,userinfo.name AS userinfo__name,userinfo.nickname AS userinfo__nickname,userinfo.phone AS userinfo__phone,userinfo.email AS userinfo__email,userinfo.avatar AS userinfo__avatar,userinfo.gender AS userinfo__gender,userinfo.country AS userinfo__country,userinfo.province AS userinfo__province,userinfo.citys AS userinfo__citys,userinfo.member_service_id AS userinfo__member_service_id,userinfo.subordinate_count AS userinfo__subordinate_count,userinfo.money AS userinfo__money,userinfo.status AS userinfo__status,userinfo.createtime AS userinfo__createtime,userinfo.prevtime AS userinfo__prevtime,userinfo.logintime AS userinfo__logintime,userinfo.jointime AS userinfo__jointime,userinfo.topid AS userinfo__topid,userinfo.card AS userinfo__card,userinfo.birth AS userinfo__birth,userinfo.quota AS userinfo__quota FROM `h_partner` `partner` LEFT JOIN `h_member_service` `memberservice` ON `partner`.`member_service_id`=`memberservice`.`id` LEFT JOIN `h_userinfo` `userinfo` ON `partner`.`user_id`=`userinfo`.`id` ORDER BY `partner`.`id` DESC LIMIT 0,10 [ RunTime:0.000275s ]
+[ sql ] [ SQL ] SELECT `name` FROM `h_userinfo` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000193s ]
+---------------------------------------------------------------
+[ 2019-09-13T23:12:39+08:00 ] 183.11.69.244 GET c.yaoget.cn/admin/partner/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%22userinfo.topid%22%3A%227%22%7D&op=%7B%22userinfo.topid%22%3A%22%3D%22%7D&_=1568387548314
+[运行时间：0.043243s] [吞吐率：23.13req/s] [内存消耗：4,567.60kb] [文件加载：145]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000016s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001474s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'partner',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/partner?addtabs=1',
+  'sec-fetch-site' => 'same-origin',
+  'content-type' => 'application/json',
+  'sec-fetch-mode' => 'cors',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'host' => 'c.yaoget.cn',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'addtabs' => '1',
+  'sort' => 'id',
+  'order' => 'desc',
+  'offset' => '0',
+  'limit' => '10',
+  'filter' => '{"userinfo.topid":"7"}',
+  'op' => '{"userinfo.topid":"="}',
+  '_' => '1568387548314',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001238s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000137s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/partner.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000029s ]
+[ info ] [ RUN ] app\admin\controller\Partner->index[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Partner.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000094s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000310s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000695s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000231s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000627s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000341s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_partner` [ RunTime:0.000487s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_member_service` [ RunTime:0.000581s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_userinfo` [ RunTime:0.000655s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_partner` `partner` LEFT JOIN `h_member_service` `memberservice` ON `partner`.`member_service_id`=`memberservice`.`id` LEFT JOIN `h_userinfo` `userinfo` ON `partner`.`user_id`=`userinfo`.`id` WHERE  (  `userinfo`.`topid` = '7' ) ORDER BY `partner`.`id` DESC LIMIT 1 [ RunTime:0.000343s ]
+[ sql ] [ SQL ] SELECT `partner`.`id`,`partner`.`member_service_id`,`partner`.`user_id`,`partner`.`pay_type`,`partner`.`order_status`,`partner`.`crearetime`,memberservice.id AS memberservice__id,memberservice.title AS memberservice__title,memberservice.price AS memberservice__price,memberservice.give AS memberservice__give,memberservice.member_discount AS memberservice__member_discount,memberservice.status AS memberservice__status,memberservice.weigh AS memberservice__weigh,memberservice.commission AS memberservice__commission,userinfo.id AS userinfo__id,userinfo.openid AS userinfo__openid,userinfo.name AS userinfo__name,userinfo.nickname AS userinfo__nickname,userinfo.phone AS userinfo__phone,userinfo.email AS userinfo__email,userinfo.avatar AS userinfo__avatar,userinfo.gender AS userinfo__gender,userinfo.country AS userinfo__country,userinfo.province AS userinfo__province,userinfo.citys AS userinfo__citys,userinfo.member_service_id AS userinfo__member_service_id,userinfo.subordinate_count AS userinfo__subordinate_count,userinfo.money AS userinfo__money,userinfo.status AS userinfo__status,userinfo.createtime AS userinfo__createtime,userinfo.prevtime AS userinfo__prevtime,userinfo.logintime AS userinfo__logintime,userinfo.jointime AS userinfo__jointime,userinfo.topid AS userinfo__topid,userinfo.card AS userinfo__card,userinfo.birth AS userinfo__birth,userinfo.quota AS userinfo__quota FROM `h_partner` `partner` LEFT JOIN `h_member_service` `memberservice` ON `partner`.`member_service_id`=`memberservice`.`id` LEFT JOIN `h_userinfo` `userinfo` ON `partner`.`user_id`=`userinfo`.`id` WHERE  (  `userinfo`.`topid` = '7' ) ORDER BY `partner`.`id` DESC LIMIT 0,10 [ RunTime:0.000435s ]
+---------------------------------------------------------------
+[ 2019-09-13T23:12:43+08:00 ] 183.11.69.244 GET c.yaoget.cn/admin/partner/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%22userinfo.topid%22%3A%224%22%7D&op=%7B%22userinfo.topid%22%3A%22%3D%22%7D&_=1568387548315
+[运行时间：0.044646s] [吞吐率：22.40req/s] [内存消耗：4,550.21kb] [文件加载：146]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000017s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001625s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'partner',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/partner?addtabs=1',
+  'sec-fetch-site' => 'same-origin',
+  'content-type' => 'application/json',
+  'sec-fetch-mode' => 'cors',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'host' => 'c.yaoget.cn',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'addtabs' => '1',
+  'sort' => 'id',
+  'order' => 'desc',
+  'offset' => '0',
+  'limit' => '10',
+  'filter' => '{"userinfo.topid":"4"}',
+  'op' => '{"userinfo.topid":"="}',
+  '_' => '1568387548315',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001276s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000134s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/partner.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000029s ]
+[ info ] [ RUN ] app\admin\controller\Partner->index[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Partner.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000094s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000364s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000657s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000236s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000592s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000353s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_partner` [ RunTime:0.000519s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_member_service` [ RunTime:0.000549s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_userinfo` [ RunTime:0.000548s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_partner` `partner` LEFT JOIN `h_member_service` `memberservice` ON `partner`.`member_service_id`=`memberservice`.`id` LEFT JOIN `h_userinfo` `userinfo` ON `partner`.`user_id`=`userinfo`.`id` WHERE  (  `userinfo`.`topid` = '4' ) ORDER BY `partner`.`id` DESC LIMIT 1 [ RunTime:0.000337s ]
+[ sql ] [ SQL ] SELECT `partner`.`id`,`partner`.`member_service_id`,`partner`.`user_id`,`partner`.`pay_type`,`partner`.`order_status`,`partner`.`crearetime`,memberservice.id AS memberservice__id,memberservice.title AS memberservice__title,memberservice.price AS memberservice__price,memberservice.give AS memberservice__give,memberservice.member_discount AS memberservice__member_discount,memberservice.status AS memberservice__status,memberservice.weigh AS memberservice__weigh,memberservice.commission AS memberservice__commission,userinfo.id AS userinfo__id,userinfo.openid AS userinfo__openid,userinfo.name AS userinfo__name,userinfo.nickname AS userinfo__nickname,userinfo.phone AS userinfo__phone,userinfo.email AS userinfo__email,userinfo.avatar AS userinfo__avatar,userinfo.gender AS userinfo__gender,userinfo.country AS userinfo__country,userinfo.province AS userinfo__province,userinfo.citys AS userinfo__citys,userinfo.member_service_id AS userinfo__member_service_id,userinfo.subordinate_count AS userinfo__subordinate_count,userinfo.money AS userinfo__money,userinfo.status AS userinfo__status,userinfo.createtime AS userinfo__createtime,userinfo.prevtime AS userinfo__prevtime,userinfo.logintime AS userinfo__logintime,userinfo.jointime AS userinfo__jointime,userinfo.topid AS userinfo__topid,userinfo.card AS userinfo__card,userinfo.birth AS userinfo__birth,userinfo.quota AS userinfo__quota FROM `h_partner` `partner` LEFT JOIN `h_member_service` `memberservice` ON `partner`.`member_service_id`=`memberservice`.`id` LEFT JOIN `h_userinfo` `userinfo` ON `partner`.`user_id`=`userinfo`.`id` WHERE  (  `userinfo`.`topid` = '4' ) ORDER BY `partner`.`id` DESC LIMIT 0,10 [ RunTime:0.000420s ]
+[ sql ] [ SQL ] SELECT `name` FROM `h_userinfo` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000182s ]
+---------------------------------------------------------------
+[ 2019-09-13T23:13:28+08:00 ] 183.11.69.244 GET c.yaoget.cn/admin/order_vip?addtabs=1
+[运行时间：0.039912s] [吞吐率：25.06req/s] [内存消耗：4,292.10kb] [文件加载：139]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000018s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001477s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'order_vip',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/order_vip?ref=addtabs',
+  'sec-fetch-site' => 'same-origin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'sec-fetch-mode' => 'nested-navigate',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'addtabs' => '1',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001396s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000156s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/order_vip.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000031s ]
+[ info ] [ RUN ] app\admin\controller\OrderVip->index[ /www/wwwroot/c.yaoget.cn/application/admin/controller/OrderVip.php ]
+[ info ] [ VIEW ] /www/wwwroot/c.yaoget.cn/public/../application/admin/view/order_vip/index.html [ array (
+  0 => 'breadcrumb',
+  1 => 'site',
+  2 => 'config',
+  3 => 'auth',
+  4 => 'admin',
+  5 => 'payTypeList',
+  6 => 'orderStatusList',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000095s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000377s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000600s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000349s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000494s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000434s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'ordervip' LIMIT 1 [ RunTime:0.000229s ]
+---------------------------------------------------------------
+[ 2019-09-13T23:13:28+08:00 ] 183.11.69.244 GET c.yaoget.cn/admin/ajax/lang?callback=define&controllername=order_vip&v=1568387608
+[运行时间：0.031670s] [吞吐率：31.58req/s] [内存消耗：3,353.25kb] [文件加载：131]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000019s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001482s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'lang',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/order_vip?addtabs=1',
+  'sec-fetch-site' => 'same-origin',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'sec-fetch-mode' => 'no-cors',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'define',
+  'controllername' => 'order_vip',
+  'v' => '1568387608',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001225s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000150s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/ajax.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000027s ]
+[ info ] [ RUN ] app\admin\controller\Ajax->lang[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Ajax.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/order_vip.php
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000107s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-09-13T23:13:29+08:00 ] 183.11.69.244 GET c.yaoget.cn/admin/order_vip/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1568387608411
+[运行时间：0.045606s] [吞吐率：21.93req/s] [内存消耗：4,555.27kb] [文件加载：146]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000018s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001718s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'order_vip',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/order_vip?addtabs=1',
+  'sec-fetch-site' => 'same-origin',
+  'content-type' => 'application/json',
+  'sec-fetch-mode' => 'cors',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'host' => 'c.yaoget.cn',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'addtabs' => '1',
+  'sort' => 'id',
+  'order' => 'desc',
+  'offset' => '0',
+  'limit' => '10',
+  'filter' => '{}',
+  'op' => '{}',
+  '_' => '1568387608411',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001231s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000166s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/order_vip.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000029s ]
+[ info ] [ RUN ] app\admin\controller\OrderVip->index[ /www/wwwroot/c.yaoget.cn/application/admin/controller/OrderVip.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000093s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001667s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000630s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000351s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000513s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000335s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_order_vip` [ RunTime:0.000557s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_member_service` [ RunTime:0.000498s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_userinfo` [ RunTime:0.000551s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_order_vip` `order_vip` LEFT JOIN `h_member_service` `memberservice` ON `order_vip`.`member_service_id`=`memberservice`.`id` LEFT JOIN `h_userinfo` `userinfo` ON `order_vip`.`user_id`=`userinfo`.`id` ORDER BY `order_vip`.`id` DESC LIMIT 1 [ RunTime:0.000397s ]
+[ sql ] [ SQL ] SELECT `order_vip`.`id`,`order_vip`.`member_service_id`,`order_vip`.`user_id`,`order_vip`.`pay_type`,`order_vip`.`order_status`,`order_vip`.`crearetime`,`order_vip`.`paymenttime`,memberservice.id AS memberservice__id,memberservice.title AS memberservice__title,memberservice.price AS memberservice__price,memberservice.give AS memberservice__give,memberservice.member_discount AS memberservice__member_discount,memberservice.status AS memberservice__status,memberservice.weigh AS memberservice__weigh,memberservice.commission AS memberservice__commission,userinfo.id AS userinfo__id,userinfo.openid AS userinfo__openid,userinfo.name AS userinfo__name,userinfo.nickname AS userinfo__nickname,userinfo.phone AS userinfo__phone,userinfo.email AS userinfo__email,userinfo.avatar AS userinfo__avatar,userinfo.gender AS userinfo__gender,userinfo.country AS userinfo__country,userinfo.province AS userinfo__province,userinfo.citys AS userinfo__citys,userinfo.member_service_id AS userinfo__member_service_id,userinfo.subordinate_count AS userinfo__subordinate_count,userinfo.money AS userinfo__money,userinfo.status AS userinfo__status,userinfo.createtime AS userinfo__createtime,userinfo.prevtime AS userinfo__prevtime,userinfo.logintime AS userinfo__logintime,userinfo.jointime AS userinfo__jointime,userinfo.topid AS userinfo__topid,userinfo.card AS userinfo__card,userinfo.birth AS userinfo__birth,userinfo.quota AS userinfo__quota FROM `h_order_vip` `order_vip` LEFT JOIN `h_member_service` `memberservice` ON `order_vip`.`member_service_id`=`memberservice`.`id` LEFT JOIN `h_userinfo` `userinfo` ON `order_vip`.`user_id`=`userinfo`.`id` ORDER BY `order_vip`.`id` DESC LIMIT 0,10 [ RunTime:0.000409s ]
+---------------------------------------------------------------
+[ 2019-09-13T23:13:33+08:00 ] 183.11.69.244 POST c.yaoget.cn/admin/order_vip/del/ids/0
+[运行时间：0.046959s] [吞吐率：21.30req/s] [内存消耗：4,285.85kb] [文件加载：141]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000017s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001596s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'order_vip',
+    2 => 'del',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/order_vip?addtabs=1',
+  'sec-fetch-site' => 'same-origin',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'sec-fetch-mode' => 'cors',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'https://c.yaoget.cn',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '18',
+  'host' => 'c.yaoget.cn',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'del',
+  'params' => '',
+  'ids' => '0',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001288s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000145s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/order_vip.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000038s ]
+[ info ] [ RUN ] app\common\controller\Backend->del[ /www/wwwroot/c.yaoget.cn/application/admin/library/traits/Backend.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.007351s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000349s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000739s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000225s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000509s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000422s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.000539s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('订单管理 VIP订单 删除' , '{\"action\":\"del\",\"params\":\"\",\"ids\":\"0\"}' , '/admin/order_vip/del/ids/0' , 1 , 'admin' , 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36' , '183.11.69.244' , 1568387613) [ RunTime:0.006280s ]
+---------------------------------------------------------------
+[ 2019-09-13T23:13:39+08:00 ] 183.11.69.244 GET c.yaoget.cn/admin/auth/rule?addtabs=1
+[运行时间：0.050172s] [吞吐率：19.93req/s] [内存消耗：4,771.30kb] [文件加载：143]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000016s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001471s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'auth.rule',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/auth/rule?ref=addtabs',
+  'sec-fetch-site' => 'same-origin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'sec-fetch-mode' => 'nested-navigate',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'addtabs' => '1',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001299s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000149s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/auth/rule.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000038s ]
+[ info ] [ RUN ] app\admin\controller\auth\Rule->index[ /www/wwwroot/c.yaoget.cn/application/admin/controller/auth/Rule.php ]
+[ info ] [ VIEW ] /www/wwwroot/c.yaoget.cn/public/../application/admin/view/auth/rule/index.html [ array (
+  0 => 'breadcrumb',
+  1 => 'site',
+  2 => 'config',
+  3 => 'auth',
+  4 => 'admin',
+  5 => 'ruledata',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000095s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000352s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000638s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000224s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000521s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000336s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.000998s ]
+[ sql ] [ SQL ] SELECT `title`,`remark` FROM `h_auth_rule` WHERE  `name` = 'auth/rule' LIMIT 1 [ RunTime:0.000328s ]
+---------------------------------------------------------------
+[ 2019-09-13T23:13:39+08:00 ] 183.11.69.244 GET c.yaoget.cn/admin/ajax/lang?callback=define&controllername=auth.rule&v=1568387619
+[运行时间：0.031836s] [吞吐率：31.41req/s] [内存消耗：3,353.30kb] [文件加载：131]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000018s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001568s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'lang',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/auth/rule?addtabs=1',
+  'sec-fetch-site' => 'same-origin',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'sec-fetch-mode' => 'no-cors',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'define',
+  'controllername' => 'auth.rule',
+  'v' => '1568387619',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001306s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000160s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/ajax.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000030s ]
+[ info ] [ RUN ] app\admin\controller\Ajax->lang[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Ajax.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/auth/rule.php
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000094s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-09-13T23:13:40+08:00 ] 183.11.69.244 GET c.yaoget.cn/admin/auth/rule/index?sort=weigh&order=desc&_=1568387619596
+[运行时间：0.049498s] [吞吐率：20.20req/s] [内存消耗：4,615.81kb] [文件加载：141]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000018s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001644s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'auth.rule',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/auth/rule?addtabs=1',
+  'sec-fetch-site' => 'same-origin',
+  'content-type' => 'application/json',
+  'sec-fetch-mode' => 'cors',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'host' => 'c.yaoget.cn',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'sort' => 'weigh',
+  'order' => 'desc',
+  '_' => '1568387619596',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001251s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000157s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/auth/rule.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000041s ]
+[ info ] [ RUN ] app\admin\controller\auth\Rule->index[ /www/wwwroot/c.yaoget.cn/application/admin/controller/auth/Rule.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000098s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000352s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000633s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000217s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000660s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000328s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.000310s ]
+---------------------------------------------------------------
+[ 2019-09-13T23:13:46+08:00 ] 183.11.69.244 GET c.yaoget.cn/admin/auth/rule/edit/ids/219?dialog=1
+[运行时间：0.049052s] [吞吐率：20.39req/s] [内存消耗：4,789.10kb] [文件加载：143]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000016s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001481s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'auth.rule',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/auth/rule?addtabs=1',
+  'sec-fetch-site' => 'same-origin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'sec-fetch-mode' => 'nested-navigate',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'dialog' => '1',
+  'ids' => '219',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001214s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000148s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/auth/rule.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000042s ]
+[ info ] [ RUN ] app\admin\controller\auth\Rule->edit[ /www/wwwroot/c.yaoget.cn/application/admin/controller/auth/Rule.php ]
+[ info ] [ VIEW ] /www/wwwroot/c.yaoget.cn/public/../application/admin/view/auth/rule/edit.html [ array (
+  0 => 'breadcrumb',
+  1 => 'site',
+  2 => 'config',
+  3 => 'auth',
+  4 => 'admin',
+  5 => 'ruledata',
+  6 => 'row',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000213s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000330s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000693s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000219s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000595s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000334s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.000301s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` WHERE  `id` = 219 LIMIT 1 [ RunTime:0.000378s ]
+---------------------------------------------------------------
+[ 2019-09-13T23:13:46+08:00 ] 183.11.69.244 GET c.yaoget.cn/admin/ajax/lang?callback=define&controllername=auth.rule&v=1568387626
+[运行时间：0.030513s] [吞吐率：32.77req/s] [内存消耗：3,353.45kb] [文件加载：131]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000017s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001593s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'lang',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/auth/rule/edit/ids/219?dialog=1',
+  'sec-fetch-site' => 'same-origin',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'sec-fetch-mode' => 'no-cors',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'define',
+  'controllername' => 'auth.rule',
+  'v' => '1568387626',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001335s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000152s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/ajax.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000025s ]
+[ info ] [ RUN ] app\admin\controller\Ajax->lang[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Ajax.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/auth/rule.php
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000095s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-09-13T23:13:54+08:00 ] 183.11.69.244 POST c.yaoget.cn/admin/auth/rule/edit/ids/219?dialog=1
+[运行时间：0.078889s] [吞吐率：12.68req/s] [内存消耗：4,624.67kb] [文件加载：144]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000018s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001591s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'auth.rule',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/auth/rule/edit/ids/219?dialog=1',
+  'sec-fetch-site' => 'same-origin',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'sec-fetch-mode' => 'cors',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'https://c.yaoget.cn',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '223',
+  'host' => 'c.yaoget.cn',
+)
+[ info ] [ PARAM ] array (
+  'dialog' => '1',
+  'row' => 
+  array (
+    'ismenu' => '1',
+    'pid' => '210',
+    'name' => 'partner',
+    'title' => '合伙人订单',
+    'icon' => 'fa fa-circle-o',
+    'weigh' => '0',
+    'condition' => '',
+    'remark' => '',
+    'status' => 'normal',
+  ),
+  'ids' => '219',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001313s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000154s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/auth/rule.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000038s ]
+[ info ] [ RUN ] app\admin\controller\auth\Rule->edit[ /www/wwwroot/c.yaoget.cn/application/admin/controller/auth/Rule.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.008177s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000400s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000664s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000223s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000538s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000488s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.000353s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` WHERE  `id` = 219 LIMIT 1 [ RunTime:0.000247s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` [ RunTime:0.000627s ]
+[ sql ] [ SQL ] SELECT `id` FROM `h_auth_rule` WHERE  `name` = 'partner'  AND `id` <> 219 LIMIT 1 [ RunTime:0.000308s ]
+[ sql ] [ SQL ] UPDATE `h_auth_rule`  SET `pid`=210,`title`='合伙人订单',`weigh`=0,`updatetime`=1568387634  WHERE  `id` = 219 [ RunTime:0.016460s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.000681s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('权限管理 菜单规则 编辑' , '{\"dialog\":\"1\",\"row\":{\"ismenu\":\"1\",\"pid\":\"210\",\"name\":\"partner\",\"title\":\"\\u5408\\u4f19\\u4eba\\u8ba2\\u5355\",\"icon\":\"fa fa-circle-o\",\"weigh\":\"0\",\"condition\":\"\",\"remark\":\"\",\"status\":\"normal\"},\"ids\":\"219\"}' , '/admin/auth/rule/edit/ids/219?dialog=1' , 1 , 'admin' , 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36' , '183.11.69.244' , 1568387634) [ RunTime:0.006653s ]
+---------------------------------------------------------------
+[ 2019-09-13T23:13:54+08:00 ] 183.11.69.244 GET c.yaoget.cn/admin/auth/rule/index?sort=weigh&order=desc&_=1568387619597
+[运行时间：0.058418s] [吞吐率：17.12req/s] [内存消耗：4,615.79kb] [文件加载：141]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000049s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001567s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'auth.rule',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/auth/rule?addtabs=1',
+  'sec-fetch-site' => 'same-origin',
+  'content-type' => 'application/json',
+  'sec-fetch-mode' => 'cors',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'host' => 'c.yaoget.cn',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'sort' => 'weigh',
+  'order' => 'desc',
+  '_' => '1568387619597',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001445s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000169s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/auth/rule.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000053s ]
+[ info ] [ RUN ] app\admin\controller\auth\Rule->index[ /www/wwwroot/c.yaoget.cn/application/admin/controller/auth/Rule.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000098s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000326s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000769s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000226s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000523s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000711s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.001061s ]
+---------------------------------------------------------------
+[ 2019-09-13T23:13:54+08:00 ] 183.11.69.244 POST c.yaoget.cn/admin/index/index
+[运行时间：0.136961s] [吞吐率：7.30req/s] [内存消耗：4,516.70kb] [文件加载：152]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000017s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.005578s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/auth/rule?ref=addtabs',
+  'sec-fetch-site' => 'same-origin',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'sec-fetch-mode' => 'cors',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'https://c.yaoget.cn',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '18',
+  'host' => 'c.yaoget.cn',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'refreshmenu',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001309s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000156s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/index.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000037s ]
+[ info ] [ RUN ] app\admin\controller\Index->index[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.005849s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000302s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000634s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000224s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000629s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000334s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 1 ORDER BY `weigh` DESC [ RunTime:0.000532s ]
+[ sql ] [ SQL ] SELECT `name`,`pid` FROM `h_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 0  AND `name` LIKE '%/index' [ RunTime:0.000473s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.000746s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('' , '{\"action\":\"refreshmenu\"}' , '/admin/index/index' , 1 , 'admin' , 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36' , '183.11.69.244' , 1568387634) [ RunTime:0.004262s ]
+---------------------------------------------------------------
+[ 2019-09-13T23:13:55+08:00 ] 183.11.69.244 GET c.yaoget.cn/admin/auth/rule/index?sort=weigh&order=desc&_=1568387619598
+[运行时间：0.048466s] [吞吐率：20.63req/s] [内存消耗：4,615.79kb] [文件加载：141]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000017s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001476s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'auth.rule',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/auth/rule?addtabs=1',
+  'sec-fetch-site' => 'same-origin',
+  'content-type' => 'application/json',
+  'sec-fetch-mode' => 'cors',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'host' => 'c.yaoget.cn',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'sort' => 'weigh',
+  'order' => 'desc',
+  '_' => '1568387619598',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001290s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000154s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/auth/rule.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000037s ]
+[ info ] [ RUN ] app\admin\controller\auth\Rule->index[ /www/wwwroot/c.yaoget.cn/application/admin/controller/auth/Rule.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000102s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000352s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000661s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000239s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000558s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000450s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.000344s ]
+---------------------------------------------------------------
+[ 2019-09-13T23:14:05+08:00 ] 183.11.69.244 GET c.yaoget.cn/admin/auth/rule/edit/ids/179?dialog=1
+[运行时间：0.049571s] [吞吐率：20.17req/s] [内存消耗：4,569.45kb] [文件加载：141]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000016s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001517s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'auth.rule',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/auth/rule?addtabs=1',
+  'sec-fetch-site' => 'same-origin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'sec-fetch-mode' => 'nested-navigate',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'dialog' => '1',
+  'ids' => '179',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001237s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000178s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/auth/rule.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000034s ]
+[ info ] [ RUN ] app\admin\controller\auth\Rule->edit[ /www/wwwroot/c.yaoget.cn/application/admin/controller/auth/Rule.php ]
+[ info ] [ VIEW ] /www/wwwroot/c.yaoget.cn/public/../application/admin/view/auth/rule/edit.html [ array (
+  0 => 'breadcrumb',
+  1 => 'site',
+  2 => 'config',
+  3 => 'auth',
+  4 => 'admin',
+  5 => 'ruledata',
+  6 => 'row',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000094s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000323s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000743s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000209s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000651s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000313s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.000295s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` WHERE  `id` = 179 LIMIT 1 [ RunTime:0.000429s ]
+---------------------------------------------------------------
+[ 2019-09-13T23:14:06+08:00 ] 183.11.69.244 GET c.yaoget.cn/admin/ajax/lang?callback=define&controllername=auth.rule&v=1568387645
+[运行时间：0.030581s] [吞吐率：32.70req/s] [内存消耗：3,353.45kb] [文件加载：131]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000017s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001502s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'lang',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/auth/rule/edit/ids/179?dialog=1',
+  'sec-fetch-site' => 'same-origin',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'sec-fetch-mode' => 'no-cors',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'define',
+  'controllername' => 'auth.rule',
+  'v' => '1568387645',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001210s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000176s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/ajax.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000027s ]
+[ info ] [ RUN ] app\admin\controller\Ajax->lang[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Ajax.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/auth/rule.php
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000119s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-09-13T23:14:12+08:00 ] 183.11.69.244 POST c.yaoget.cn/admin/auth/rule/edit/ids/179?dialog=1
+[运行时间：0.060949s] [吞吐率：16.41req/s] [内存消耗：4,627.84kb] [文件加载：144]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000017s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001521s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'auth.rule',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/auth/rule/edit/ids/179?dialog=1',
+  'sec-fetch-site' => 'same-origin',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'sec-fetch-mode' => 'cors',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'https://c.yaoget.cn',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '204',
+  'host' => 'c.yaoget.cn',
+)
+[ info ] [ PARAM ] array (
+  'dialog' => '1',
+  'row' => 
+  array (
+    'ismenu' => '1',
+    'pid' => '210',
+    'name' => 'order_vip',
+    'title' => 'VIP订单',
+    'icon' => 'fa fa-street-view',
+    'weigh' => '0',
+    'condition' => '',
+    'remark' => '',
+    'status' => 'hidden',
+  ),
+  'ids' => '179',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001278s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000152s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/auth/rule.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000031s ]
+[ info ] [ RUN ] app\admin\controller\auth\Rule->edit[ /www/wwwroot/c.yaoget.cn/application/admin/controller/auth/Rule.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.005549s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000392s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000665s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000385s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000518s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000416s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.000325s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` WHERE  `id` = 179 LIMIT 1 [ RunTime:0.000224s ]
+[ sql ] [ SQL ] SELECT `id` FROM `h_auth_rule` WHERE  `name` = 'order_vip'  AND `id` <> 179 LIMIT 1 [ RunTime:0.000287s ]
+[ sql ] [ SQL ] UPDATE `h_auth_rule`  SET `weigh`=0,`status`='hidden',`updatetime`=1568387652  WHERE  `id` = 179 [ RunTime:0.004930s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.000621s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('权限管理 菜单规则 编辑' , '{\"dialog\":\"1\",\"row\":{\"ismenu\":\"1\",\"pid\":\"210\",\"name\":\"order_vip\",\"title\":\"VIP\\u8ba2\\u5355\",\"icon\":\"fa fa-street-view\",\"weigh\":\"0\",\"condition\":\"\",\"remark\":\"\",\"status\":\"hidden\"},\"ids\":\"179\"}' , '/admin/auth/rule/edit/ids/179?dialog=1' , 1 , 'admin' , 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36' , '183.11.69.244' , 1568387652) [ RunTime:0.004347s ]
+---------------------------------------------------------------
+[ 2019-09-13T23:14:13+08:00 ] 183.11.69.244 GET c.yaoget.cn/admin/auth/rule/index?sort=weigh&order=desc&_=1568387619599
+[运行时间：0.069386s] [吞吐率：14.41req/s] [内存消耗：4,615.27kb] [文件加载：141]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000015s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001460s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'auth.rule',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/auth/rule?addtabs=1',
+  'sec-fetch-site' => 'same-origin',
+  'content-type' => 'application/json',
+  'sec-fetch-mode' => 'cors',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'host' => 'c.yaoget.cn',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'sort' => 'weigh',
+  'order' => 'desc',
+  '_' => '1568387619599',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001195s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000158s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/auth/rule.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000038s ]
+[ info ] [ RUN ] app\admin\controller\auth\Rule->index[ /www/wwwroot/c.yaoget.cn/application/admin/controller/auth/Rule.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000106s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003318s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000605s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000351s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000511s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000690s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.001055s ]
+---------------------------------------------------------------
+[ 2019-09-13T23:14:13+08:00 ] 183.11.69.244 POST c.yaoget.cn/admin/index/index
+[运行时间：0.133641s] [吞吐率：7.48req/s] [内存消耗：4,514.48kb] [文件加载：152]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000018s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001470s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/auth/rule?ref=addtabs',
+  'sec-fetch-site' => 'same-origin',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'sec-fetch-mode' => 'cors',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'https://c.yaoget.cn',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '18',
+  'host' => 'c.yaoget.cn',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'refreshmenu',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001304s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000154s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/index.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000028s ]
+[ info ] [ RUN ] app\admin\controller\Index->index[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.005871s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000312s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000652s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000234s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000512s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000446s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 1 ORDER BY `weigh` DESC [ RunTime:0.000569s ]
+[ sql ] [ SQL ] SELECT `name`,`pid` FROM `h_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 0  AND `name` LIKE '%/index' [ RunTime:0.000446s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.000867s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('' , '{\"action\":\"refreshmenu\"}' , '/admin/index/index' , 1 , 'admin' , 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36' , '183.11.69.244' , 1568387653) [ RunTime:0.004358s ]
+---------------------------------------------------------------
+[ 2019-09-13T23:14:13+08:00 ] 183.11.69.244 GET c.yaoget.cn/admin/auth/rule/index?sort=weigh&order=desc&_=1568387619600
+[运行时间：0.047610s] [吞吐率：21.00req/s] [内存消耗：4,615.27kb] [文件加载：141]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000017s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001643s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'auth.rule',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/auth/rule?addtabs=1',
+  'sec-fetch-site' => 'same-origin',
+  'content-type' => 'application/json',
+  'sec-fetch-mode' => 'cors',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'host' => 'c.yaoget.cn',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'sort' => 'weigh',
+  'order' => 'desc',
+  '_' => '1568387619600',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001267s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000138s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/auth/rule.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000031s ]
+[ info ] [ RUN ] app\admin\controller\auth\Rule->index[ /www/wwwroot/c.yaoget.cn/application/admin/controller/auth/Rule.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000091s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000328s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000712s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000219s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000628s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000320s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.000320s ]
+---------------------------------------------------------------
+[ 2019-09-13T23:14:19+08:00 ] 183.11.69.244 GET c.yaoget.cn/admin/auth/rule/edit/ids/219?dialog=1
+[运行时间：0.054750s] [吞吐率：18.26req/s] [内存消耗：4,568.91kb] [文件加载：141]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000016s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001531s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'auth.rule',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/auth/rule?addtabs=1',
+  'sec-fetch-site' => 'same-origin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'sec-fetch-mode' => 'nested-navigate',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'dialog' => '1',
+  'ids' => '219',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001190s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000219s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/auth/rule.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000049s ]
+[ info ] [ RUN ] app\admin\controller\auth\Rule->edit[ /www/wwwroot/c.yaoget.cn/application/admin/controller/auth/Rule.php ]
+[ info ] [ VIEW ] /www/wwwroot/c.yaoget.cn/public/../application/admin/view/auth/rule/edit.html [ array (
+  0 => 'breadcrumb',
+  1 => 'site',
+  2 => 'config',
+  3 => 'auth',
+  4 => 'admin',
+  5 => 'ruledata',
+  6 => 'row',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000094s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000384s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000641s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000342s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000549s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000544s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.000356s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` WHERE  `id` = 219 LIMIT 1 [ RunTime:0.000384s ]
+---------------------------------------------------------------
+[ 2019-09-13T23:14:19+08:00 ] 183.11.69.244 GET c.yaoget.cn/admin/ajax/lang?callback=define&controllername=auth.rule&v=1568387659
+[运行时间：0.030691s] [吞吐率：32.58req/s] [内存消耗：3,353.45kb] [文件加载：131]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000019s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001504s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'lang',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/auth/rule/edit/ids/219?dialog=1',
+  'sec-fetch-site' => 'same-origin',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'sec-fetch-mode' => 'no-cors',
+  'host' => 'c.yaoget.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'define',
+  'controllername' => 'auth.rule',
+  'v' => '1568387659',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001233s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000137s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/ajax.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000043s ]
+[ info ] [ RUN ] app\admin\controller\Ajax->lang[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Ajax.php ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/auth/rule.php
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000117s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-09-13T23:14:22+08:00 ] 183.11.69.244 POST c.yaoget.cn/admin/auth/rule/edit/ids/219?dialog=1
+[运行时间：0.060733s] [吞吐率：16.47req/s] [内存消耗：4,627.38kb] [文件加载：144]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000017s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001767s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'auth.rule',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/auth/rule/edit/ids/219?dialog=1',
+  'sec-fetch-site' => 'same-origin',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'sec-fetch-mode' => 'cors',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'https://c.yaoget.cn',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '226',
+  'host' => 'c.yaoget.cn',
+)
+[ info ] [ PARAM ] array (
+  'dialog' => '1',
+  'row' => 
+  array (
+    'ismenu' => '1',
+    'pid' => '210',
+    'name' => 'partner',
+    'title' => '合伙人订单',
+    'icon' => 'fa fa-street-view',
+    'weigh' => '0',
+    'condition' => '',
+    'remark' => '',
+    'status' => 'normal',
+  ),
+  'ids' => '219',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001278s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000168s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/auth/rule.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000037s ]
+[ info ] [ RUN ] app\admin\controller\auth\Rule->edit[ /www/wwwroot/c.yaoget.cn/application/admin/controller/auth/Rule.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.005632s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000355s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000682s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000367s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000562s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000415s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.000359s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` WHERE  `id` = 219 LIMIT 1 [ RunTime:0.000303s ]
+[ sql ] [ SQL ] SELECT `id` FROM `h_auth_rule` WHERE  `name` = 'partner'  AND `id` <> 219 LIMIT 1 [ RunTime:0.000308s ]
+[ sql ] [ SQL ] UPDATE `h_auth_rule`  SET `icon`='fa fa-street-view',`weigh`=0,`updatetime`=1568387662  WHERE  `id` = 219 [ RunTime:0.004404s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.000649s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('权限管理 菜单规则 编辑' , '{\"dialog\":\"1\",\"row\":{\"ismenu\":\"1\",\"pid\":\"210\",\"name\":\"partner\",\"title\":\"\\u5408\\u4f19\\u4eba\\u8ba2\\u5355\",\"icon\":\"fa fa-street-view\",\"weigh\":\"0\",\"condition\":\"\",\"remark\":\"\",\"status\":\"normal\"},\"ids\":\"219\"}' , '/admin/auth/rule/edit/ids/219?dialog=1' , 1 , 'admin' , 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36' , '183.11.69.244' , 1568387662) [ RunTime:0.004373s ]
+---------------------------------------------------------------
+[ 2019-09-13T23:14:22+08:00 ] 183.11.69.244 GET c.yaoget.cn/admin/auth/rule/index?sort=weigh&order=desc&_=1568387619601
+[运行时间：0.056812s] [吞吐率：17.60req/s] [内存消耗：4,615.30kb] [文件加载：141]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000036s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001455s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'auth.rule',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/auth/rule?addtabs=1',
+  'sec-fetch-site' => 'same-origin',
+  'content-type' => 'application/json',
+  'sec-fetch-mode' => 'cors',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'host' => 'c.yaoget.cn',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'sort' => 'weigh',
+  'order' => 'desc',
+  '_' => '1568387619601',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001287s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000170s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/auth/rule.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000033s ]
+[ info ] [ RUN ] app\admin\controller\auth\Rule->index[ /www/wwwroot/c.yaoget.cn/application/admin/controller/auth/Rule.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000093s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006889s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000738s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000212s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000597s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000634s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.000960s ]
+---------------------------------------------------------------
+[ 2019-09-13T23:14:22+08:00 ] 183.11.69.244 POST c.yaoget.cn/admin/index/index
+[运行时间：0.132773s] [吞吐率：7.53req/s] [内存消耗：4,514.49kb] [文件加载：152]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000017s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.004977s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/auth/rule?ref=addtabs',
+  'sec-fetch-site' => 'same-origin',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'sec-fetch-mode' => 'cors',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'https://c.yaoget.cn',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '18',
+  'host' => 'c.yaoget.cn',
+)
+[ info ] [ PARAM ] array (
+  'action' => 'refreshmenu',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.029225s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000149s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/index.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000028s ]
+[ info ] [ RUN ] app\admin\controller\Index->index[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.006041s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000240s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000614s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000195s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000550s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000392s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 1 ORDER BY `weigh` DESC [ RunTime:0.000629s ]
+[ sql ] [ SQL ] SELECT `name`,`pid` FROM `h_auth_rule` WHERE  `status` = 'normal'  AND `ismenu` = 0  AND `name` LIKE '%/index' [ RunTime:0.000383s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_admin_log` [ RunTime:0.000880s ]
+[ sql ] [ SQL ] INSERT INTO `h_admin_log` (`title` , `content` , `url` , `admin_id` , `username` , `useragent` , `ip` , `createtime`) VALUES ('' , '{\"action\":\"refreshmenu\"}' , '/admin/index/index' , 1 , 'admin' , 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36' , '183.11.69.244' , 1568387662) [ RunTime:0.004501s ]
+---------------------------------------------------------------
+[ 2019-09-13T23:14:23+08:00 ] 183.11.69.244 GET c.yaoget.cn/admin/auth/rule/index?sort=weigh&order=desc&_=1568387619602
+[运行时间：0.046624s] [吞吐率：21.45req/s] [内存消耗：4,615.30kb] [文件加载：141]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000016s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001578s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'auth.rule',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/auth/rule?addtabs=1',
+  'sec-fetch-site' => 'same-origin',
+  'content-type' => 'application/json',
+  'sec-fetch-mode' => 'cors',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'host' => 'c.yaoget.cn',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'sort' => 'weigh',
+  'order' => 'desc',
+  '_' => '1568387619602',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001215s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000135s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/auth/rule.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000031s ]
+[ info ] [ RUN ] app\admin\controller\auth\Rule->index[ /www/wwwroot/c.yaoget.cn/application/admin/controller/auth/Rule.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000091s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000345s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000585s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000326s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000519s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000392s ]
+[ sql ] [ SQL ] SELECT * FROM `h_auth_rule` ORDER BY `weigh` DESC,`id` ASC [ RunTime:0.000285s ]
+---------------------------------------------------------------
+[ 2019-09-13T23:15:14+08:00 ] 183.11.69.244 GET c.yaoget.cn/admin/partner/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%22pay_type%22%3A%220%22%7D&op=%7B%22pay_type%22%3A%22%3D%22%7D&_=1568387548316
+[运行时间：0.044938s] [吞吐率：22.25req/s] [内存消耗：4,550.01kb] [文件加载：146]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000016s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001582s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'partner',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/partner?addtabs=1',
+  'sec-fetch-site' => 'same-origin',
+  'content-type' => 'application/json',
+  'sec-fetch-mode' => 'cors',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'host' => 'c.yaoget.cn',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'addtabs' => '1',
+  'sort' => 'id',
+  'order' => 'desc',
+  'offset' => '0',
+  'limit' => '10',
+  'filter' => '{"pay_type":"0"}',
+  'op' => '{"pay_type":"="}',
+  '_' => '1568387548316',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001224s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000140s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/partner.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000028s ]
+[ info ] [ RUN ] app\admin\controller\Partner->index[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Partner.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000096s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000348s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000637s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000221s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000532s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000333s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_partner` [ RunTime:0.000591s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_member_service` [ RunTime:0.000522s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_userinfo` [ RunTime:0.000577s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_partner` `partner` LEFT JOIN `h_member_service` `memberservice` ON `partner`.`member_service_id`=`memberservice`.`id` LEFT JOIN `h_userinfo` `userinfo` ON `partner`.`user_id`=`userinfo`.`id` WHERE  (  `partner`.`pay_type` = '0' ) ORDER BY `partner`.`id` DESC LIMIT 1 [ RunTime:0.000561s ]
+[ sql ] [ SQL ] SELECT `partner`.`id`,`partner`.`member_service_id`,`partner`.`user_id`,`partner`.`pay_type`,`partner`.`order_status`,`partner`.`crearetime`,memberservice.id AS memberservice__id,memberservice.title AS memberservice__title,memberservice.price AS memberservice__price,memberservice.give AS memberservice__give,memberservice.member_discount AS memberservice__member_discount,memberservice.status AS memberservice__status,memberservice.weigh AS memberservice__weigh,memberservice.commission AS memberservice__commission,userinfo.id AS userinfo__id,userinfo.openid AS userinfo__openid,userinfo.name AS userinfo__name,userinfo.nickname AS userinfo__nickname,userinfo.phone AS userinfo__phone,userinfo.email AS userinfo__email,userinfo.avatar AS userinfo__avatar,userinfo.gender AS userinfo__gender,userinfo.country AS userinfo__country,userinfo.province AS userinfo__province,userinfo.citys AS userinfo__citys,userinfo.member_service_id AS userinfo__member_service_id,userinfo.subordinate_count AS userinfo__subordinate_count,userinfo.money AS userinfo__money,userinfo.status AS userinfo__status,userinfo.createtime AS userinfo__createtime,userinfo.prevtime AS userinfo__prevtime,userinfo.logintime AS userinfo__logintime,userinfo.jointime AS userinfo__jointime,userinfo.topid AS userinfo__topid,userinfo.card AS userinfo__card,userinfo.birth AS userinfo__birth,userinfo.quota AS userinfo__quota FROM `h_partner` `partner` LEFT JOIN `h_member_service` `memberservice` ON `partner`.`member_service_id`=`memberservice`.`id` LEFT JOIN `h_userinfo` `userinfo` ON `partner`.`user_id`=`userinfo`.`id` WHERE  (  `partner`.`pay_type` = '0' ) ORDER BY `partner`.`id` DESC LIMIT 0,10 [ RunTime:0.000444s ]
+[ sql ] [ SQL ] SELECT `name` FROM `h_userinfo` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000185s ]
+---------------------------------------------------------------
+[ 2019-09-13T23:15:16+08:00 ] 183.11.69.244 GET c.yaoget.cn/admin/order/index?addtabs=1&sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1568387539328
+[运行时间：0.047363s] [吞吐率：21.11req/s] [内存消耗：4,596.84kb] [文件加载：147]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000020s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001510s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'order',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'keeplogin=1%7C86400%7C1567960359%7C6a94a626317dfa599d9b9cb451cd3039; PHPSESSID=9equc2u2uh4rocsi2tt49os9qb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://c.yaoget.cn/admin/order?addtabs=1',
+  'sec-fetch-site' => 'same-origin',
+  'content-type' => 'application/json',
+  'sec-fetch-mode' => 'cors',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'host' => 'c.yaoget.cn',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'addtabs' => '1',
+  'sort' => 'id',
+  'order' => 'desc',
+  'offset' => '0',
+  'limit' => '10',
+  'filter' => '{}',
+  'op' => '{}',
+  '_' => '1568387539328',
+)
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.001294s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000141s ]
+[ info ] [ LANG ] /www/wwwroot/c.yaoget.cn/public/../application/admin/lang/zh-cn/order.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000037s ]
+[ info ] [ RUN ] app\admin\controller\Order->index[ /www/wwwroot/c.yaoget.cn/application/admin/controller/Order.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000096s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000350s ] mysql:host=127.0.0.1;dbname=happiness;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_group_access` [ RunTime:0.000685s ]
+[ sql ] [ SQL ] SELECT `aga`.`uid`,`aga`.`group_id`,`ag`.`id`,`ag`.`pid`,`ag`.`name`,`ag`.`rules` FROM `h_auth_group_access` `aga` LEFT JOIN `h_auth_group` `ag` ON `aga`.`group_id`=`ag`.`id` WHERE  (  aga.uid='1' and ag.status='normal' ) [ RunTime:0.000232s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_auth_rule` [ RunTime:0.000635s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`condition`,`icon`,`name`,`title`,`ismenu` FROM `h_auth_rule` WHERE  `status` = 'normal' [ RunTime:0.000338s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_order` [ RunTime:0.000588s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_userinfo` [ RunTime:0.000710s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_course` [ RunTime:0.000647s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `h_member_service` [ RunTime:0.000591s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `h_order` `order` LEFT JOIN `h_userinfo` `userinfo` ON `order`.`user_id`=`userinfo`.`id` LEFT JOIN `h_course` `course` ON `order`.`course_id`=`course`.`id` LEFT JOIN `h_member_service` `memberservice` ON `order`.`member_service_id`=`memberservice`.`id` ORDER BY `order`.`id` DESC LIMIT 1 [ RunTime:0.000237s ]
+[ sql ] [ SQL ] SELECT `order`.`id`,`order`.`order_num`,`order`.`user_id`,`order`.`course_id`,`order`.`member_service_id`,`order`.`price`,`order`.`commission`,`order`.`recommend`,`order`.`commission_two`,`order`.`recommend_two`,`order`.`commission_three`,`order`.`recommend_three`,`order`.`pay_type`,`order`.`order_status`,`order`.`createtime`,`order`.`paymenttime`,`order`.`is_royalty`,userinfo.id AS userinfo__id,userinfo.openid AS userinfo__openid,userinfo.name AS userinfo__name,userinfo.nickname AS userinfo__nickname,userinfo.phone AS userinfo__phone,userinfo.email AS userinfo__email,userinfo.avatar AS userinfo__avatar,userinfo.gender AS userinfo__gender,userinfo.country AS userinfo__country,userinfo.province AS userinfo__province,userinfo.citys AS userinfo__citys,userinfo.member_service_id AS userinfo__member_service_id,userinfo.subordinate_count AS userinfo__subordinate_count,userinfo.money AS userinfo__money,userinfo.status AS userinfo__status,userinfo.createtime AS userinfo__createtime,userinfo.prevtime AS userinfo__prevtime,userinfo.logintime AS userinfo__logintime,userinfo.jointime AS userinfo__jointime,userinfo.topid AS userinfo__topid,userinfo.card AS userinfo__card,userinfo.birth AS userinfo__birth,userinfo.quota AS userinfo__quota,course.id AS course__id,course.type AS course__type,course.teacher_id AS course__teacher_id,course.image AS course__image,course.title AS course__title,course.category_id AS course__category_id,course.sales AS course__sales,course.stock AS course__stock,course.price AS course__price,course.gratisrank AS course__gratisrank,course.studynum AS course__studynum,course.updatestatus AS course__updatestatus,course.weight AS course__weight,course.status AS course__status,course.coursecontent AS course__coursecontent,course.chapter_id AS course__chapter_id,memberservice.id AS memberservice__id,memberservice.title AS memberservice__title,memberservice.price AS memberservice__price,memberservice.give AS memberservice__give,memberservice.member_discount AS memberservice__member_discount,memberservice.status AS memberservice__status,memberservice.weigh AS memberservice__weigh,memberservice.commission AS memberservice__commission FROM `h_order` `order` LEFT JOIN `h_userinfo` `userinfo` ON `order`.`user_id`=`userinfo`.`id` LEFT JOIN `h_course` `course` ON `order`.`course_id`=`course`.`id` LEFT JOIN `h_member_service` `memberservice` ON `order`.`member_service_id`=`memberservice`.`id` ORDER BY `order`.`id` DESC LIMIT 0,10 [ RunTime:0.000382s ]
+[ sql ] [ SQL ] SELECT `name` FROM `h_userinfo` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000214s ]

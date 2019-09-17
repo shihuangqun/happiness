@@ -36,7 +36,7 @@
 <body>
     <div class="footer">
         <div>
-        	<a href="/" class="tab-item">
+        	<a href="/index/index/index/openid/{$Request.session.wechat_user.original.openid}" class="tab-item">
             <div class="tab-icon">
                 <i class="icon iconfont" style="font-size: 22px;">&#xe615;</i>
                 <p>首页</p>
@@ -45,7 +45,7 @@
         </a>
         </div>
         <div>
-        	<a href="/index/course/index" class="tab-item">
+        	<a href="/index/course/index/openid/{$Request.session.wechat_user.original.openid}" class="tab-item">
             <div class="tab-icon">
                 <i class="icon iconfont" style="font-size: 22px;">&#xe600;</i>
                 <p>在线课程</p>

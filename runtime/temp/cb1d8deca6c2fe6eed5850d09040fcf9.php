@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:76:"/www/wwwroot/c.yaoget.cn/public/../application/index/view/userinfo/card.html";i:1567182618;s:63:"/www/wwwroot/c.yaoget.cn/application/index/view/common/nav.html";i:1567156502;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:76:"/www/wwwroot/c.yaoget.cn/public/../application/index/view/userinfo/card.html";i:1567182618;s:63:"/www/wwwroot/c.yaoget.cn/application/index/view/common/nav.html";i:1568191990;}*/ ?>
 
 <!--
  * ============================================================================
@@ -65,7 +65,7 @@
 <body>
     <div class="footer">
         <div>
-        	<a href="/" class="tab-item">
+        	<a href="/index/index/index/openid/<?php echo \think\Request::instance()->session('wechat_user.original.openid'); ?>" class="tab-item">
             <div class="tab-icon">
                 <i class="icon iconfont" style="font-size: 22px;">&#xe615;</i>
                 <p>首页</p>
@@ -74,7 +74,7 @@
         </a>
         </div>
         <div>
-        	<a href="/index/course/index" class="tab-item">
+        	<a href="/index/course/index/openid/<?php echo \think\Request::instance()->session('wechat_user.original.openid'); ?>" class="tab-item">
             <div class="tab-icon">
                 <i class="icon iconfont" style="font-size: 22px;">&#xe600;</i>
                 <p>在线课程</p>

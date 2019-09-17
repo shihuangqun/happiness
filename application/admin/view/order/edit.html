@@ -1,36 +1,86 @@
+<style>
+    div.sp_result_area.shadowDown{
+        width:50%;
+    }
+</style>
 <form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
 
+<!--    <div class="form-group">-->
+<!--        <label class="control-label col-xs-12 col-sm-2">{:__('Order_num')}:</label>-->
+<!--        <div class="col-xs-12 col-sm-8">-->
+<!--            <input id="c-order_num" data-rule="required" class="form-control" name="row[order_num]" type="text" value="{$row.order_num|htmlentities}">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--        <label class="control-label col-xs-12 col-sm-2">{:__('User_id')}:</label>-->
+<!--        <div class="col-xs-12 col-sm-8">-->
+<!--            <input id="c-user_id" data-rule="required" data-source="userinfo/selectpage_new" data-field="nickname" class="form-control selectpage" name="row[user_id]" type="text" value="{$row.user_id|htmlentities}">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--        <label class="control-label col-xs-12 col-sm-2">{:__('Course_id')}:</label>-->
+<!--        <div class="col-xs-12 col-sm-8">-->
+<!--            <input id="c-course_id" data-rule="required" data-field="title" data-source="course/index" class="form-control selectpage" name="row[course_id]" type="text" value="{$row.course_id|htmlentities}">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--        <label class="control-label col-xs-12 col-sm-2">{:__('Member_service_id')}:</label>-->
+<!--        <div class="col-xs-12 col-sm-8">-->
+<!--            <input id="c-member_service_id" data-rule="required" data-field="title" data-source="member_service/index" class="form-control selectpage" name="row[member_service_id]" type="text" value="{$row.member_service_id|htmlentities}">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--        <label class="control-label col-xs-12 col-sm-2">{:__('Price')}:</label>-->
+<!--        <div class="col-xs-12 col-sm-8">-->
+<!--            <input id="c-price" data-rule="required" class="form-control" step="0.01" name="row[price]" type="number" value="{$row.price|htmlentities}">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--        <label class="control-label col-xs-12 col-sm-2">{:__('Commission')}:</label>-->
+<!--        <div class="col-xs-12 col-sm-8">-->
+<!--            <input id="c-commission" class="form-control" name="row[commission]" type="text" value="{$row.commission|htmlentities}">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--        <label class="control-label col-xs-12 col-sm-2">{:__('Recommend')}:</label>-->
+<!--        <div class="col-xs-12 col-sm-8">-->
+<!--            <input id="c-recommend" class="form-control" name="row[recommend]" type="text" value="{$row.recommend|htmlentities}">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--        <label class="control-label col-xs-12 col-sm-2">{:__('Commission_two')}:</label>-->
+<!--        <div class="col-xs-12 col-sm-8">-->
+<!--            <input id="c-commission_two" class="form-control" name="row[commission_two]" type="text" value="{$row.commission_two|htmlentities}">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--        <label class="control-label col-xs-12 col-sm-2">{:__('Recommend_two')}:</label>-->
+<!--        <div class="col-xs-12 col-sm-8">-->
+<!--            <input id="c-recommend_two" class="form-control" name="row[recommend_two]" type="text" value="{$row.recommend_two|htmlentities}">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--        <label class="control-label col-xs-12 col-sm-2">{:__('Commission_three')}:</label>-->
+<!--        <div class="col-xs-12 col-sm-8">-->
+<!--            <input id="c-commission_three" class="form-control" name="row[commission_three]" type="text" value="{$row.commission_three|htmlentities}">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--        <label class="control-label col-xs-12 col-sm-2">{:__('Recommend_three')}:</label>-->
+<!--        <div class="col-xs-12 col-sm-8">-->
+<!--            <input id="c-recommend_three" class="form-control" name="row[recommend_three]" type="text" value="{$row.recommend_three|htmlentities}">-->
+<!--        </div>-->
+<!--    </div>-->
     <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2">{:__('Order_num')}:</label>
+        <label class="control-label col-xs-12 col-sm-2">{:__('是否产生提成')}:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-order_num" data-rule="required" class="form-control" name="row[order_num]" type="text" value="{$row.order_num|htmlentities}">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2">{:__('User_id')}:</label>
-        <div class="col-xs-12 col-sm-8">
-            <input id="c-user_id" data-rule="required" data-source="userinfo/index" data-field="nickname" class="form-control selectpage" name="row[user_id]" type="text" value="{$row.user_id|htmlentities}">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2">{:__('Course_id')}:</label>
-        <div class="col-xs-12 col-sm-8">
-            <input id="c-course_id" data-rule="required" data-field="title" data-source="course/index" class="form-control selectpage" name="row[course_id]" type="text" value="{$row.course_id|htmlentities}">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2">{:__('Member_service_id')}:</label>
-        <div class="col-xs-12 col-sm-8">
-            <input id="c-member_service_id"  data-field="title" data-source="member_service/index" class="form-control selectpage" name="row[member_service_id]" type="text" value="{$row.member_service_id|htmlentities}">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2">{:__('Price')}:</label>
-        <div class="col-xs-12 col-sm-8">
-            <input id="c-price" data-rule="required" class="form-control" step="0.01" name="row[price]" type="number" value="{$row.price|htmlentities}">
-        </div>
-    </div>
 
+            <div class="radio">
+                <label for="row[is_royalty]-1"><input id="row[is_royalty]-1" name="row[is_royalty]" type="radio" value="1" {if condition="$row.is_royalty eq 1"}checked {/if}/> 是</label>
+                <label for="row[is_royalty]-0"><input id="row[is_royalty]-0" name="row[is_royalty]" type="radio" value="0" {if condition="$row.is_royalty eq 0"}checked {/if}/> 否</label>
+            </div>
+        </div>
+    </div>
     <div class="form-group">
         <label class="control-label col-xs-12 col-sm-2">{:__('Pay_type')}:</label>
         <div class="col-xs-12 col-sm-8">
@@ -55,7 +105,12 @@
 
         </div>
     </div>
-
+<!--    <div class="form-group">-->
+<!--        <label class="control-label col-xs-12 col-sm-2">{:__('Paymenttime')}:</label>-->
+<!--        <div class="col-xs-12 col-sm-8">-->
+<!--            <input id="c-paymenttime" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[paymenttime]" type="text" value="{:$row.paymenttime?datetime($row.paymenttime):''}">-->
+<!--        </div>-->
+<!--    </div>-->
     <div class="form-group layer-footer">
         <label class="control-label col-xs-12 col-sm-2"></label>
         <div class="col-xs-12 col-sm-8">

@@ -144,9 +144,10 @@ body {
 .content .info-box .control-box .title {
     text-align: center;
     width: 100%;
-    font-size: 11px;
+    font-size: 13px;
     color: #999999;
     margin-top: 4px;
+    font-weight: 900;
 }
 
 .content .info-box .control-box .icon {

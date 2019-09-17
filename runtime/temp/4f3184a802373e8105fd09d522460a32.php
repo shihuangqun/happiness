@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:77:"/www/wwwroot/c.yaoget.cn/public/../application/index/view/userinfo/index.html";i:1567156313;s:64:"/www/wwwroot/c.yaoget.cn/application/index/view/common/meta.html";i:1566985948;s:63:"/www/wwwroot/c.yaoget.cn/application/index/view/common/nav.html";i:1567156502;s:66:"/www/wwwroot/c.yaoget.cn/application/index/view/common/footer.html";i:1567132625;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:77:"/www/wwwroot/c.yaoget.cn/public/../application/index/view/userinfo/index.html";i:1568100214;s:64:"/www/wwwroot/c.yaoget.cn/application/index/view/common/meta.html";i:1568100133;s:63:"/www/wwwroot/c.yaoget.cn/application/index/view/common/nav.html";i:1568191990;s:66:"/www/wwwroot/c.yaoget.cn/application/index/view/common/footer.html";i:1567132625;}*/ ?>
 <!--<meta charset="utf-8">-->
 <!--<title><?php echo (isset($title) && ($title !== '')?$title:''); ?> – <?php echo __('The fastest framework based on ThinkPHP5 and Bootstrap'); ?></title>-->
 <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">-->
@@ -31,7 +31,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <title></title>
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <link href="/index/css/mui.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="/index/css/style.css" />
@@ -43,6 +42,7 @@
         .mui-toast-message {background: url(/index/images/success.png) no-repeat center 10px #000; opacity: 0.6; color: #fff; width: 120px;
             padding: 70px 5px 10px 5px;border-radius: 12px;}
     </style>
+<title>个人中心</title>
 <style>
     a{
         color:#333333;
@@ -89,7 +89,7 @@
 <body>
     <div class="footer">
         <div>
-        	<a href="/" class="tab-item">
+        	<a href="/index/index/index/openid/<?php echo \think\Request::instance()->session('wechat_user.original.openid'); ?>" class="tab-item">
             <div class="tab-icon">
                 <i class="icon iconfont" style="font-size: 22px;">&#xe615;</i>
                 <p>首页</p>
@@ -98,7 +98,7 @@
         </a>
         </div>
         <div>
-        	<a href="/index/course/index" class="tab-item">
+        	<a href="/index/course/index/openid/<?php echo \think\Request::instance()->session('wechat_user.original.openid'); ?>" class="tab-item">
             <div class="tab-icon">
                 <i class="icon iconfont" style="font-size: 22px;">&#xe600;</i>
                 <p>在线课程</p>
@@ -139,16 +139,32 @@
 <div class="my-header">
     <div class="my-img content-fixe">
 <!--        <a href="setting.html">-->
-            <img src="<?php echo $info['avatar']; ?>" />
+        <img src="<?php echo $info['avatar']; ?>" />
 <!--        </a>-->
 
     </div>
-    <div class="my-username" style="margin-left: 10px;">
-        <?php echo $info['nickname']; ?>
+    <div class="my-username" style="margin-left: 10px;line-height: 1.8;">
+        <span><?php echo $info['nickname']; ?></span><br>
+        <span style="font-size: 12px;font-weight: 700;">
+            <?php if($info['member_service_id'] == 4): ?>
+            A级合伙人
+            <?php elseif($info['member_service_id'] == 5): ?>
+            B级合伙人
+            <?php elseif($info['member_service_id'] == 6): ?>
+            C级合伙人
+            <?php elseif($grade == null): ?>
+            普通用户
+            <?php elseif($grade['type'] == 1): ?>
+            中级用户
+            <?php elseif($grade['type'] == 2): ?>
+            高级用户
+            <?php endif; ?>
+        </span>
     </div>
+
     <div>
         <?php if($auth == null): ?>
-        <button type="button" class="mui-btn my-bnt">未认证</button>
+        <button type="button" class="mui-btn my-bnt"><a href="/index/userinfo/save" style="color:white">未认证</a></button>
         <?php else: ?>
         <button type="button" class="mui-btn my-bnt">已认证</button>
         <?php endif; ?>
@@ -189,17 +205,52 @@
                 </div>
             </a>
         </li>
-        <li>
-            <a href="/index/userinfo/infos/id/<?php echo $info['id']; ?>">
-                <div class="my-icon">
-                    <img src="/index/images/info.png" />
-                </div>
+<!--        <li>-->
+<!--            <a href="/index/userinfo/infos/id/<?php echo $info['id']; ?>">-->
+<!--                <div class="my-icon">-->
+<!--                    <img src="/index/images/info.png" />-->
+<!--                </div>-->
 
-                <div class="my-name">
-                    我的信息
-                </div>
-            </a>
-        </li>
+<!--                <div class="my-name">-->
+<!--                    我的信息-->
+<!--                </div>-->
+<!--            </a>-->
+<!--        </li>-->
+         <div style="display: <?php if($info['member_service_id'] != null): ?>block<?php else: ?>none<?php endif; ?>">
+             <li>
+                 <a href="/index/userinfo/team">
+                     <div class="my-icon">
+                         <img src="/index/images/xueyuan.png" />
+                     </div>
+
+                     <div class="my-name">
+                         我的学员
+                     </div>
+                 </a>
+             </li>
+             <li>
+                 <a href="/index/userinfo/partnercommision">
+                     <div class="my-icon">
+                         <img src="/index/images/yongjin.png" />
+                     </div>
+
+                     <div class="my-name">
+                         佣金明细
+                     </div>
+                 </a>
+             </li>
+             <li>
+                 <a href="/index/finance/index">
+                     <div class="my-icon">
+                         <img src="/index/images/yongjin.png" />
+                     </div>
+
+                     <div class="my-name">
+                         我的佣金
+                     </div>
+                 </a>
+             </li>
+         </div>
 
     </ul>
 

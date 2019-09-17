@@ -51,23 +51,24 @@ class OrderVip extends Backend
             }
             list($where, $sort, $order, $offset, $limit) = $this->buildparams();
             $total = $this->model
-                    ->with(['user','memberservice'])
+                    ->with(['memberservice','userinfo'])
                     ->where($where)
                     ->order($sort, $order)
                     ->count();
 
             $list = $this->model
-                    ->with(['user','memberservice'])
+                    ->with(['memberservice','userinfo'])
                     ->where($where)
                     ->order($sort, $order)
                     ->limit($offset, $limit)
                     ->select();
 
             foreach ($list as $row) {
-                $row->visible(['id','order_num','memberservice_id','user_id','price','pay_type','order_status','crearetime']);
-                $row->visible(['user']);
-				$row->getRelation('user')->visible(['nickname']);
-				$row->visible(['memberservice']);
+                $row->visible(['member_service_id','user_id','pay_type','order_status','crearetime']);
+                $row->visible(['memberservice']);
+				$row->getRelation('memberservice')->visible(['title','price']);
+				$row->visible(['userinfo']);
+				$row->getRelation('userinfo')->visible(['name','phone','avatar','topid','quota']);
             }
             $list = collection($list)->toArray();
             $result = array("total" => $total, "rows" => $list);

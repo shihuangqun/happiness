@@ -14,7 +14,7 @@ return [
     'Commission_three'    => '三级佣金',
     'Recommend_three'     => '三级推荐人ID',
     'Pay_type'            => '支付方式',
-    'Pay_type 0'          => '其他',
+    'Pay_type 0'          => '线下支付',
     'Pay_type 1'          => '微信支付',
     'Order_status'        => '订单状态',
     'Order_status 0'      => '待付款',
@@ -25,7 +25,9 @@ return [
     'Order_status 5'      => '退款成功',
     'Createtime'          => '下单时间',
     'Paymenttime'         => '付款时间',
-    'User.nickname'       => '昵称',
+    'Userinfo.name'       => '姓名',
+    'Userinfo.phone'      => '手机号',
+    'Userinfo.topid'      => '上级ID',
     'Course.title'        => '课程名称',
     'Memberservice.title' => '名称'
 ];

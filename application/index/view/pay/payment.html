@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //调用微信JS api 支付
+    function jsApiCall()
+    {
+        WeixinJSBridge.invoke(
+            'getBrandWCPayRequest',{$config},
+            function(res){
+                if (res.err_msg == "get_brand_wcpay_request:ok") { // 支付成功
+                    // location.href = '/index/video/index/course_id/'+{$info.course_id};
+                    location.href = '/';
+                }
+                if(res.err_msg == "get_brand_wcpay_request:fail") { // 支付失败
+                    location.href = 'fail';
+                }
+                if (res.err_msg == "get_brand_wcpay_request:cancel") { // 取消支付
+                    location.href = '/index/order/alllist/user_id/'+{$info.user_id};
+                }
+            }
+        );
+    }
+
+    function callpay()
+    {
+        if (typeof WeixinJSBridge == "undefined"){
+            if( document.addEventListener ){
+                document.addEventListener('WeixinJSBridgeReady', jsApiCall, false);
+            }else if (document.attachEvent){
+                document.attachEvent('WeixinJSBridgeReady', jsApiCall);
+                document.attachEvent('onWeixinJSBridgeReady', jsApiCall);
+            }
+        }else{
+            jsApiCall();
+        }
+    }
+    callpay();
+</script>
+</html>

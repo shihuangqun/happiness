@@ -10,6 +10,7 @@ use EasyWeChat\Foundation\Application;
 use EasyWeChat\Payment\Order;
 use addons\wechat\library\Wechat as WechatService;
 use addons\wechat\library\Config as ConfigService;
+use think\Cache;
 use think\cache\driver\Redis;
 use think\Config;
 use think\Db;
@@ -17,6 +18,7 @@ use think\Exception;
 use think\Log;
 use think\Response;
 use think\Session;
+use EasyWeChat\Message\News;
 /**
  * 微信接口
  */
@@ -40,18 +42,113 @@ class Index extends \think\addons\Controller
     {
         $this->app->server->setMessageHandler(function ($message) {
             $user = $this->app->user->get($message['FromUserName']);
-            $id = explode('_',$message['EventKey']);
-            if(count($id)>1){
-                $id = $id[1];
-            }else{
-                $id = $id[0];
+            $str = explode('|',$message['EventKey']);
+            $aa = json_encode($str);
+            $referer = isset($str[2]) ? $str[2]: '';
+//            if(count($str)>1){
+                $id = isset($str[1]) ? $str[1]: '';
+//            }else{
+//                $id = $str[0];
+//            }
+
+            $info = Db::name('userinfo')->where('openid',$message['FromUserName'])->field('member_service_id,id,topid,nickname,createtime')->find();
+            if(!empty($info)){//如果用户存在 则该用户为分享用户 则需要修改对应上级
+                $top = Db::name('userinfo')->where('id',$id)->field('member_service_id,topid,id,openid')->find();//父级数据
+                if(empty($top['member_service_id'])){//为空则该父级不为合伙人身份
+
+                    $parent = Db::name('userinfo')->where('id',$top['topid'])->field('member_service_id,id,openid')->find();//父级的父级
+                    if($parent){
+                        if(!empty($parent['member_service_id'])){//该用户父级的父级为合伙人 即修改所属父级
+                            $id = $parent['id'];
+                            $openid = $parent['openid'];
+                            Db::name('userinfo')->where('id',$info['id'])->update(['topid' => $id]);
+                        }
+                    }
+                }else{
+                    $openid = $top['openid'];
+                    Db::name('userinfo')->where('id',$info['id'])->update(['topid' => $id]);
+                }
+
+                if(!empty($openid)){//如果父 openid存在  即父级为合伙人 即推送
+                    //推荐成功模版ID
+                    $template = $this->site['download_notice'];
+                    $url = Config::get('HOST').'/index/userinfo/team';;
+                    $data = [
+                        'first' => ['您好，有学员通过您的推荐进入平台','#3686c5'],
+                        'keyword1' => $info['nickname'],
+                        'keyword2' => date('Y-m-d H:i:s',$info['createtime']),
+                        'remark' => ['感谢您的支持','#3686c5']
+                    ];
+                    $this->tempMessage($openid,$template,$url,$data);
+                }
+            }else{//反之 如果用户不存在 则该用户为二维码分享  此时用户未注册
+                $a = Db::name('only')->where('key',$message['FromUserName'])->find();
+                if(empty($a)){
+                    $top = Db::name('userinfo')->where('id',$id)->field('member_service_id,topid,id')->find();//父级数据
+                    if(empty($top['member_service_id'])){//为空则该父级不为合伙人身份
+
+                        $parent = Db::name('userinfo')->where('id',$top['topid'])->field('member_service_id,id')->find();//父级的父级
+                        if($parent){
+                            if(!empty($parent['member_service_id'])){//该用户父级的父级为合伙人 即修改所属父级
+                                $id = $parent['id'];
+                                Db::name('only')->insert(['key' =>$message['FromUserName'],'value' => $id]);
+                            }
+                        }
+                    }else{
+                        Db::name('only')->insert(['key' =>$message['FromUserName'],'value' => $id]);
+                    }
+                }
             }
-            $a = Db::name('only')->where('key',$message['FromUserName'])->find();
 
-            if(empty($a)) if($id !== 0) Db::name('only')->insert(['key' =>$message['FromUserName'],'value' => $id]);
+            if(!empty($referer)){//不为空  则属于分享用户  即推送 扫码前浏览的网站记录
+                $arr = explode('/',$referer);
+                $art_id = end($arr);
 
+                if(in_array('video',$arr)){//视频内容
+                    $course = Db::name('course')->where('id',$art_id)->field('title,coursecontent,image')->find();
+                    $article = [
+                        'title' => $course['title'],
+                        'desc' => $course['coursecontent'],
+                        'image' => $course['image']
+                    ];
+                }else if(in_array('desc',$arr)){//视频介绍
+                    $desc = Db::name('course')->where('id',$art_id)->find();
+                    $article = [
+                        'title' => $desc['title'],
+                        'desc' => $desc['coursecontent'],
+                        'image' => $desc['image']
+                    ];
+                }else if(in_array('show',$arr)){//精选材料
+                    $notice = Db::name('notice')->where('id',$art_id)->find();
+                    $article = [
+                        'title' => $notice['name'],
+                        'desc' => $notice['description'],
+                        'image' => $notice['image']
+                    ];
+                }else if(in_array('course',$arr)){//在线课程
+                    $article = [
+                        'title' => '男性课堂',
+                        'desc' => '男性课堂',
+                        'image' => '/uploads/20190904/f5218b534787fe65e5c6eb5bbc0718dc.png'
+                    ];
+                }else{//首页
+                    $article = [
+                        'title' => '幸福传承',
+                        'desc' => '幸福传承-首页',
+                        'image' => '/index/images/head1.jpg'
+                    ];
+                }
+                $news = new News([
+                    'title'       => '欢迎继续回来，点击继续学习'."\n".'<<'.$article['title'].'>>',
+                    'description' => $article['desc'],
+                    'url'         => Config::get('HOST').$referer,
+                    'image'       => 'https://'.Config::get('HOST').$article['image'],
+                ]);
+                $this->app->staff->message($news)->to($message['FromUserName'])->send();
+            }
 
             return "您好！欢迎关注幸福传承!";
+
         });
 
         $response = $this->app->server->serve();
@@ -167,7 +264,6 @@ class Index extends \think\addons\Controller
         $oauth = $this->app->oauth;
 
         if(empty(Session::get('wechat_user'))){
-
             $http_top = Session::get('topUrl');//授权前地址
 
             Session::set('target_url',$http_top);
@@ -208,6 +304,26 @@ class Index extends \think\addons\Controller
 //            $topid = $redis->get($res['openid']);
             $topid = Db::name('only')->where('key',$res['openid'])->find();
 
+//            if(!empty($topid)){
+//
+//                $parent = Db::name('userinfo')->where('id',$topid['value'])->field('id,member_service_id,topid')->find();
+//                if($parent){
+//                    if(!empty($parent['member_service_id'])){
+//                        $new_topid = $parent['id'];
+//                    }else{
+//
+//                        $p_parent = Db::name('userinfo')->where('id',$parent['topid'])->field('member_service_id,id')->find();
+//                        if($p_parent){
+//                            if(!empty($p_parent['member_service_id'])){
+//                                $new_topid = $p_parent['id'];
+//                            }
+//                        }
+//                    }
+//                }else{
+//                    $new_topid = 0;
+//                }
+//            }
+
 
             $res['topid'] = empty($topid) ? '0' : $topid['value'];
 
@@ -227,7 +343,7 @@ class Index extends \think\addons\Controller
             if(!empty($parent)){
                 //推荐成功模版ID
                 $template = $this->site['download_notice'];
-                $url = '/';
+                $url = Config::get('HOST').'/index/userinfo/team';;
                 $data = [
                     'first' => ['您好，有学员通过您的推荐进入平台','#3686c5'],
                     'keyword1' => $res['nickname'],
@@ -299,23 +415,68 @@ class Index extends \think\addons\Controller
                     ->find();//获取课程,订单,用户信息
 
                 $template = $this->site['pay_success'];//模板ID
-                $url = Config::get('HOST').'/index/video/index/course_id/'.$info['course_id'];//跳转URL
 
                 if($info['topid'] != 0){//父级模板消息推送
 
-                    $parent_openid = Db::name('userinfo')->where('id',$info['topid'])->value('openid');//获取父级openid
+                    $parent = Db::name('userinfo')->where('id',$info['topid'])->field('openid,member_service_id,money,quota')->find();//获取父级openid
 
+                    $partner_commision = Db::name('member_service')
+                        ->where('id',$parent['member_service_id'])
+                        ->value('commission');//获取合伙人等级 佣金比例
+                    if($partner_commision){
+//                        $money = $info['price'] * $partner_commision / 100;//佣金
+
+                        $course_type = Db::name('course')->where('id',$info['course_id'])->value('type');//是否为中级
+//                        if($course_type == 1) $money = 9;//课程类型为1时  即中级课程
+//                        if($course_type == 2) $money = 900;//课程类型为1时  即中级课程
+                        switch ($course_type){
+                            case 1://课程类型为1时  即中级课程
+                                $money = 9;
+                                break;
+                            case 2://课程类型为2时  即高级课程
+                                if($parent['quota'] <=0){ //即名额用完
+                                    $money = 700;
+                                }else{
+                                    $money = 900;
+                                    $quota = $parent['quota'] -1;
+                                }
+                                break;
+                        }
+                        $commission_list = [
+                            'money' => $money,
+                            'user_id' => $info['user_id'],
+                            'parent_id' => $info['topid'],
+                            'order_id' => $info['id'],
+                            'order_no' => time(),
+                            'createtime' => time()
+                        ];
+                        $parent_money = [
+                            'id' => $info['topid'],
+                            'money' => $parent['money'] + $money,
+                            'quota' => isset($quota) ? $quota : $parent['quota']
+                        ];
+                        try{
+                            $partner_list = Db::name('partner_commision')->insert($commission_list);//合伙人佣金明细
+
+                            if($partner_list) Db::name('userinfo')->update($parent_money);//更新父级余额
+                        }catch(Exception $e){
+                            $this->logs('合伙人佣金明细计算错误');
+                        }
+                    }
+
+                    $url = Config::get('HOST').'/index/userinfo/partnercommision';
                     $datas = [
                         'first' => $info['name'].'报名成功通知',
                         'keyword1' => $info['title'],
                         'keyword2' => date('Y-m-d H:i:s',$res['paymenttime']),
                         'remark' => '您的客户'.$info['name'].'，已成功报名课程，请及时邀请进入对应学习群以及推荐给辅导老师'
                     ];
-                    $this->tempMessage($parent_openid,$template,Config::get('HOST'),$datas);//推送报名成功通知给父级
+                    $this->tempMessage($parent['openid'],$template,$url,$datas);//推送报名成功通知给父级
 
                 }
 
                 $openid = $info['openid'];//获取当前用户openid
+                $url = Config::get('HOST').'/index/video/index/course_id/'.$info['course_id'];//跳转URL
                 $data = [
                     'first' => '您好，恭喜成功报名【'.$info['title'].'】',
                     'keyword1' => $info['title'],
@@ -326,48 +487,54 @@ class Index extends \think\addons\Controller
 
 //                $order = new \app\index\controller\Order();
 //                $order->getAllTop($info['topid'],($orderinfo->total_fee) / 100);//结算父级佣金
+//                $commission = Db::name('commission')->find();//佣金比例
 
-                if($info['topid'] != 0){//一级
-                    $commission = Db::name('commission')->find();//佣金比例
-
-                    $one = Db::name('userinfo')->where('id',$info['topid'])->field('id,topid')->find();//一级
-
-                    $money = ($orderinfo->total_fee * $commission['one']) / 10000;
-
-                    $user = Db::name('userinfo')->where('id',$one['id'])->field('openid,money')->find();//获取当前用户余额
-                    $res = [
-                        'id' => $one['id'],
-                        'money' => $money + $user['money']//佣金+当前余额
-                    ];
-
-                    $this->SaveMoney($res);
-                    if($one['topid'] != 0){//二级
-                        $two = Db::name('userinfo')->where('id',$one['topid'])->field('id,topid')->find();
-
-                        $money = ($orderinfo->total_fee * $commission['two']) / 10000;
-
-                        $user = Db::name('userinfo')->where('id',$two['id'])->field('openid,money')->find();//获取当前用户余额
-                        $res = [
-                            'id' => $two['id'],
-                            'money' => $money + $user['money']//佣金+当前余额
-                        ];
-
-                        $this->SaveMoney($res);
-                        if($two['topid'] != 0){//三级
-                            $three = Db::name('userinfo')->where('id',$two['topid'])->field('id,topid')->find();
-                            $money = ($orderinfo->total_fee * $commission['three']) / 10000;
-
-                            $user = Db::name('userinfo')->where('id',$three['id'])->field('openid,money')->find();//获取当前用户余额
-                            $res = [
-                                'id' => $three['id'],
-                                'money' => $money + $user['money']//佣金+当前余额
-                            ];
-
-                            $this->SaveMoney($res);
-                        }
-                    }
-
-                }
+//                if($info['topid'] != 0){//合伙人佣金统计
+//
+//
+//                }
+//                if($commission['status'] == 1){//状态为 1  则开启分销模式
+//                    if($info['topid'] != 0){//一级
+//
+//                        $one = Db::name('userinfo')->where('id',$info['topid'])->field('id,topid')->find();//一级
+//
+//                        $money = ($orderinfo->total_fee * $commission['one']) / 10000;
+//
+//                        $user = Db::name('userinfo')->where('id',$one['id'])->field('openid,money')->find();//获取当前用户余额
+//                        $res = [
+//                            'id' => $one['id'],
+//                            'money' => $money + $user['money']//佣金+当前余额
+//                        ];
+//
+//                        $this->SaveMoney($res);
+//                        if($one['topid'] != 0){//二级
+//                            $two = Db::name('userinfo')->where('id',$one['topid'])->field('id,topid')->find();
+//
+//                            $money = ($orderinfo->total_fee * $commission['two']) / 10000;
+//
+//                            $user = Db::name('userinfo')->where('id',$two['id'])->field('openid,money')->find();//获取当前用户余额
+//                            $res = [
+//                                'id' => $two['id'],
+//                                'money' => $money + $user['money']//佣金+当前余额
+//                            ];
+//
+//                            $this->SaveMoney($res);
+//                            if($two['topid'] != 0){//三级
+//                                $three = Db::name('userinfo')->where('id',$two['topid'])->field('id,topid')->find();
+//                                $money = ($orderinfo->total_fee * $commission['three']) / 10000;
+//
+//                                $user = Db::name('userinfo')->where('id',$three['id'])->field('openid,money')->find();//获取当前用户余额
+//                                $res = [
+//                                    'id' => $three['id'],
+//                                    'money' => $money + $user['money']//佣金+当前余额
+//                                ];
+//
+//                                $this->SaveMoney($res);
+//                            }
+//                        }
+//
+//                    }
+//                }
 
 
                 return true; // 返回处理完成
@@ -402,7 +569,9 @@ class Index extends \think\addons\Controller
      */
     public function qrcode(){
 
-        $ticket = $this->getTicket();
+        $userinfo = Session::get('wechat_user');
+        $openid = $userinfo['original']['openid'];
+        $ticket = $this->getTicket($openid);
         $url = "https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=$ticket";
 
 //        echo "<img src='$url'>";
@@ -412,36 +581,84 @@ class Index extends \think\addons\Controller
     }
 
     /**
+     * 链接分享   显示上级的二维码
+     * @return string
+     */
+    public function shareQrcode(){
+        $openid = input('openid','');
+        $ticket = $this->getTicket($openid);
+        $url = "https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=$ticket";
+//        echo "<img src='$url'>";
+        return $url;
+    }
+
+    /**
      * 获取ticket
      * @return mixed
      */
-    public function getTicket(){
+    public function getTicket($openid=''){
+
+        Cache::set('share_referer',input('referer',''));//存在则属于分享  记录识别二维码前地址
+        Cache::set('share_title',input('share_title',''));
+        Cache::set('share_desc',input('share_desc',''));
+        Cache::set('img',input('img',''));
+//        dump($referer);
+//        $token = Cache::get("wechat_access_token");
+////        dump($token);
+//        if(!$token){
+            $accessToken = $this->app->access_token; // EasyWeChat\Core\AccessToken 实例
+            $token = $accessToken->getToken(); // token 字符串
+            $token = $accessToken->getToken(true); // 强制重新从微信服务器获取 token.
+//            Cache::set('wechat_access_token',$token,'7200');
+//        }
+
+//        $ticket = Cache::get('wechat_jsapi_ticket');
+
+//        if(!$ticket){
+
+            $user = Db::name('userinfo')->where('openid',$openid)->field('id')->find();
+
+            $api = "https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token=$token&connect_redirect=1";
+
+
+            $params = [
+//            'expire_seconds' => 604800,
+                'action_name' => 'QR_LIMIT_STR_SCENE',
+                'action_info' => [
+                    'scene' => [
+//                        'scene_id' => $user['id'],//修改参数
+                        'scene_str' => '|'.$user['id'].'|'.Cache::get('share_referer')
+                    ]
+                ]
+            ];
+            $json = \GuzzleHttp\json_encode($params);
+
+            $ret = \GuzzleHttp\json_decode($this->curl($api,$json));
+//            dump($ret);
+            $ticket = $ret->ticket;
+
+//            Cache::set('wechat_jsapi_ticket',$ticket,7200);
+//        }
+
+        return $ticket;
+    }
+
+    /**
+     * 查看当前用户是否关注该公众号  0 未关注  1 已关注
+     * @return mixed
+     */
+    public function getSubscribe(){
         $accessToken = $this->app->access_token; // EasyWeChat\Core\AccessToken 实例
         $token = $accessToken->getToken(); // token 字符串
         $token = $accessToken->getToken(true); // 强制重新从微信服务器获取 token.
+        $openid = Session::get('wechat_user')['original']['openid'];
 
-        $userinfo = Session::get('wechat_user');
-        $openid = $userinfo['original']['openid'];
-        $user = Db::name('userinfo')->where('openid',$openid)->field('id')->find();
+        $url = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$token.'&openid='.$openid.'&lang=zh_CN';
 
-//        dump($user);
-//        //永久二维码
-        $api = "https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token=$token&connect_redirect=1";
-        $params = [
-//            'expire_seconds' => 604800,
-            'action_name' => 'QR_LIMIT_SCENE',
-            'action_info' => [
-                'scene' => [
-                    'scene_id' => $user['id']
-                ]
-            ]
-        ];
-        $json = \GuzzleHttp\json_encode($params);
-//
-        $ret = \GuzzleHttp\json_decode($this->curl($api,$json));
-        return $ret->ticket;
+        $res = json_decode($this->curl($url,''));
+
+        return $res->subscribe;
     }
-
 
     /**
      * 模版消息推送

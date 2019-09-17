@@ -2,8 +2,10 @@
 
 return [
     'Openid'              => '微信openid(唯一标示)',
+    'Name'                => '姓名',
     'Nickname'            => '昵称',
     'Phone'               => '手机号',
+    'Email'               => '邮箱',
     'Avatar'              => '微信头像',
     'Gender'              => '性别',
     'Gender 0'            => '女',
@@ -21,5 +23,8 @@ return [
     'Prevtime'            => '上次登录时间',
     'Logintime'           => '登录时间',
     'Jointime'            => '加入时间',
+    'Topid'               => '上级ID',
+    'Card'                => '身份证',
+    'Birth'               => '出生日期',
     'Memberservice.title' => '名称'
 ];

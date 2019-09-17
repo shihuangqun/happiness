@@ -3,6 +3,7 @@
 namespace app\common\controller;
 
 use app\common\library\Auth;
+use think\Cache;
 use think\Config;
 use think\Controller;
 use think\Db;
@@ -48,13 +49,15 @@ class Frontend extends Controller
     public function _initialize()
     {
         if(empty(Session::get('wechat_user'))){
-//            dump('110');
             Session::set('topUrl',$_SERVER['REQUEST_URI']);//记录授权前地址
             header('location:'.'/addons/wechat/index/oauth');//判断session是否存在  反之跳转授权
         }
 
-//        dump(Session::get('wechat_user'));
         $this->user = Session::get('wechat_user');//获取当前用户session
+
+//        Cache::set('parent_openid',$this->user['original']['openid']);
+        $this->userStatus();//查看当前用户是否被拉黑
+
         $this->site = Config::get("site");//获取系统配置
         //移除HTML标签
         $this->request->filter('trim,strip_tags,htmlspecialchars');
@@ -231,6 +234,14 @@ class Frontend extends Controller
                 return $_SESSION['openid'];
             }
         }
+    }
+
+    //当前用户是否被拉黑
+    public function userStatus(){
+        $info = $this->getUserInfo();
+
+        if(!empty($info)) if($info['status'] == 0) $this->redirect('index/error/black');
+
     }
 
     //捕获异常

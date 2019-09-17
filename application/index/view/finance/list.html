@@ -1,0 +1,50 @@
+{include file="common/meta"}
+
+<style>
+    body{
+        background: #f7f7f7;
+    }
+    .pagination{text-align:center;margin-top:20px;margin-bottom: 20px;}
+    .pagination li{margin:0px 10px; border:1px solid #e6e6e6;padding: 3px 8px;display: inline-block;min-width: 20px;}
+    .pagination .active{background-color: #c8c7cc;color: #fff;}
+    .pagination .disabled{color:#aaa;}
+    a{
+        color: #999;
+    }
+</style>
+<div>
+
+    {volist name="data" id="vo" empty="<img src='/index/images/loaded.png' width='300' style='margin-left: 10%;margin-top: 10px'>"}
+    <div style="width:100%;height: 90px;background: white;margin-bottom: 10px;">
+        <div style="padding: 5px 5% 5px 5%">
+            <div style="position: relative">
+                <div style="float: left;font-size: 12px;color: #666;">
+                    <span>订单号：{$vo.order_no}</span>
+                </div>
+<!--                <div style="float: right;font-size: 12px;color: #666;">申请时间:{$vo.createtime|date="Y-m-d H:i:s",###}</div>-->
+            </div>
+            <br>
+            <div style="position: relative;margin-top:10px;">
+                <div style="float: left">
+                    <img src="{$vo.avatar}" alt="" width="50" style="border-radius: 25px;">
+                </div>
+                <div style="float: left;line-height: 1.6;margin-top: 5px;margin-left: 5px;">
+                    <div>
+                        <span>{$vo.nickname}&nbsp;({$vo.name})</span><br>
+                        <span>{$vo.phone}</span>
+                    </div>
+                </div>
+                <div style="float: right;line-height: 1.5;margin-top: 10px;">
+                    <span>提现金额：</span><span style="width:100px;height: 30px;color:#e2892a"> {$vo.money}</span><span style="color:#666">（{if condition="$vo.status eq 0"}待审核{else}已审核{/if}）</span><br>
+                    <span style="width:100px;font-size: 12px;color: #666;">{if condition="$vo.status eq 1"}到账时间:{$vo.createtime|date="Y-m-d H:i:s",###}{else}申请时间:{$vo.createtime|date="Y-m-d H:i:s",###}{/if}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    {/volist}
+
+
+
+</div>
+{include file="common/nav"}
+{include file="common/footer"}

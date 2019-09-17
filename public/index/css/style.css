@@ -52,11 +52,11 @@ body {
 }
 
 .home-list {
-	margin: 10px auto;
+	margin: auto;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-    margin-bottom: 8%;
+    margin-bottom: 5%;
 }
 
 .home-list .item {
@@ -201,13 +201,14 @@ ul {
 .day-list li .font .title{
 	padding: 5px 0px;
 	margin: 5px 0px;
-	font-size:18px;
+	font-size:13px;
 	width: 100%;
 	text-overflow: ellipsis;
-	white-space: nowrap;
+	/*white-space: nowrap;*/
 	overflow: hidden;
     font-family: sans-serif;
     color:black;
+	-webkit-line-clamp:2;
 }
 .day-list li .dat-top img {
 	width: 100%;
@@ -319,7 +320,7 @@ ul {
 	border-radius:50% ;
 }
 .my-header .my-bnt{
-	margin-left: 50px;
+	margin-left: 100px;
 	background: none;
 	border:1px solid #FFFFFF ;
 	color: #FFFFFF;
@@ -337,7 +338,7 @@ ul {
     position: relative;
     left: 0px;
     right: 0px;
-	padding-bottom: 10px;
+	padding-bottom: 20px;
 }
 .my-container .tt{
 	width: 90%;
@@ -348,12 +349,17 @@ ul {
     margin-top: 10px;
 }
 .my-container ul{
-	display: flex;
+	/*display: flex;*/
 	justify-content:space-between;
 	align-items: center;
+	width: 100%;
+	height: 130px;
 }
 .my-container ul li{
-	width: 23%;
+	height: 60px;
+	margin-top: 20px;
+	float: left;
+	width: 25%;
 	    text-align: center;
 }
 .my-container ul li .my-icon{
@@ -389,11 +395,10 @@ padding: 10px 0px;
 	 margin: 0 auto;
     z-index: 99;
     width: 94%;
-    /* margin-top: -40px; */
     border-radius: 25px;
     background: #FFFFFF;
     padding-bottom: 30px;
-	margin-top: -50px;
+	margin-top: -24px;
   
 }
 .my-menu .tt{

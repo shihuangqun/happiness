@@ -3,6 +3,7 @@ namespace app\index\controller;
 
 use app\common\controller\Frontend;
 use think\Db;
+use think\Session;
 
 class Course extends Frontend{
 
@@ -19,11 +20,29 @@ class Course extends Frontend{
     public function index(){
 
         $user = $this->getUserInfo();
+        $grade = Db::name('order')
+            ->where('user_id',$user['id'])
+            ->where('order_status','neq','0')
+            ->alias('o')
+            ->join('course c','c.id = o.course_id')
+            ->field('type')
+            ->find();//查看当前等级
+
+        $is_height = Db::name('order')
+            ->where('user_id',$user['id'])
+            ->where('order_status','neq','0')
+            ->alias('o')
+            ->join('course c','c.id = o.course_id')
+            ->where('c.type','2')//为2  等于高级用户 则可以免费学习中级
+            ->field('type')
+            ->find();
         $data = Db::name('course')->order('price asc')->select();
 
         $this->assign([
             'data' => $data,
-            'user' => $user
+            'user' => $user,
+            'grade' => $grade,
+            'is_height' => $is_height
         ]);
         return $this->fetch();
     }
